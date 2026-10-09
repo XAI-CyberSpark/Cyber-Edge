@@ -1,0 +1,3 @@
+# Optional local HMI speech recognition; install alongside host-lite requirements.
+sherpa-onnx==1.13.8
+numpy==2.2.6

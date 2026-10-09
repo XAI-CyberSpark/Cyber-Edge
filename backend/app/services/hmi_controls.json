@@ -1,0 +1,464 @@
+{
+  "ac.on": {
+    "label": "空调",
+    "page": "climate",
+    "default": true,
+    "type": "boolean",
+    "path": [
+      "ac",
+      "on"
+    ]
+  },
+  "ac.temp": {
+    "label": "目标温度",
+    "page": "climate",
+    "default": 22,
+    "type": "number",
+    "min": 16,
+    "max": 30,
+    "step": 1,
+    "unit": "°C",
+    "path": [
+      "ac",
+      "temp"
+    ]
+  },
+  "ac.mode": {
+    "label": "空调模式",
+    "page": "climate",
+    "default": "auto",
+    "type": "string",
+    "options": {
+      "auto": "自动",
+      "cool": "制冷",
+      "heat": "制热"
+    },
+    "path": [
+      "ac",
+      "mode"
+    ]
+  },
+  "ac.fan": {
+    "label": "风量",
+    "page": "climate",
+    "default": 3,
+    "type": "number",
+    "min": 0,
+    "max": 10,
+    "step": 1,
+    "path": [
+      "ac",
+      "fan"
+    ]
+  },
+  "ac.frontDefrost": {
+    "label": "前风挡除雾",
+    "page": "climate",
+    "default": false,
+    "type": "boolean"
+  },
+  "ac.rearDefrost": {
+    "label": "后窗除雾",
+    "page": "climate",
+    "default": false,
+    "type": "boolean"
+  },
+  "doors.locked": {
+    "label": "车辆锁定",
+    "page": "locks",
+    "default": true,
+    "type": "boolean",
+    "path": [
+      "doors",
+      "locked"
+    ]
+  },
+  "locks.walkUp": {
+    "label": "靠近解锁",
+    "page": "locks",
+    "default": false,
+    "type": "boolean"
+  },
+  "locks.walkAway": {
+    "label": "离车自动上锁",
+    "page": "locks",
+    "default": true,
+    "type": "boolean"
+  },
+  "locks.child": {
+    "label": "儿童锁",
+    "page": "locks",
+    "default": false,
+    "type": "boolean"
+  },
+  "locks.parkUnlock": {
+    "label": "驻车解锁",
+    "page": "locks",
+    "default": true,
+    "type": "boolean"
+  },
+  "lights.headlights": {
+    "label": "大灯",
+    "page": "lights",
+    "default": "auto",
+    "type": "string",
+    "options": {
+      "off": "关闭",
+      "parking": "示宽灯",
+      "on": "开启",
+      "auto": "自动"
+    }
+  },
+  "lights.fog": {
+    "label": "前雾灯",
+    "page": "lights",
+    "default": false,
+    "type": "boolean"
+  },
+  "lights.dome": {
+    "label": "阅读灯",
+    "page": "lights",
+    "default": "auto",
+    "type": "string",
+    "options": {
+      "off": "关闭",
+      "on": "开启",
+      "auto": "自动"
+    }
+  },
+  "lights.ambient": {
+    "label": "氛围灯",
+    "page": "lights",
+    "default": true,
+    "type": "boolean"
+  },
+  "lights.color": {
+    "label": "氛围灯颜色",
+    "page": "lights",
+    "default": "#88ded7",
+    "type": "string",
+    "format": "color",
+    "path": [
+      "lights",
+      "ambientColor"
+    ]
+  },
+  "lights.brightness": {
+    "label": "氛围灯亮度",
+    "page": "lights",
+    "default": 50,
+    "type": "number",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "%",
+    "path": [
+      "lights",
+      "brightness"
+    ]
+  },
+  "lights.hazard": {
+    "label": "危险警示灯",
+    "page": "lights",
+    "default": false,
+    "type": "boolean"
+  },
+  "display.mode": {
+    "label": "显示模式",
+    "page": "display",
+    "default": "auto",
+    "type": "string",
+    "options": {
+      "day": "日间",
+      "night": "夜间",
+      "auto": "自动"
+    }
+  },
+  "display.brightness": {
+    "label": "屏幕亮度",
+    "page": "display",
+    "default": 100,
+    "type": "number",
+    "min": 20,
+    "max": 100,
+    "step": 1,
+    "unit": "%"
+  },
+  "display.distance": {
+    "label": "距离单位",
+    "page": "display",
+    "default": "km",
+    "type": "string",
+    "options": {
+      "km": "公里",
+      "mi": "英里"
+    }
+  },
+  "display.temperature": {
+    "label": "温度单位",
+    "page": "display",
+    "default": "C",
+    "type": "string",
+    "options": {
+      "F": "°F",
+      "C": "°C"
+    }
+  },
+  "mirrors.folded": {
+    "label": "折叠后视镜",
+    "page": "quick",
+    "default": false,
+    "type": "boolean"
+  },
+  "mirrors.horizontal": {
+    "label": "后视镜水平角度",
+    "page": "quick",
+    "default": 0,
+    "type": "number",
+    "min": -30,
+    "max": 30,
+    "step": 1,
+    "unit": "°"
+  },
+  "mirrors.vertical": {
+    "label": "后视镜垂直角度",
+    "page": "quick",
+    "default": 0,
+    "type": "number",
+    "min": -20,
+    "max": 20,
+    "step": 1,
+    "unit": "°"
+  },
+  "steering.height": {
+    "label": "方向盘高度",
+    "page": "quick",
+    "default": 50,
+    "type": "number",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "%"
+  },
+  "steering.reach": {
+    "label": "方向盘前后",
+    "page": "quick",
+    "default": 50,
+    "type": "number",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "%"
+  },
+  "driving.steering": {
+    "label": "转向模式",
+    "page": "driving",
+    "default": "standard",
+    "type": "string",
+    "options": {
+      "comfort": "舒适",
+      "standard": "标准",
+      "sport": "运动"
+    }
+  },
+  "driving.regen": {
+    "label": "能量回收",
+    "page": "driving",
+    "default": "standard",
+    "type": "string",
+    "options": {
+      "standard": "标准",
+      "low": "低"
+    }
+  },
+  "driving.slipStart": {
+    "label": "脱困起步",
+    "page": "driving",
+    "default": false,
+    "type": "boolean"
+  },
+  "driving.creep": {
+    "label": "低速缓行",
+    "page": "driving",
+    "default": false,
+    "type": "boolean"
+  },
+  "autopilot.distance": {
+    "label": "跟车距离",
+    "page": "autopilot",
+    "default": 5,
+    "type": "number",
+    "min": 1,
+    "max": 7,
+    "step": 1
+  },
+  "autopilot.autosteer": {
+    "label": "辅助转向",
+    "page": "autopilot",
+    "default": false,
+    "type": "boolean"
+  },
+  "autopilot.laneChange": {
+    "label": "辅助变道",
+    "page": "autopilot",
+    "default": false,
+    "type": "boolean"
+  },
+  "safety.parkingBrake": {
+    "label": "驻车制动",
+    "page": "safety",
+    "default": true,
+    "type": "boolean"
+  },
+  "safety.power": {
+    "label": "车辆电源",
+    "page": "safety",
+    "default": true,
+    "type": "boolean"
+  },
+  "service.wiper": {
+    "label": "雨刷维护位置",
+    "page": "service",
+    "default": false,
+    "type": "boolean"
+  },
+  "service.headlightHeight": {
+    "label": "大灯高度",
+    "page": "service",
+    "default": 0,
+    "type": "number",
+    "min": -5,
+    "max": 5,
+    "step": 1
+  },
+  "glovebox.open": {
+    "label": "手套箱",
+    "page": "quick",
+    "default": false,
+    "type": "boolean"
+  },
+  "seat.heat.0": {
+    "label": "主驾加热",
+    "page": "climate",
+    "default": 0,
+    "type": "number",
+    "min": 0,
+    "max": 3,
+    "step": 1
+  },
+  "seat.vent.0": {
+    "label": "主驾通风",
+    "page": "climate",
+    "default": 0,
+    "type": "number",
+    "min": 0,
+    "max": 3,
+    "step": 1
+  },
+  "seat.heat.1": {
+    "label": "副驾加热",
+    "page": "climate",
+    "default": 0,
+    "type": "number",
+    "min": 0,
+    "max": 3,
+    "step": 1
+  },
+  "seat.vent.1": {
+    "label": "副驾通风",
+    "page": "climate",
+    "default": 0,
+    "type": "number",
+    "min": 0,
+    "max": 3,
+    "step": 1
+  },
+  "seat.heat.2": {
+    "label": "后排左侧加热",
+    "page": "climate",
+    "default": 0,
+    "type": "number",
+    "min": 0,
+    "max": 3,
+    "step": 1
+  },
+  "seat.vent.2": {
+    "label": "后排左侧通风",
+    "page": "climate",
+    "default": 0,
+    "type": "number",
+    "min": 0,
+    "max": 3,
+    "step": 1
+  },
+  "seat.heat.3": {
+    "label": "后排右侧加热",
+    "page": "climate",
+    "default": 0,
+    "type": "number",
+    "min": 0,
+    "max": 3,
+    "step": 1
+  },
+  "seat.vent.3": {
+    "label": "后排右侧通风",
+    "page": "climate",
+    "default": 0,
+    "type": "number",
+    "min": 0,
+    "max": 3,
+    "step": 1
+  },
+  "seat.position.0": {
+    "label": "主驾座椅位置",
+    "page": "climate",
+    "default": 10,
+    "type": "number",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "%",
+    "path": [
+      "seats",
+      "driverPos"
+    ]
+  },
+  "seat.position.1": {
+    "label": "副驾座椅位置",
+    "page": "climate",
+    "default": 10,
+    "type": "number",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "%",
+    "path": [
+      "seats",
+      "passengerPos"
+    ]
+  },
+  "sunshade.1": {
+    "label": "天幕遮阳帘",
+    "page": "climate",
+    "default": false,
+    "type": "boolean"
+  },
+  "sunshade.2": {
+    "label": "后风挡遮阳帘",
+    "page": "climate",
+    "default": false,
+    "type": "boolean"
+  },
+  "sunshade.3": {
+    "label": "后排左侧遮阳帘",
+    "page": "climate",
+    "default": false,
+    "type": "boolean"
+  },
+  "sunshade.4": {
+    "label": "后排右侧遮阳帘",
+    "page": "climate",
+    "default": false,
+    "type": "boolean"
+  }
+}

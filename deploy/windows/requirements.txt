@@ -1,0 +1,5 @@
+-r ../../backend/requirements-host-lite.txt
+-r ../../backend/requirements-asr.txt
+websockets>=14,<16
+paramiko>=3.5,<5
+colorama==0.4.6

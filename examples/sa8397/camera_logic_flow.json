@@ -1,0 +1,55 @@
+{
+  "name": "sa8397_camera_logic_flow",
+  "nodes": [
+    {
+      "id": "camera_in",
+      "type": "systemInput",
+      "data": {
+        "label": "Cabin Camera",
+        "inputType": "camera"
+      }
+    },
+    {
+      "id": "check_attention",
+      "type": "logic",
+      "data": {
+        "label": "Need Attention Check?",
+        "condition": "camera.occupied == true and confidence >= 0.8"
+      }
+    },
+    {
+      "id": "vision_llm",
+      "type": "llm",
+      "data": {
+        "label": "Vision Inspector",
+        "systemPrompt": "Describe the camera scene briefly."
+      }
+    },
+    {
+      "id": "normal_exit",
+      "type": "output",
+      "data": {
+        "label": "No Attention Needed"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "camera_in",
+      "target": "check_attention"
+    },
+    {
+      "id": "e2",
+      "source": "check_attention",
+      "target": "vision_llm",
+      "sourceHandle": "true"
+    },
+    {
+      "id": "e3",
+      "source": "check_attention",
+      "target": "normal_exit",
+      "sourceHandle": "false"
+    }
+  ]
+}

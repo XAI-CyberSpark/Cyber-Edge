@@ -1,0 +1,2 @@
+# Install in a separate venv, never merge into the model backend environment.
+mcp==2.2.0

@@ -1,0 +1,37 @@
+/* Semantic typography: docs/product/TYPOGRAPHY.md. Do not shrink type to fit a panel. */
+:root {
+  --text-page-size: 1.5rem; --text-page-line: 1.3333333333333333; --text-page-weight: 600;
+  --text-panel-size: 1.125rem; --text-panel-line: 1.4444444444444444; --text-panel-weight: 600;
+  --text-section-size: 1rem; --text-section-line: 1.5; --text-section-weight: 600;
+  --text-item-title-size: 1rem; --text-item-title-line: 1.5; --text-item-title-weight: 600;
+  --text-body-size: 0.875rem; --text-body-line: 1.5714285714285714; --text-body-weight: 400;
+  --text-label-size: 0.875rem; --text-label-line: 1.4285714285714286; --text-label-weight: 500;
+  --text-caption-size: 0.75rem; --text-caption-line: 1.5; --text-caption-weight: 400;
+  --text-tag-size: 0.75rem; --text-tag-line: 1.5; --text-tag-weight: 500;
+  --text-code-size: 0.8125rem; --text-code-line: 1.5384615384615385; --text-code-weight: 400;
+  --text-metric-size: 1.5rem; --text-metric-line: 1.3333333333333333; --text-metric-weight: 600;
+  --text-hmi-title-size: 1.25rem; --text-hmi-title-line: 1.4; --text-hmi-title-weight: 600;
+  --text-hmi-body-size: 1rem; --text-hmi-body-line: 1.625; --text-hmi-body-weight: 400;
+  --text-hmi-label-size: 0.875rem; --text-hmi-label-line: 1.5714285714285714; --text-hmi-label-weight: 500;
+  --text-hmi-caption-size: 0.75rem; --text-hmi-caption-line: 1.5; --text-hmi-caption-weight: 400;
+  --text-brand-size: clamp(.875rem, 4vw, 2.25rem);
+  --text-hmi-clock-size: clamp(1.25rem, 2.047cqw, 1.5625rem);
+  --text-hmi-temperature-size: clamp(1.5rem, 2.315cqw, 2rem);
+  --text-hmi-temperature-display-size: 2.875rem;
+}
+body { font-size:var(--text-body-size); line-height:var(--text-body-line); }
+.type-page { font-size:var(--text-page-size); line-height:var(--text-page-line); font-weight:var(--text-page-weight); }
+.type-panel { font-size:var(--text-panel-size); line-height:var(--text-panel-line); font-weight:var(--text-panel-weight); }
+.type-section { font-size:var(--text-section-size); line-height:var(--text-section-line); font-weight:var(--text-section-weight); }
+.type-item-title { font-size:var(--text-item-title-size); line-height:var(--text-item-title-line); font-weight:var(--text-item-title-weight); }
+.type-body { font-size:var(--text-body-size); line-height:var(--text-body-line); }
+.type-label { font-size:var(--text-label-size); line-height:var(--text-label-line); font-weight:var(--text-label-weight); }
+.type-caption { font-size:var(--text-caption-size); line-height:var(--text-caption-line); }
+.type-tag { font-size:var(--text-tag-size); line-height:var(--text-tag-line); font-weight:var(--text-tag-weight); }
+.type-code { font-size:var(--text-code-size); line-height:var(--text-code-line); }
+.type-metric { font-size:var(--text-metric-size); line-height:var(--text-metric-line); font-weight:var(--text-metric-weight); }
+.type-hmi-title { font-size:var(--text-hmi-title-size); line-height:var(--text-hmi-title-line); font-weight:var(--text-hmi-title-weight); }
+.type-hmi-body { font-size:var(--text-hmi-body-size); line-height:var(--text-hmi-body-line); }
+.type-hmi-label { font-size:var(--text-hmi-label-size); line-height:var(--text-hmi-label-line); font-weight:var(--text-hmi-label-weight); }
+.type-hmi-caption { font-size:var(--text-hmi-caption-size); line-height:var(--text-hmi-caption-line); }
+.type-code { font-family:var(--font-code); }

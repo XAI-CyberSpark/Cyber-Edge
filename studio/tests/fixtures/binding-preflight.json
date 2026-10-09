@@ -1,0 +1,16 @@
+[
+  {"name":"valid roots and dynamic fields","data":{"systemPrompt":"{{input.text}} {{event.value}} {{state.future}} {{outputs.m.data.title}}"},"valid":true},
+  {"name":"direct node root","data":{"responseText":"{{m.data.title}}"},"valid":false},
+  {"name":"unknown output node","data":{"responseText":"{{outputs.absent.data.title}}"},"valid":false},
+  {"name":"stage has no output","data":{"responseText":"{{outputs.stage.title}}"},"valid":false},
+  {"name":"typed ref","data":{"values":{"copy":{"$ref":"outputs.m.data"}}},"valid":true},
+  {"name":"nested typed ref invalid","data":{"arguments":{"items":[{"$ref":"m.data.title"}]}},"valid":false},
+  {"name":"prototype path","data":{"responseText":"{{state.constructor}}"},"valid":false},
+  {"name":"empty path segment","data":{"responseText":"{{outputs..data}}"},"valid":false},
+  {"name":"numeric segment unsupported","data":{"values":{"value":{"$ref":"state.items.0"}}},"valid":false},
+  {"name":"object with ref and extra is ordinary data","data":{"arguments":{"$ref":"some document identifier","description":"literal"}},"valid":true},
+  {"name":"display metadata and old evidence ignored","data":{"label":"{{label}}","name":"{{name}}","description":"{{note}}","trace":["{{oldOutput}}"],"output":{"text":"{{userTemplate}}"},"responseText":"{{input.text}}"},"valid":true},
+  {"name":"text not consumed by runtime binding regex","data":{"systemPrompt":"Return the literal {{non-path text}}"},"valid":true},
+  {"name":"whole contexts and missing dynamic state","data":{"values":{"s":{"$ref":"state"},"e":{"$ref":"event"}},"responseText":"{{input}} {{state.optional}}"},"valid":true},
+  {"name":"unknown ref root","data":{"controlValue":{"$ref":"car.ac.temp"}},"valid":false}
+]

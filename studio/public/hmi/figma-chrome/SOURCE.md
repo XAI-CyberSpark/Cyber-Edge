@@ -1,0 +1,1 @@
+Figma file pLWFNEoqZRfNPbASDtOiKy. Top status bar 556:3522; Dock 556:3524. Assets exported 2026-09-15 from the user-selected design; exact exported bytes. Temporary asset URLs are not used at runtime. Album image is the design artwork, not metadata for the simulated track.

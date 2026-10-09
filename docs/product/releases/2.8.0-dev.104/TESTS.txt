@@ -1,0 +1,8 @@
+dev.104 2026-10-09
+Red: 5 tests, 4 failures; memory example execution additionally reproduced invalid output-field failure.
+Green: 6 tests passed, 0.738s.
+Full backend: 378 tests, 369 passed, 9 skipped, 26.843s.
+Studio tsc -b: exit 0.
+Studio scenario execution: 20 passed, 0 failed.
+Docs: 42 errors / 24 warnings (unchanged baseline).
+Diff whitespace: passed.

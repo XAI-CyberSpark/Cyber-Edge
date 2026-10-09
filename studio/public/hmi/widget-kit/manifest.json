@@ -1,0 +1,389 @@
+{
+  "source": "https://www.figma.com/design/9FMine79oMFlnP2eQVXjg3/?node-id=1-19694",
+  "node": "1:19694",
+  "assets": [
+    {
+      "name": "img1",
+      "file": "img1.png",
+      "bytes": 342039,
+      "sha256": "72d349e0d0d535c569b7189c74d670d124bfc974ae3b33880ea822fdce1f8dfb"
+    },
+    {
+      "name": "img2",
+      "file": "img2.png",
+      "bytes": 544934,
+      "sha256": "89605585d2d81d2ec5fe63d37d9eee869c53f45a73a393ae5f5a5101536a844f"
+    },
+    {
+      "name": "imgImage958",
+      "file": "imgImage958.png",
+      "bytes": 822892,
+      "sha256": "239d98aa180959e179bbf3cd0314e252763c2c49b310d094f2db35ddb2503269"
+    },
+    {
+      "name": "imgWecomTempF67392B47Fca4B50Fb0572Da818Ed1D22",
+      "file": "imgWecomTempF67392B47Fca4B50Fb0572Da818Ed1D22.png",
+      "bytes": 102806,
+      "sha256": "77b6731dde82596ffa2beccdaa7301a8c70b365d0923d519b9fae4f18118c8fd"
+    },
+    {
+      "name": "imgApp5",
+      "file": "imgApp5.png",
+      "bytes": 1247483,
+      "sha256": "3d273bd922cb06094a7d0d56c59de47946a96add04b482cd18f320effb6e8448"
+    },
+    {
+      "name": "imgRectangle112978",
+      "file": "imgRectangle112978.png",
+      "bytes": 7095149,
+      "sha256": "8bcd1fd473b20199acba73e58e3c6357d3129d0e710c166b4411948decae9cae"
+    },
+    {
+      "name": "imgApp",
+      "file": "imgApp.svg",
+      "bytes": 1607,
+      "sha256": "2ef977989f68c962d369f01ab54943baa5c859231935c2a5f5166eb048c2af67",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"464\" height=\"464\" viewBox=\"0 0 464 464\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgEvreneBirTiniBirak",
+      "file": "imgEvreneBirTiniBirak.png",
+      "bytes": 389458,
+      "sha256": "104ca4419b592da94cdb8e9c18606760641939b7be78960f634601689b538a22"
+    },
+    {
+      "name": "img",
+      "file": "img.svg",
+      "bytes": 1586,
+      "sha256": "c8f8c6f41f49b6b9341056e9f0fea8aa4e62ffe464a2bcdac5f365074549c4da",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"464\" height=\"464\" viewBox=\"0 0 464 464\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgWaypoint",
+      "file": "imgWaypoint.svg",
+      "bytes": 1188,
+      "sha256": "ee018548d9d850a2d4588c4aa1254524f9a3452f6b6d151fa0fc71f1b65f071c",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"38\" height=\"51\" viewBox=\"0 0 38 51\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "img3",
+      "file": "img3.svg",
+      "bytes": 641,
+      "sha256": "8bee2aabcce0e1dd1db9ed78ea47d0d51e6954055eb571b3352bd997c6a0d326",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"32.5\" height=\"31.5\" viewBox=\"0 0 32.5 31.5\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgEllipse2355",
+      "file": "imgEllipse2355.svg",
+      "bytes": 641,
+      "sha256": "b79f3703e67284213426b1bc0128fb7aafe57f243a8ea390e30f84a8d3b7d5f8",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"72\" height=\"72\" viewBox=\"0 0 72 72\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgGroup",
+      "file": "imgGroup.svg",
+      "bytes": 769,
+      "sha256": "0b0778a65cf5ef18850d7680904057c1f99a143e82500aaf07edc06794768229",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"33\" height=\"36\" viewBox=\"0 0 33 36\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgFrame15230096",
+      "file": "imgFrame15230096.svg",
+      "bytes": 1596,
+      "sha256": "ab0a37364778a4e9b1928e48f6058e3903d24988476a9c3906703357815c38d6",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"72\" height=\"72\" viewBox=\"0 0 72 72\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "img4",
+      "file": "img4.svg",
+      "bytes": 1011,
+      "sha256": "03458332b40506b9bddc9d3340332459c4b0eaba4ac8a1dd9e5a97a320621c37",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"35.5\" height=\"35\" viewBox=\"0 0 35.5 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgVector4126",
+      "file": "imgVector4126.svg",
+      "bytes": 1037,
+      "sha256": "1a8b8cedceed2a88ef1d0f9eca80c60e15f8f886fbedb0f922c4366d29329806",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"43.6284\" height=\"291.671\" viewBox=\"0 0 43.6284 291.671\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgGroup1",
+      "file": "imgGroup1.svg",
+      "bytes": 2608,
+      "sha256": "ebfe2173ac336dbfbf594cb1933b53c1a8c345c78aff0662aa4486b40cbdc901",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"38.0873\" height=\"298.155\" viewBox=\"0 0 38.0873 298.155\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgVector4127",
+      "file": "imgVector4127.svg",
+      "bytes": 438,
+      "sha256": "d12606b439d36940e629982599895faa2083e9cc2a3877d8bb60c597960c89b1",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"35.7756\" height=\"141.744\" viewBox=\"0 0 35.7756 141.744\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgGroup15230051",
+      "file": "imgGroup15230051.svg",
+      "bytes": 4811,
+      "sha256": "96bc9e5f3526535887f52d82d95b241857e5e896074bdc8820bc21560aad2ead",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"213.52\" height=\"190.687\" viewBox=\"0 0 213.52 190.687\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgRectangle114312",
+      "file": "imgRectangle114312.svg",
+      "bytes": 1142,
+      "sha256": "4de29b02fb94ce8e30cf1d3e13c571e217cf0918880be40dcf071d4fa82cf39d",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"464\" height=\"128\" viewBox=\"0 0 464 128\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgExitRight",
+      "file": "imgExitRight.svg",
+      "bytes": 757,
+      "sha256": "8a8f7a75e2ca4ac72b471264c27f53daa450e0c1ee2009b8946aa4c26bd2da5f",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"58\" height=\"72\" viewBox=\"0 0 58 72\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgEllipse2253",
+      "file": "imgEllipse2253.svg",
+      "bytes": 393,
+      "sha256": "d9bd2b3b97e6e510bea190370e0671817c032b2d04857c9f7b79ea4dba8a02f8",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"16\" height=\"19\" viewBox=\"0 0 16 19\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "img5",
+      "file": "img5.svg",
+      "bytes": 293,
+      "sha256": "229be2caa8706c07116cd0f9c3a23ae5fbf6f6e2750926734e21e6a0866c4e07",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"4\" height=\"4\" viewBox=\"0 0 4 4\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "img06SignDirectionExpand",
+      "file": "img06SignDirectionExpand.svg",
+      "bytes": 4657,
+      "sha256": "bf5d7983d389ad2df9bb9256c2ef5ce9a87d6e7839f369ac35142889a252115f",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"464\" height=\"72\" viewBox=\"0 0 464 72\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgRectangle112805",
+      "file": "imgRectangle112805.svg",
+      "bytes": 1599,
+      "sha256": "8c063f38b5af5b473af95abf86210b74722eb038160c73ec1e8246ccf4434e8e",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"464\" height=\"216\" viewBox=\"0 0 464 216\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgFrame15230055",
+      "file": "imgFrame15230055.svg",
+      "bytes": 3232,
+      "sha256": "6aed59da65239845cbdbe9586c415a50cd3560edb83f11784462f3a519a6fa45",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"464\" height=\"216\" viewBox=\"0 0 464 216\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgImage957",
+      "file": "imgImage957.svg",
+      "bytes": 241,
+      "sha256": "08fdf7d945a72ac3633546f9abebf5d14a81ec66b70b5a5784e0f9c5c68ccb0d",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"104\" height=\"104\" viewBox=\"0 0 104 104\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgSubtract",
+      "file": "imgSubtract.svg",
+      "bytes": 338,
+      "sha256": "0e95730f56ecabe30c9d41c9f969afba085d66f2bbdb66a5e0fcdceaf86ffc7b",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"56\" height=\"56\" viewBox=\"0 0 56 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "img6",
+      "file": "img6.svg",
+      "bytes": 525,
+      "sha256": "711736179899c52c94828ebd66ab31b1fc9e28db7447138e896c9de7103d9a7d",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"18\" height=\"24.75\" viewBox=\"0 0 18 24.75\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgGroup2",
+      "file": "imgGroup2.svg",
+      "bytes": 760,
+      "sha256": "e79cd9b70625ea1a528b281d8f7407c388318e773b8b21d907c5c0070f855243",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"27.9976\" height=\"31\" viewBox=\"0 0 27.9976 31\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "img7",
+      "file": "img7.svg",
+      "bytes": 621,
+      "sha256": "18d17ba45349efda74abfc358eb6a80e9011bf707d41888c902728e26201c699",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"31.503\" height=\"27.7507\" viewBox=\"0 0 31.503 27.7507\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgHotelCaliforina",
+      "file": "imgHotelCaliforina.svg",
+      "bytes": 532,
+      "sha256": "524b8a666654c0ef59bd4a0731ba136c03a9020881af8039c8f42d7c2ea9c584",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"224\" height=\"40\" viewBox=\"0 0 224 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgWecomTempF67392B47Fca4B50Fb0572Da818Ed1D24",
+      "file": "imgWecomTempF67392B47Fca4B50Fb0572Da818Ed1D24.png",
+      "bytes": 144133,
+      "sha256": "7a2b839460fb22beab6ef14b01f9f064001afff99090edeb059ec128bcf40af7"
+    },
+    {
+      "name": "imgApp1",
+      "file": "imgApp1.svg",
+      "bytes": 1610,
+      "sha256": "0e448e37ba57f8ed32c071b3e9cbd8c79864e02d70ffd9b2c1298c5f6654e1ac",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"216\" height=\"216\" viewBox=\"0 0 216 216\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgWecomTempF67392B47Fca4B50Fb0572Da818Ed1D23",
+      "file": "imgWecomTempF67392B47Fca4B50Fb0572Da818Ed1D23.svg",
+      "bytes": 1604,
+      "sha256": "10a8529f9291725c55f34abae35daf19cfcbc1923a57714e6522aa7288cc5246",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"216\" height=\"216\" viewBox=\"0 0 216 216\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgRectangle114310",
+      "file": "imgRectangle114310.svg",
+      "bytes": 1108,
+      "sha256": "3f182d10ef570c916a38c01eb9db024022ddc4d4fca34801a5a385aa0cd40f21",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"464\" height=\"72\" viewBox=\"0 0 464 72\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgImage1038",
+      "file": "imgImage1038.png",
+      "bytes": 2530168,
+      "sha256": "01f16bd6bd8409c5358f4a48e2f7440efe348ea96500acfb5fd51c9df7f3fba7"
+    },
+    {
+      "name": "imgApp2",
+      "file": "imgApp2.svg",
+      "bytes": 1091,
+      "sha256": "9a7cda2ee17b7a7051bca3cedf4a3d6ef7b349aa706cbb9d61539c913325f9bd",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"216\" height=\"72\" viewBox=\"0 0 216 72\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgVector4139",
+      "file": "imgVector4139.svg",
+      "bytes": 625,
+      "sha256": "c2ee842f33a54a77dc35317fe770184a903ee9f91ac9510ebb21b8951b71c553",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"566\" height=\"247\" viewBox=\"0 0 566 247\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgFrame1522887",
+      "file": "imgFrame1522887.svg",
+      "bytes": 1943,
+      "sha256": "b983b5dc9251297fc143a9d4171040f342e11583913d546c19edc838754d0280",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"48\" height=\"48\" viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgVector",
+      "file": "imgVector.svg",
+      "bytes": 2340,
+      "sha256": "59cefc73403fcdcf8c29889046414f256fa0a19f1cbc40b1dbafb8859da73c57",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"686\" height=\"633\" viewBox=\"0 0 686 633\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgRectangle113475",
+      "file": "imgRectangle113475.svg",
+      "bytes": 450,
+      "sha256": "5838e090fb401d36a23abe08e4c548143f94b89840aeaf61978f15519062be66",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"2.77156\" height=\"25.4853\" viewBox=\"0 0 2.77156 25.4853\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgExitRight1",
+      "file": "imgExitRight1.svg",
+      "bytes": 832,
+      "sha256": "d77e47864f6b9e166c1c02281a01297c7ceef63466e109f23a1fde37ac7a17f5",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"38.6667\" height=\"47.9997\" viewBox=\"0 0 38.6667 47.9997\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgApp3",
+      "file": "imgApp3.svg",
+      "bytes": 1588,
+      "sha256": "123ddac0d26a424418cb92cdf186bbf9861933798e9fe920810d4007dc9501ca",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"464\" height=\"216\" viewBox=\"0 0 464 216\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgOval5",
+      "file": "imgOval5.svg",
+      "bytes": 253,
+      "sha256": "e70971807a785be676b3e60bb2f3d3c027d70408e076a505eaa4d9357bfac1ff",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgApp6",
+      "file": "imgApp6.svg",
+      "bytes": 1581,
+      "sha256": "6ad2060bf8bacccb30877d5e163ae45d88ef055c255bb16fe3c549b610e4f171",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"464\" height=\"216\" viewBox=\"0 0 464 216\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "img8",
+      "file": "img8.svg",
+      "bytes": 501,
+      "sha256": "15e3b6ecec1146e485be875757c663519958d8ce9607551093e55a08aa040a8e",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"22\" height=\"22\" viewBox=\"0 0 22 22\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgApp4",
+      "file": "imgApp4.svg",
+      "bytes": 1586,
+      "sha256": "1f43479729480dd8048eeb1f4465003bbf76ea6fa69755cbee6e627a24c60023",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"464\" height=\"216\" viewBox=\"0 0 464 216\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgFrame15230128",
+      "file": "imgFrame15230128.svg",
+      "bytes": 259,
+      "sha256": "5bb22c9bce4b04ae45cc01f0339a2cea319c83210c8c233a47cd520d19299fe5",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"48\" height=\"48\" viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "img9",
+      "file": "img9.svg",
+      "bytes": 1407,
+      "sha256": "9d3e5e1d0847a087424b460ed6dac6029944be9099f26af1100f988d2cb72688",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"19.7272\" height=\"29.3332\" viewBox=\"0 0 19.7272 29.3332\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "img1111111",
+      "file": "img1111111.svg",
+      "bytes": 760,
+      "sha256": "3e5057721bdb372c8e901b31c6c4f845ac703417b7ff01b61ebc698f6c889ee6",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"48\" height=\"48\" viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "img11",
+      "file": "img11.svg",
+      "bytes": 997,
+      "sha256": "10e9b00a226695312dc02b82ed5ed502d4247faeee1327da7a3183be63986fd8",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"25.3333\" height=\"25.333\" viewBox=\"0 0 25.3333 25.333\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "img10",
+      "file": "img10.svg",
+      "bytes": 1540,
+      "sha256": "f4e446af7ba86e9b85bd83342fc96552d764d7d8cea05f81276ae235d848ca0f",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"24\" height=\"26.6053\" viewBox=\"0 0 24 26.6053\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgLine122",
+      "file": "imgLine122.svg",
+      "bytes": 260,
+      "sha256": "2e5a37deeb968ee60112e25df6fd9c49f0f5cc6fc24c77e9c8ad92f4bfd9f2bf",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"288\" height=\"1\" viewBox=\"0 0 288 1\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgFrame15230129",
+      "file": "imgFrame15230129.svg",
+      "bytes": 1432,
+      "sha256": "897f2b6c7d37ad578c7f7edef7abf0f1538cdc3a3bee9c821ffad39532393f41",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"48\" height=\"48\" viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    },
+    {
+      "name": "imgRectangle112806",
+      "file": "imgRectangle112806.svg",
+      "bytes": 1613,
+      "sha256": "f12d1b1471639857a577b63e0bb136fdfb9d69e2df217c000cecd763482763bd",
+      "root": "<svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"180\" height=\"216\" viewBox=\"0 0 180 216\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">"
+    }
+  ]
+}

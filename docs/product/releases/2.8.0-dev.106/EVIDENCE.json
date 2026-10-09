@@ -1,0 +1,3143 @@
+{
+  "version": "2.8.0-dev.106",
+  "runs": [
+    {
+      "name": "A-Claude-1",
+      "request_sha256": "34adccdf965b3c51d8e2e6d0c75c734b0c0d18ddf9d69b63b2e47d31a07303ee",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5",
+      "result_kind": "result",
+      "can_apply": false,
+      "completion_attempts": 38,
+      "seconds": 736.925,
+      "preflight_hits": {
+        "PLAN_ASSERTION_PATH": 1,
+        "PLAN_ASSERTION_TYPE": 0
+      },
+      "revision_kind": [
+        "initial"
+      ],
+      "truncation_retries": 0,
+      "truncation_skip_reason": null,
+      "last_errors": [
+        "实际内容核验：内容核验未完成或证据引用无效，不能将该候选标记为可应用。",
+        "智能体未完成最终提交；保留最新图与执行证据供继续修复。"
+      ],
+      "final_diagnostics": [],
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 1,
+        "graph_logic": 1,
+        "assertion": 0
+      },
+      "nodes": 25,
+      "edges": 31,
+      "revision": 19,
+      "trials": [
+        {
+          "revision": 18,
+          "status": "failed",
+          "model_calls": 0,
+          "failures": [
+            "[assertion/ASSERTION_STATUS] 有记忆_临近放学_走最短时间路线第1步：状态failed，期望not_failed；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[graph_logic/GRAPH_EXECUTION] 节点check_memory_exists：判断条件执行失败：判断条件必须返回true或false；修复方向：检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。",
+            "[assertion/ASSERTION_STATUS] 无记忆_首次录入_非临近_走最短距离路线第1步：状态failed，期望not_failed；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[graph_logic/GRAPH_EXECUTION] 节点check_memory_exists：判断条件执行失败：判断条件必须返回true或false；修复方向：检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+          ],
+          "content_review": {
+            "status": "not_run",
+            "source": "not_run",
+            "issues": [],
+            "independent_verification": false
+          }
+        },
+        {
+          "revision": 19,
+          "status": "passed",
+          "model_calls": 0,
+          "failures": [],
+          "content_review": {
+            "status": "error",
+            "source": "same_model_separate_context",
+            "independent_verification": false,
+            "scope": "listed_text_and_structured_execution_evidence",
+            "issues": [],
+            "provider": {
+              "id": "anthropic",
+              "model": "claude-sonnet-5"
+            },
+            "artifact_sha256": "cc8c82b88b51aaea91bb10a4f84606082b15134734cef86354042b81db53a8a7",
+            "evidence_sha256": "395f08c180dcd3b2be7d5c5821bbbb47478ebf96a6f6015ddb496a9620e0d4cf",
+            "error_type": "ReviewProtocolError",
+            "failure_stage": "validate_response",
+            "message": "内容核验未完成或证据引用无效，不能将该候选标记为可应用。",
+            "error_code": "invalid_evidence_quote",
+            "details": [
+              {
+                "field": "checks.1.findings.0.observed_quote",
+                "issue": "引用未通过主机校验，请核对该字段对应的原始证据。"
+              }
+            ],
+            "duration_ms": 25322
+          }
+        }
+      ],
+      "graph_model_calls": 0,
+      "content_review": {
+        "status": "error",
+        "source": "same_model_separate_context",
+        "independent_verification": false,
+        "scope": "listed_text_and_structured_execution_evidence",
+        "issues": [],
+        "provider": {
+          "id": "anthropic",
+          "model": "claude-sonnet-5"
+        },
+        "artifact_sha256": "cc8c82b88b51aaea91bb10a4f84606082b15134734cef86354042b81db53a8a7",
+        "evidence_sha256": "395f08c180dcd3b2be7d5c5821bbbb47478ebf96a6f6015ddb496a9620e0d4cf",
+        "error_type": "ReviewProtocolError",
+        "failure_stage": "validate_response",
+        "message": "内容核验未完成或证据引用无效，不能将该候选标记为可应用。",
+        "error_code": "invalid_evidence_quote",
+        "details": [
+          {
+            "field": "checks.1.findings.0.observed_quote",
+            "issue": "引用未通过主机校验，请核对该字段对应的原始证据。"
+          }
+        ],
+        "duration_ms": 25322
+      },
+      "run_diagnostics": {
+        "completed": false,
+        "failed": true,
+        "failure_retryable": true,
+        "brief_registered": true,
+        "last_tool_ok": true,
+        "api_calls": 37,
+        "tool_calls": 37,
+        "failed_tool_calls": 4,
+        "revision": 19,
+        "node_count": 25,
+        "last_tool": "oakegde_trial",
+        "stage": "reviewing_output",
+        "termination": "returned",
+        "completion_attempts": 38,
+        "truncation_retries": 0,
+        "truncation_skip_reason": null
+      },
+      "warnings": {},
+      "tool_counts": {
+        "oakegde_capabilities": 3,
+        "oakegde_read_graph": 3,
+        "oakegde_brief": 2,
+        "oakegde_patch_graph": 21,
+        "oakegde_inspect": 4,
+        "oakegde_test_plan": 2,
+        "oakegde_trial": 2
+      },
+      "inspections": [
+        {
+          "revision": 11,
+          "issues": [
+            "state_profile_new：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e9', 'e11']。",
+            "llm_extract_memory（llm_extract_memory）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_estimate_minutes_new（llm_estimate_minutes_new）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "每个用户需求必须有且仅有一条实现对应关系。只允许ID ['R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7']；缺少 ['R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7']；多余 []；不可把修复项添加为用户需求。"
+          ],
+          "warnings": [
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。"
+          ]
+        },
+        {
+          "revision": 14,
+          "issues": [
+            "llm_extract_memory（llm_extract_memory）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_estimate_minutes_new（llm_estimate_minutes_new）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "R7 的 node_ids 为空，请填写实际实现节点 ID。"
+          ],
+          "warnings": [
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 16,
+          "issues": [
+            "llm_extract_memory（llm_extract_memory）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_estimate_minutes_new（llm_estimate_minutes_new）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。"
+          ],
+          "warnings": [
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 18,
+          "issues": [],
+          "warnings": [
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        }
+      ],
+      "rejections": [
+        {
+          "tool": "oakegde_brief",
+          "revision": 0,
+          "error": "source_quote必须逐字引用用户原话，不要改写或拼接。错误引用：[{\"id\":\"R3\",\"rejected_quote\":\"根据放学时间去选择最适合的路线...30分钟\"},{\"id\":\"R4\",\"rejected_quote\":\"儿童上车识别：2、3、...不退化\"}]；最新用户原文：重新编排",
+          "contract_diagnostics": []
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "revision": 2,
+          "error": "不能同时删除和写入同一节点：state_profile_from_memory。修改已有节点时从remove_node_ids移除该ID，使用一个upsert_nodes项原位修改type/set_data，用remove_data_keys删除旧配置。",
+          "contract_diagnostics": []
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "revision": 7,
+          "error": "不能同时删除和写入同一连线。",
+          "contract_diagnostics": []
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "revision": 18,
+          "error": "plan.cases[0].steps[1].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；无效计划未锁定。",
+          "contract_diagnostics": [
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[1].assertions[1]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ]
+              ],
+              "message": "plan.cases[0].steps[1].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "A-Claude-2",
+      "request_sha256": "34adccdf965b3c51d8e2e6d0c75c734b0c0d18ddf9d69b63b2e47d31a07303ee",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5",
+      "result_kind": "result",
+      "can_apply": false,
+      "completion_attempts": 39,
+      "seconds": 745.215,
+      "preflight_hits": {
+        "PLAN_ASSERTION_PATH": 0,
+        "PLAN_ASSERTION_TYPE": 0
+      },
+      "revision_kind": [],
+      "truncation_retries": 0,
+      "truncation_skip_reason": null,
+      "last_errors": [
+        "候选尚未实际试跑通过。",
+        "智能体未完成最终提交；保留最新图与执行证据供继续修复。"
+      ],
+      "final_diagnostics": [],
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 0,
+        "graph_logic": 2,
+        "assertion": 0
+      },
+      "nodes": 23,
+      "edges": 24,
+      "revision": 23,
+      "trials": [],
+      "graph_model_calls": 0,
+      "content_review": {
+        "status": "not_run",
+        "source": "not_run",
+        "issues": [],
+        "independent_verification": false
+      },
+      "run_diagnostics": {
+        "completed": false,
+        "failed": true,
+        "failure_retryable": true,
+        "brief_registered": true,
+        "last_tool_ok": true,
+        "api_calls": 39,
+        "tool_calls": 39,
+        "failed_tool_calls": 1,
+        "revision": 23,
+        "node_count": 23,
+        "last_tool": "oakegde_patch_graph",
+        "stage": "building_graph",
+        "termination": "returned",
+        "completion_attempts": 39,
+        "truncation_retries": 0,
+        "truncation_skip_reason": null
+      },
+      "warnings": {},
+      "tool_counts": {
+        "oakegde_capabilities": 2,
+        "oakegde_read_graph": 4,
+        "oakegde_brief": 2,
+        "oakegde_patch_graph": 23,
+        "oakegde_inspect": 8
+      },
+      "inspections": [
+        {
+          "revision": 8,
+          "issues": [
+            "llm_build_summary（llm_build_summary）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_extract_info（llm_extract_info）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "每个用户需求必须有且仅有一条实现对应关系。只允许ID ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；缺少 ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；多余 []；不可把修复项添加为用户需求。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded"
+          ]
+        },
+        {
+          "revision": 9,
+          "issues": [
+            "llm_build_summary（llm_build_summary）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_extract_info（llm_extract_info）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "每个用户需求必须有且仅有一条实现对应关系。只允许ID ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；缺少 ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；多余 []；不可把修复项添加为用户需求。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded"
+          ]
+        },
+        {
+          "revision": 12,
+          "issues": [
+            "llm_build_summary（llm_build_summary）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_extract_info（llm_extract_info）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "每个用户需求必须有且仅有一条实现对应关系。只允许ID ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；缺少 ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；多余 []；不可把修复项添加为用户需求。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded"
+          ]
+        },
+        {
+          "revision": 13,
+          "issues": [
+            "llm_build_summary（llm_build_summary）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_extract_info（llm_extract_info）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "每个用户需求必须有且仅有一条实现对应关系。只允许ID ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；缺少 ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；多余 []；不可把修复项添加为用户需求。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded"
+          ]
+        },
+        {
+          "revision": 16,
+          "issues": [
+            "llm_build_summary（llm_build_summary）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_extract_info（llm_extract_info）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "每个用户需求必须有且仅有一条实现对应关系。只允许ID ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；缺少 ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；多余 []；不可把修复项添加为用户需求。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded"
+          ]
+        },
+        {
+          "revision": 17,
+          "issues": [
+            "llm_build_summary（llm_build_summary）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_extract_info（llm_extract_info）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "每个用户需求必须有且仅有一条实现对应关系。只允许ID ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；缺少 ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；多余 []；不可把修复项添加为用户需求。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded"
+          ]
+        },
+        {
+          "revision": 21,
+          "issues": [
+            "input_pickup_signal：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e_navfast_wait2', 'e_navshort_wait2']。",
+            "每个用户需求必须有且仅有一条实现对应关系。只允许ID ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；缺少 ['R1', 'R2', 'R2b', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9']；多余 []；不可把修复项添加为用户需求。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded"
+          ]
+        },
+        {
+          "revision": 22,
+          "issues": [
+            "R6 的 node_ids 为空，请填写实际实现节点 ID。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded",
+            "R2 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R2b 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R4 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        }
+      ],
+      "rejections": [
+        {
+          "tool": "oakegde_brief",
+          "revision": 0,
+          "error": "source_quote必须逐字引用用户原话，不要改写或拼接。错误引用：[{\"id\":\"R2\",\"rejected_quote\":\"根据放学时间去选择最适合的路线...如果即将放学就选最短时间\"}]；最新用户原文：重新编排",
+          "contract_diagnostics": []
+        }
+      ]
+    },
+    {
+      "name": "A-Claude-3",
+      "request_sha256": "34adccdf965b3c51d8e2e6d0c75c734b0c0d18ddf9d69b63b2e47d31a07303ee",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5",
+      "result_kind": "result",
+      "can_apply": false,
+      "completion_attempts": 33,
+      "seconds": 605.263,
+      "preflight_hits": {
+        "PLAN_ASSERTION_PATH": 3,
+        "PLAN_ASSERTION_TYPE": 0
+      },
+      "revision_kind": [
+        "initial"
+      ],
+      "truncation_retries": 0,
+      "truncation_skip_reason": null,
+      "last_errors": [
+        "llm_extract_onboarding（llm_extract_onboarding）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+        "llm_extract_memory（llm_extract_memory）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+        "llm_route_decision（llm_route_decision）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。"
+      ],
+      "final_diagnostics": [],
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 0,
+        "graph_logic": 3,
+        "assertion": 0
+      },
+      "nodes": 24,
+      "edges": 31,
+      "revision": 12,
+      "trials": [
+        {
+          "revision": 8,
+          "status": "failed",
+          "model_calls": 1,
+          "failures": [
+            "[assertion/ASSERTION_STATUS] 首次无记忆-询问录入后完成接送全流程第2步：状态failed，期望not_failed；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[model_output/MODEL_ACTION_INVALID] 节点llm_extract_onboarding：模型没有返回可执行的结构化结果，未使用规则替代。；修复方向：检查实际调用模型节点的提示词、outputFormat/outputFields及返回内容；修图中该节点，保留输入与验收要求。",
+            "[assertion/ASSERTION_VALUE] 断言['outputs', 'state_profile', 'data', 'school'] equals：期望 \"阳光小学\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['outputs', 'state_profile', 'data', 'home_address'] contains：期望 \"幸福小区\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['outputs', 'memory_write', 'short_term_memory_written'] equals：期望 true(boolean)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+          ],
+          "content_review": {
+            "status": "not_run",
+            "source": "not_run",
+            "issues": [],
+            "independent_verification": false
+          }
+        }
+      ],
+      "graph_model_calls": 1,
+      "content_review": {
+        "status": "not_run",
+        "source": "not_run",
+        "issues": [],
+        "independent_verification": false
+      },
+      "run_diagnostics": {
+        "completed": false,
+        "interrupted": true,
+        "brief_registered": true,
+        "last_tool_ok": true,
+        "api_calls": 33,
+        "tool_calls": 33,
+        "failed_tool_calls": 2,
+        "revision": 12,
+        "node_count": 24,
+        "last_tool": "oakegde_submit",
+        "stage": "submitting",
+        "termination": "returned",
+        "completion_attempts": 33,
+        "truncation_retries": 0,
+        "truncation_skip_reason": null
+      },
+      "warnings": {
+        "PLAN_WAITING_PATH": 8
+      },
+      "tool_counts": {
+        "oakegde_capabilities": 5,
+        "oakegde_read_graph": 3,
+        "oakegde_brief": 1,
+        "oakegde_patch_graph": 12,
+        "oakegde_inspect": 7,
+        "oakegde_test_plan": 3,
+        "oakegde_trial": 1,
+        "oakegde_submit": 1
+      },
+      "inspections": [
+        {
+          "revision": 4,
+          "issues": [
+            "llm_extract_onboarding（llm_extract_onboarding）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_extract_memory（llm_extract_memory）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_route_decision（llm_route_decision）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "每个用户需求必须有且仅有一条实现对应关系。只允许ID ['R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7']；缺少 ['R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7']；多余 []；不可把修复项添加为用户需求。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded"
+          ]
+        },
+        {
+          "revision": 5,
+          "issues": [
+            "llm_extract_onboarding（llm_extract_onboarding）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_extract_memory（llm_extract_memory）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_route_decision（llm_route_decision）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "R7 的 node_ids 为空，请填写实际实现节点 ID。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded",
+            "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 6,
+          "issues": [
+            "llm_extract_onboarding（llm_extract_onboarding）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_extract_memory（llm_extract_memory）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_route_decision（llm_route_decision）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "R7 的 node_ids 为空，请填写实际实现节点 ID。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded",
+            "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 7,
+          "issues": [
+            "llm_extract_onboarding（llm_extract_onboarding）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_route_decision（llm_route_decision）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "R7 的 node_ids 为空，请填写实际实现节点 ID。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded",
+            "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 8,
+          "issues": [],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded",
+            "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 10,
+          "issues": [
+            "llm_extract_onboarding（llm_extract_onboarding）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_extract_memory（llm_extract_memory）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_route_decision（llm_route_decision）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded",
+            "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_seat_sensor（eventName=seat_sensor_detected，prompt=前往学校中，等待儿童座席传感器信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。",
+            "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_door_event（eventName=rear_door_opened，prompt=等待后排车门开启信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。",
+            "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_seat_sensor（eventName=seat_sensor_detected，prompt=前往学校中，等待儿童座席传感器信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。",
+            "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_door_event（eventName=rear_door_opened，prompt=等待后排车门开启信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+          ]
+        },
+        {
+          "revision": 12,
+          "issues": [
+            "llm_extract_onboarding（llm_extract_onboarding）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_extract_memory（llm_extract_memory）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_route_decision（llm_route_decision）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。"
+          ],
+          "warnings": [
+            "logic_child_boarded：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_boarded",
+            "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_seat_sensor（eventName=seat_sensor_detected，prompt=前往学校中，等待儿童座席传感器信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。",
+            "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_door_event（eventName=rear_door_opened，prompt=等待后排车门开启信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。",
+            "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_seat_sensor（eventName=seat_sensor_detected，prompt=前往学校中，等待儿童座席传感器信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。",
+            "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_door_event（eventName=rear_door_opened，prompt=等待后排车门开启信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+          ]
+        }
+      ],
+      "rejections": [
+        {
+          "tool": "oakegde_test_plan",
+          "revision": 8,
+          "error": "plan.cases[0].steps[3].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；无效计划未锁定。",
+          "contract_diagnostics": [
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[3].assertions[1]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ]
+              ],
+              "message": "plan.cases[0].steps[3].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            }
+          ]
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "revision": 8,
+          "error": "plan.cases[0].steps[3].assertions[0]：断言路径 [\"car\",\"locks\",\"child\"] 不存在；最接近的合法路径：[\"car\",\"hmiSettings\",\"locks.child\"]、[\"car\",\"hmiSettings\",\"locks.walkUp\"]、[\"car\",\"doors\",\"locked\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[0].steps[3].assertions[2]：断言路径 [\"car\",\"display\",\"brightness\"] 不存在；最接近的合法路径：[\"car\",\"hmiSettings\",\"display.brightness\"]、[\"car\",\"lights\",\"brightness\"]、[\"car\",\"hmiSettings\",\"display.distance\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；无效计划未锁定。",
+          "contract_diagnostics": [
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[3].assertions[0]",
+              "suggestions": [
+                [
+                  "car",
+                  "hmiSettings",
+                  "locks.child"
+                ],
+                [
+                  "car",
+                  "hmiSettings",
+                  "locks.walkUp"
+                ],
+                [
+                  "car",
+                  "doors",
+                  "locked"
+                ]
+              ],
+              "message": "plan.cases[0].steps[3].assertions[0]：断言路径 [\"car\",\"locks\",\"child\"] 不存在；最接近的合法路径：[\"car\",\"hmiSettings\",\"locks.child\"]、[\"car\",\"hmiSettings\",\"locks.walkUp\"]、[\"car\",\"doors\",\"locked\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[3].assertions[2]",
+              "suggestions": [
+                [
+                  "car",
+                  "hmiSettings",
+                  "display.brightness"
+                ],
+                [
+                  "car",
+                  "lights",
+                  "brightness"
+                ],
+                [
+                  "car",
+                  "hmiSettings",
+                  "display.distance"
+                ]
+              ],
+              "message": "plan.cases[0].steps[3].assertions[2]：断言路径 [\"car\",\"display\",\"brightness\"] 不存在；最接近的合法路径：[\"car\",\"hmiSettings\",\"display.brightness\"]、[\"car\",\"lights\",\"brightness\"]、[\"car\",\"hmiSettings\",\"display.distance\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C-MiniMax-1",
+      "request_sha256": "fe0acad0dd8f06a903eadf1257d23d453b69d0752a47e5e8f47e64393e58f845",
+      "provider": "minimax",
+      "model": "MiniMax-M3",
+      "result_kind": "result",
+      "can_apply": true,
+      "completion_attempts": 10,
+      "seconds": 159.661,
+      "preflight_hits": {
+        "PLAN_ASSERTION_PATH": 12,
+        "PLAN_ASSERTION_TYPE": 0
+      },
+      "revision_kind": [
+        "initial"
+      ],
+      "truncation_retries": 0,
+      "truncation_skip_reason": null,
+      "last_errors": [],
+      "final_diagnostics": [],
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 0,
+        "graph_logic": 0,
+        "assertion": 0
+      },
+      "nodes": 7,
+      "edges": 9,
+      "revision": 1,
+      "trials": [
+        {
+          "revision": 1,
+          "status": "passed",
+          "model_calls": 3,
+          "failures": [],
+          "content_review": {
+            "status": "passed",
+            "source": "same_model_separate_context",
+            "independent_verification": false,
+            "scope": "listed_text_and_structured_execution_evidence",
+            "issues": [],
+            "provider": {
+              "id": "minimax",
+              "model": "MiniMax-M3"
+            },
+            "artifact_sha256": "afceff850bc132bf97eeddf764017b7004dfb30af9d64a83ffe41008b1b479af",
+            "evidence_sha256": "f0986908795af5ee1c65003d938bc4dbd6dd291de93627fd89323b2c157bfb0d",
+            "checks": [
+              {
+                "case_index": 0,
+                "step_index": 0,
+                "verdict": "pass",
+                "findings": []
+              },
+              {
+                "case_index": 1,
+                "step_index": 0,
+                "verdict": "pass",
+                "findings": []
+              },
+              {
+                "case_index": 2,
+                "step_index": 0,
+                "verdict": "pass",
+                "findings": []
+              }
+            ],
+            "duration_ms": 3309
+          }
+        }
+      ],
+      "graph_model_calls": 3,
+      "content_review": {
+        "status": "passed",
+        "source": "same_model_separate_context",
+        "independent_verification": false,
+        "scope": "listed_text_and_structured_execution_evidence",
+        "issues": [],
+        "provider": {
+          "id": "minimax",
+          "model": "MiniMax-M3"
+        },
+        "artifact_sha256": "afceff850bc132bf97eeddf764017b7004dfb30af9d64a83ffe41008b1b479af",
+        "evidence_sha256": "f0986908795af5ee1c65003d938bc4dbd6dd291de93627fd89323b2c157bfb0d",
+        "checks": [
+          {
+            "case_index": 0,
+            "step_index": 0,
+            "verdict": "pass",
+            "findings": []
+          },
+          {
+            "case_index": 1,
+            "step_index": 0,
+            "verdict": "pass",
+            "findings": []
+          },
+          {
+            "case_index": 2,
+            "step_index": 0,
+            "verdict": "pass",
+            "findings": []
+          }
+        ],
+        "duration_ms": 3309
+      },
+      "run_diagnostics": {
+        "completed": false,
+        "interrupted": true,
+        "brief_registered": true,
+        "last_tool_ok": true,
+        "api_calls": 10,
+        "tool_calls": 10,
+        "failed_tool_calls": 2,
+        "revision": 1,
+        "node_count": 7,
+        "last_tool": "oakegde_submit",
+        "stage": "submitting",
+        "termination": "returned",
+        "completion_attempts": 10,
+        "truncation_retries": 0,
+        "truncation_skip_reason": null
+      },
+      "warnings": {},
+      "tool_counts": {
+        "oakegde_capabilities": 1,
+        "oakegde_read_graph": 1,
+        "oakegde_brief": 1,
+        "oakegde_patch_graph": 2,
+        "oakegde_inspect": 1,
+        "oakegde_test_plan": 2,
+        "oakegde_trial": 1,
+        "oakegde_submit": 1
+      },
+      "inspections": [
+        {
+          "revision": 1,
+          "issues": [],
+          "warnings": [
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "R1_auto_ac_by_temp 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R3_no_confirm_direct 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        }
+      ],
+      "rejections": [
+        {
+          "tool": "oakegde_patch_graph",
+          "revision": 0,
+          "error": "字段契约未通过",
+          "contract_diagnostics": []
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "revision": 1,
+          "error": "plan.cases[0].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[0].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[0].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[0].steps[0].assertions[3]：断言路径 [\"car\",\"hmiSettings\",\"ac.fan\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[1].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[1].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[1].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[1].steps[0].assertions[3]：断言路径 [\"car\",\"hmiSettings\",\"ac.fan\"] 不存在；最",
+          "contract_diagnostics": [
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[0].assertions[0]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[0].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[0].assertions[1]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ]
+              ],
+              "message": "plan.cases[0].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[0].assertions[2]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ]
+              ],
+              "message": "plan.cases[0].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[0].assertions[3]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[0].steps[0].assertions[3]：断言路径 [\"car\",\"hmiSettings\",\"ac.fan\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[1].steps[0].assertions[0]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[1].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[1].steps[0].assertions[1]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ]
+              ],
+              "message": "plan.cases[1].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[1].steps[0].assertions[2]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ]
+              ],
+              "message": "plan.cases[1].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[1].steps[0].assertions[3]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[1].steps[0].assertions[3]：断言路径 [\"car\",\"hmiSettings\",\"ac.fan\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[2].steps[0].assertions[0]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[2].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[2].steps[0].assertions[1]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ]
+              ],
+              "message": "plan.cases[2].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[2].steps[0].assertions[2]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ]
+              ],
+              "message": "plan.cases[2].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[2].steps[0].assertions[3]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[2].steps[0].assertions[3]：断言路径 [\"car\",\"hmiSettings\",\"ac.fan\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C-MiniMax-2",
+      "request_sha256": "fe0acad0dd8f06a903eadf1257d23d453b69d0752a47e5e8f47e64393e58f845",
+      "provider": "minimax",
+      "model": "MiniMax-M3",
+      "result_kind": "result",
+      "can_apply": false,
+      "completion_attempts": 34,
+      "seconds": 304.699,
+      "preflight_hits": {
+        "PLAN_ASSERTION_PATH": 13,
+        "PLAN_ASSERTION_TYPE": 20
+      },
+      "revision_kind": [
+        "initial"
+      ],
+      "truncation_retries": 0,
+      "truncation_skip_reason": null,
+      "last_errors": [
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] satisfies：期望 \"input === 4\"(string)，实际 3(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'hmiSettings', 'ac.frontDefrost'] satisfies：期望 \"input === false\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains：期望 \"制热\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+      ],
+      "final_diagnostics": [
+        {
+          "category": "assertion",
+          "code": "ASSERTION_VALUE",
+          "path": "plan.cases[0].steps[0].assertions[1]",
+          "message": "断言['car', 'ac', 'temp'] satisfies：期望 \"input === 24\"(string)，实际 22(number)",
+          "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        },
+        {
+          "category": "assertion",
+          "code": "ASSERTION_VALUE",
+          "path": "plan.cases[0].steps[0].assertions[2]",
+          "message": "断言['car', 'ac', 'mode'] satisfies：期望 \"input === 'cool'\"(string)，实际 \"auto\"(string)",
+          "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        },
+        {
+          "category": "assertion",
+          "code": "ASSERTION_VALUE",
+          "path": "plan.cases[0].steps[0].assertions[3]",
+          "message": "断言['car', 'ac', 'fan'] satisfies：期望 \"input === 6\"(string)，实际 3(number)",
+          "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        },
+        {
+          "category": "assertion",
+          "code": "ASSERTION_VALUE",
+          "path": "plan.cases[0].steps[0].assertions[4]",
+          "message": "断言['car', 'hmiSettings', 'ac.frontDefrost'] satisfies：期望 \"input === true\"(string)，实际 undefined(missing)",
+          "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        },
+        {
+          "category": "assertion",
+          "code": "ASSERTION_VALUE",
+          "path": "plan.cases[0].steps[0].assertions[5]",
+          "message": "断言['hmi', 'message'] contains：期望 \"制冷\"(string)，实际 undefined(missing)",
+          "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        },
+        {
+          "category": "assertion",
+          "code": "ASSERTION_VALUE",
+          "path": "plan.cases[0].steps[0].assertions[6]",
+          "message": "断言['hmi', 'message'] contains：期望 \"24\"(string)，实际 undefined(missing)",
+          "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        },
+        {
+          "category": "assertion",
+          "code": "ASSERTION_VALUE",
+          "path": "plan.cases[1].steps[0].assertions[0]",
+          "message": "断言['car', 'ac', 'temp'] satisfies：期望 \"input === 23\"(string)，实际 22(number)",
+          "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        },
+        {
+          "category": "assertion",
+          "code": "ASSERTION_VALUE",
+          "path": "plan.cases[1].steps[0].assertions[4]",
+          "message": "断言['hmi', 'message'] contains：期望 \"自动\"(string)，实际 undefined(missing)",
+          "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        },
+        {
+          "category": "assertion",
+          "code": "ASSERTION_VALUE",
+          "path": "plan.cases[2].steps[0].assertions[0]",
+          "message": "断言['car', 'ac', 'temp'] satisfies：期望 \"input === 25\"(string)，实际 22(number)",
+          "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        },
+        {
+          "category": "assertion",
+          "code": "ASSERTION_VALUE",
+          "path": "plan.cases[2].steps[0].assertions[1]",
+          "message": "断言['car', 'ac', 'mode'] satisfies：期望 \"input === 'heat'\"(string)，实际 \"auto\"(string)",
+          "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        },
+        {
+          "category": "assertion",
+          "code": "ASSERTION_VALUE",
+          "path": "plan.cases[2].steps[0].assertions[2]",
+          "message": "断言['car', 'ac', 'fan'] satisfies：期望 \"input === 4\"(string)，实际 3(number)",
+          "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        },
+        {
+          "category": "assertion",
+          "code": "ASSERTION_VALUE",
+          "path": "plan.cases[2].steps[0].assertions[3]",
+          "message": "断言['car', 'hmiSettings', 'ac.frontDefrost'] satisfies：期望 \"input === false\"(string)，实际 undefined(missing)",
+          "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        },
+        {
+          "category": "assertion",
+          "code": "ASSERTION_VALUE",
+          "path": "plan.cases[2].steps[0].assertions[4]",
+          "message": "断言['hmi', 'message'] contains：期望 \"制热\"(string)，实际 undefined(missing)",
+          "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        }
+      ],
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 0,
+        "graph_logic": 0,
+        "assertion": 13
+      },
+      "nodes": 9,
+      "edges": 12,
+      "revision": 9,
+      "trials": [
+        {
+          "revision": 3,
+          "status": "failed",
+          "model_calls": 0,
+          "failures": [
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] satisfies：期望 \"input === 24\"(string)，实际 22(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'mode'] satisfies：期望 \"input === 'cool'\"(string)，实际 \"auto\"(string)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] satisfies：期望 \"input === 6\"(string)，实际 3(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'hmiSettings', 'ac.frontDefrost'] satisfies：期望 \"input === true\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains：期望 \"制冷\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains：期望 \"24\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] satisfies：期望 \"input === 23\"(string)，实际 22(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains：期望 \"自动\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] satisfies：期望 \"input === 25\"(string)，实际 22(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'mode'] satisfies：期望 \"input === 'heat'\"(string)，实际 \"auto\"(string)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] satisfies：期望 \"input === 4\"(string)，实际 3(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'hmiSettings', 'ac.frontDefrost'] satisfies：期望 \"input === false\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains：期望 \"制热\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+          ],
+          "content_review": {
+            "status": "not_run",
+            "source": "not_run",
+            "issues": [],
+            "independent_verification": false
+          }
+        },
+        {
+          "revision": 4,
+          "status": "failed",
+          "model_calls": 0,
+          "failures": [
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] satisfies：期望 \"input === 24\"(string)，实际 22(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'mode'] satisfies：期望 \"input === 'cool'\"(string)，实际 \"auto\"(string)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] satisfies：期望 \"input === 6\"(string)，实际 3(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'hmiSettings', 'ac.frontDefrost'] satisfies：期望 \"input === true\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains：期望 \"制冷\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains：期望 \"24\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] satisfies：期望 \"input === 23\"(string)，实际 22(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains：期望 \"自动\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] satisfies：期望 \"input === 25\"(string)，实际 22(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'mode'] satisfies：期望 \"input === 'heat'\"(string)，实际 \"auto\"(string)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] satisfies：期望 \"input === 4\"(string)，实际 3(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'hmiSettings', 'ac.frontDefrost'] satisfies：期望 \"input === false\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains：期望 \"制热\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+          ],
+          "content_review": {
+            "status": "not_run",
+            "source": "not_run",
+            "issues": [],
+            "independent_verification": false
+          }
+        },
+        {
+          "revision": 9,
+          "status": "failed",
+          "model_calls": 0,
+          "failures": [
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] satisfies：期望 \"input === 24\"(string)，实际 22(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'mode'] satisfies：期望 \"input === 'cool'\"(string)，实际 \"auto\"(string)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] satisfies：期望 \"input === 6\"(string)，实际 3(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'hmiSettings', 'ac.frontDefrost'] satisfies：期望 \"input === true\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains：期望 \"制冷\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains：期望 \"24\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] satisfies：期望 \"input === 23\"(string)，实际 22(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains：期望 \"自动\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] satisfies：期望 \"input === 25\"(string)，实际 22(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'mode'] satisfies：期望 \"input === 'heat'\"(string)，实际 \"auto\"(string)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] satisfies：期望 \"input === 4\"(string)，实际 3(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'hmiSettings', 'ac.frontDefrost'] satisfies：期望 \"input === false\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains：期望 \"制热\"(string)，实际 undefined(missing)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+          ],
+          "content_review": {
+            "status": "not_run",
+            "source": "not_run",
+            "issues": [],
+            "independent_verification": false
+          }
+        }
+      ],
+      "graph_model_calls": 0,
+      "content_review": {
+        "status": "not_run",
+        "source": "not_run",
+        "issues": [],
+        "independent_verification": false
+      },
+      "run_diagnostics": {
+        "completed": false,
+        "interrupted": true,
+        "brief_registered": true,
+        "last_tool_ok": true,
+        "api_calls": 32,
+        "tool_calls": 33,
+        "failed_tool_calls": 10,
+        "revision": 9,
+        "node_count": 9,
+        "last_tool": "oakegde_submit",
+        "stage": "submitting",
+        "termination": "returned",
+        "completion_attempts": 34,
+        "truncation_retries": 0,
+        "truncation_skip_reason": null
+      },
+      "warnings": {},
+      "tool_counts": {
+        "oakegde_capabilities": 1,
+        "oakegde_read_graph": 2,
+        "oakegde_brief": 1,
+        "oakegde_patch_graph": 14,
+        "oakegde_inspect": 4,
+        "oakegde_test_plan": 6,
+        "oakegde_trial": 4,
+        "oakegde_submit": 1
+      },
+      "inspections": [
+        {
+          "revision": 2,
+          "issues": [
+            "join_actions（join_actions）：请填写判断条件，不能以空条件默认通过。"
+          ],
+          "warnings": [
+            "join_actions：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "req_ac_control 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 3,
+          "issues": [],
+          "warnings": [
+            "join_actions：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "req_ac_control 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 8,
+          "issues": [
+            "测试输入 plan.cases[0].steps[0].input（高温制冷 35℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：缺少 celsius（number）",
+            "测试输入 plan.cases[1].steps[0].input（常温 22℃自动模式）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：缺少 celsius（number）",
+            "测试输入 plan.cases[2].steps[0].input（低温制热 10℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：缺少 celsius（number）"
+          ],
+          "warnings": [
+            "join_actions：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "req_ac_control 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 9,
+          "issues": [],
+          "warnings": [
+            "join_actions：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "req_ac_control 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        }
+      ],
+      "rejections": [
+        {
+          "tool": "oakegde_patch_graph",
+          "revision": 0,
+          "error": "字段契约未通过",
+          "contract_diagnostics": []
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "revision": 0,
+          "error": "字段契约未通过",
+          "contract_diagnostics": []
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "revision": 3,
+          "error": "plan.cases[0].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[0].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[0].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[0].steps[0].assertions[3]：断言路径 [\"car\",\"hmiSettings\",\"ac.fan\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[0].steps[0].assertions[4]：[\"car\",\"hmiSettings\",\"ac.frontDefrost\"] 的 equals 期望 boolean，收到 \"true\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；测试输入 plan.cases[0].steps[0].input（高温制冷 35℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string；plan.cases[1].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[1].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一",
+          "contract_diagnostics": [
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[0].assertions[0]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[0].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[0].assertions[1]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ]
+              ],
+              "message": "plan.cases[0].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[0].assertions[2]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ]
+              ],
+              "message": "plan.cases[0].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[0].assertions[3]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[0].steps[0].assertions[3]：断言路径 [\"car\",\"hmiSettings\",\"ac.fan\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[0].steps[0].assertions[4]",
+              "expected_type": "boolean",
+              "message": "plan.cases[0].steps[0].assertions[4]：[\"car\",\"hmiSettings\",\"ac.frontDefrost\"] 的 equals 期望 boolean，收到 \"true\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "input_contract",
+              "code": "INPUT_FIELD_TYPE",
+              "field": "celsius",
+              "path": "plan.cases[0].steps[0].input",
+              "node_id": "enter_car_event",
+              "message": "测试输入 plan.cases[0].steps[0].input（高温制冷 35℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[1].steps[0].assertions[0]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ]
+              ],
+              "message": "plan.cases[1].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[1].steps[0].assertions[1]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ]
+              ],
+              "message": "plan.cases[1].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[1].steps[0].assertions[2]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[1].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.fan\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[1].steps[0].assertions[3]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[1].steps[0].assertions[3]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "input_contract",
+              "code": "INPUT_FIELD_TYPE",
+              "field": "celsius",
+              "path": "plan.cases[1].steps[0].input",
+              "node_id": "enter_car_event",
+              "message": "测试输入 plan.cases[1].steps[0].input（常温 22℃自动模式）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[2].steps[0].assertions[0]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ]
+              ],
+              "message": "plan.cases[2].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[2].steps[0].assertions[1]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ]
+              ],
+              "message": "plan.cases[2].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[2].steps[0].assertions[2]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[2].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.fan\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[2].steps[0].assertions[3]",
+              "expected_type": "boolean",
+              "message": "plan.cases[2].steps[0].assertions[3]：[\"car\",\"hmiSettings\",\"ac.frontDefrost\"] 的 equals 期望 boolean，收到 \"false\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "input_contract",
+              "code": "INPUT_FIELD_TYPE",
+              "field": "celsius",
+              "path": "plan.cases[2].steps[0].input",
+              "node_id": "enter_car_event",
+              "message": "测试输入 plan.cases[2].steps[0].input（低温制热 10℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string"
+            }
+          ]
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "revision": 3,
+          "error": "plan.cases[0].steps[0].assertions[0]：[\"car\",\"ac\",\"on\"] 的 equals 期望 boolean，收到 \"true\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；plan.cases[0].steps[0].assertions[1]：[\"car\",\"ac\",\"temp\"] 的 equals 期望 number，收到 \"24\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；plan.cases[0].steps[0].assertions[3]：[\"car\",\"ac\",\"fan\"] 的 equals 期望 number，收到 \"6\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；plan.cases[0].steps[0].assertions[4]：断言路径 [\"car\",\"ac\",\"frontDefrost\"] 不存在；最接近的合法路径：[\"car\",\"hmiSettings\",\"ac.frontDefrost\"]、[\"car\",\"hmiSettings\",\"ac.rearDefrost\"]、[\"car\",\"ac\",\"on\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；测试输入 plan.cases[0].steps[0].input（高温制冷 35℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string；plan.cases[1].steps[0].assertions[0]：[\"car\",\"ac\",\"temp\"] 的 equals 期望 number，收到 \"23\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；plan.cases[1].steps[0].assertions[2]：[\"car\",\"ac\",\"fan\"] 的 equals 期望 number，收到 \"3\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；plan.cases[1].steps[0].assertions[3]：[\"car\",\"ac\",\"on\"] 的 equals 期望 boolean，收到 \"true\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；测试输入 plan.cases[1].steps[0].input（常温 22℃自动模式）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string；plan.cases[2].steps[0].assertions[0]：[\"car\",\"ac\",\"temp\"] 的 equals 期望 number，收到 \"25\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；plan.cases[2].steps[0].assertions[",
+          "contract_diagnostics": [
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[0].steps[0].assertions[0]",
+              "expected_type": "boolean",
+              "message": "plan.cases[0].steps[0].assertions[0]：[\"car\",\"ac\",\"on\"] 的 equals 期望 boolean，收到 \"true\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[0].steps[0].assertions[1]",
+              "expected_type": "number",
+              "message": "plan.cases[0].steps[0].assertions[1]：[\"car\",\"ac\",\"temp\"] 的 equals 期望 number，收到 \"24\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[0].steps[0].assertions[3]",
+              "expected_type": "number",
+              "message": "plan.cases[0].steps[0].assertions[3]：[\"car\",\"ac\",\"fan\"] 的 equals 期望 number，收到 \"6\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[0].assertions[4]",
+              "suggestions": [
+                [
+                  "car",
+                  "hmiSettings",
+                  "ac.frontDefrost"
+                ],
+                [
+                  "car",
+                  "hmiSettings",
+                  "ac.rearDefrost"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ]
+              ],
+              "message": "plan.cases[0].steps[0].assertions[4]：断言路径 [\"car\",\"ac\",\"frontDefrost\"] 不存在；最接近的合法路径：[\"car\",\"hmiSettings\",\"ac.frontDefrost\"]、[\"car\",\"hmiSettings\",\"ac.rearDefrost\"]、[\"car\",\"ac\",\"on\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "input_contract",
+              "code": "INPUT_FIELD_TYPE",
+              "field": "celsius",
+              "path": "plan.cases[0].steps[0].input",
+              "node_id": "enter_car_event",
+              "message": "测试输入 plan.cases[0].steps[0].input（高温制冷 35℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[1].steps[0].assertions[0]",
+              "expected_type": "number",
+              "message": "plan.cases[1].steps[0].assertions[0]：[\"car\",\"ac\",\"temp\"] 的 equals 期望 number，收到 \"23\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[1].steps[0].assertions[2]",
+              "expected_type": "number",
+              "message": "plan.cases[1].steps[0].assertions[2]：[\"car\",\"ac\",\"fan\"] 的 equals 期望 number，收到 \"3\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[1].steps[0].assertions[3]",
+              "expected_type": "boolean",
+              "message": "plan.cases[1].steps[0].assertions[3]：[\"car\",\"ac\",\"on\"] 的 equals 期望 boolean，收到 \"true\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "input_contract",
+              "code": "INPUT_FIELD_TYPE",
+              "field": "celsius",
+              "path": "plan.cases[1].steps[0].input",
+              "node_id": "enter_car_event",
+              "message": "测试输入 plan.cases[1].steps[0].input（常温 22℃自动模式）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[2].steps[0].assertions[0]",
+              "expected_type": "number",
+              "message": "plan.cases[2].steps[0].assertions[0]：[\"car\",\"ac\",\"temp\"] 的 equals 期望 number，收到 \"25\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[2].steps[0].assertions[2]",
+              "expected_type": "number",
+              "message": "plan.cases[2].steps[0].assertions[2]：[\"car\",\"ac\",\"fan\"] 的 equals 期望 number，收到 \"4\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[2].steps[0].assertions[3]",
+              "suggestions": [
+                [
+                  "car",
+                  "hmiSettings",
+                  "ac.frontDefrost"
+                ],
+                [
+                  "car",
+                  "hmiSettings",
+                  "ac.rearDefrost"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ]
+              ],
+              "message": "plan.cases[2].steps[0].assertions[3]：断言路径 [\"car\",\"ac\",\"frontDefrost\"] 不存在；最接近的合法路径：[\"car\",\"hmiSettings\",\"ac.frontDefrost\"]、[\"car\",\"hmiSettings\",\"ac.rearDefrost\"]、[\"car\",\"ac\",\"on\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "input_contract",
+              "code": "INPUT_FIELD_TYPE",
+              "field": "celsius",
+              "path": "plan.cases[2].steps[0].input",
+              "node_id": "enter_car_event",
+              "message": "测试输入 plan.cases[2].steps[0].input（低温制热 10℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string"
+            }
+          ]
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "revision": 3,
+          "error": "plan.cases[0].steps[0].assertions[0]：[\"car\",\"ac\",\"on\"] 的 equals 期望 boolean，收到 \"true\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；plan.cases[0].steps[0].assertions[1]：[\"car\",\"ac\",\"temp\"] 的 equals 期望 number，收到 \"24\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；plan.cases[0].steps[0].assertions[3]：[\"car\",\"ac\",\"fan\"] 的 equals 期望 number，收到 \"6\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；plan.cases[0].steps[0].assertions[4]：[\"car\",\"hmiSettings\",\"ac.frontDefrost\"] 的 equals 期望 boolean，收到 \"true\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；测试输入 plan.cases[0].steps[0].input（高温制冷 35℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string；plan.cases[1].steps[0].assertions[0]：[\"car\",\"ac\",\"temp\"] 的 equals 期望 number，收到 \"23\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；plan.cases[1].steps[0].assertions[2]：[\"car\",\"ac\",\"fan\"] 的 equals 期望 number，收到 \"3\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；plan.cases[1].steps[0].assertions[3]：[\"car\",\"ac\",\"on\"] 的 equals 期望 boolean，收到 \"true\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；测试输入 plan.cases[1].steps[0].input（常温 22℃自动模式）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string；plan.cases[2].steps[0].assertions[0]：[\"car\",\"ac\",\"temp\"] 的 equals 期望 number，收到 \"25\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。；plan.cases[2].steps[0].assertions[2]：[\"car\",\"ac\",\"fan\"] 的 equals 期望 number，收到 \"4\"(string)；修正测试计划的 expected/va",
+          "contract_diagnostics": [
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[0].steps[0].assertions[0]",
+              "expected_type": "boolean",
+              "message": "plan.cases[0].steps[0].assertions[0]：[\"car\",\"ac\",\"on\"] 的 equals 期望 boolean，收到 \"true\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[0].steps[0].assertions[1]",
+              "expected_type": "number",
+              "message": "plan.cases[0].steps[0].assertions[1]：[\"car\",\"ac\",\"temp\"] 的 equals 期望 number，收到 \"24\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[0].steps[0].assertions[3]",
+              "expected_type": "number",
+              "message": "plan.cases[0].steps[0].assertions[3]：[\"car\",\"ac\",\"fan\"] 的 equals 期望 number，收到 \"6\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[0].steps[0].assertions[4]",
+              "expected_type": "boolean",
+              "message": "plan.cases[0].steps[0].assertions[4]：[\"car\",\"hmiSettings\",\"ac.frontDefrost\"] 的 equals 期望 boolean，收到 \"true\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "input_contract",
+              "code": "INPUT_FIELD_TYPE",
+              "field": "celsius",
+              "path": "plan.cases[0].steps[0].input",
+              "node_id": "enter_car_event",
+              "message": "测试输入 plan.cases[0].steps[0].input（高温制冷 35℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[1].steps[0].assertions[0]",
+              "expected_type": "number",
+              "message": "plan.cases[1].steps[0].assertions[0]：[\"car\",\"ac\",\"temp\"] 的 equals 期望 number，收到 \"23\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[1].steps[0].assertions[2]",
+              "expected_type": "number",
+              "message": "plan.cases[1].steps[0].assertions[2]：[\"car\",\"ac\",\"fan\"] 的 equals 期望 number，收到 \"3\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[1].steps[0].assertions[3]",
+              "expected_type": "boolean",
+              "message": "plan.cases[1].steps[0].assertions[3]：[\"car\",\"ac\",\"on\"] 的 equals 期望 boolean，收到 \"true\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "input_contract",
+              "code": "INPUT_FIELD_TYPE",
+              "field": "celsius",
+              "path": "plan.cases[1].steps[0].input",
+              "node_id": "enter_car_event",
+              "message": "测试输入 plan.cases[1].steps[0].input（常温 22℃自动模式）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[2].steps[0].assertions[0]",
+              "expected_type": "number",
+              "message": "plan.cases[2].steps[0].assertions[0]：[\"car\",\"ac\",\"temp\"] 的 equals 期望 number，收到 \"25\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[2].steps[0].assertions[2]",
+              "expected_type": "number",
+              "message": "plan.cases[2].steps[0].assertions[2]：[\"car\",\"ac\",\"fan\"] 的 equals 期望 number，收到 \"4\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_TYPE",
+              "path": "plan.cases[2].steps[0].assertions[3]",
+              "expected_type": "boolean",
+              "message": "plan.cases[2].steps[0].assertions[3]：[\"car\",\"hmiSettings\",\"ac.frontDefrost\"] 的 equals 期望 boolean，收到 \"false\"(string)；修正测试计划的 expected/value 类型或状态值，不转换实际值。"
+            },
+            {
+              "category": "input_contract",
+              "code": "INPUT_FIELD_TYPE",
+              "field": "celsius",
+              "path": "plan.cases[2].steps[0].input",
+              "node_id": "enter_car_event",
+              "message": "测试输入 plan.cases[2].steps[0].input（低温制热 10℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string"
+            }
+          ]
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "revision": 3,
+          "error": "测试输入 plan.cases[0].steps[0].input（高温制冷 35℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string；测试输入 plan.cases[1].steps[0].input（常温 22℃自动模式）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string；测试输入 plan.cases[2].steps[0].input（低温制热 10℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string；无效计划未锁定。",
+          "contract_diagnostics": [
+            {
+              "category": "input_contract",
+              "code": "INPUT_FIELD_TYPE",
+              "field": "celsius",
+              "path": "plan.cases[0].steps[0].input",
+              "node_id": "enter_car_event",
+              "message": "测试输入 plan.cases[0].steps[0].input（高温制冷 35℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string"
+            },
+            {
+              "category": "input_contract",
+              "code": "INPUT_FIELD_TYPE",
+              "field": "celsius",
+              "path": "plan.cases[1].steps[0].input",
+              "node_id": "enter_car_event",
+              "message": "测试输入 plan.cases[1].steps[0].input（常温 22℃自动模式）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string"
+            },
+            {
+              "category": "input_contract",
+              "code": "INPUT_FIELD_TYPE",
+              "field": "celsius",
+              "path": "plan.cases[2].steps[0].input",
+              "node_id": "enter_car_event",
+              "message": "测试输入 plan.cases[2].steps[0].input（低温制热 10℃）：入口节点 enter_car_event 的 JSON 输入不符合字段约定：字段 celsius 必须是 number，实际 string"
+            }
+          ]
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "revision": 4,
+          "error": "测试计划已锁定；AI计划允许单独修改/删除任一步status，无需waiting证据。也允许有类型证据的equals等义类型修正或非法路径改为预检合法候选；其他改动仅沿用当前waiting/completed证据下改waiting并紧接补回答的受限规则，原输入/断言/条件保留；调用方计划完全锁定。",
+          "contract_diagnostics": []
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "revision": 6,
+          "error": "字段契约未通过",
+          "contract_diagnostics": []
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "revision": 6,
+          "error": "字段契约未通过",
+          "contract_diagnostics": []
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "revision": 8,
+          "error": "字段契约未通过",
+          "contract_diagnostics": []
+        }
+      ]
+    },
+    {
+      "name": "C-Claude-1",
+      "request_sha256": "49d2a124deaa3a1cfb820daea2c02822f63aaafab2a5cf40abd05bc14b880dd4",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5",
+      "result_kind": "result",
+      "can_apply": true,
+      "completion_attempts": 22,
+      "seconds": 329.086,
+      "preflight_hits": {
+        "PLAN_ASSERTION_PATH": 9,
+        "PLAN_ASSERTION_TYPE": 0
+      },
+      "revision_kind": [
+        "initial"
+      ],
+      "truncation_retries": 0,
+      "truncation_skip_reason": null,
+      "last_errors": [],
+      "final_diagnostics": [],
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 0,
+        "graph_logic": 0,
+        "assertion": 0
+      },
+      "nodes": 17,
+      "edges": 18,
+      "revision": 7,
+      "trials": [
+        {
+          "revision": 3,
+          "status": "failed",
+          "model_calls": 3,
+          "failures": [
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'mode'] equals：期望 \"cool\"(string)，实际 \"auto\"(string)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'mode'] equals：期望 \"heat\"(string)，实际 \"auto\"(string)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+            "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] equals：期望 24(number)，实际 22(number)；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+          ],
+          "content_review": {
+            "status": "not_run",
+            "source": "not_run",
+            "issues": [],
+            "independent_verification": false
+          }
+        },
+        {
+          "revision": 4,
+          "status": "passed",
+          "model_calls": 3,
+          "failures": [],
+          "content_review": {
+            "status": "needs_changes",
+            "source": "same_model_separate_context",
+            "independent_verification": false,
+            "scope": "listed_text_and_structured_execution_evidence",
+            "issues": [
+              {
+                "case_index": 1,
+                "step_index": 0,
+                "request_quote": "并用语音播报调节结果",
+                "evidence_path": [
+                  "hmi",
+                  "message"
+                ],
+                "observed_quote": "当前车内温度10摄氏度，空调已切换至自动模式，目标温度设定为24摄氏度。",
+                "problem": "实际执行动作将ac.mode设置为heat（制热），但播报文字称'已切换至自动模式'，播报内容与实际空调模式设置结果不一致，未真实反映调节结果。",
+                "correction": "将播报文案中的模式描述改为与actions中ac.mode实际值（heat/制热）一致的表述。"
+              }
+            ],
+            "provider": {
+              "id": "anthropic",
+              "model": "claude-sonnet-5"
+            },
+            "artifact_sha256": "8ff3b8c0b1ead2951c345061962def9b94d8175e74b94990f12a7fd04284ebce",
+            "evidence_sha256": "6e2bdd33d41f25a244a8469c316fba6c85213d4915435feb8532d4ae9075e375",
+            "provider_envelopes_normalized": [
+              "result.checks (named array envelope)",
+              "result.checks (JSON string)"
+            ],
+            "checks": [
+              {
+                "case_index": 0,
+                "step_index": 0,
+                "verdict": "pass",
+                "findings": []
+              },
+              {
+                "case_index": 1,
+                "step_index": 0,
+                "verdict": "fail",
+                "findings": [
+                  {
+                    "request_quote": "并用语音播报调节结果",
+                    "evidence_path": [
+                      "hmi",
+                      "message"
+                    ],
+                    "observed_quote": "当前车内温度10摄氏度，空调已切换至自动模式，目标温度设定为24摄氏度。",
+                    "problem": "实际执行动作将ac.mode设置为heat（制热），但播报文字称'已切换至自动模式'，播报内容与实际空调模式设置结果不一致，未真实反映调节结果。",
+                    "correction": "将播报文案中的模式描述改为与actions中ac.mode实际值（heat/制热）一致的表述。"
+                  }
+                ]
+              },
+              {
+                "case_index": 2,
+                "step_index": 0,
+                "verdict": "pass",
+                "findings": []
+              }
+            ],
+            "duration_ms": 14800
+          }
+        },
+        {
+          "revision": 7,
+          "status": "passed",
+          "model_calls": 3,
+          "failures": [],
+          "content_review": {
+            "status": "passed",
+            "source": "same_model_separate_context",
+            "independent_verification": false,
+            "scope": "listed_text_and_structured_execution_evidence",
+            "issues": [],
+            "provider": {
+              "id": "anthropic",
+              "model": "claude-sonnet-5"
+            },
+            "artifact_sha256": "c96594e0a824efab933df31a88599e17575876ca4abc47611ad408a49944f5bd",
+            "evidence_sha256": "62922de98157d1eba8da20a76aa7c862814e22de2e6c5a50d3b8230a89ff6616",
+            "checks": [
+              {
+                "case_index": 0,
+                "step_index": 0,
+                "verdict": "pass",
+                "findings": []
+              },
+              {
+                "case_index": 1,
+                "step_index": 0,
+                "verdict": "pass",
+                "findings": []
+              },
+              {
+                "case_index": 2,
+                "step_index": 0,
+                "verdict": "pass",
+                "findings": []
+              }
+            ],
+            "duration_ms": 12912
+          }
+        }
+      ],
+      "graph_model_calls": 9,
+      "content_review": {
+        "status": "passed",
+        "source": "same_model_separate_context",
+        "independent_verification": false,
+        "scope": "listed_text_and_structured_execution_evidence",
+        "issues": [],
+        "provider": {
+          "id": "anthropic",
+          "model": "claude-sonnet-5"
+        },
+        "artifact_sha256": "c96594e0a824efab933df31a88599e17575876ca4abc47611ad408a49944f5bd",
+        "evidence_sha256": "62922de98157d1eba8da20a76aa7c862814e22de2e6c5a50d3b8230a89ff6616",
+        "checks": [
+          {
+            "case_index": 0,
+            "step_index": 0,
+            "verdict": "pass",
+            "findings": []
+          },
+          {
+            "case_index": 1,
+            "step_index": 0,
+            "verdict": "pass",
+            "findings": []
+          },
+          {
+            "case_index": 2,
+            "step_index": 0,
+            "verdict": "pass",
+            "findings": []
+          }
+        ],
+        "duration_ms": 12912
+      },
+      "run_diagnostics": {
+        "completed": false,
+        "interrupted": true,
+        "brief_registered": true,
+        "last_tool_ok": true,
+        "api_calls": 22,
+        "tool_calls": 22,
+        "failed_tool_calls": 2,
+        "revision": 7,
+        "node_count": 17,
+        "last_tool": "oakegde_submit",
+        "stage": "submitting",
+        "termination": "returned",
+        "completion_attempts": 22,
+        "truncation_retries": 0,
+        "truncation_skip_reason": null
+      },
+      "warnings": {},
+      "tool_counts": {
+        "oakegde_capabilities": 1,
+        "oakegde_read_graph": 2,
+        "oakegde_brief": 1,
+        "oakegde_patch_graph": 8,
+        "oakegde_inspect": 4,
+        "oakegde_test_plan": 2,
+        "oakegde_trial": 3,
+        "oakegde_submit": 1
+      },
+      "inspections": [
+        {
+          "revision": 2,
+          "issues": [
+            "每个用户需求必须有且仅有一条实现对应关系。只允许ID ['R1', 'R2', 'R3']；缺少 ['R1', 'R2', 'R3']；多余 []；不可把修复项添加为用户需求。"
+          ],
+          "warnings": [
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。"
+          ]
+        },
+        {
+          "revision": 3,
+          "issues": [],
+          "warnings": [
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "R1 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 4,
+          "issues": [],
+          "warnings": [
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "R1 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 7,
+          "issues": [],
+          "warnings": [
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "R1 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        }
+      ],
+      "rejections": [
+        {
+          "tool": "oakegde_test_plan",
+          "revision": 3,
+          "error": "plan.cases[0].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[0].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[0].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[1].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[1].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[1].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[2].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。；plan.cases[2].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最",
+          "contract_diagnostics": [
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[0].assertions[0]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[0].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[0].assertions[1]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ]
+              ],
+              "message": "plan.cases[0].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[0].steps[0].assertions[2]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ]
+              ],
+              "message": "plan.cases[0].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[1].steps[0].assertions[0]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[1].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[1].steps[0].assertions[1]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ]
+              ],
+              "message": "plan.cases[1].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[1].steps[0].assertions[2]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ]
+              ],
+              "message": "plan.cases[1].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[2].steps[0].assertions[0]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "fan"
+                ],
+                [
+                  "car",
+                  "ac"
+                ]
+              ],
+              "message": "plan.cases[2].steps[0].assertions[0]：断言路径 [\"car\",\"hmiSettings\",\"ac.on\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"fan\"]、[\"car\",\"ac\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[2].steps[0].assertions[1]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ]
+              ],
+              "message": "plan.cases[2].steps[0].assertions[1]：断言路径 [\"car\",\"hmiSettings\",\"ac.mode\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"mode\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"temp\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            },
+            {
+              "category": "assertion",
+              "code": "PLAN_ASSERTION_PATH",
+              "path": "plan.cases[2].steps[0].assertions[2]",
+              "suggestions": [
+                [
+                  "car",
+                  "ac",
+                  "temp"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "on"
+                ],
+                [
+                  "car",
+                  "ac",
+                  "mode"
+                ]
+              ],
+              "message": "plan.cases[2].steps[0].assertions[2]：断言路径 [\"car\",\"hmiSettings\",\"ac.temp\"] 不存在；最接近的合法路径：[\"car\",\"ac\",\"temp\"]、[\"car\",\"ac\",\"on\"]、[\"car\",\"ac\",\"mode\"]。按目录/图修正测试计划；hmiSettings 使用完整 controlId 作为一个路径段。"
+            }
+          ]
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "revision": 5,
+          "error": "不能同时删除和写入同一连线。",
+          "contract_diagnostics": []
+        }
+      ]
+    },
+    {
+      "name": "A-MiniMax-1",
+      "request_sha256": "139c310ca56c2f47d1c4b2dda395995ce7b0170dbfe69b320fc36a27b1667f37",
+      "provider": "minimax",
+      "model": "MiniMax-M3",
+      "result_kind": "result",
+      "can_apply": false,
+      "completion_attempts": 28,
+      "seconds": 665.35,
+      "preflight_hits": {
+        "PLAN_ASSERTION_PATH": 0,
+        "PLAN_ASSERTION_TYPE": 0
+      },
+      "revision_kind": [],
+      "truncation_retries": 0,
+      "truncation_skip_reason": null,
+      "last_errors": [
+        "候选尚未实际试跑通过。"
+      ],
+      "final_diagnostics": [],
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 0,
+        "graph_logic": 1,
+        "assertion": 0
+      },
+      "nodes": 31,
+      "edges": 40,
+      "revision": 10,
+      "trials": [],
+      "graph_model_calls": 0,
+      "content_review": {
+        "status": "not_run",
+        "source": "not_run",
+        "issues": [],
+        "independent_verification": false
+      },
+      "run_diagnostics": {
+        "completed": false,
+        "interrupted": true,
+        "brief_registered": true,
+        "last_tool_ok": true,
+        "api_calls": 26,
+        "tool_calls": 21,
+        "failed_tool_calls": 1,
+        "revision": 10,
+        "node_count": 31,
+        "last_tool": "oakegde_submit",
+        "stage": "submitting",
+        "termination": "returned",
+        "completion_attempts": 28,
+        "truncation_retries": 0,
+        "truncation_skip_reason": null
+      },
+      "warnings": {},
+      "tool_counts": {
+        "oakegde_capabilities": 1,
+        "oakegde_read_graph": 1,
+        "oakegde_brief": 2,
+        "oakegde_patch_graph": 10,
+        "oakegde_inspect": 5,
+        "oakegde_trial": 1,
+        "oakegde_submit": 1
+      },
+      "inspections": [
+        {
+          "revision": 1,
+          "issues": [
+            "llm_extract_fields（llm_extract_fields）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_decide_route（llm_decide_route）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。"
+          ],
+          "warnings": [
+            "logic_child_onboard：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "逻辑分支不完整，请核对未连接出口是否应结束: logic_child_onboard",
+            "REQ-06 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "REQ-07 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "REQ-08 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 5,
+          "issues": [
+            "output_route_choice：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e_decide_output', 'e_merge_output_route']。",
+            "state_after_write：data.values.home 收到 'state_after_extract.home'：绑定根仅支持input/event/state/outputs；读取节点结果请用outputs.state_after_extract.home。 示例 outputs.input_start.text 或 state.savedValue（节点/状态须由图实际产生）。",
+            "state_after_write：data.values.route 收到 'state_after_extract.route'：绑定根仅支持input/event/state/outputs；读取节点结果请用outputs.state_after_extract.route。 示例 outputs.input_start.text 或 state.savedValue（节点/状态须由图实际产生）。",
+            "state_after_write：data.values.school 收到 'state_after_extract.school'：绑定根仅支持input/event/state/outputs；读取节点结果请用outputs.state_after_extract.school。 示例 outputs.input_start.text 或 state.savedValue（节点/状态须由图实际产生）。",
+            "state_after_write：data.values.school_minutes 收到 'state_after_extract.school_minutes'：绑定根仅支持input/event/state/outputs；读取节点结果请用outputs.state_after_extract.school_minutes。 示例 outputs.input_start.text 或 state.savedValue（节点/状态须由图实际产生）。",
+            "state_after_write：data.values.school_time 收到 'state_after_extract.school_time'：绑定根仅支持input/event/state/outputs；读取节点结果请用outputs.state_after_extract.school_time。 示例 outputs.input_start.text 或 state.savedValue（节点/状态须由图实际产生）。",
+            "llm_extract_fields（llm_extract_fields）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "llm_decide_route（llm_decide_route）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "state_for_decide（state_for_decide）：请填写判断条件，不能以空条件默认通过。",
+            "logic_merge_strategy（logic_merge_strategy）：请填写判断条件，不能以空条件默认通过。"
+          ],
+          "warnings": [
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "REQ-06 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "REQ-07 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "REQ-08 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 7,
+          "issues": [
+            "state_after_write：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e_memory_write_for_decide', 'e_memory_write_state_after_write']。",
+            "state_after_write：输入端口重名，请指定不同targetHandle。",
+            "llm_extract_fields（llm_extract_fields）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+            "logic_merge_strategy（logic_merge_strategy）：请填写判断条件，不能以空条件默认通过。"
+          ],
+          "warnings": [
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "REQ-06 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "REQ-07 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "REQ-08 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 8,
+          "issues": [
+            "llm_extract_fields（llm_extract_fields）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。"
+          ],
+          "warnings": [
+            "logic_merge_strategy：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "REQ-06 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "REQ-07 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "REQ-08 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        },
+        {
+          "revision": 10,
+          "issues": [],
+          "warnings": [
+            "logic_merge_strategy：未连接 false 出口，条件不成立时本分支结束。",
+            "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+            "REQ-06 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "REQ-07 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+            "REQ-08 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+          ]
+        }
+      ],
+      "rejections": [
+        {
+          "tool": "oakegde_brief",
+          "revision": 0,
+          "error": "source_quote必须逐字引用用户原话，不要改写或拼接。错误引用：[{\"id\":\"REQ-05\",\"rejected_quote\":\"儿童上车识别：2、3；不退化\"}]；最新用户原文：重新编排",
+          "contract_diagnostics": []
+        }
+      ]
+    }
+  ],
+  "metrics_note": "preflight_hits统计公开工具结果contract_diagnostics中每条诊断，含重复反馈；final_error_categories按最终公开issues逐条计数，非历史根因数。核验协议错误映射model_output，未试跑/未提交映射graph_logic。",
+  "frozen_implementation": {
+    "backend/app/core/site_access.py": "d6c1efffa06abf39f668a7f5ee5c1b1084034415b76027f0d3164452b15222ef",
+    "backend/app/core/branding.py": "042b2ecb2a37e2c8de17fd68abe84613664fdae8a7637b0c47bcac369d1f0bfd",
+    "backend/app/core/memory.py": "52f089b950b8bce03d08fbe96fa4acd579bfc3dbc70c3aa191047bd6ad571479",
+    "backend/app/core/engine.py": "0efd8a50941522653a24be0933457fcba349d42b6a1abc9663db90990a22d3e6",
+    "backend/app/agents/hermes_worker.py": "ab8def76e9678a82752dbd6a0b55e7e3aff782567cf77f486bdd52bd48ec069e",
+    "backend/app/schemas/sdk_schema.py": "034e69c68f13da85d8fcc2c82d73162ee30ba5ac39182c216e07a971b338cc95",
+    "backend/app/schemas/inference_schema.py": "8f60237473ca015beb5fa68b83c447b566ff1eeed14bc56d60a2354035f6ed35",
+    "backend/app/schemas/execution_schema.py": "2a94da053876168e50139dcbe94877c3c8d92555f1f6bc9cc04ce24f9f42f648",
+    "backend/app/schemas/system_schema.py": "a53d24a3e6d4758b980a6bcc5882bfd1177947ce8899d2e581cb63f4e89508d5",
+    "backend/app/schemas/orchestration_schema.py": "203359fbfbe1ea8f631242facb9b8af569bdd0992ad104aed7cbf2ee9a51c2bf",
+    "backend/app/schemas/edge_schema.py": "363ddfa10228d6b1008e2be9907be81c11297a728bed7cc618662d7e540168d4",
+    "backend/app/schemas/project_schema.py": "f4ce58a1a30622efc02ac41e7148dc983d27db6f8a685f3ea90d948bc5a44a05",
+    "backend/app/schemas/model_schema.py": "4d375e47f70f7bad945168fc130e95759f813ab3a080d3661a5c3854e1691756",
+    "backend/app/api/mcp_catalog.py": "f9518ace5b6a765ffd8343eb347cb72b1e6380dbc7d4d6bb47ff16f7bfd8ec72",
+    "backend/app/api/executions.py": "3d018c7b61b26d130cd9b7747da3ac4e4fc211cff6325abdcfbfcc1d6a2af2bb",
+    "backend/app/api/system.py": "55243b02a5f724f1337156914466cf10275e47e16854e5c52d387378a3e42b6c",
+    "backend/app/api/edge.py": "e17c39bad3da7d2153abeddf17d5def7f96eb89fe3cb7434b4e1ff98135b7932",
+    "backend/app/api/sdk.py": "01610876193a27cfc33b089eec4feef1bd4f2170ab8edf169415caa7f3cc713b",
+    "backend/app/api/models.py": "696b47d5caaa76e3b114dd5673e7ee199771044e7a568dbf50cd966aa0ba7be4",
+    "backend/app/api/deployment.py": "b15d791435cd7bf1f9ecc1661594ec3dc5cabba9e2b5684837a655cba0813a32",
+    "backend/app/api/memory.py": "e8b280825a8314791099e06bdd12eec511dfa7192eb56fcdb24ed965f9ee92e3",
+    "backend/app/api/telemetry.py": "649c9ad60922a7aa9ee200e9a9fdcecb4a8003339b87dda33411d239e58a6a90",
+    "backend/app/api/mcp_runtime.py": "08842b3f697ffdf10027ca3791fff6748588e14d886d7817445bb28832ce635b",
+    "backend/app/api/orchestration.py": "8d64a1cb564adb9857dc11edae41b05ce05e93dc25838e23200b7ce581627779",
+    "backend/app/api/capabilities.py": "aee92b1b7bd085ccccd0b2ccd924c539958b16698c6c0c8f69ccc5bb1d7ab9f8",
+    "backend/app/api/qualcomm_catalog.py": "954f83826fb485f1fadf47ee55a845c6b2e83eb8bac8047facb34cce22dcd3c1",
+    "backend/app/api/inference.py": "c9dc8336eb259691aaf2fea561aad2fa276d54eb23a0cb3e30e92b4de44a736a",
+    "backend/app/api/audio.py": "d0f5ef54bea16f8b1c51069eb80723f2c56334de68f120e71783e19e00aa0c72",
+    "backend/app/api/projects.py": "ea618d4adf26995046c60de9f6f14b65babb52fe7478135218f7e7c6ace04e3d",
+    "backend/app/api/rear_media.py": "de49ca87d7a918418af0bb6dee0f00726d51e16b6878ae57d5978af933f94c9c",
+    "backend/app/services/mcp_catalog.py": "cac58c685b85ca4cff27ea17f4ab61f5e1cb2c3995d00d18c4398137c3309b92",
+    "backend/app/services/qualcomm_catalog_snapshot.json": "180790a474948f17d30623d2fa1e1933ebe2b20116f4591b045ff6fb194bc33f",
+    "backend/app/services/file_paths.py": "39dae51637c263156a5131cc1f8524150619fd5d5d9da33498898390b4e78f68",
+    "backend/app/services/model_providers.py": "3b850f7d4fa9f0db8ef026afc9603f329373991a94e2f10a98c718dbd73d15aa",
+    "backend/app/services/authoring_diagnostics.py": "b6742d0c80a01fe9c0bee29cea0872a3914f4d29beea2545803e456a4fb71e07",
+    "backend/app/services/flow_loops.py": "9ce2ad76bf195a7d0e757790f0e1cb919c059e0e955022056fd037c84cf7012d",
+    "backend/app/services/qualcomm_card_metadata.json": "428124580e2001e8cb2148edd8a37901c5844c0862cf29c51910335eff106143",
+    "backend/app/services/model_reasoning.py": "0049e276b3e0c40f3fba3f478d47fbe1293061540c5eb4b218b37c09ee39d3de",
+    "backend/app/services/mcp_packages.py": "ec7b6d8e572b082eed2814d62aac497e881f13a0022c2522c055b6b727f46003",
+    "backend/app/services/project_service.py": "be2f09861243c7f79a1c315370093a173aa85a80a577146dbb6cd9f64c3e4b32",
+    "backend/app/services/catalog_model_guard.py": "4ba85a41cd77dd095d0744ecf134c9a6dccb386e194497ba7214e0c7fcffa4e7",
+    "backend/app/services/system_service.py": "6067088dc5c3f62d1262ee252acc97ea8b38959a1eaae9f2476672835d9f3dda",
+    "backend/app/services/host_lite_edge_service.py": "a0fc3aad320041f0c779a00f2c20439bb4f34ad19a0c228d51520d05feaa606c",
+    "backend/app/services/authoring_intake.py": "a8aeccf82dbdd6f0341e0f57be3d7b93e6c8f33a6e3bf892762ffb9003987428",
+    "backend/app/services/child_care_template.json": "b28e578a4aa59bcb60728fa6841e3284e4a24038fbc7e158bb7da1f78423ef8d",
+    "backend/app/services/hermes_tool_arguments.py": "5ecc4b8d20bc519e49b5452146bde1fd4077e7e2c83612bd6035be4818dc7a71",
+    "backend/app/services/node_capabilities.json": "0d13546ba240339947a646447ec832e9d41cb18d84b9ae101c7a3f14de348ad7",
+    "backend/app/services/expression_preflight.py": "172cb9d28cead7a30e417035a49a383f11cb430969f9d31aaa26703cb9a0f76b",
+    "backend/app/services/asr_service.py": "f410fe0f19ea174afb694690c858772f0196706ae4e65cf748c4dd245a5bb1c3",
+    "backend/app/services/inference_service.py": "a0b24b14725ee0b9d98f126083d5702aa64cc3f96eacd26372377d9f4f0de6f4",
+    "backend/app/services/capability_categories.py": "6370af7d0a0ee27c729ee62418cd930b642bc4f1ceb670bd574001786d96a86e",
+    "backend/app/services/capability_library.py": "56f73c641065ea4609c9e33e015eca46c91bb05276aaa4da6a9afd7b09ea7616",
+    "backend/app/services/authoring_checkpoint.py": "0a514c6e138d2385041f67035490e46745b5f2a1cbbab5e519a0d1e4b3a9cdcc",
+    "backend/app/services/scenario_execution.py": "bfaeb999a88c0706695171e2a5826561b5760155a958b9f710473de206c56e08",
+    "backend/app/services/scenario_benchmark.py": "ded84501ac0ad9a1c2d7eb481bc7e7d2ec117431c1a6132db2f6c1137ab81265",
+    "backend/app/services/mcp_runtime.py": "3bd8f5720e07407dc0dcca265efa7dd725fa042eae6386c4ba844debaf37877b",
+    "backend/app/services/execution_store.py": "933dcd17c79822e2d3aa57ee1dd7219ed538cecdef626e72ebc02e19b5999201",
+    "backend/app/services/interaction_contract.py": "d6ff47b7f50aa410b553f6485c21b43d0d1e4a38d7d21f9fb9ca16db13f9a074",
+    "backend/app/services/node_capability_service.py": "2acd789fdd242bbdd411e584a761dca1a47c3be531755f8872212c48875545f2",
+    "backend/app/services/node_data_schema.py": "050d7f894bbeb77fc180bead1f40d30522d08b8c289850b8fe474281ec519189",
+    "backend/app/services/hmi_control_contract.py": "00824236dcbc013ae1942bfa767281b4180a6752d10e6e5025b090b6f487f36a",
+    "backend/app/services/edge_service.py": "d22b28c6b871e3f7b0f5ba96c3ed4a5c5bd65a2f4c9a52465f92f78b8d88afa4",
+    "backend/app/services/multimodal_messages.py": "54778b25d6c9258c0631694395fc890c4984726c88326cd8a719e4b68df15f34",
+    "backend/app/services/model_service.py": "c3ca36b3ac0da01cc28edc75003da5c1e51e26fcc4959e937e8edbc9f2414f50",
+    "backend/app/services/orchestration_service.py": "874544135236e5f154ddb5b05e3582115f539c6f7c59477e38e8ea5ed11c7d8e",
+    "backend/app/services/flow_contract.py": "338d0e1fe25d61bc731ab1c019356956a5f6c6b1e6eb61e03bdb94682bad00a3",
+    "backend/app/services/qualcomm_catalog.py": "e57d40516942beb12df4038b8385b170347e41a9e441f45364419b1f0fbb773d",
+    "backend/app/services/hmi_controls.json": "c8b754464c6289e8765ccf7b1506c44fcb0a79055cfeacafcbc8ad727ce4f14b",
+    "backend/app/services/hermes_authoring.py": "6048b0fa4898cda60a4944d1ef0fe3812bb3280b7d8ead31450314919ebf7b06",
+    "backend/app/services/execution_review.py": "54dd24f6708b1537f1b4432e806a76042e4820851ce3891ec4e920b520ade2b2",
+    "backend/app/services/sdk_service.py": "63c16fbea88a83b6e6d140e0b1e8aad922af1bb9a11179b9017158ff0ed98e0b",
+    "backend/app/services/authoring_session.py": "368319e662381497ca41fafd85e8c6c2cf2a9ee511f208d9f65bc5cf9c249955",
+    "backend/app/services/inference_lifecycle.py": "81bae3e19427270fba0f5967da4765e03b0f1a96d8957952a73ceb6c065587b2",
+    "backend/app/services/mcp_worker.py": "9c6d25bd0833a62ec64a506c94e01bc8ed72528ae6e2f9dfc485f8bbb7d96acb",
+    "backend/app/services/scenario_builder.py": "05f0f3347ab5b10948a1bf91583cda0ff7fa6bf7dcacf55ba0ed44b69a066aaf",
+    "backend/app/services/authoring_team.py": "39aae0efc6fd3e200dd7fc841f3889344f01c83937b73fecad73f4348bbfa2a0",
+    "backend/app/services/test_plan_preflight.py": "4d912578fbdcee7207e26f09c306ac478c24c49c8e727c95803fe90aff3e26df",
+    "backend/app/services/xlsx_capabilities.py": "701ec77152c3917d4af21f6f84b77afddc7e933b34ad8d91d6af1d9d80ed2274",
+    "backend/app/services/opensparx_service.py": "e5dd1d8a78f7d538d43c95f1ff15a29e399f566547ae85d97d6240fed423e174",
+    "studio/src/App.tsx": "2e4aba1a0aeee466f40969d01f64f87fbb216b9b967d863a9ada836b5bed6508",
+    "studio/src/main.tsx": "f98a3f050711057f568fc6faa4a78ae0aa04be284ad12044b5d4b97448ca5aa8",
+    "studio/src/developer-docs.d.ts": "2792a4afde0e71becefb0fcfc78694d4b2815e504b4ee6d7362c221fe4ea113b",
+    "studio/src/context/AppContext.tsx": "afe7d7689c83b1d7360d0af7db45e8c3c9f182307e1a25633b713d913516de74",
+    "studio/src/utils/GraphEngine.ts": "ea5ceb83400c8feac06651b4b3d979a94adabe2617b42a199fd5ceb5aee19928",
+    "studio/src/hooks/useHmiSpeech.ts": "4fdb1e6ffcee7475a1b7c17655c60de76b93d72bedf0261edaabb22fc00e7c38",
+    "studio/src/hooks/useVoiceInput.ts": "e8f3d59ed7f75ada462dec3a20ae230de9b616f70d5d4306c1413f02c29fc1f8",
+    "studio/src/lib/voiceCapture.ts": "8bbfd9736b74f82f7065536291dbdf2a38c7071ec97bdad9fad38b0cafa263e7",
+    "studio/src/lib/prepareImage.ts": "9332f37769fd773722c09ccb3d91a8af3eff25340317f59c3b061cc02d5cdaf9",
+    "studio/src/lib/utils.ts": "726cf1d77dbfb6b47be36b52fbd33f651e153ac8ca0d78e2ebddf51ab36eb968",
+    "studio/src/lib/api.ts": "e8fdd74338daa27a9dd0f6d80d5d795562874596027e40c6bde87c79e74f3ab6",
+    "studio/src/lib/speechEndpoint.ts": "456cbc2a0b12983cf170886e1eb2d590a44bdf2af0f20e07c72ca20103a531d6",
+    "studio/src/lib/projectFiles.ts": "4fcd1ca8c8034ace1a0e871ca861042d67dedce46746d6fc91cd6ddc65e7efe6",
+    "studio/src/api/coreClient.ts": "08edf2351a2fe4c43ae0a30f762b8908d2f8b985f9e9ba42968189677bce77c9",
+    "studio/src/i18n/en.json": "1e9848b2762d08d8a1e28e7258c030d36ce1ef1d030c1633e9ca0a7c8db51272",
+    "studio/src/i18n/index.ts": "dc7cfe5bb9127c24d8db9153e4d9d2218e8011e7e559a2432a1a8e930609dd9b",
+    "studio/src/data/childSafetyScenario.ts": "d05b404be52c59f6a4b96089dbc6b5ea0f9f437c16d2c52e40df97ae9bcb57b1",
+    "studio/src/data/teslaAssets.json": "71c602fb7a057cb2e64d8bd1da1e2d779c500858bc70484d0262994c18046fd2",
+    "studio/src/data/selfieAmbientScenario.ts": "5be0a31e6aae147146407c09a0913a282c8f3cb366f2af0ccb492b4b59c68c25",
+    "studio/src/data/inferencePolicy.json": "a66589c1ca47abeb6505696701316e8d1ac33dd62010e645db67854e4574a4ee",
+    "studio/src/data/carControlCatalog.json": "adf52233ac1917f55b38e23fc4d1e23b1460880986bb3c554cf32ddbae68b922",
+    "studio/src/data/nodeCapabilities.json": "0d13546ba240339947a646447ec832e9d41cb18d84b9ae101c7a3f14de348ad7",
+    "studio/src/data/activeCarRig.ts": "fea1f2be4a4fb750e4ef1007ff149b4fb34eaaf22c1eaf97f6854d384ccbd064",
+    "studio/src/data/hmiControls.json": "c8b754464c6289e8765ccf7b1506c44fcb0a79055cfeacafcbc8ad727ce4f14b",
+    "studio/src/data/mcpCatalog.ts": "3936de93102466971bbf83cf35fb158585d3ff5b96cadbe99acc19c4a1ac6a8f",
+    "studio/src/data/rainComfortScenario.ts": "31fce1e19e2d7dad34bb9a7a361e2192f3bf0ad7c09e8fb16ba50c4c6e0fee6d",
+    "studio/src/data/scenarios.ts": "d1571b2548940bcfcd956c05326bba11e05e8ddd48d33059b21890409414a47c",
+    "studio/src/domain/nodeCapabilities.ts": "fc0891410c897cc57fb1a0965de5d162d950688ca15e2312f3ee30fb07af313e",
+    "studio/src/domain/contractErrors.ts": "49b1d9d2764431d7ae21efb92c69d9d33940dbaaebf0182252b915c4ec8db65c",
+    "studio/src/domain/flowSession.ts": "5fd6aa47d8c5d38d489aa6eb5ff99a6099391676edc920cb8b796042e6193f43",
+    "studio/src/domain/expression.ts": "8eecf905a9853d9012665e190ede233b7df6bb63c0d8b742051eed4bb71b1f46",
+    "studio/src/domain/modelCatalog.ts": "ac6b2dd4edfb331055fcbd83c8d85d339e579ba134981e5709f7a4e7383022b4",
+    "studio/src/domain/flowContract.ts": "04376b17f17a4750b8539d29be21ba6295f8907f6e8538607b9e88a3c4789e7d",
+    "studio/src/domain/scenarioBuild.ts": "ce0e5458b04e27f27da15625587e9dbbc8877e186852dc3013f1d53c3c17efd0",
+    "studio/src/domain/cockpitAssistant.ts": "74a3d3bae5b31aff47b582cb55dfff166287bb03e662b9db65a7fa6b2442819c",
+    "studio/src/domain/stageView.ts": "c9b94a04acc5297f360af129fe4e76cf7cbfa3760c675cae301922deed7dc970",
+    "studio/src/domain/durableFlow.ts": "945b32b788440a41953db3297f6bb000d4343c2d033a32415d06f38c6f3bf42e",
+    "studio/src/domain/developerDocs.ts": "8c372e2887585153ed537c6bd67523339f86f728aa127e37cf10e762040ad787",
+    "studio/src/domain/modelTest.ts": "4cc303a4b083b85a4a0f62b7bb155f7f672607970308b658c7a3260f3d4e8906",
+    "studio/src/domain/testPlanPreflight.ts": "52781e189435b67251e384f8a2aca2370dc195da0fa92c4cf1fec532693269d4",
+    "studio/src/domain/capabilityTree.ts": "dc2f4875dbf2405f3d52f0f18506e86b299974e636bc2eb240eaf4e50ae423f4",
+    "studio/src/domain/scenarioSession.ts": "09506ea58941da29f4cfeaa4f6fed35e289489ec12b645a1fd6cdf869aff1783",
+    "studio/src/domain/nodeDeletion.ts": "abacb38d1d789b6d2bd8fee5f4f83bc1fac4fc6d588ee7ff1c5dcee2b138b425",
+    "studio/src/domain/flowLoops.ts": "b6469335be833f427d6800ef71ecea835a3724f38c6ba70831f165fc77fac21e",
+    "studio/src/domain/workflowLayout.ts": "25fe14d68a82dd59590042565b3f4604a2ecbe0ef4ad1dbd0145fd9e458ca74e",
+    "studio/src/domain/qualcommCatalog.ts": "b903fffed9b98099d86c0951316022f7b8e15c4afd3ec66efa230a16eb9be459",
+    "studio/src/domain/runtime.ts": "c6b6734c11738512fcdfa13d9bb54db60199d6f92f10965cc69d4e25290ba7f4",
+    "studio/src/domain/capabilityPresentation.ts": "57f158a4e894fd4a7cf4725430e4fed232d375b07cd1ba343b7b6b4586b9d03a",
+    "studio/src/domain/hmiControls.ts": "c6c97169d616a08d268b7858d89e8b9e4ba32a5bdbc7299ec1ec6a5b20e22c63",
+    "studio/src/domain/scenarioRehearsal.ts": "76e7fa77d22f7ce02467d372beae902b70f7d7f7d3cffcf82262dc58ca09bae9",
+    "studio/src/domain/simulationReport.ts": "b0bdfdd542719be0447834c4822fa9ab6f224063fe5ef5aadad42161d23cafe6",
+    "studio/src/domain/inferencePolicy.ts": "e5cfedd8d6a738e20f2e147113b49716b97f0e053c6e4eed353db036854bb845",
+    "studio/src/domain/projectAutosave.ts": "c792e884240c93617a3b8a70cb7048b0a71ab81dd298be8fe8658236adbc06b0",
+    "studio/src/domain/carRig.ts": "94abb7a282a6c0680ec7ff98e8b14d852bbc2836bf0c7986d9368fb3c5feedd8",
+    "studio/src/domain/videoReplay.ts": "a00e982f01077c575021b5919678762f8130dee0dcb78732ecd8123771818e4b",
+    "studio/src/domain/vehicleWorld.ts": "e310e1a0361af33eea13d2f882a4d4252afa9cbdec8be6517efc1d57011d2206",
+    "studio/src/domain/assistantPresentation.ts": "d435ef895f87aa780547586393035c143c8ba40e78b97ff24b129348cef39fad",
+    "studio/src/domain/assertionContract.ts": "3c145c9b679f26428cf57515792e534da0c0375382ef0bf112dc3eeff2a9765d",
+    "studio/src/domain/chatTimestamps.ts": "8be0fa3ee047f416bc2054cabb5b78f818f45bd57dead0d4db4319023e0e0d4f",
+    "studio/src/domain/scenarioExecution.ts": "4916c1b744001b49fc063ee0fca43d8cf930593856e039ba1967db9699763df8",
+    "studio/src/domain/inputContract.ts": "30b7e18489a6bb8ca48c03c5005d35aec224c48407a58750f6bce4d687d3d931",
+    "studio/src/domain/catalogModelNode.ts": "c95ac60ffd225df6818af41b2356b364b7eced44cfefd7037bb6b3cee3d06d7d",
+    "studio/src/domain/rearVideo.ts": "ad14a03b9c3ada71890088f197d39926e4839d74b34b63a85e53f40fdb6ad3f3",
+    "studio/src/domain/modelOutput.ts": "1bfea6e38a86cad21e2d1b0f6ca5ea419803bad0ab97845f9f84f8e232f7edf3",
+    "studio/src/domain/opensparx.ts": "9b09768de3dc43ec2c54bce58de1f8879184fd5dabf772ffc547341c34024e2c",
+    "studio/src/components/hmi-widgets/HmiWidgetLibrary.tsx": "5ea17845b508847c7c4f5165e557128e39d4dfe92c6478df4814ea0546ee8a2c",
+    "studio/src/components/hmi-widgets/FigmaWidgetArtwork.tsx": "ffc5a752c23bc5980dbf45331ab3fcd70f21cba229472fca9d5a1d443424b082",
+    "studio/src/components/hmi-widgets/catalog.ts": "64b4bd51f2de0d19a3f6c23e77a65527d47a58a97e3364efecbd64034a9332c4",
+    "studio/src/components/ui/RetroComputerLogo.tsx": "3ffda92ec2e879fcfe2dbc8c766430a8db084668f60095bb1c461e2569cf9b0f",
+    "studio/src/components/ui/tabs.tsx": "8340bf784dc5505b723aa78ffe4651ab36bbd54d6e391ac21a5ab616699ace6c",
+    "studio/src/components/ui/card.tsx": "af6fe5855ce8049132ad0761240fba63e015ea4387107cee319336455ec7df3b",
+    "studio/src/components/ui/slider.tsx": "234e38fef59169bd02d8f5b56ca02e5ec13a0bd6846c328927b924e1299f7fb0",
+    "studio/src/components/ui/progress.tsx": "77258897ea867d18486ec1c693b0b9e0b6f79a31c045cb4926667074cf4483ad",
+    "studio/src/components/ui/toaster.tsx": "920a5f72dd4c5678b98043845f2ec3345d634fa52c1c0bf945d27455bdfe0f08",
+    "studio/src/components/ui/SiteAccessGate.tsx": "4c0a1fb72e897be33c02f720b5e0bf2e16b0a13d9169cfa911adfdb0ce20d029",
+    "studio/src/components/ui/sheet.tsx": "b6666b3576a67c71a6c71ade72b610fc1bfe116be641f5fdc4f611d18d7a11c9",
+    "studio/src/components/ui/ResizableSplitter.tsx": "864215d7d0501998d88b7232df42984c6be097599b16aab47a11c874153410e2",
+    "studio/src/components/ui/scroll-area.tsx": "edbaecbc4f5cb6e16ecb39d3678d81b26e1a968dfc273dbb77821de3c8626377",
+    "studio/src/components/ui/label.tsx": "e5d2fe282bbd509054eada8a56eaa47c97777ada083e25228b4988253de2840a",
+    "studio/src/components/ui/accordion.tsx": "6b797ae5251e5c276215dd70364a38c1b91bee03cd1e9fa5b77479ae4b468bcd",
+    "studio/src/components/ui/use-toast.ts": "ef2f995dcdf8e93be32892e6a79da30da309f50396fd5c348359a2b61f1c50b4",
+    "studio/src/components/ui/switch.tsx": "ab2d009e0fa7366f47ae1a6e0ca35d0aac55c6264c5f61718e12366c196163b4",
+    "studio/src/components/ui/AppIcon.tsx": "003684223fda3d538a54b66747c10a4261c47c3c71092fc0300287899bf3a824",
+    "studio/src/components/ui/ProjectConfirmDialog.tsx": "0362ec78e97e4662100427242a954518084bb7122b5377816318ce6ca3952969",
+    "studio/src/components/ui/dialog.tsx": "40aa4e66031736947f87ec7ab367be7b3f2612a84d5009a8d714bba55134ce23",
+    "studio/src/components/ui/badge.tsx": "93e077de42665df20b811bb90cc54b112741c5eec5ddf4b5595149f94ebd8caf",
+    "studio/src/components/ui/separator.tsx": "995c54f1c5c688f712a675fe35d55bcada2b31dba561dcc71553a1ad601e59ec",
+    "studio/src/components/ui/button.tsx": "9f00b7cc98d1840575239ed2d8e1a055989f4e8526d624bc46cfb7571879b4f2",
+    "studio/src/components/ui/toast.tsx": "f8d999f4eaa1231f2eba5117b9585e8182c82275c161f3fcf07d685b116f8098",
+    "studio/src/components/ui/select.tsx": "282a85c81aaafe144ff65d9a390f67c222b0a502a468eb84b14ad871343db88b",
+    "studio/src/components/ui/textarea.tsx": "7bfcee14419a4977b0a3efa647cbf58d17a21d603927591d57fbeab9f0ecf049",
+    "studio/src/components/ui/input.tsx": "5351c1b1de3981bc3edf1b1d7d4e4aa369f62372b332e2407b6d3994514563c5",
+    "studio/src/components/monitors/SafetyMonitor.tsx": "bc618bc8310b651a7f1d4cdf6ee4b9cd09c5ca90d1517e75ae997ce6e7f3bfb7",
+    "studio/src/components/monitors/KernelMonitor.tsx": "790779c540a0eb2885c0126c675646018580e26e7fc66045f2a509787be195d3",
+    "studio/src/components/monitors/MemoryMonitor.tsx": "f13fb9ad484a230e66989246235839a3a9146e2226a0bb9deda56a7c28453999",
+    "studio/src/components/monitors/MiddlewareMonitor.tsx": "bb7693cad0d7fd98f40adb72a5b694233165c00c729a769fe4a821bff4759cd6",
+    "studio/src/components/hmi-tesla/TeslaMedia.tsx": "0d665ebbdb214fee4c3fc528cde45f5c76532bff0c308aa96bf1e2f4241f366d",
+    "studio/src/components/hmi-tesla/TeslaDock.tsx": "7e9f1bc6c1f1a0800c002014069004192883da2e28315e587ca7b81ff7bc05d9",
+    "studio/src/components/hmi-tesla/TeslaNavigation.tsx": "fc708662c5e8f3581547105be95eb16f21e8dce277cb958b8554084a8cbe9a34",
+    "studio/src/components/hmi-tesla/TeslaSettings.tsx": "095f929cf6c743839d590aead3f9ca9b05b2b34207ea70c0be6be1ea6e0f18d3",
+    "studio/src/components/hmi-tesla/assets.tsx": "7c35f986d3b409b4ab16c6b16dfaec766fc5304fe8b0afa5d5d75d81ff361410",
+    "studio/src/components/core/CockpitHmi.tsx": "82a34564077526d0abbb5bbdacc9c7e6e52f528f90155cdb1647bbc4a2ef984b",
+    "studio/src/components/core/RearVideo.tsx": "6de74f4e07840a2debe5b67a9feac804c55062c1f6b0424da5bad9a0f8909635",
+    "studio/src/components/core/HmiChrome.tsx": "73143c1278b0e3b9555635407e39779c190e16924df3d23125c402523adf5b69",
+    "studio/src/components/core/VideoReplay.tsx": "6e12246835ac90a320e8473f5124ca2d44fca907554b83bc72d634c50c670b1f",
+    "studio/src/components/core/FlowCanvas.tsx": "568e8a44979617a96bdbbfb778f7c9b69a2217663ef723186ec51e06c92cce3a",
+    "studio/src/components/core/VehicleSimulator.tsx": "fb0e76ede02fb8424743129ac94ecb74c4e66e671053aef32350f5eef04a8641",
+    "studio/src/components/core/SimulationRunReport.tsx": "e51176975ea1a4982d280b87f8cdf17d0229a1bb6a43b8a23e2617f8ee884746",
+    "studio/src/components/core/SimulationChatSession.tsx": "9c52cd390990d2aa9e27dba43981f30a6f2f56894f60385f2fbba60b23092037",
+    "studio/src/components/core/ModelTestPanel.tsx": "bc28d978b7c8b0c924a94dd347b41720b32194237aac38a3db550db60e5d5439",
+    "studio/src/components/core/CockpitAssistant.tsx": "45c1df2d8b4fc5a48623c367a3816f329bfc4571bd382654668f08aee9a632bd",
+    "studio/src/components/core/WorkflowLayoutControls.tsx": "9275fd2bc3f1ce68c603df668ffc4ccb423e3b4a91bb07c945f321de7ce4a192",
+    "studio/src/components/core/SimulationInputPanel.tsx": "e3bd1baecc5db2fcc65fe6d47adb8b3bdad1fb11551fc292b18c37b7c5ce2db5",
+    "studio/src/components/core/NodeContextMenu.tsx": "e86016f37b80c2b03f8480b151cc3fa5c350cc6e8e54ccbf24213818eb638e67",
+    "studio/src/components/nodes/HmiControlEditor.tsx": "b7879fc7544d11e62215941d7e56e19ba1c127dcce58f894fa71910045faba14",
+    "studio/src/components/nodes/FallbackNode.tsx": "3dad487fb454dfb108da2e6b1ce7a4011a56344eef1ec2f650a7068ec9be65e0",
+    "studio/src/components/nodes/RecognitionNode.tsx": "0949b5b2cae3d947c9a3e3178020d882d855c9dccabfec6990704de2d3247ded",
+    "studio/src/components/nodes/FlowNodes.tsx": "8609fad015156c13e2cd73394e943eab517c9d78837d2dc60eb9e8c2ae4d5fe4",
+    "studio/src/components/nodes/InteractionNode.tsx": "27d2efd071ce374842bb6adcca38ec6eb2c3c272406e1d1719e0bc01f84ae72e",
+    "studio/src/components/nodes/DataNode.tsx": "977cb5d9418a2af8dfd9b0a4110a063556bf2d727e109dce2b1d86f53f7284a1",
+    "studio/src/components/nodes/OpenClawNode.tsx": "dd0e2398e1e023617c93ba5acf809bc5d56f4cbad202600a91df628881202234",
+    "studio/src/components/nodes/EventLogNode.tsx": "8cb6d278e3d7c93a4709903d47eef00c7236f7b3b7a4bd857c50da7d1d0e54ce",
+    "studio/src/components/nodes/CatalogModelNode.tsx": "50c9335032ff6822ab42f5df4c11f7cf6d2b1d4f3513a88e36b7140a7773001d",
+    "studio/src/components/nodes/ToolNode.tsx": "fd9b4b0d73627e88a82b04a62f00d11643b2e584d2cf7503615c4517146f692d",
+    "studio/src/components/nodes/CockpitAlertNode.tsx": "9da393a1589e1b66879b9b9a9b0281415f12e9ab4577073638d3c0465c482625",
+    "studio/src/components/nodes/NodeStatusDecorators.tsx": "af1000d97938512131fbe8532609da6b103a5d6c858d0be447467f85d249f624",
+    "studio/src/components/nodes/SystemInputNode.tsx": "8653b5e1b3500a7d8988856071aff3f505f6cd79406666e6f4a6d887c3aaead7",
+    "studio/src/components/nodes/LogicNode.tsx": "2912288158f1032ee764a57578c5eebac0d522fbe28f698ab85d2353ec7927ed",
+    "studio/src/components/nodes/VideoDisplayNode.tsx": "43bc9538e3df9a439dac7df2bff8d29bc08725325f94a15bed20d195ccf7f188",
+    "studio/src/components/nodes/LLMNode.tsx": "87c8008f72b71bf16884b5f9814f4bd5c758a75be8dbaf44d9e161f8bbb9a5e9",
+    "studio/src/components/nodes/MemoryNode.tsx": "19f14ba73fd70db7835ecc9357afa88d509bb09cb57b66f380ffba47773df1b0",
+    "studio/src/components/nodes/nodeStatus.ts": "ce6a94d96f48c8d282be651427d972d041761fb740007e81fa8918b04bf75f8a",
+    "studio/src/components/nodes/IONode.tsx": "e1f64534e7b531a73e402ac2c6b42fa8fcc4c0a81723fd5cf87046026c226063",
+    "studio/src/components/nodes/RiskMonitorNode.tsx": "23f98c9b7fd3c297de4212aa69ab30cfda4cece875f4d35bf7c8a60cfe3910c6",
+    "studio/src/components/nodes/CarControlNode.tsx": "a96787db2a2af2e106a8d1576c28fc8c8880225fa01219a51e470db2fa3423f1",
+    "studio/src/components/layout/ScenarioSpecPanel.tsx": "6c03e37b8b9e72dac28f1ea1e996ebdf633871b2ad3e5ebeebe61dfdb7b7cca6",
+    "studio/src/components/layout/CatalogChrome.tsx": "05e1db3663326491b2b933029e9197dc1f51ac0e0922f4937d2569c7c8033366",
+    "studio/src/components/layout/CategoryLabel.tsx": "596225bd970d6ea24ee1c82cb8bed2bdc9cca83343a78c31f0b7fcf835f484c5",
+    "studio/src/components/layout/AuthoringModelPicker.tsx": "37e40f56dfaf4da9735ad80552beb01b4c53a60d909ee3c9e134ee01a5231d28",
+    "studio/src/components/layout/McpCatalogPanel.tsx": "3e6dd38472648db5c11ce93946abed76bd6ec8e359ca9a2a9bf92c66bf777ef5",
+    "studio/src/components/layout/IconNav.tsx": "f7c09c9d3aa311feacd71cd011717bf81a9b9978af738556e598960b47c7897a",
+    "studio/src/components/layout/AIModelCatalog.tsx": "efb541df4e5b9a09920902ad39762a653fe04eba896cafce02792f9230948fe1",
+    "studio/src/components/layout/PropertyPanel.tsx": "a326e45eae28648bbc394efaa726b91f3200b0b8ecebae0ef613b967ef84f95f",
+    "studio/src/components/layout/FlowCapabilityEditor.tsx": "f7b7aafb7660b9a223309e5d02f95ec080c846ff27da80106b7f5843fa911ae7",
+    "studio/src/components/layout/CapabilityDetails.tsx": "e2c9695eafa99fc5afc72a62e86df917271e411c66a1a95502de7679c5942a3f",
+    "studio/src/components/layout/ProjectLibraryPanel.tsx": "f2fa6616066873f1a90ecfba59c582be8786aa8d259324e8ace0bdeee8918eea",
+    "studio/src/components/layout/MonitorPanel.tsx": "e0c886a1d2752eae27c1bc505f1b5cc3cb44ef674c73370099093397b44d3e72",
+    "studio/src/components/layout/DeleteProjectButton.tsx": "4f0c0cbca11dc98f6c92e978eff2517186509f5351410cd389f980c652f10446",
+    "studio/src/components/layout/InteractionEditor.tsx": "cf9133e84bfdc808790c5398ed7709d6ed5e2a8fb8b46cd9d8dd1e8eded42d68",
+    "studio/src/components/layout/SettingsPanel.tsx": "0d963842a15202df6d498432588aff092cad7db6b3a1ea074fec156baf1d9dbd",
+    "studio/src/components/layout/DiagnosticPanel.tsx": "88273948e7ae7e27e5ad3166c896f7970da38b4545ccab13d8c8031e72a59195",
+    "studio/src/components/layout/NavigationPanel.tsx": "2591d165d3cc906fd9a3333f907094d1aad15e9e596b42096008233963d4679c",
+    "studio/src/components/layout/ReplyActivity.tsx": "f31eef575a4f0e0635cfc34296e95ec13422e0db9abc81c7e9151286e9023492",
+    "studio/src/components/layout/NodeCapabilityInspector.tsx": "10332b03b7c08aa1fcc9c504bbef9de2801ceb43bc31f32b2618b68ae89b95c6",
+    "studio/src/components/layout/ChildSafetySimulationPanel.tsx": "8a91117c60f503829a3290aa06407a1a472beb50835193ff38bacafeb0c028dd",
+    "studio/src/components/layout/ChatPanel.tsx": "6d38810c87a849037b22512c135666c457fad65eccd86e6ca023b345f6748081",
+    "studio/src/components/layout/Sidebar.tsx": "0d1472ad703ebbf75e699810bc633ea0a1e98cbf195784a3e3d917428977fd57",
+    "studio/src/components/layout/McpArgumentsEditor.tsx": "fdc78a9746b2dc2886787e0b32fda7ae8e44be8f6e36b6f006f5804d7c1c6f48",
+    "studio/src/components/layout/SceneLibraryPanel.tsx": "fd7a118a33abbff14650e0d354acb9a1562757bd44d149f098e841b0cfef2b3d",
+    "studio/src/components/layout/MapStoryboardPanel.tsx": "eaa172789e89469ac16cbcbd9861b1206bad0f09d391102afdb1c2e2f90bbbad",
+    "studio/src/components/backgrounds/Topography.tsx": "20395e285862256418208611b840f14336a0d418fd7c564856e2e1a0722e5b4c",
+    "studio/src/components/backgrounds/Prism.tsx": "73553421ab1805ae1fd6756bfd1c37cd7b6a0b35448000ab00f87b8108fc7d56",
+    "studio/src/components/avatar/HmiAssistantAvatar.tsx": "215df97f497958c04370a699174bfc3046a0e975254237ec3ac2e5bd2dc13a5d",
+    "studio/src/components/avatar/BloubAvatar.tsx": "b66b3fb7137bdffcbb72b31c261b55d0d474ad1d959e33192dfe1ac801b0711a",
+    "studio/src/components/avatar/avatarPlayback.ts": "7fba912cb6deb8f02bd0da24ddc30c28847dd3e67553ee16a70268c4ff074b12",
+    "studio/src/components/text/Shuffle.tsx": "5e6c6da234686f02f5762141aa31ef9b99cfa8864361fe87f21e5da5eed8c10e",
+    "studio/src/components/spatial/SpatialScene.tsx": "5febdb53da2265c5d05cb78f3e05d0c60cf1b2a74528cd99cdb38e7d5d999e60",
+    "studio/src/components/spatial/HmiCarStage.tsx": "b3a18a7f38335f5a7ec5e2776ff39014b4e46716ea6d9dd9a55fdbb442388e9d",
+    "studio/src/components/wizards/SkillLibrary.tsx": "82ade37d6698433735d4bf16acc18323e503a752a21d7d1536ed0bdbb89f1a87",
+    "studio/src/components/wizards/ScenarioSelector.tsx": "dc3246c0293257ee8143eb70a09cd7acdb0f9c237dca8227211571c8d599c923",
+    "studio/src/components/wizards/DeploymentWizard.tsx": "88d0c515a5c79c4bb1b2f1a4d70d64fc09a277f0017008a67adc3ee516bdd7a4",
+    "studio/src/components/wizards/ProjectLoadDialog.tsx": "e2751f739e4a6f1b3325bf6440296d6e1e037042419c53254e64e198af6068fe",
+    "studio/src/components/wizards/ModelRegistry.tsx": "49f307677afa5bdb68ffe6b3e9c57f1466b70bb4070c270f98d06d1c5256215d",
+    "studio/src/components/pages/WorkspacePage.tsx": "ed83fdbc50f99519f6c721cb9bd2d1856baa91d1e19127625d42dbac1801ee15",
+    "studio/src/components/pages/DeveloperDocsPage.tsx": "cfb556aae5324646c2ac7ff057ed4228e01c9594fc9a8190a3ebe6db899ff995",
+    "studio/src/components/pages/AvatarPreviewPage.tsx": "de84a36d1d37457228916898f7d60555993db4b8f284b0f8f7dad14f7631e903",
+    "studio/src/components/pages/HomePage.tsx": "1f5e2ccb9984fb4ca9627efd3722dfea112b4f63fe9fc2a1e696d031cea64122",
+    "studio/src/vendor/bloub/face.ts": "f9ddf7f750b101dbf6fa29acc95fe5fbdeec41c96b2873b1a844df2b5c1bd8c8",
+    "studio/src/vendor/bloub/profiles.ts": "62dc55bc860b9e2b1f7a43168cee8738b68b42bf4d07f668d32984ee886f02d3",
+    "studio/src/vendor/bloub/skins.ts": "2fa0f296e8a49b7b81458eebb98b6ecb44d1073bdc815a46e7846819b743b3c3",
+    "studio/src/vendor/bloub/states.ts": "7b67bfc4ee95011225a2cef542866dacde0a1c044a56f174bee4173b82cec207",
+    "studio/src/vendor/bloub/decor.ts": "6c300f8aaa7d2f95c13b35993753b0542779528d16bd8e1d01507e467fe52d04",
+    "studio/src/vendor/bloub/sha256.json": "74dac396176f0dbfecdacfd04ec75158e6a3dd755f64b8cf6264a92b42ae756a",
+    "studio/src/vendor/bloub/math.ts": "736be559b961109c3ca2a4c88d7992e99ceaff46450a522d47e596c1def99c0f",
+    "studio/src/vendor/bloub/shape.ts": "72020197e3ff117487ed670d915dfb3297b8034f7e9a803f573f15b3dd41d44e",
+    "studio/src/vendor/bloub/engine.ts": "d824c715b6ec38b241fc61ae2ac516d7c1623f9603f88942b4585cdd9307e638",
+    "studio/src/vendor/bloub/cycles.ts": "7567aaecf000fa8dce5900617ec64a4537520a3329c62a67c81526d4e25ed86c",
+    "studio/src/vendor/bloub/expressions.ts": "66c5562afcf376c7fde0c83b6c9cc953f1313d9e2f910e2b94fd24098aa52ae5",
+    "studio/src/vendor/bloub/eyefit.ts": "8da411d7643c24f383d2d994a4668e43292c9810a6f63c257dbfd13f61284e9b",
+    "studio/src/vendor/bloub/repere.ts": "2f74419387868a13c2f887a714c7442b130753d938732d91f39905f39ab2030e",
+    "studio/scripts/inspect-test-plan.mjs": "23183d3d6845c0b93d6076462536423c77c6661bf4981ba9f2e9dc3b68a68992",
+    "backend/app/agents/hermes_authoring.md": "13e8b52fc6efbb5834211a74126b8e29eccc939c1221837c8c7a4de1c50a9774"
+  },
+  "frozen_verified": {
+    "count": 271,
+    "changed": []
+  },
+  "post_experiment_changes": {
+    "backend/app/services/authoring_session.py": "4b90b859bfa80e0fb78693b4cf1b7a34f0a81f33ab48703ab1a7e9185a4c408c",
+    "studio/src/domain/assertionContract.ts": "3bb27fb665655cacc6c9a8c89befb82d605242148bfffce4f37178a82d4ee533"
+  },
+  "preflight_comparison": [
+    {
+      "file": "A-Claude-1.json",
+      "same": true,
+      "frozen": {
+        "errors": [],
+        "warnings": [
+          {
+            "category": "assertion",
+            "code": "PLAN_WAITING_PATH",
+            "path": "plan.cases[0].steps[1]",
+            "node_id": "wait_school",
+            "message": "plan.cases[0].steps[1]（有记忆_临近放学_走最短时间路线）：路径可能到达等待节点 wait_school（eventName=message，prompt=没有找到接送记忆，请告诉我孩子的学校名称）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+          }
+        ]
+      },
+      "final": {
+        "errors": [],
+        "warnings": [
+          {
+            "category": "assertion",
+            "code": "PLAN_WAITING_PATH",
+            "path": "plan.cases[0].steps[1]",
+            "node_id": "wait_school",
+            "message": "plan.cases[0].steps[1]（有记忆_临近放学_走最短时间路线）：路径可能到达等待节点 wait_school（eventName=message，prompt=没有找到接送记忆，请告诉我孩子的学校名称）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+          }
+        ]
+      }
+    },
+    {
+      "file": "A-Claude-2.json",
+      "skipped": "no_plan"
+    },
+    {
+      "file": "A-Claude-3.json",
+      "same": true,
+      "frozen": {
+        "errors": [],
+        "warnings": [
+          {
+            "category": "assertion",
+            "code": "PLAN_WAITING_PATH",
+            "path": "plan.cases[1].steps[1]",
+            "node_id": "wait_seat_sensor",
+            "message": "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_seat_sensor（eventName=seat_sensor_detected，prompt=前往学校中，等待儿童座席传感器信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+          },
+          {
+            "category": "assertion",
+            "code": "PLAN_WAITING_PATH",
+            "path": "plan.cases[1].steps[1]",
+            "node_id": "wait_door_event",
+            "message": "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_door_event（eventName=rear_door_opened，prompt=等待后排车门开启信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+          },
+          {
+            "category": "assertion",
+            "code": "PLAN_WAITING_PATH",
+            "path": "plan.cases[1].steps[1]",
+            "node_id": "wait_seat_sensor",
+            "message": "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_seat_sensor（eventName=seat_sensor_detected，prompt=前往学校中，等待儿童座席传感器信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+          },
+          {
+            "category": "assertion",
+            "code": "PLAN_WAITING_PATH",
+            "path": "plan.cases[1].steps[1]",
+            "node_id": "wait_door_event",
+            "message": "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_door_event（eventName=rear_door_opened，prompt=等待后排车门开启信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+          }
+        ]
+      },
+      "final": {
+        "errors": [],
+        "warnings": [
+          {
+            "category": "assertion",
+            "code": "PLAN_WAITING_PATH",
+            "path": "plan.cases[1].steps[1]",
+            "node_id": "wait_seat_sensor",
+            "message": "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_seat_sensor（eventName=seat_sensor_detected，prompt=前往学校中，等待儿童座席传感器信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+          },
+          {
+            "category": "assertion",
+            "code": "PLAN_WAITING_PATH",
+            "path": "plan.cases[1].steps[1]",
+            "node_id": "wait_door_event",
+            "message": "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_door_event（eventName=rear_door_opened，prompt=等待后排车门开启信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+          },
+          {
+            "category": "assertion",
+            "code": "PLAN_WAITING_PATH",
+            "path": "plan.cases[1].steps[1]",
+            "node_id": "wait_seat_sensor",
+            "message": "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_seat_sensor（eventName=seat_sensor_detected，prompt=前往学校中，等待儿童座席传感器信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+          },
+          {
+            "category": "assertion",
+            "code": "PLAN_WAITING_PATH",
+            "path": "plan.cases[1].steps[1]",
+            "node_id": "wait_door_event",
+            "message": "plan.cases[1].steps[1]（已有记忆-直接读取无需询问）：路径可能到达等待节点 wait_door_event（eventName=rear_door_opened，prompt=等待后排车门开启信号）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+          }
+        ]
+      }
+    },
+    {
+      "file": "A-MiniMax-1.json",
+      "skipped": "no_plan"
+    },
+    {
+      "file": "C-Claude-1.json",
+      "same": true,
+      "frozen": {
+        "errors": [],
+        "warnings": []
+      },
+      "final": {
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "file": "C-MiniMax-1.json",
+      "same": true,
+      "frozen": {
+        "errors": [],
+        "warnings": []
+      },
+      "final": {
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "file": "C-MiniMax-2.json",
+      "same": true,
+      "frozen": {
+        "errors": [],
+        "warnings": []
+      },
+      "final": {
+        "errors": [],
+        "warnings": []
+      }
+    }
+  ],
+  "protected_before": {
+    "backend/projects/朵朵生日航海 · 持续互动.json": "87e5bf687c4360372d3ff15d6859283ccb912373f617e195cda5eefdc799fae1",
+    "backend/projects/儿童关怀.json": "7aeabfd401d50b7934fc9701ae63ef715a61d15a85b8f7a056577ede68a6df97",
+    "backend/projects/接小孩放学.json": "87510782e089a2938b8328a8b21649a5737ed162b0cc68e240dd0ddf789fd2de",
+    "backend/projects/selfie-hmi-mock-dev48.json": "f568920c8b49eef5f537462836bddb4217011ca40e13ae496d52d3b385181dc6",
+    "backend/projects/general-birthday-dev56.json": "55d9eefdfdd373cbec1a48c687a5b57aa3d28a656418606cff62e279270237a9",
+    "backend/config/mcp-servers.mock.json": "ef97c56f425af7b3d8864afe0e13bcd98689c9ce1b42466f6d1216683aaee5a7",
+    "backend/config/mcp-servers.example.json": "cebe237f569cfc95d2e82541e38b03c6dc0b7ff796ebf7dc5c6d333e7465f7d3",
+    ".demo-runtime/orchestration-engine.json": "0f8be661887bdeee6454d94c51e8b2826f933eb4c390e6cfe5cc79ba20e4af0a"
+  },
+  "protected_after": {
+    "backend/projects/朵朵生日航海 · 持续互动.json": "87e5bf687c4360372d3ff15d6859283ccb912373f617e195cda5eefdc799fae1",
+    "backend/projects/儿童关怀.json": "7aeabfd401d50b7934fc9701ae63ef715a61d15a85b8f7a056577ede68a6df97",
+    "backend/projects/接小孩放学.json": "87510782e089a2938b8328a8b21649a5737ed162b0cc68e240dd0ddf789fd2de",
+    "backend/projects/selfie-hmi-mock-dev48.json": "f568920c8b49eef5f537462836bddb4217011ca40e13ae496d52d3b385181dc6",
+    "backend/projects/general-birthday-dev56.json": "55d9eefdfdd373cbec1a48c687a5b57aa3d28a656418606cff62e279270237a9",
+    "backend/config/mcp-servers.mock.json": "ef97c56f425af7b3d8864afe0e13bcd98689c9ce1b42466f6d1216683aaee5a7",
+    "backend/config/mcp-servers.example.json": "cebe237f569cfc95d2e82541e38b03c6dc0b7ff796ebf7dc5c6d333e7465f7d3",
+    ".demo-runtime/orchestration-engine.json": "0f8be661887bdeee6454d94c51e8b2826f933eb4c390e6cfe5cc79ba20e4af0a"
+  },
+  "protected_unchanged": true,
+  "pip_freeze_unchanged": true,
+  "pip_freeze_sha256": "8a2056562ccb8ce6e2770255061529f277fb3e65df19ba635a279c6132959acd",
+  "sdk_commit": "d0288be5b3330d2442e3907185b8e9d0958297bb",
+  "sdk_clean": true,
+  "tests": {
+    "backend": {
+      "total": 402,
+      "passed": 393,
+      "skipped": 9,
+      "seconds": 45.825
+    },
+    "frontend": {
+      "total": 80,
+      "passed": 78,
+      "skipped": 2
+    },
+    "typecheck": "passed",
+    "pinned_sdk_local_protocols": 4,
+    "docs": {
+      "errors": 42,
+      "warnings": 24,
+      "baseline_unchanged": true
+    },
+    "typography": {
+      "files": 148,
+      "entries": 2431,
+      "violations": 0
+    },
+    "diff_check": "passed_with_preexisting_CRLF_notice"
+  },
+  "test_dependencies": {
+    "target": "/tmp/oakegde-test-deps",
+    "installed_missing": {
+      "attrs": "26.1.0",
+      "jsonschema": "4.26.0",
+      "jsonschema-specifications": "2025.9.1",
+      "referencing": "0.37.0",
+      "rpds-py": "2026.9.1"
+    },
+    "existing_reused": {
+      "typing-extensions": "4.16.0"
+    }
+  },
+  "project_file_set_unchanged": true
+}

@@ -1,0 +1,7 @@
+{
+  "studio/src/components/avatar/HmiAssistantAvatar.tsx": "abb080ad25dc46dd58e29d28abefbd2fb983353b0ee260a1a314ea13eccd1c7b",
+  "studio/src/components/core/CockpitAssistant.tsx": "eeb5d6a93c104d5841ffe7e49598bdc49d19d34cea1b9f31069adf002ec1b574",
+  "studio/src/components/core/cockpit-assistant.css": "f511acbb60b837381937e5f251ee8608ebcb7f59db9995d1e5b1ef402d1ad2fb",
+  "studio/tests/hmi-assistant-avatar.dom.tsx": "6ad61793c04d026ce9188eed14788b9052ce77c7835596c18a7bad3220c9dc4b",
+  "studio/scripts/test-hmi-assistant-avatar.mjs": "6dc49e0254e20126b47aea13f57622c128a13a533d6c9c0fcd18a495e91401ea"
+}

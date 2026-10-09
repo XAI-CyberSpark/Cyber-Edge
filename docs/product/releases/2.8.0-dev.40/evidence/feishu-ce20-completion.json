@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "content": "<fragment mode=\"keyword\" keyword=\"CE-20|20、现在的这些\"><p id=\"doxcnIDlVAPcIyk0sETVBAR7Q7g\"><del><span text-color=\"rgb(100,37,208)\">20、现在的这些还是有点挤，mcp等文本都换行了，删除mcp 右侧的下拉箭头，如果文本太长 比如浏览器自动化超出了容器限制就采用，让超出的部分渐隐</span></del></p><p id=\"doxcnbMWMFT5tPLnjdogeF5qsqe\"><span text-color=\"rgb(100,37,208)\">已完成 · CE-20 · 2.8.0-dev.40：移除 MCP 右侧下拉箭头，点击 MCP 仍显示全部服务和子分类；分类名称统一单行，超出宽度时末尾渐隐，短名称保持完整，悬停可查看全名。数量保留靠右且不受渐隐影响；窄面板沿用隐藏数量的规则。1920px 与390px实际页面检查、分类选择、8组回归及构建通过。仅界面变更，未提交、未发布。</span></p></fragment>",
+      "document_id": "DBiPdF7ExoyJMcx0l2mcEgYenJh",
+      "revision_id": 673
+    }
+  },
+  "_notice": {
+    "update": {
+      "command": "lark-cli update",
+      "current": "1.0.95",
+      "latest": "1.0.96",
+      "message": "lark-cli 1.0.96 available, current 1.0.95, run: lark-cli update"
+    }
+  }
+}

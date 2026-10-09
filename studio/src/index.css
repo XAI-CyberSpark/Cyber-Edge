@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --canvas-background: 0 0% 100%;
+    --canvas-dot: 215 28% 87%;
+    --foreground: 215.29 16.83% 39.61%;
+    --card: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --primary: 246 64% 58%;
+    --primary-foreground: 0.00 0.00% 100.00%;
+    --secondary: 0 0% 100%;
+    --muted: 0 0% 100%;
+    --muted-foreground: 215.29 14.41% 46.27%;
+    --accent: 246 75% 96%;
+    --destructive: 0.00 45.00% 52.94%;
+    --destructive-foreground: 0.00 0.00% 100.00%;
+    --divider: 220 15% 95.44%;
+    --border: 210.00 17.14% 86.27%;
+    --input: 210.00 17.14% 86.27%;
+    --ring: 246 64% 58%;
+    --chart-1: 95.12 75.46% 31.96%;
+    --chart-2: 210.00 28.04% 41.96%;
+    --chart-3: 253.85 27.20% 53.14%;
+    --chart-4: 33.27 55.56% 38.82%;
+    --chart-5: 0.00 45.00% 52.94%;
+    --card-foreground: 215.29 16.83% 39.61%;
+    --popover-foreground: 215.29 16.83% 39.61%;
+    --secondary-foreground: 215.29 16.83% 39.61%;
+    --accent-foreground: 215.29 16.83% 39.61%;
+    --radius: 0.75rem;
+    --font-studio: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+    --font-code: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  .dark {
+    --background: 240.00 1.64% 11.96%;
+    --canvas-background: 240 2% 12%;
+    --canvas-dot: 215 12% 25%;
+    --foreground: 212.73 26.83% 83.92%;
+    --card: 240.00 2.13% 9.22%;
+    --popover: 240.00 3.90% 15.10%;
+    --primary: 246 85% 78%;
+    --primary-foreground: 240.00 2.13% 9.22%;
+    --secondary: 240.00 3.61% 16.27%;
+    --muted: 240.00 3.61% 16.27%;
+    --muted-foreground: 215.29 19.77% 66.27%;
+    --accent: 246 28% 23%;
+    --destructive: 0.00 64.71% 80.00%;
+    --destructive-foreground: 240.00 2.13% 9.22%;
+    --divider: 240.00 5.60% 24.51%;
+    --border: 240.00 5.60% 24.51%;
+    --input: 240.00 4.90% 28.04%;
+    --ring: 246 85% 78%;
+    --chart-1: 130.17 47.97% 75.88%;
+    --chart-2: 210.00 100.00% 78.04%;
+    --chart-3: 247.06 100.00% 90.00%;
+    --chart-4: 36.15 69.64% 78.04%;
+    --chart-5: 0.00 64.71% 80.00%;
+    --card-foreground: 212.73 26.83% 83.92%;
+    --popover-foreground: 212.73 26.83% 83.92%;
+    --secondary-foreground: 212.73 26.83% 83.92%;
+    --accent-foreground: 212.73 26.83% 83.92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Structural dividers must work without regenerating Tailwind theme utilities. */
+.workspace-divider { border-color: hsl(var(--divider)); }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-studio);
+}
+
+.react-flow__edge-path,
+.react-flow__connection-path {
+  stroke: hsl(var(--muted-foreground)) !important;
+  stroke-width: 1.5px !important;
+  stroke-opacity: 0.6 !important;
+}
+
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge.animated .react-flow__edge-path {
+  stroke: hsl(var(--primary)) !important;
+  stroke-opacity: 0.8 !important;
+}
+
+.react-flow__arrowhead path,
+.react-flow__arrowhead polyline {
+  stroke: hsl(var(--muted-foreground)) !important;
+  fill: hsl(var(--muted-foreground)) !important;
+  opacity: 0.6 !important;
+}
+
+/* Our custom I/O cards use React Flow's built-in type names. Remove the
+   framework's default white wrapper so the card itself is the only frame. */
+.react-flow__node-input,
+.react-flow__node-output {
+  width: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background-color: transparent !important;
+}
+
+/* Canvas control island: align React Flow's controls with the dark Studio UI. */
+.canvas-control-island.react-flow__controls {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+  overflow: visible !important;
+  padding: 5px !important;
+  border: 1px solid hsl(var(--border) / 0.9) !important;
+  border-radius: 14px !important;
+  background: linear-gradient(145deg, hsl(var(--card) / 0.98), hsl(var(--secondary) / 0.9)) !important;
+  box-shadow: 0 14px 32px rgb(0 0 0 / 0.28), 0 0 0 1px rgb(255 255 255 / 0.035) inset !important;
+  backdrop-filter: blur(12px);
+}
+
+.canvas-control-island.react-flow__controls button {
+  position: relative;
+  width: 34px !important;
+  height: 34px !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 9px !important;
+  background: transparent !important;
+  color: hsl(var(--muted-foreground)) !important;
+  box-shadow: none !important;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease !important;
+}
+
+.canvas-control-island.react-flow__controls button:hover:not(:disabled) {
+  background: hsl(var(--primary) / 0.15) !important;
+  color: hsl(var(--primary)) !important;
+  transform: translateY(-1px);
+}
+
+.canvas-control-island.react-flow__controls button:focus-visible {
+  outline: 2px solid hsl(var(--primary) / 0.85) !important;
+  outline-offset: 2px !important;
+}
+
+.canvas-control-island.react-flow__controls button:disabled {
+  color: hsl(var(--muted-foreground) / 0.35) !important;
+}
+
+.canvas-control-island.react-flow__controls button svg {
+  width: 16px !important;
+  height: 16px !important;
+  fill: currentColor !important;
+}
+
+.canvas-control-island.react-flow__controls button:nth-of-type(3) {
+  margin-top: 5px !important;
+}
+
+.canvas-control-island.react-flow__controls button:nth-of-type(3)::before {
+  position: absolute;
+  top: -4px;
+  right: 4px;
+  left: 4px;
+  height: 1px;
+  content: '';
+  background: hsl(var(--border) / 0.85);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Quiet system typography for UI; plain monospace for code and logs. */
+button, input, textarea, select { font-family: inherit; }
+code, pre { font-family: var(--font-code); }
+::selection { background: hsl(var(--primary) / .28); }

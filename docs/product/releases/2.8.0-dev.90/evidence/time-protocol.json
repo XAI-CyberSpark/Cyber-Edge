@@ -1,0 +1,151 @@
+{
+  "before": {
+    "server_id": "catalog-time",
+    "package": "mcp-server-time",
+    "version": "2026.8.18",
+    "status": "on_first_run",
+    "usage_note": "无需凭证。读取运行主机的时钟并进行时区换算；时间使用24小时制，时区使用IANA名称。",
+    "tools": [
+      {
+        "name": "get_current_time",
+        "title": "查询当前时间",
+        "parameters": [
+          {
+            "name": "timezone",
+            "type": "string",
+            "required": true,
+            "description": "IANA时区名称，例如 Asia/Shanghai 或 UTC"
+          }
+        ]
+      },
+      {
+        "name": "convert_time",
+        "title": "时区换算",
+        "parameters": [
+          {
+            "name": "source_timezone",
+            "type": "string",
+            "required": true,
+            "description": "原始时区，例如 Asia/Shanghai"
+          },
+          {
+            "name": "time",
+            "type": "string",
+            "required": true,
+            "description": "待换算时间，格式为 HH:MM，例如 09:30"
+          },
+          {
+            "name": "target_timezone",
+            "type": "string",
+            "required": true,
+            "description": "目标时区，例如 Europe/London"
+          }
+        ]
+      }
+    ]
+  },
+  "discovered": [
+    {
+      "name": "get_current_time",
+      "description": "Get current time in a specific timezone",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "timezone": {
+            "type": "string",
+            "description": "IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'Asia/Shanghai' as local timezone if no timezone provided by the user."
+          }
+        },
+        "required": [
+          "timezone"
+        ]
+      },
+      "output_schema": null,
+      "server_id": "catalog-time",
+      "allow_trials": false
+    },
+    {
+      "name": "convert_time",
+      "description": "Convert time between timezones",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "source_timezone": {
+            "type": "string",
+            "description": "Source IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'Asia/Shanghai' as local timezone if no source timezone provided by the user."
+          },
+          "time": {
+            "type": "string",
+            "description": "Time to convert in 24-hour format (HH:MM)"
+          },
+          "target_timezone": {
+            "type": "string",
+            "description": "Target IANA timezone name (e.g., 'Asia/Tokyo', 'America/San_Francisco'). Use 'Asia/Shanghai' as local timezone if no target timezone provided by the user."
+          }
+        },
+        "required": [
+          "source_timezone",
+          "time",
+          "target_timezone"
+        ]
+      },
+      "output_schema": null,
+      "server_id": "catalog-time",
+      "allow_trials": false
+    }
+  ],
+  "current": {
+    "source": "mcp",
+    "server_id": "catalog-time",
+    "tool_name": "get_current_time",
+    "data": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"timezone\": \"Asia/Shanghai\",\n  \"datetime\": \"2026-10-05T19:25:24+08:00\",\n  \"day_of_week\": \"Monday\",\n  \"is_dst\": false\n}"
+      }
+    ],
+    "text": "{\n  \"timezone\": \"Asia/Shanghai\",\n  \"datetime\": \"2026-10-05T19:25:24+08:00\",\n  \"day_of_week\": \"Monday\",\n  \"is_dst\": false\n}",
+    "is_error": false
+  },
+  "converted": {
+    "source": "mcp",
+    "server_id": "catalog-time",
+    "tool_name": "convert_time",
+    "data": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"source\": {\n    \"timezone\": \"Asia/Shanghai\",\n    \"datetime\": \"2026-10-05T09:30:00+08:00\",\n    \"day_of_week\": \"Monday\",\n    \"is_dst\": false\n  },\n  \"target\": {\n    \"timezone\": \"UTC\",\n    \"datetime\": \"2026-10-05T01:30:00+00:00\",\n    \"day_of_week\": \"Monday\",\n    \"is_dst\": false\n  },\n  \"time_difference\": \"-8.0h\"\n}"
+      }
+    ],
+    "text": "{\n  \"source\": {\n    \"timezone\": \"Asia/Shanghai\",\n    \"datetime\": \"2026-10-05T09:30:00+08:00\",\n    \"day_of_week\": \"Monday\",\n    \"is_dst\": false\n  },\n  \"target\": {\n    \"timezone\": \"UTC\",\n    \"datetime\": \"2026-10-05T01:30:00+00:00\",\n    \"day_of_week\": \"Monday\",\n    \"is_dst\": false\n  },\n  \"time_difference\": \"-8.0h\"\n}",
+    "is_error": false
+  },
+  "invalid_arguments": [
+    {
+      "tool": "get_current_time",
+      "arguments": {
+        "timezone": 42
+      },
+      "rejected": "MCP参数不符合工具Schema：timezone"
+    },
+    {
+      "tool": "get_current_time",
+      "arguments": {
+        "timezone": "Not/AZone"
+      },
+      "rejected": "MCP工具返回失败：Error processing mcp-server-time query: Invalid timezone: 'No time zone found with key Not/AZone'"
+    },
+    {
+      "tool": "convert_time",
+      "arguments": {
+        "source_timezone": "UTC",
+        "time": "25:99",
+        "target_timezone": "Asia/Shanghai"
+      },
+      "rejected": "MCP工具返回失败：Error processing mcp-server-time query: Invalid time format. Expected HH:MM [24-hour format]"
+    }
+  ],
+  "reused_environment": true
+}

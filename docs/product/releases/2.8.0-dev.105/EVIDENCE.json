@@ -1,0 +1,3568 @@
+{
+  "version": "2.8.0-dev.105",
+  "runs": [
+    {
+      "run": "C-MiniMax-1",
+      "provider": "minimax",
+      "model": "MiniMax-M3",
+      "request_sha256": "fe0acad0dd8f06a903eadf1257d23d453b69d0752a47e5e8f47e64393e58f845",
+      "elapsed": 364.544,
+      "calls": 31,
+      "can_apply": false,
+      "status": "needs_changes",
+      "runtime_verified": false,
+      "nodes": 7,
+      "edges": 6,
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 0,
+        "graph_logic": 0,
+        "assertion": 13
+      },
+      "last_three_errors": [
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'fan'] equals 3，实际3；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] equals 23，实际23；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] equals 3，实际3；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+      ],
+      "errors": [
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'temp'] equals 22，实际22；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'fan'] equals 5，实际5；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'on'] equals true，实际True；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] equals 22，实际22；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] equals 5，实际5；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'temp'] equals 24，实际24；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'fan'] equals 5，实际5；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] equals 24，实际24；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] equals 5，实际5；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'temp'] equals 23，实际23；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'fan'] equals 3，实际3；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] equals 23，实际23；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] equals 3，实际3；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+      ],
+      "error_details": [
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'temp'] equals 22，实际22；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'fan'] equals 5，实际5；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'on'] equals true，实际True；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] equals 22，实际22；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] equals 5，实际5；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'temp'] equals 24，实际24；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'fan'] equals 5，实际5；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] equals 24，实际24；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] equals 5，实际5；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'temp'] equals 23，实际23；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'fan'] equals 3，实际3；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] equals 23，实际23；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] equals 3，实际3；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        }
+      ],
+      "host_finalized": false,
+      "diagnostics": {
+        "call_timeouts": 0,
+        "normalizations": 8,
+        "normalizations_by_provider": {
+          "minimax": 8
+        }
+      },
+      "candidate": "/tmp/oakegde-dev105-candidates/C-MiniMax-1.json",
+      "call_count_scope": "共享CompletionBudget次数（含入口；图内模型调用另列）",
+      "trial_count": 3,
+      "trial_model_calls": 10,
+      "trial_tool_calls": 0,
+      "patch_total": 13,
+      "patch_rejected": 5,
+      "last_failed_trial": {
+        "revision": 8,
+        "last_three_errors": [
+          "[assertion/ASSERTION_VALUE] 断言['outputs', 'decide', 'data', 'fan'] equals 3，实际3；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] equals 23，实际23；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] equals 3，实际3；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        ],
+        "is_final_revision": true
+      },
+      "static_warning_occurrences": {}
+    },
+    {
+      "run": "C-MiniMax-2",
+      "provider": "minimax",
+      "model": "MiniMax-M3",
+      "request_sha256": "fe0acad0dd8f06a903eadf1257d23d453b69d0752a47e5e8f47e64393e58f845",
+      "elapsed": 144.689,
+      "calls": 2,
+      "can_apply": false,
+      "status": "no_result",
+      "runtime_verified": false,
+      "nodes": 0,
+      "edges": 0,
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 1,
+        "graph_logic": 0,
+        "assertion": 0
+      },
+      "last_three_errors": [
+        "本轮场景编排未完成。停止阶段：需求登记前。原因：模型输出被截断。当前项目未被替换。"
+      ],
+      "errors": [
+        "本轮场景编排未完成。停止阶段：需求登记前。原因：模型输出被截断。当前项目未被替换。"
+      ],
+      "error_details": [
+        {
+          "category": "model_output",
+          "message": "本轮场景编排未完成。停止阶段：需求登记前。原因：模型输出被截断。当前项目未被替换。",
+          "classification_source": "failure_reason"
+        }
+      ],
+      "host_finalized": null,
+      "diagnostics": {},
+      "candidate": null,
+      "call_count_scope": "SDK返回的失败作者阶段api_calls；共享总数/入口调用未返回，不能补造",
+      "terminal_diagnostics": {
+        "completed": false,
+        "partial": true,
+        "failure_retryable": true,
+        "brief_registered": false,
+        "last_tool_ok": true,
+        "api_calls": 2,
+        "tool_calls": 2,
+        "failed_tool_calls": 0,
+        "revision": 0,
+        "node_count": 0,
+        "failure_reason": "truncated",
+        "last_tool": "oakegde_read_graph",
+        "stage": "before_brief",
+        "termination": "returned"
+      },
+      "trial_count": 0,
+      "trial_model_calls": 0,
+      "trial_tool_calls": 0,
+      "patch_total": 0,
+      "patch_rejected": 0
+    },
+    {
+      "run": "C-Claude-1",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5",
+      "request_sha256": "49d2a124deaa3a1cfb820daea2c02822f63aaafab2a5cf40abd05bc14b880dd4",
+      "elapsed": 234.772,
+      "calls": 17,
+      "can_apply": true,
+      "status": "preview",
+      "runtime_verified": true,
+      "nodes": 20,
+      "edges": 21,
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 0,
+        "graph_logic": 0,
+        "assertion": 0
+      },
+      "last_three_errors": [],
+      "errors": [],
+      "error_details": [],
+      "host_finalized": false,
+      "diagnostics": {
+        "call_timeouts": 0,
+        "normalizations": 0,
+        "normalizations_by_provider": {
+          "anthropic": 0
+        }
+      },
+      "candidate": "/tmp/oakegde-dev105-candidates/C-Claude-1.json",
+      "call_count_scope": "共享CompletionBudget次数（含入口；图内模型调用另列）",
+      "trial_count": 3,
+      "trial_model_calls": 0,
+      "trial_tool_calls": 0,
+      "patch_total": 3,
+      "patch_rejected": 0,
+      "last_failed_trial": {
+        "revision": 1,
+        "last_three_errors": [
+          "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] equals 24，实际23；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] equals 5，实际3；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains 制热，实际车内温度适中，已为您开启空调自动模式，温度设定为23度，保持舒适风量。；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        ],
+        "is_final_revision": false
+      },
+      "static_warning_occurrences": {}
+    },
+    {
+      "run": "C-Claude-2",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5",
+      "request_sha256": "49d2a124deaa3a1cfb820daea2c02822f63aaafab2a5cf40abd05bc14b880dd4",
+      "elapsed": 149.924,
+      "calls": 16,
+      "can_apply": true,
+      "status": "preview",
+      "runtime_verified": true,
+      "nodes": 11,
+      "edges": 12,
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 0,
+        "graph_logic": 0,
+        "assertion": 0
+      },
+      "last_three_errors": [],
+      "errors": [],
+      "error_details": [],
+      "host_finalized": false,
+      "diagnostics": {
+        "call_timeouts": 0,
+        "normalizations": 0,
+        "normalizations_by_provider": {
+          "anthropic": 0
+        }
+      },
+      "candidate": "/tmp/oakegde-dev105-candidates/C-Claude-2.json",
+      "call_count_scope": "共享CompletionBudget次数（含入口；图内模型调用另列）",
+      "trial_count": 2,
+      "trial_model_calls": 0,
+      "trial_tool_calls": 0,
+      "patch_total": 6,
+      "patch_rejected": 1,
+      "last_failed_trial": {
+        "revision": 3,
+        "last_three_errors": [
+          "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'temp'] equals 26，实际22；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "[assertion/ASSERTION_VALUE] 断言['car', 'ac', 'fan'] equals 4，实际3；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "[assertion/ASSERTION_VALUE] 断言['hmi', 'message'] contains 制热，实际检测到车内温度°C，已为您开启自动模式，目标温度22°C，风量3档。；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        ],
+        "is_final_revision": false
+      },
+      "static_warning_occurrences": {}
+    },
+    {
+      "run": "A-MiniMax-1",
+      "provider": "minimax",
+      "model": "MiniMax-M3",
+      "request_sha256": "139c310ca56c2f47d1c4b2dda395995ce7b0170dbfe69b320fc36a27b1667f37",
+      "elapsed": 246.589,
+      "calls": 34,
+      "can_apply": false,
+      "status": "needs_changes",
+      "runtime_verified": false,
+      "nodes": 29,
+      "edges": 39,
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 0,
+        "graph_logic": 1,
+        "assertion": 0
+      },
+      "last_three_errors": [
+        "候选尚未实际试跑通过。"
+      ],
+      "errors": [
+        "候选尚未实际试跑通过。"
+      ],
+      "error_details": [
+        {
+          "category": "graph_logic",
+          "message": "候选尚未实际试跑通过。",
+          "classification_source": "unclassified_final_graph_or_orchestration_issue"
+        }
+      ],
+      "host_finalized": false,
+      "diagnostics": {
+        "call_timeouts": 0,
+        "normalizations": 0,
+        "normalizations_by_provider": {
+          "minimax": 0
+        }
+      },
+      "candidate": "/tmp/oakegde-dev105-candidates/A-MiniMax-1.json",
+      "call_count_scope": "共享CompletionBudget次数（含入口；图内模型调用另列）",
+      "trial_count": 3,
+      "trial_model_calls": 6,
+      "trial_tool_calls": 0,
+      "patch_total": 17,
+      "patch_rejected": 0,
+      "last_failed_trial": {
+        "revision": 14,
+        "last_three_errors": [
+          "[graph_logic/GRAPH_EXECUTION] 节点board_check：判断条件执行失败：数据运算需要标量；修复方向：检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。",
+          "[assertion/ASSERTION_STATUS] 记忆已有且30分钟内放学→最短时间路线+上车触发舒适配置第3步：状态failed，期望not_failed；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "[graph_logic/GRAPH_EXECUTION] 节点board_check：判断条件执行失败：数据运算需要标量；修复方向：检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+        ],
+        "is_final_revision": false
+      },
+      "static_warning_occurrences": {
+        "PLAN_WAITING_PATH": 12
+      }
+    },
+    {
+      "run": "A-MiniMax-2",
+      "provider": "minimax",
+      "model": "MiniMax-M3",
+      "request_sha256": "139c310ca56c2f47d1c4b2dda395995ce7b0170dbfe69b320fc36a27b1667f37",
+      "elapsed": 413.155,
+      "calls": 32,
+      "can_apply": false,
+      "status": "needs_changes",
+      "runtime_verified": false,
+      "nodes": 28,
+      "edges": 30,
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 0,
+        "graph_logic": 1,
+        "assertion": 0
+      },
+      "last_three_errors": [
+        "候选尚未实际试跑通过。"
+      ],
+      "errors": [
+        "候选尚未实际试跑通过。"
+      ],
+      "error_details": [
+        {
+          "category": "graph_logic",
+          "message": "候选尚未实际试跑通过。",
+          "classification_source": "unclassified_final_graph_or_orchestration_issue"
+        }
+      ],
+      "host_finalized": false,
+      "diagnostics": {
+        "call_timeouts": 0,
+        "normalizations": 0,
+        "normalizations_by_provider": {
+          "minimax": 0
+        }
+      },
+      "candidate": "/tmp/oakegde-dev105-candidates/A-MiniMax-2.json",
+      "call_count_scope": "共享CompletionBudget次数（含入口；图内模型调用另列）",
+      "trial_count": 3,
+      "trial_model_calls": 1,
+      "trial_tool_calls": 0,
+      "patch_total": 11,
+      "patch_rejected": 1,
+      "last_failed_trial": {
+        "revision": 7,
+        "last_three_errors": [
+          "[assertion/ASSERTION_VALUE] 断言['nodes', 'first_run'] equals success，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "[assertion/ASSERTION_VALUE] 断言['nodes', 'read_event'] equals success，实际dormant；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "[assertion/ASSERTION_VALUE] 断言['nodes', 'first_run'] equals success，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        ],
+        "is_final_revision": false
+      },
+      "static_warning_occurrences": {
+        "PLAN_WAITING_PATH": 16
+      }
+    },
+    {
+      "run": "A-MiniMax-3",
+      "provider": "minimax",
+      "model": "MiniMax-M3",
+      "request_sha256": "139c310ca56c2f47d1c4b2dda395995ce7b0170dbfe69b320fc36a27b1667f37",
+      "elapsed": 274.936,
+      "calls": 34,
+      "can_apply": false,
+      "status": "needs_changes",
+      "runtime_verified": false,
+      "nodes": 17,
+      "edges": 23,
+      "final_error_categories": {
+        "input_contract": 0,
+        "model_output": 0,
+        "graph_logic": 0,
+        "assertion": 5
+      },
+      "last_three_errors": [
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'seat', 'vent', '1'] equals 2，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'locks', 'child'] equals True，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'final_reply'] exists None，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+      ],
+      "errors": [
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'locks', 'child'] equals True，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'seat', 'heat', '1'] equals 2，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'seat', 'vent', '1'] equals 2，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'locks', 'child'] equals True，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+        "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'final_reply'] exists None，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+      ],
+      "error_details": [
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'locks', 'child'] equals True，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'seat', 'heat', '1'] equals 2，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'seat', 'vent', '1'] equals 2，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['car', 'locks', 'child'] equals True，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        },
+        {
+          "category": "assertion",
+          "message": "实际试跑未通过；[assertion/ASSERTION_VALUE] 断言['outputs', 'final_reply'] exists None，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "classification_source": "explicit"
+        }
+      ],
+      "host_finalized": false,
+      "diagnostics": {
+        "call_timeouts": 0,
+        "normalizations": 0,
+        "normalizations_by_provider": {
+          "minimax": 0
+        }
+      },
+      "candidate": "/tmp/oakegde-dev105-candidates/A-MiniMax-3.json",
+      "call_count_scope": "共享CompletionBudget次数（含入口；图内模型调用另列）",
+      "trial_count": 2,
+      "trial_model_calls": 0,
+      "trial_tool_calls": 0,
+      "patch_total": 12,
+      "patch_rejected": 3,
+      "last_failed_trial": {
+        "revision": 9,
+        "last_three_errors": [
+          "[assertion/ASSERTION_VALUE] 断言['car', 'seat', 'vent', '1'] equals 2，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "[assertion/ASSERTION_VALUE] 断言['car', 'locks', 'child'] equals True，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。",
+          "[assertion/ASSERTION_VALUE] 断言['outputs', 'final_reply'] exists None，实际None；修复方向：比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+        ],
+        "is_final_revision": true
+      },
+      "static_warning_occurrences": {
+        "PLAN_WAITING_PATH": 6
+      }
+    }
+  ],
+  "details": [
+    {
+      "run": "C-MiniMax-1",
+      "final_typed_assertion_failures": [
+        {
+          "case": "车内35度-制冷降温",
+          "step": 0,
+          "path": [
+            "outputs",
+            "decide",
+            "data",
+            "temp"
+          ],
+          "op": "equals",
+          "expected": "22",
+          "actual": 22,
+          "actual_missing": false,
+          "expected_type": "str",
+          "actual_type": "int"
+        },
+        {
+          "case": "车内35度-制冷降温",
+          "step": 0,
+          "path": [
+            "outputs",
+            "decide",
+            "data",
+            "fan"
+          ],
+          "op": "equals",
+          "expected": "5",
+          "actual": 5,
+          "actual_missing": false,
+          "expected_type": "str",
+          "actual_type": "int"
+        },
+        {
+          "case": "车内35度-制冷降温",
+          "step": 0,
+          "path": [
+            "outputs",
+            "decide",
+            "data",
+            "on"
+          ],
+          "op": "equals",
+          "expected": "true",
+          "actual": true,
+          "actual_missing": false,
+          "expected_type": "str",
+          "actual_type": "bool"
+        },
+        {
+          "case": "车内35度-制冷降温",
+          "step": 0,
+          "path": [
+            "car",
+            "ac",
+            "temp"
+          ],
+          "op": "equals",
+          "expected": "22",
+          "actual": 22,
+          "actual_missing": false,
+          "expected_type": "str",
+          "actual_type": "int"
+        },
+        {
+          "case": "车内35度-制冷降温",
+          "step": 0,
+          "path": [
+            "car",
+            "ac",
+            "fan"
+          ],
+          "op": "equals",
+          "expected": "5",
+          "actual": 5,
+          "actual_missing": false,
+          "expected_type": "str",
+          "actual_type": "int"
+        },
+        {
+          "case": "车内15度-制热升温",
+          "step": 0,
+          "path": [
+            "outputs",
+            "decide",
+            "data",
+            "temp"
+          ],
+          "op": "equals",
+          "expected": "24",
+          "actual": 24,
+          "actual_missing": false,
+          "expected_type": "str",
+          "actual_type": "int"
+        },
+        {
+          "case": "车内15度-制热升温",
+          "step": 0,
+          "path": [
+            "outputs",
+            "decide",
+            "data",
+            "fan"
+          ],
+          "op": "equals",
+          "expected": "5",
+          "actual": 5,
+          "actual_missing": false,
+          "expected_type": "str",
+          "actual_type": "int"
+        },
+        {
+          "case": "车内15度-制热升温",
+          "step": 0,
+          "path": [
+            "car",
+            "ac",
+            "temp"
+          ],
+          "op": "equals",
+          "expected": "24",
+          "actual": 24,
+          "actual_missing": false,
+          "expected_type": "str",
+          "actual_type": "int"
+        },
+        {
+          "case": "车内15度-制热升温",
+          "step": 0,
+          "path": [
+            "car",
+            "ac",
+            "fan"
+          ],
+          "op": "equals",
+          "expected": "5",
+          "actual": 5,
+          "actual_missing": false,
+          "expected_type": "str",
+          "actual_type": "int"
+        },
+        {
+          "case": "车内23度-自动模式保持舒适",
+          "step": 0,
+          "path": [
+            "outputs",
+            "decide",
+            "data",
+            "temp"
+          ],
+          "op": "equals",
+          "expected": "23",
+          "actual": 23,
+          "actual_missing": false,
+          "expected_type": "str",
+          "actual_type": "int"
+        },
+        {
+          "case": "车内23度-自动模式保持舒适",
+          "step": 0,
+          "path": [
+            "outputs",
+            "decide",
+            "data",
+            "fan"
+          ],
+          "op": "equals",
+          "expected": "3",
+          "actual": 3,
+          "actual_missing": false,
+          "expected_type": "str",
+          "actual_type": "int"
+        },
+        {
+          "case": "车内23度-自动模式保持舒适",
+          "step": 0,
+          "path": [
+            "car",
+            "ac",
+            "temp"
+          ],
+          "op": "equals",
+          "expected": "23",
+          "actual": 23,
+          "actual_missing": false,
+          "expected_type": "str",
+          "actual_type": "int"
+        },
+        {
+          "case": "车内23度-自动模式保持舒适",
+          "step": 0,
+          "path": [
+            "car",
+            "ac",
+            "fan"
+          ],
+          "op": "equals",
+          "expected": "3",
+          "actual": 3,
+          "actual_missing": false,
+          "expected_type": "str",
+          "actual_type": "int"
+        }
+      ],
+      "feedback": [
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 1,
+          "result": {
+            "issues": [],
+            "warnings": [
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "apply_ac_controls 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "no_confirm 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "ok": false,
+          "revision": 1,
+          "result": {
+            "error": "测试输入 plan.cases[0].steps[0].input（车内35度-制冷降温）：入口节点 start 的 JSON 输入不符合字段约定：字段 temp 必须是 number，实际 string；测试输入 plan.cases[1].steps[0].input（车内15度-制热升温）：入口节点 start 的 JSON 输入不符合字段约定：字段 temp 必须是 number，实际 string；测试输入 plan.cases[2].steps[0].input（车内23度-自动模式保持舒适）：入口节点 start 的 JSON 输入不符合字段约定：字段 temp 必须是 number，实际 string；无效计划未锁定。",
+            "contract_diagnostics": [
+              {
+                "category": "input_contract",
+                "code": "INPUT_FIELD_TYPE",
+                "field": "temp",
+                "path": "plan.cases[0].steps[0].input",
+                "node_id": "start",
+                "message": "测试输入 plan.cases[0].steps[0].input（车内35度-制冷降温）：入口节点 start 的 JSON 输入不符合字段约定：字段 temp 必须是 number，实际 string"
+              },
+              {
+                "category": "input_contract",
+                "code": "INPUT_FIELD_TYPE",
+                "field": "temp",
+                "path": "plan.cases[1].steps[0].input",
+                "node_id": "start",
+                "message": "测试输入 plan.cases[1].steps[0].input（车内15度-制热升温）：入口节点 start 的 JSON 输入不符合字段约定：字段 temp 必须是 number，实际 string"
+              },
+              {
+                "category": "input_contract",
+                "code": "INPUT_FIELD_TYPE",
+                "field": "temp",
+                "path": "plan.cases[2].steps[0].input",
+                "node_id": "start",
+                "message": "测试输入 plan.cases[2].steps[0].input（车内23度-自动模式保持舒适）：入口节点 start 的 JSON 输入不符合字段约定：字段 temp 必须是 number，实际 string"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "ok": true,
+          "revision": 1,
+          "result": {
+            "warnings": []
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 1,
+          "result": {
+            "status": "failed",
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[1]",
+                "message": "断言['outputs', 'decide', 'data', 'temp'] equals 22，实际22",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[2]",
+                "message": "断言['outputs', 'decide', 'data', 'fan'] equals 5，实际5",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[3]",
+                "message": "断言['outputs', 'decide', 'data', 'on'] equals true，实际True",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[5]",
+                "message": "断言['car', 'ac', 'temp'] equals 22，实际22",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[6]",
+                "message": "断言['car', 'ac', 'fan'] equals 5，实际5",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[7]",
+                "message": "断言['hmi', 'message'] contains 35，实际当前车内温度22℃，当前车内较热，已为您开启制冷降温。空调已设为cool模式、22℃、风量5档。",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[1]",
+                "message": "断言['outputs', 'decide', 'data', 'temp'] equals 24，实际24",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[2]",
+                "message": "断言['outputs', 'decide', 'data', 'fan'] equals 5，实际5",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[4]",
+                "message": "断言['car', 'ac', 'temp'] equals 24，实际24",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[5]",
+                "message": "断言['car', 'ac', 'fan'] equals 5，实际5",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[6]",
+                "message": "断言['hmi', 'message'] contains 15，实际当前车内温度24℃，当前车内较冷，已为您开启制热升温。空调已设为heat模式、24℃、风量5档。",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[1]",
+                "message": "断言['outputs', 'decide', 'data', 'temp'] equals 23，实际23",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[2]",
+                "message": "断言['outputs', 'decide', 'data', 'fan'] equals 3，实际3",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[4]",
+                "message": "断言['car', 'ac', 'temp'] equals 23，实际23",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[5]",
+                "message": "断言['car', 'ac', 'fan'] equals 3，实际3",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              }
+            ],
+            "model_calls": 3,
+            "trials_remaining": 2,
+            "trial_action": "executed"
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 2,
+          "result": {
+            "status": "failed",
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[1]",
+                "message": "断言['outputs', 'decide', 'data', 'temp'] equals 22，实际20",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[2]",
+                "message": "断言['outputs', 'decide', 'data', 'fan'] equals 5，实际5",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[3]",
+                "message": "断言['outputs', 'decide', 'data', 'on'] equals true，实际True",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[5]",
+                "message": "断言['car', 'ac', 'temp'] equals 22，实际20",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[6]",
+                "message": "断言['car', 'ac', 'fan'] equals 5，实际5",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[9]",
+                "message": "断言['hmi', 'message'] contains 22，实际当前车内温度35℃，车内温度35度远高于舒适范围，自动开启制冷并将温度设低、风速最大以快速降温。空调已设为cool模式、20℃、风量5档。",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_STATUS",
+                "path": "plan.cases[1].steps[0].status",
+                "message": "车内15度-制热升温第1步：状态failed，期望not_failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[1].steps[0]",
+                "node_id": "ac_mode",
+                "message": "节点ac_mode：空调模式选项无效。",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[1].steps[0]",
+                "node_id": "ac_temp",
+                "message": "节点ac_temp：目标温度必须在 16–30 范围内。",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[0]",
+                "message": "断言['outputs', 'decide', 'data', 'mode'] equals heat，实际",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[1]",
+                "message": "断言['outputs', 'decide', 'data', 'temp'] equals 24，实际15",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[2]",
+                "message": "断言['outputs', 'decide', 'data', 'fan'] equals 5，实际0",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[3]",
+                "message": "断言['car', 'ac', 'mode'] equals heat，实际auto",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[4]",
+                "message": "断言['car', 'ac', 'temp'] equals 24，实际22",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[5]",
+                "message": "断言['car', 'ac', 'fan'] equals 5，实际0",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[7]",
+                "message": "断言['hmi', 'message'] contains 制热，实际当前车内温度15℃，当前未提供车内温度与用户意图，仅给定室外温度15℃，无法判断是否需要开启空调，故默认关闭。。空调已设为模式、15℃、风量0档。",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[1]",
+                "message": "断言['outputs', 'decide', 'data', 'temp'] equals 23，实际23",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[2]",
+                "message": "断言['outputs', 'decide', 'data', 'fan'] equals 3，实际2",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[4]",
+                "message": "断言['car', 'ac', 'temp'] equals 23，实际23",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[5]",
+                "message": "断言['car', 'ac', 'fan'] equals 3，实际2",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[7]",
+                "message": "断言['hmi', 'message'] contains 自动，实际当前车内温度23℃，用户未明确请求操作，默认关闭空调，保留温度参考值，风扇设为低档。。空调已设为auto模式、23℃、风量2档。",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[8]",
+                "message": "断言['hmi', 'message'] contains 舒适，实际当前车内温度23℃，用户未明确请求操作，默认关闭空调，保留温度参考值，风扇设为低档。。空调已设为auto模式、23℃、风量2档。",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              }
+            ],
+            "model_calls": 4,
+            "trials_remaining": 1,
+            "trial_action": "executed"
+          }
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "ok": false,
+          "revision": 2,
+          "result": {
+            "error": "字段契约未通过",
+            "details": [
+              {
+                "field": "coverage.1.node_ids",
+                "issue": "Field required"
+              },
+              {
+                "field": "coverage.2.node_ids",
+                "issue": "Field required"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "ok": false,
+          "revision": 2,
+          "result": {
+            "error": "字段契约未通过",
+            "details": [
+              {
+                "field": "upsert_edges.15.source",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.15.target",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.15.position",
+                "issue": "Extra inputs are not permitted",
+                "fix": "position不属于upsert_edges.*，只能写在：upsert_nodes.*.position。"
+              },
+              {
+                "field": "upsert_edges.15.set_data",
+                "issue": "Extra inputs are not permitted",
+                "fix": "set_data不属于upsert_edges.*，只能写在：upsert_nodes.*.set_data。"
+              },
+              {
+                "field": "upsert_edges.16.source",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.16.target",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.16.position",
+                "issue": "Extra inputs are not permitted",
+                "fix": "position不属于upsert_edges.*，只能写在：upsert_nodes.*.position。"
+              },
+              {
+                "field": "upsert_edges.16.set_data",
+                "issue": "Extra inputs are not permitted",
+                "fix": "set_data不属于upsert_edges.*，只能写在：upsert_nodes.*.set_data。"
+              },
+              {
+                "field": "upsert_edges.17.source",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.17.target",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.17.position",
+                "issue": "Extra inputs are not permitted",
+                "fix": "position不属于upsert_edges.*，只能写在：upsert_nodes.*.position。"
+              },
+              {
+                "field": "upsert_edges.17.set_data",
+                "issue": "Extra inputs are not permitted",
+                "fix": "set_data不属于upsert_edges.*，只能写在：upsert_nodes.*.set_data。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "ok": false,
+          "revision": 3,
+          "result": {
+            "error": "字段契约未通过",
+            "details": [
+              {
+                "field": "upsert_edges.18.source",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.18.target",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.18.position",
+                "issue": "Extra inputs are not permitted",
+                "fix": "position不属于upsert_edges.*，只能写在：upsert_nodes.*.position。"
+              },
+              {
+                "field": "upsert_edges.18.set_data",
+                "issue": "Extra inputs are not permitted",
+                "fix": "set_data不属于upsert_edges.*，只能写在：upsert_nodes.*.set_data。"
+              },
+              {
+                "field": "upsert_edges.19.source",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.19.target",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.19.position",
+                "issue": "Extra inputs are not permitted",
+                "fix": "position不属于upsert_edges.*，只能写在：upsert_nodes.*.position。"
+              },
+              {
+                "field": "upsert_edges.19.set_data",
+                "issue": "Extra inputs are not permitted",
+                "fix": "set_data不属于upsert_edges.*，只能写在：upsert_nodes.*.set_data。"
+              },
+              {
+                "field": "upsert_edges.20.source",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.20.target",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.20.position",
+                "issue": "Extra inputs are not permitted",
+                "fix": "position不属于upsert_edges.*，只能写在：upsert_nodes.*.position。"
+              },
+              {
+                "field": "upsert_edges.20.set_data",
+                "issue": "Extra inputs are not permitted",
+                "fix": "set_data不属于upsert_edges.*，只能写在：upsert_nodes.*.set_data。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 4,
+          "result": {
+            "issues": [
+              "branch_hot（branch_hot）：多分支必须明确 true/false 出口，不能猜测连线含义。",
+              "branch_cool（branch_cool）：多分支必须明确 true/false 出口，不能猜测连线含义。",
+              "branch_mild（branch_mild）：多分支必须明确 true/false 出口，不能猜测连线含义。",
+              "plan.cases[0].steps[0].assertions[0].path 收到 ['outputs', 'decide', 'data', 'mode']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[0].steps[0].assertions[1].path 收到 ['outputs', 'decide', 'data', 'temp']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[0].steps[0].assertions[2].path 收到 ['outputs', 'decide', 'data', 'fan']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[0].steps[0].assertions[3].path 收到 ['outputs', 'decide', 'data', 'on']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[1].steps[0].assertions[0].path 收到 ['outputs', 'decide', 'data', 'mode']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[1].steps[0].assertions[1].path 收到 ['outputs', 'decide', 'data', 'temp']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[1].steps[0].assertions[2].path 收到 ['outputs', 'decide', 'data', 'fan']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[2].steps[0].assertions[0].path 收到 ['outputs', 'decide', 'data', 'mode']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[2].steps[0].assertions[1].path 收到 ['outputs', 'decide', 'data', 'temp']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[2].steps[0].assertions[2].path 收到 ['outputs', 'decide', 'data', 'fan']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。"
+            ],
+            "warnings": [
+              "branch_hot：未连接 false 出口，条件不成立时本分支结束。",
+              "branch_cool：未连接 false 出口，条件不成立时本分支结束。",
+              "branch_mild：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "逻辑分支不完整，请核对未连接出口是否应结束: branch_hot",
+              "逻辑分支不完整，请核对未连接出口是否应结束: branch_cool",
+              "逻辑分支不完整，请核对未连接出口是否应结束: branch_mild",
+              "apply_ac_controls 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 5,
+          "result": {
+            "issues": [
+              "branch_hot（branch_hot）：多分支必须明确 true/false 出口，不能猜测连线含义。",
+              "branch_cool（branch_cool）：多分支必须明确 true/false 出口，不能猜测连线含义。",
+              "branch_mild（branch_mild）：多分支必须明确 true/false 出口，不能猜测连线含义。",
+              "plan.cases[0].steps[0].assertions[0].path 收到 ['outputs', 'decide', 'data', 'mode']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[0].steps[0].assertions[1].path 收到 ['outputs', 'decide', 'data', 'temp']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[0].steps[0].assertions[2].path 收到 ['outputs', 'decide', 'data', 'fan']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[0].steps[0].assertions[3].path 收到 ['outputs', 'decide', 'data', 'on']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[1].steps[0].assertions[0].path 收到 ['outputs', 'decide', 'data', 'mode']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[1].steps[0].assertions[1].path 收到 ['outputs', 'decide', 'data', 'temp']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[1].steps[0].assertions[2].path 收到 ['outputs', 'decide', 'data', 'fan']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[2].steps[0].assertions[0].path 收到 ['outputs', 'decide', 'data', 'mode']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[2].steps[0].assertions[1].path 收到 ['outputs', 'decide', 'data', 'temp']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[2].steps[0].assertions[2].path 收到 ['outputs', 'decide', 'data', 'fan']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。"
+            ],
+            "warnings": [
+              "branch_hot：未连接 false 出口，条件不成立时本分支结束。",
+              "branch_cool：未连接 false 出口，条件不成立时本分支结束。",
+              "branch_mild：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "逻辑分支不完整，请核对未连接出口是否应结束: branch_hot",
+              "逻辑分支不完整，请核对未连接出口是否应结束: branch_cool",
+              "逻辑分支不完整，请核对未连接出口是否应结束: branch_mild",
+              "apply_ac_controls 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "ok": false,
+          "revision": 5,
+          "result": {
+            "error": "字段契约未通过",
+            "details": [
+              {
+                "field": "upsert_edges.3.source",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.3.target",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.3.position",
+                "issue": "Extra inputs are not permitted",
+                "fix": "position不属于upsert_edges.*，只能写在：upsert_nodes.*.position。"
+              },
+              {
+                "field": "upsert_edges.3.set_data",
+                "issue": "Extra inputs are not permitted",
+                "fix": "set_data不属于upsert_edges.*，只能写在：upsert_nodes.*.set_data。"
+              },
+              {
+                "field": "upsert_edges.4.source",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.4.target",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.4.position",
+                "issue": "Extra inputs are not permitted",
+                "fix": "position不属于upsert_edges.*，只能写在：upsert_nodes.*.position。"
+              },
+              {
+                "field": "upsert_edges.4.set_data",
+                "issue": "Extra inputs are not permitted",
+                "fix": "set_data不属于upsert_edges.*，只能写在：upsert_nodes.*.set_data。"
+              },
+              {
+                "field": "upsert_edges.5.source",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.5.target",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.5.position",
+                "issue": "Extra inputs are not permitted",
+                "fix": "position不属于upsert_edges.*，只能写在：upsert_nodes.*.position。"
+              },
+              {
+                "field": "upsert_edges.5.set_data",
+                "issue": "Extra inputs are not permitted",
+                "fix": "set_data不属于upsert_edges.*，只能写在：upsert_nodes.*.set_data。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 7,
+          "result": {
+            "issues": [
+              "branch_hot（branch_hot）：多分支必须明确 true/false 出口，不能猜测连线含义。",
+              "branch_cool（branch_cool）：多分支必须明确 true/false 出口，不能猜测连线含义。",
+              "branch_mild（branch_mild）：多分支必须明确 true/false 出口，不能猜测连线含义。",
+              "plan.cases[0].steps[0].assertions[0].path 收到 ['outputs', 'decide', 'data', 'mode']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[0].steps[0].assertions[1].path 收到 ['outputs', 'decide', 'data', 'temp']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[0].steps[0].assertions[2].path 收到 ['outputs', 'decide', 'data', 'fan']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[0].steps[0].assertions[3].path 收到 ['outputs', 'decide', 'data', 'on']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[1].steps[0].assertions[0].path 收到 ['outputs', 'decide', 'data', 'mode']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[1].steps[0].assertions[1].path 收到 ['outputs', 'decide', 'data', 'temp']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[1].steps[0].assertions[2].path 收到 ['outputs', 'decide', 'data', 'fan']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[2].steps[0].assertions[0].path 收到 ['outputs', 'decide', 'data', 'mode']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[2].steps[0].assertions[1].path 收到 ['outputs', 'decide', 'data', 'temp']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。",
+              "plan.cases[2].steps[0].assertions[2].path 收到 ['outputs', 'decide', 'data', 'fan']：outputs引用的执行节点不存在：decide；示例 [\"outputs\",\"start\"]。"
+            ],
+            "warnings": [
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "apply_ac_controls 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "ok": false,
+          "revision": 7,
+          "result": {
+            "error": "测试计划已锁定；AI计划允许单独修改/删除任一步status，无需waiting证据。其他改动仅沿用当前waiting/completed证据下改waiting并紧接补回答的受限规则，原输入/断言/条件保留；调用方计划完全锁定。"
+          }
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "ok": false,
+          "revision": 7,
+          "result": {
+            "error": "测试计划已锁定；AI计划允许单独修改/删除任一步status，无需waiting证据。其他改动仅沿用当前waiting/completed证据下改waiting并紧接补回答的受限规则，原输入/断言/条件保留；调用方计划完全锁定。"
+          }
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "ok": false,
+          "revision": 7,
+          "result": {
+            "error": "字段契约未通过",
+            "details": [
+              {
+                "field": "coverage.2.node_ids",
+                "issue": "Field required"
+              },
+              {
+                "field": "coverage.3.node_ids",
+                "issue": "Field required"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 8,
+          "result": {
+            "issues": [],
+            "warnings": [
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "apply_ac_controls 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "no_confirm 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 8,
+          "result": {
+            "status": "failed",
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[1]",
+                "message": "断言['outputs', 'decide', 'data', 'temp'] equals 22，实际22",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[2]",
+                "message": "断言['outputs', 'decide', 'data', 'fan'] equals 5，实际5",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[3]",
+                "message": "断言['outputs', 'decide', 'data', 'on'] equals true，实际True",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[5]",
+                "message": "断言['car', 'ac', 'temp'] equals 22，实际22",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[6]",
+                "message": "断言['car', 'ac', 'fan'] equals 5，实际5",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[1]",
+                "message": "断言['outputs', 'decide', 'data', 'temp'] equals 24，实际24",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[2]",
+                "message": "断言['outputs', 'decide', 'data', 'fan'] equals 5，实际5",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[4]",
+                "message": "断言['car', 'ac', 'temp'] equals 24，实际24",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[5]",
+                "message": "断言['car', 'ac', 'fan'] equals 5，实际5",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[1]",
+                "message": "断言['outputs', 'decide', 'data', 'temp'] equals 23，实际23",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[2]",
+                "message": "断言['outputs', 'decide', 'data', 'fan'] equals 3，实际3",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[4]",
+                "message": "断言['car', 'ac', 'temp'] equals 23，实际23",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[5]",
+                "message": "断言['car', 'ac', 'fan'] equals 3，实际3",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              }
+            ],
+            "model_calls": 3,
+            "trials_remaining": 0,
+            "trial_action": "executed"
+          }
+        }
+      ]
+    },
+    {
+      "run": "C-MiniMax-2",
+      "final_typed_assertion_failures": [],
+      "feedback": []
+    },
+    {
+      "run": "C-Claude-1",
+      "final_typed_assertion_failures": [],
+      "feedback": [
+        {
+          "tool": "oakegde_brief",
+          "ok": false,
+          "revision": 0,
+          "result": {
+            "error": "source_quote必须逐字引用用户原话，不要改写或拼接。错误引用：[{\"id\":\"R2\",\"rejected_quote\":\"自动调节空调...不需要再确认，规则用合理默认值\"}]；最新用户原文：上车后根据当前车内温度自动调节空调，并用语音播报调节结果。不需要再确认，规则用合理默认值，请直接生成编排。"
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 1,
+          "result": {
+            "issues": [],
+            "warnings": [
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "ok": true,
+          "revision": 1,
+          "result": {
+            "warnings": []
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 1,
+          "result": {
+            "status": "failed",
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[1]",
+                "message": "断言['car', 'ac', 'mode'] equals cool，实际auto",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[2]",
+                "message": "断言['car', 'ac', 'temp'] equals 22，实际23",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[3]",
+                "message": "断言['car', 'ac', 'fan'] equals 7，实际3",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[4]",
+                "message": "断言['hmi', 'message'] contains 制冷，实际车内温度适中，已为您开启空调自动模式，温度设定为23度，保持舒适风量。",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[1]",
+                "message": "断言['car', 'ac', 'mode'] equals heat，实际auto",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[2]",
+                "message": "断言['car', 'ac', 'temp'] equals 24，实际23",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[3]",
+                "message": "断言['car', 'ac', 'fan'] equals 5，实际3",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[4]",
+                "message": "断言['hmi', 'message'] contains 制热，实际车内温度适中，已为您开启空调自动模式，温度设定为23度，保持舒适风量。",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              }
+            ],
+            "model_calls": 0,
+            "trials_remaining": 2,
+            "trial_action": "executed"
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 2,
+          "result": {
+            "issues": [],
+            "warnings": [
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 2,
+          "result": {
+            "status": "passed",
+            "contract_diagnostics": [],
+            "model_calls": 0,
+            "trials_remaining": 1,
+            "trial_action": "executed"
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 3,
+          "result": {
+            "issues": [],
+            "warnings": [
+              "logic_mid：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 3,
+          "result": {
+            "status": "passed",
+            "contract_diagnostics": [],
+            "model_calls": 0,
+            "trials_remaining": 0,
+            "trial_action": "executed"
+          }
+        }
+      ]
+    },
+    {
+      "run": "C-Claude-2",
+      "final_typed_assertion_failures": [],
+      "feedback": [
+        {
+          "tool": "oakegde_patch_graph",
+          "ok": false,
+          "revision": 1,
+          "result": {
+            "error": "不能同时删除和写入同一连线。"
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 2,
+          "result": {
+            "issues": [
+              "logic_cold：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e2', 'e5']。",
+              "每个用户需求必须有且仅有一条实现对应关系。只允许ID ['R1', 'R2', 'R3']；缺少 ['R1', 'R2', 'R3']；多余 []；不可把修复项添加为用户需求。"
+            ],
+            "warnings": [
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 3,
+          "result": {
+            "issues": [],
+            "warnings": [
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "R2 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "ok": true,
+          "revision": 3,
+          "result": {
+            "warnings": []
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 3,
+          "result": {
+            "status": "failed",
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[1]",
+                "message": "断言['car', 'ac', 'mode'] equals cool，实际auto",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[2]",
+                "message": "断言['car', 'ac', 'temp'] equals 24，实际22",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[3]",
+                "message": "断言['car', 'ac', 'fan'] equals 6，实际3",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[4]",
+                "message": "断言['hmi', 'message'] contains 制冷，实际检测到车内温度°C，已为您开启自动模式，目标温度22°C，风量3档。",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[1]",
+                "message": "断言['car', 'ac', 'mode'] equals heat，实际auto",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[2]",
+                "message": "断言['car', 'ac', 'temp'] equals 26，实际22",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[3]",
+                "message": "断言['car', 'ac', 'fan'] equals 4，实际3",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[4]",
+                "message": "断言['hmi', 'message'] contains 制热，实际检测到车内温度°C，已为您开启自动模式，目标温度22°C，风量3档。",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              }
+            ],
+            "model_calls": 0,
+            "trials_remaining": 2,
+            "trial_action": "executed"
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 5,
+          "result": {
+            "status": "passed",
+            "contract_diagnostics": [],
+            "model_calls": 0,
+            "trials_remaining": 1,
+            "trial_action": "executed"
+          }
+        }
+      ]
+    },
+    {
+      "run": "A-MiniMax-1",
+      "final_typed_assertion_failures": [],
+      "feedback": [
+        {
+          "tool": "oakegde_brief",
+          "ok": false,
+          "revision": 0,
+          "result": {
+            "error": "source_quote必须逐字引用用户原话，不要改写或拼接。错误引用：[{\"id\":\"R4\",\"rejected_quote\":\"30分钟 ，根据放学时间选定，如果即将放学就选最短时间\"},{\"id\":\"R5\",\"rejected_quote\":\"儿童上车识别：2、3、 儿童舒适配置你这些都可以 不退化\"},{\"id\":\"R6\",\"rejected_quote\":\"儿童上车后，帮我开启儿童舒适的配置 ... 儿童舒适配置你这些都可以 默认回家\"}]；最新用户原文：重新编排"
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 5,
+          "result": {
+            "issues": [
+              "save_memory：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e_save_school', 'e_save_home']。",
+              "extract_school（extract_school）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+              "extract_home（extract_home）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+              "door_event（door_event）：输入来源仅支持：weather、camera、rear_camera、image。",
+              "board_recognition：生成场景不能以预设识别结果冒充模型判断。"
+            ],
+            "warnings": [
+              "board_recognition：预设识别仅模拟，不证明识别准确率。",
+              "board_check：未连接 false 出口，条件不成立时本分支结束。",
+              "time_window_check：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 6,
+          "result": {
+            "issues": [
+              "extract_school（extract_school）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+              "extract_home（extract_home）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+              "board_recognition：生成场景不能以预设识别结果冒充模型判断。"
+            ],
+            "warnings": [
+              "board_recognition：预设识别仅模拟，不证明识别准确率。",
+              "board_check：未连接 false 出口，条件不成立时本分支结束。",
+              "time_window_check：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "R3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 8,
+          "result": {
+            "issues": [
+              "board_recognition（board_recognition）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。"
+            ],
+            "warnings": [
+              "board_check：未连接 false 出口，条件不成立时本分支结束。",
+              "time_window_check：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 9,
+          "result": {
+            "issues": [
+              "board_recognition（board_recognition）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。"
+            ],
+            "warnings": [
+              "board_check：未连接 false 出口，条件不成立时本分支结束。",
+              "time_window_check：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 10,
+          "result": {
+            "issues": [],
+            "warnings": [
+              "board_check：未连接 false 出口，条件不成立时本分支结束。",
+              "time_window_check：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "ok": true,
+          "revision": 10,
+          "result": {
+            "warnings": [
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "ask_first_time",
+                "message": "plan.cases[0].steps[3]（首录记忆后再触发接小孩放学）：路径可能到达等待节点 ask_first_time（eventName=message，prompt=首次使用，请告诉我学校名称、放学时间、班级（例如：阳光小学 16:30 三年级一班））；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "ask_home",
+                "message": "plan.cases[0].steps[3]（首录记忆后再触发接小孩放学）：路径可能到达等待节点 ask_home（eventName=message，prompt=再请告诉我家庭住址，例如：海淀区XX小区（或仅说地址关键字））；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "door_event",
+                "message": "plan.cases[0].steps[3]（首录记忆后再触发接小孩放学）：路径可能到达等待节点 door_event（eventName=message，prompt=是否后排车门首次开启？）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[5]",
+                "node_id": "ask_first_time",
+                "message": "plan.cases[1].steps[5]（记忆已有且30分钟内放学→最短时间路线+上车触发舒适配置）：路径可能到达等待节点 ask_first_time（eventName=message，prompt=首次使用，请告诉我学校名称、放学时间、班级（例如：阳光小学 16:30 三年级一班））；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[5]",
+                "node_id": "ask_home",
+                "message": "plan.cases[1].steps[5]（记忆已有且30分钟内放学→最短时间路线+上车触发舒适配置）：路径可能到达等待节点 ask_home（eventName=message，prompt=再请告诉我家庭住址，例如：海淀区XX小区（或仅说地址关键字））；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[5]",
+                "node_id": "door_event",
+                "message": "plan.cases[1].steps[5]（记忆已有且30分钟内放学→最短时间路线+上车触发舒适配置）：路径可能到达等待节点 door_event（eventName=message，prompt=是否后排车门首次开启？）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 10,
+          "result": {
+            "status": "failed",
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "ASSERTION_STATUS",
+                "path": "plan.cases[0].steps[2].status",
+                "message": "首录记忆后再触发接小孩放学第3步：状态failed，期望not_failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[0].steps[2]",
+                "node_id": "board_check",
+                "message": "节点board_check：判断条件执行失败：数据运算需要标量",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_STATUS",
+                "path": "plan.cases[1].steps[2].status",
+                "message": "记忆已有且30分钟内放学→最短时间路线+上车触发舒适配置第3步：状态failed，期望not_failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[1].steps[2]",
+                "node_id": "board_check",
+                "message": "节点board_check：判断条件执行失败：数据运算需要标量",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              }
+            ],
+            "model_calls": 2,
+            "trials_remaining": 2,
+            "trial_action": "executed"
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 11,
+          "result": {
+            "status": "not_run",
+            "issues": [
+              "mem_check.data.condition 收到 '(input.school != null && input.school != \"\") || (state.school != null && state.school != \"\")'：未知变量：state，请从input读取字段；表达式根仅input/value（undefined为常量），不支持裸state/event/outputs。示例 input.state.count > 0；satisfies的input是path选中的值，例如path=[\"outputs\"]时使用input.start.text === \"完成\"。跨节点绑定示例 {\"$ref\":\"outputs.start.text\"}，引用节点必须存在。"
+            ],
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "ask_first_time",
+                "message": "plan.cases[0].steps[3]（首录记忆后再触发接小孩放学）：路径可能到达等待节点 ask_first_time（eventName=message，prompt=首次使用，请告诉我学校名称、放学时间、班级（例如：阳光小学 16:30 三年级一班））；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "ask_home",
+                "message": "plan.cases[0].steps[3]（首录记忆后再触发接小孩放学）：路径可能到达等待节点 ask_home（eventName=message，prompt=再请告诉我家庭住址，例如：海淀区XX小区（或仅说地址关键字））；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "door_event",
+                "message": "plan.cases[0].steps[3]（首录记忆后再触发接小孩放学）：路径可能到达等待节点 door_event（eventName=message，prompt=是否后排车门首次开启？）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[5]",
+                "node_id": "ask_first_time",
+                "message": "plan.cases[1].steps[5]（记忆已有且30分钟内放学→最短时间路线+上车触发舒适配置）：路径可能到达等待节点 ask_first_time（eventName=message，prompt=首次使用，请告诉我学校名称、放学时间、班级（例如：阳光小学 16:30 三年级一班））；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[5]",
+                "node_id": "ask_home",
+                "message": "plan.cases[1].steps[5]（记忆已有且30分钟内放学→最短时间路线+上车触发舒适配置）：路径可能到达等待节点 ask_home（eventName=message，prompt=再请告诉我家庭住址，例如：海淀区XX小区（或仅说地址关键字））；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[5]",
+                "node_id": "door_event",
+                "message": "plan.cases[1].steps[5]（记忆已有且30分钟内放学→最短时间路线+上车触发舒适配置）：路径可能到达等待节点 door_event（eventName=message，prompt=是否后排车门首次开启？）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 12,
+          "result": {
+            "status": "failed",
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "ASSERTION_STATUS",
+                "path": "plan.cases[0].steps[2].status",
+                "message": "首录记忆后再触发接小孩放学第3步：状态failed，期望not_failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[0].steps[2]",
+                "node_id": "board_check",
+                "message": "节点board_check：判断条件执行失败：数据运算需要标量",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_STATUS",
+                "path": "plan.cases[1].steps[2].status",
+                "message": "记忆已有且30分钟内放学→最短时间路线+上车触发舒适配置第3步：状态failed，期望not_failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[1].steps[2]",
+                "node_id": "board_check",
+                "message": "节点board_check：判断条件执行失败：数据运算需要标量",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              }
+            ],
+            "model_calls": 2,
+            "trials_remaining": 1,
+            "trial_action": "executed"
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 14,
+          "result": {
+            "status": "failed",
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "ASSERTION_STATUS",
+                "path": "plan.cases[0].steps[2].status",
+                "message": "首录记忆后再触发接小孩放学第3步：状态failed，期望not_failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[0].steps[2]",
+                "node_id": "board_check",
+                "message": "节点board_check：判断条件执行失败：数据运算需要标量",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_STATUS",
+                "path": "plan.cases[1].steps[2].status",
+                "message": "记忆已有且30分钟内放学→最短时间路线+上车触发舒适配置第3步：状态failed，期望not_failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[1].steps[2]",
+                "node_id": "board_check",
+                "message": "节点board_check：判断条件执行失败：数据运算需要标量",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              }
+            ],
+            "model_calls": 2,
+            "trials_remaining": 0,
+            "trial_action": "executed"
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 16,
+          "result": {
+            "status": "not_run",
+            "issues": [
+              "board_recognition：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e_cam_recog', 'e_rear_to_board']。",
+              "board_recognition：输入端口重名，请指定不同targetHandle。",
+              "time_window_check：输入端口重名，请指定不同targetHandle。"
+            ],
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "ask_first_time",
+                "message": "plan.cases[0].steps[3]（首录记忆后再触发接小孩放学）：路径可能到达等待节点 ask_first_time（eventName=message，prompt=首次使用，请告诉我学校名称、放学时间、班级（例如：阳光小学 16:30 三年级一班））；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "ask_home",
+                "message": "plan.cases[0].steps[3]（首录记忆后再触发接小孩放学）：路径可能到达等待节点 ask_home（eventName=message，prompt=再请告诉我家庭住址，例如：海淀区XX小区（或仅说地址关键字））；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "door_event",
+                "message": "plan.cases[0].steps[3]（首录记忆后再触发接小孩放学）：路径可能到达等待节点 door_event（eventName=message，prompt=是否后排车门首次开启？）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[5]",
+                "node_id": "ask_first_time",
+                "message": "plan.cases[1].steps[5]（记忆已有且30分钟内放学→最短时间路线+上车触发舒适配置）：路径可能到达等待节点 ask_first_time（eventName=message，prompt=首次使用，请告诉我学校名称、放学时间、班级（例如：阳光小学 16:30 三年级一班））；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[5]",
+                "node_id": "ask_home",
+                "message": "plan.cases[1].steps[5]（记忆已有且30分钟内放学→最短时间路线+上车触发舒适配置）：路径可能到达等待节点 ask_home（eventName=message，prompt=再请告诉我家庭住址，例如：海淀区XX小区（或仅说地址关键字））；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[5]",
+                "node_id": "door_event",
+                "message": "plan.cases[1].steps[5]（记忆已有且30分钟内放学→最短时间路线+上车触发舒适配置）：路径可能到达等待节点 door_event（eventName=message，prompt=是否后排车门首次开启？）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": false,
+          "revision": 17,
+          "result": {
+            "error": "已达到三次实际试跑预算，请交付最新草稿及未完成项。"
+          }
+        }
+      ]
+    },
+    {
+      "run": "A-MiniMax-2",
+      "final_typed_assertion_failures": [],
+      "feedback": [
+        {
+          "tool": "oakegde_brief",
+          "ok": false,
+          "revision": 0,
+          "result": {
+            "error": "source_quote必须逐字引用用户原话，不要改写或拼接。错误引用：[{\"id\":\"r3\",\"rejected_quote\":\"\\\"根据放学时间去选择最适合的路线\\\"\\\"30分钟\\\"\\\"即将放学就选最短时间\\\"\"},{\"id\":\"r4\",\"rejected_quote\":\"\\\"儿童上车后\\\"\\\"2、3\\\"\\\"不退化\\\"\"},{\"id\":\"r5\",\"rejected_quote\":\"\\\"帮我开启儿童舒适的配置\\\"\\\"儿童舒适配置你这些都可以\\\"\"}]；最新用户原文：重新编排"
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": false,
+          "revision": 2,
+          "result": {
+            "error": "图已更新：当前revision=2，请读取最新图后修改；不能覆盖旧版本。"
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 2,
+          "result": {
+            "issues": [
+              "reply_recall：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e8', 'e9', 'e13']。",
+              "reply_navigating：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e17', 'e33']。",
+              "wait_child_board：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e18', 'e19', 'e32']。",
+              "parse_school_info（parse_school_info）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+              "choose_route_strategy（choose_route_strategy）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+              "wait_child_board：环路必须经过repeat=true的wait，并从其下游返回该等待点；自动环路尚未接入。",
+              "init_state：无法从输入起点到达；补一条从可达节点出发的连线，或用remove_node_ids删除该节点。",
+              "first_run.data.condition 收到 'state.firstRun == true || state.firstRun == null'：未知变量：state，请从input读取字段；表达式根仅input/value（undefined为常量），不支持裸state/event/outputs。示例 input.state.count > 0；satisfies的input是path选中的值，例如path=[\"outputs\"]时使用input.start.text === \"完成\"。跨节点绑定示例 {\"$ref\":\"outputs.start.text\"}，引用节点必须存在。",
+              "has_memory.data.condition 收到 'state.hasMemory == true'：未知变量：state，请从input读取字段；表达式根仅input/value（undefined为常量），不支持裸state/event/outputs。示例 input.state.count > 0；satisfies的input是path选中的值，例如path=[\"outputs\"]时使用input.start.text === \"完成\"。跨节点绑定示例 {\"$ref\":\"outputs.start.text\"}，引用节点必须存在。"
+            ],
+            "warnings": [
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "r3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "r5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "r6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "r5_detail_all 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "r2_detail_home 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "ok": false,
+          "revision": 2,
+          "result": {
+            "error": "单次修改不能重复写入同一节点：reply_recall。将同ID的set_data和remove_data_keys合并为一个upsert_nodes项后重试。"
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 3,
+          "result": {
+            "issues": [],
+            "warnings": [
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "r3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "r5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "r6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "r5_detail_all 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "r2_detail_home 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "ok": true,
+          "revision": 3,
+          "result": {
+            "warnings": [
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[0].steps[3]（首次使用：录入并完成接娃）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "wait_school",
+                "message": "plan.cases[1].steps[1]（已有记忆：临近放学选fastest导航）：路径可能到达等待节点 wait_school（eventName=message，prompt=请回复学校、放学时间、常走路线与家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[1].steps[1]（已有记忆：临近放学选fastest导航）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[2].steps[3]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[2].steps[3]（上车条件未满足循环等待不触发舒适配置）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 3,
+          "result": {
+            "status": "failed",
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "ASSERTION_STATUS",
+                "path": "plan.cases[0].steps[0].status",
+                "message": "首次使用：录入并完成接娃第1步：状态failed，期望not_failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[0].steps[0]",
+                "node_id": "first_run",
+                "message": "节点first_run：判断条件执行失败：读取字段时上游数据缺失",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[1]",
+                "message": "断言['nodes', 'wait_school'] equals waiting，实际skipped",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_STATUS",
+                "path": "plan.cases[1].steps[0].status",
+                "message": "已有记忆：临近放学选fastest导航第1步：状态failed，期望not_failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[1].steps[0]",
+                "node_id": "first_run",
+                "message": "节点first_run：判断条件执行失败：读取字段时上游数据缺失",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[0]",
+                "message": "断言['nodes', 'first_run'] equals success，实际failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[1]",
+                "message": "断言['nodes', 'read_event'] equals success，实际dormant",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_STATUS",
+                "path": "plan.cases[2].steps[0].status",
+                "message": "上车条件未满足循环等待不触发舒适配置第1步：状态failed，期望not_failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[2].steps[0]",
+                "node_id": "first_run",
+                "message": "节点first_run：判断条件执行失败：读取字段时上游数据缺失",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[0]",
+                "message": "断言['nodes', 'first_run'] equals success，实际failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              }
+            ],
+            "model_calls": 0,
+            "trials_remaining": 2,
+            "trial_action": "executed"
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 4,
+          "result": {
+            "status": "not_run",
+            "issues": [
+              "first_run：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e1', 'e36']。"
+            ],
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[0].steps[3]（首次使用：录入并完成接娃）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "wait_school",
+                "message": "plan.cases[1].steps[1]（已有记忆：临近放学选fastest导航）：路径可能到达等待节点 wait_school（eventName=message，prompt=请回复学校、放学时间、常走路线与家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[1].steps[1]（已有记忆：临近放学选fastest导航）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[2].steps[3]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[2].steps[3]（上车条件未满足循环等待不触发舒适配置）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 5,
+          "result": {
+            "status": "failed",
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "ASSERTION_STATUS",
+                "path": "plan.cases[0].steps[0].status",
+                "message": "首次使用：录入并完成接娃第1步：状态failed，期望not_failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[0].steps[0]",
+                "node_id": "first_run",
+                "message": "节点first_run：判断条件执行失败：读取字段时上游数据缺失",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[0].assertions[1]",
+                "message": "断言['nodes', 'wait_school'] equals waiting，实际skipped",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_STATUS",
+                "path": "plan.cases[1].steps[0].status",
+                "message": "已有记忆：临近放学选fastest导航第1步：状态failed，期望not_failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[1].steps[0]",
+                "node_id": "first_run",
+                "message": "节点first_run：判断条件执行失败：读取字段时上游数据缺失",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[0]",
+                "message": "断言['nodes', 'first_run'] equals success，实际failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[1]",
+                "message": "断言['nodes', 'read_event'] equals success，实际dormant",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_STATUS",
+                "path": "plan.cases[2].steps[0].status",
+                "message": "上车条件未满足循环等待不触发舒适配置第1步：状态failed，期望not_failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "graph_logic",
+                "code": "GRAPH_EXECUTION",
+                "path": "plan.cases[2].steps[0]",
+                "node_id": "first_run",
+                "message": "节点first_run：判断条件执行失败：读取字段时上游数据缺失",
+                "repair_hint": "检查图的连线、条件、绑定、节点配置与服务/预算；按执行证据修图，不削弱测试。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[0]",
+                "message": "断言['nodes', 'first_run'] equals success，实际failed",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              }
+            ],
+            "model_calls": 0,
+            "trials_remaining": 1,
+            "trial_action": "executed"
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 7,
+          "result": {
+            "issues": [],
+            "warnings": [
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "r3 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "r5 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "r6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "r5_detail_all 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "plan.cases[0].steps[3]（首次使用：录入并完成接娃）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。",
+              "plan.cases[1].steps[1]（已有记忆：临近放学选fastest导航）：路径可能到达等待节点 wait_school（eventName=message，prompt=请回复学校、放学时间、常走路线与家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。",
+              "plan.cases[1].steps[1]（已有记忆：临近放学选fastest导航）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。",
+              "plan.cases[2].steps[3]（上车条件未满足循环等待不触发舒适配置）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+            ],
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[0].steps[3]（首次使用：录入并完成接娃）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "wait_school",
+                "message": "plan.cases[1].steps[1]（已有记忆：临近放学选fastest导航）：路径可能到达等待节点 wait_school（eventName=message，prompt=请回复学校、放学时间、常走路线与家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[1].steps[1]（已有记忆：临近放学选fastest导航）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[2].steps[3]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[2].steps[3]（上车条件未满足循环等待不触发舒适配置）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 7,
+          "result": {
+            "status": "failed",
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[1].assertions[0]",
+                "message": "断言['outputs', 'parse_school_info', 'data', 'schoolName'] equals 阳光小学，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[1].assertions[1]",
+                "message": "断言['outputs', 'parse_school_info', 'data', 'dismissTime'] equals 15:30，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[1].assertions[2]",
+                "message": "断言['state', 'homeAddress'] equals 朝阳区望京SOHO，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[1].assertions[4]",
+                "message": "断言['nodes', 'choose_route_strategy'] equals success，实际pending",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[1].assertions[5]",
+                "message": "断言['nodes', 'nav_to_school'] equals success，实际pending",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[0]",
+                "message": "断言['nodes', 'first_run'] equals success，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[0].assertions[1]",
+                "message": "断言['nodes', 'read_event'] equals success，实际dormant",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[2].steps[0].assertions[0]",
+                "message": "断言['nodes', 'first_run'] equals success，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              }
+            ],
+            "model_calls": 1,
+            "trials_remaining": 0,
+            "trial_action": "executed"
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 8,
+          "result": {
+            "status": "not_run",
+            "issues": [
+              "parse_school_info（parse_school_info）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。",
+              "choose_route_strategy（choose_route_strategy）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。"
+            ],
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[0].steps[3]（首次使用：录入并完成接娃）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "wait_school",
+                "message": "plan.cases[1].steps[1]（已有记忆：临近放学选fastest导航）：路径可能到达等待节点 wait_school（eventName=message，prompt=请回复学校、放学时间、常走路线与家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[1].steps[1]（已有记忆：临近放学选fastest导航）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[2].steps[3]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[2].steps[3]（上车条件未满足循环等待不触发舒适配置）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 9,
+          "result": {
+            "status": "not_run",
+            "issues": [
+              "parse_school_info（parse_school_info）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。"
+            ],
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[3]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[0].steps[3]（首次使用：录入并完成接娃）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "wait_school",
+                "message": "plan.cases[1].steps[1]（已有记忆：临近放学选fastest导航）：路径可能到达等待节点 wait_school（eventName=message，prompt=请回复学校、放学时间、常走路线与家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[1].steps[1]（已有记忆：临近放学选fastest导航）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[2].steps[3]",
+                "node_id": "wait_child_board",
+                "message": "plan.cases[2].steps[3]（上车条件未满足循环等待不触发舒适配置）：路径可能到达等待节点 wait_child_board（eventName=message，prompt=正在等待座位传感器检测儿童重量以及后排车门在抵达学校时间窗内首次开启。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": false,
+          "revision": 10,
+          "result": {
+            "error": "已达到三次实际试跑预算，请交付最新草稿及未完成项。"
+          }
+        }
+      ]
+    },
+    {
+      "run": "A-MiniMax-3",
+      "final_typed_assertion_failures": [
+        {
+          "case": "首次使用：询问→抽取→最短时间→导航→儿童上车→舒适配置→切回家",
+          "step": 2,
+          "path": [
+            "car",
+            "locks",
+            "child"
+          ],
+          "op": "equals",
+          "expected": true,
+          "actual": null,
+          "actual_missing": true,
+          "expected_type": "bool",
+          "actual_type": "NoneType"
+        },
+        {
+          "case": "首次使用：询问→抽取→最短时间→导航→儿童上车→舒适配置→切回家",
+          "step": 2,
+          "path": [
+            "car",
+            "seat",
+            "heat",
+            "1"
+          ],
+          "op": "equals",
+          "expected": 2,
+          "actual": null,
+          "actual_missing": true,
+          "expected_type": "int",
+          "actual_type": "NoneType"
+        },
+        {
+          "case": "首次使用：询问→抽取→最短时间→导航→儿童上车→舒适配置→切回家",
+          "step": 2,
+          "path": [
+            "car",
+            "seat",
+            "vent",
+            "1"
+          ],
+          "op": "equals",
+          "expected": 2,
+          "actual": null,
+          "actual_missing": true,
+          "expected_type": "int",
+          "actual_type": "NoneType"
+        },
+        {
+          "case": "记忆已有 - 记忆召回与等待上车信号",
+          "step": 1,
+          "path": [
+            "car",
+            "locks",
+            "child"
+          ],
+          "op": "equals",
+          "expected": true,
+          "actual": null,
+          "actual_missing": true,
+          "expected_type": "bool",
+          "actual_type": "NoneType"
+        },
+        {
+          "case": "记忆已有 - 记忆召回与等待上车信号",
+          "step": 1,
+          "path": [
+            "outputs",
+            "final_reply"
+          ],
+          "op": "exists",
+          "expected": null,
+          "actual": null,
+          "actual_missing": true,
+          "expected_type": "NoneType",
+          "actual_type": "NoneType"
+        }
+      ],
+      "feedback": [
+        {
+          "tool": "oakegde_brief",
+          "ok": false,
+          "revision": 0,
+          "result": {
+            "error": "source_quote必须逐字引用用户原话，不要改写或拼接。错误引用：[{\"id\":\"R5\",\"rejected_quote\":\"儿童上车识别：2、3、  ...  不退化\"},{\"id\":\"R6\",\"rejected_quote\":\"儿童上车后，帮我开启儿童舒适的配置 ... 儿童舒适配置你这些都可以\"}]；最新用户原文：重新编排"
+          }
+        },
+        {
+          "tool": "oakegde_brief",
+          "ok": false,
+          "revision": 0,
+          "result": {
+            "error": "source_quote必须逐字引用用户原话，不要改写或拼接。错误引用：[{\"id\":\"R5\",\"rejected_quote\":\"儿童上车识别：2、3、不退化\"},{\"id\":\"R6\",\"rejected_quote\":\"儿童上车后，帮我开启儿童舒适的配置 儿童舒适配置你这些都可以\"}]；最新用户原文：重新编排"
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 1,
+          "result": {
+            "issues": [
+              "time_window：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e3', 'e7']。",
+              "nav_to_home：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e17', 'e18', 'e19', 'e20', 'e21', 'e22']。",
+              "extract_info（extract_info）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。"
+            ],
+            "warnings": [
+              "time_window：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "R4 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R7 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 2,
+          "result": {
+            "issues": [
+              "extract_info（extract_info）：文字或数据输出不能直接驱动车控/工具。模型负责决策动作时配置set_data.outputFormat=actions；保留json输出时，只能按已支持的显式HMI字段/$ref或MCP参数绑定组合，不得将原文当普通工具/车控动作。检查所有可达下游动作节点，不只是下一跳；不要只改systemPrompt而遗漏outputFormat。"
+            ],
+            "warnings": [
+              "time_window：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "R4 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R7 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 3,
+          "result": {
+            "issues": [],
+            "warnings": [
+              "time_window：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "R4 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R7 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。"
+            ],
+            "contract_diagnostics": []
+          }
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "ok": false,
+          "revision": 3,
+          "result": {
+            "error": "字段契约未通过",
+            "details": [
+              {
+                "field": "plan.cases.0.steps.1.assertions.1.path",
+                "issue": "Field required"
+              },
+              {
+                "field": "plan.cases.0.steps.1.assertions.1.op",
+                "issue": "Field required"
+              },
+              {
+                "field": "plan.cases.0.steps.1.assertions.1.input",
+                "issue": "Extra inputs are not permitted",
+                "fix": "input不属于plan.cases.*.steps.*.assertions.*，只能写在：plan.cases.*.steps.*.input。"
+              },
+              {
+                "field": "plan.cases.0.steps.1.assertions.1.assertions",
+                "issue": "Extra inputs are not permitted",
+                "fix": "assertions不属于plan.cases.*.steps.*.assertions.*，只能写在：plan.cases.*.steps.*.assertions。"
+              },
+              {
+                "field": "plan.item",
+                "issue": "Extra inputs are not permitted"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "ok": true,
+          "revision": 3,
+          "result": {
+            "warnings": [
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "ask_school_info",
+                "message": "plan.cases[1].steps[1]（记忆已有 - 记忆召回与等待上车信号）：路径可能到达等待节点 ask_school_info（eventName=message，prompt=首次使用，请告诉我孩子学校的名称（或地址）以及每天放学时间，再确认家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "ok": false,
+          "revision": 3,
+          "result": {
+            "error": "字段契约未通过",
+            "details": [
+              {
+                "field": "upsert_edges.5.source",
+                "issue": "Field required"
+              },
+              {
+                "field": "upsert_edges.5.target",
+                "issue": "Field required"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "ok": false,
+          "revision": 3,
+          "result": {
+            "error": "不能同时删除和写入同一连线。"
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 5,
+          "result": {
+            "issues": [
+              "extract_info：data.joinMode 收到 None，多个输入需要明确汇合方式 all/any；入边 ID：['e2b', 'e6b']。",
+              "extract_info：环路必须经过repeat=true的wait，并从其下游返回该等待点；自动环路尚未接入。"
+            ],
+            "warnings": [
+              "time_window：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "R4 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R7 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "plan.cases[0].steps[2]（首次使用：询问→抽取→最短时间→导航→儿童上车→舒适配置→切回家）：路径可能到达等待节点 ask_school_info（eventName=message，prompt=首次使用，请告诉我孩子学校的名称（或地址）以及每天放学时间，再确认家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。",
+              "plan.cases[1].steps[1]（记忆已有 - 记忆召回与等待上车信号）：路径可能到达等待节点 ask_school_info（eventName=message，prompt=首次使用，请告诉我孩子学校的名称（或地址）以及每天放学时间，再确认家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+            ],
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[2]",
+                "node_id": "ask_school_info",
+                "message": "plan.cases[0].steps[2]（首次使用：询问→抽取→最短时间→导航→儿童上车→舒适配置→切回家）：路径可能到达等待节点 ask_school_info（eventName=message，prompt=首次使用，请告诉我孩子学校的名称（或地址）以及每天放学时间，再确认家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "ask_school_info",
+                "message": "plan.cases[1].steps[1]（记忆已有 - 记忆召回与等待上车信号）：路径可能到达等待节点 ask_school_info（eventName=message，prompt=首次使用，请告诉我孩子学校的名称（或地址）以及每天放学时间，再确认家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 6,
+          "result": {
+            "issues": [
+              "extract_info：环路必须经过repeat=true的wait，并从其下游返回该等待点；自动环路尚未接入。"
+            ],
+            "warnings": [
+              "time_window：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "R4 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R7 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "plan.cases[0].steps[2]（首次使用：询问→抽取→最短时间→导航→儿童上车→舒适配置→切回家）：路径可能到达等待节点 ask_school_info（eventName=message，prompt=首次使用，请告诉我学校、放学时间和家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。",
+              "plan.cases[1].steps[1]（记忆已有 - 记忆召回与等待上车信号）：路径可能到达等待节点 ask_school_info（eventName=message，prompt=首次使用，请告诉我学校、放学时间和家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+            ],
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[0].steps[2]",
+                "node_id": "ask_school_info",
+                "message": "plan.cases[0].steps[2]（首次使用：询问→抽取→最短时间→导航→儿童上车→舒适配置→切回家）：路径可能到达等待节点 ask_school_info（eventName=message，prompt=首次使用，请告诉我学校、放学时间和家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              },
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "ask_school_info",
+                "message": "plan.cases[1].steps[1]（记忆已有 - 记忆召回与等待上车信号）：路径可能到达等待节点 ask_school_info（eventName=message，prompt=首次使用，请告诉我学校、放学时间和家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_patch_graph",
+          "ok": false,
+          "revision": 6,
+          "result": {
+            "error": "删除的连线不存在：e3；调用oakegde_read_graph核对当前edge.id，仅删除存在的ID。删除节点已自动删除其关联边，不要在后续patch再次删除。"
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 8,
+          "result": {
+            "issues": [
+              "time_window：输入端口重名，请指定不同targetHandle。"
+            ],
+            "warnings": [
+              "time_window：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "R4 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R7 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "plan.cases[1].steps[1]（记忆已有 - 记忆召回与等待上车信号）：路径可能到达等待节点 ask_school_info（eventName=message，prompt=首次使用，请告诉我学校、放学时间和家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+            ],
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "ask_school_info",
+                "message": "plan.cases[1].steps[1]（记忆已有 - 记忆召回与等待上车信号）：路径可能到达等待节点 ask_school_info（eventName=message，prompt=首次使用，请告诉我学校、放学时间和家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_inspect",
+          "ok": true,
+          "revision": 9,
+          "result": {
+            "issues": [],
+            "warnings": [
+              "time_window：未连接 false 出口，条件不成立时本分支结束。",
+              "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。",
+              "R4 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R6 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "R7 的执行来源已依据实际环境节点标记为 simulated；不代表实车实现。",
+              "plan.cases[1].steps[1]（记忆已有 - 记忆召回与等待上车信号）：路径可能到达等待节点 ask_school_info（eventName=message，prompt=首次使用，请告诉我学校、放学时间和家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+            ],
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "PLAN_WAITING_PATH",
+                "path": "plan.cases[1].steps[1]",
+                "node_id": "ask_school_info",
+                "message": "plan.cases[1].steps[1]（记忆已有 - 记忆召回与等待上车信号）：路径可能到达等待节点 ask_school_info（eventName=message，prompt=首次使用，请告诉我学校、放学时间和家庭住址。）；未提供后续 step；若需完成该路径，在同 case 提供后续回复；若本意仅验证等待，可显式断言 waiting。动态分支和回答匹配需 trial 确认。"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "oakegde_test_plan",
+          "ok": false,
+          "revision": 9,
+          "result": {
+            "error": "测试计划已锁定；AI计划允许单独修改/删除任一步status，无需waiting证据。其他改动仅沿用当前waiting/completed证据下改waiting并紧接补回答的受限规则，原输入/断言/条件保留；调用方计划完全锁定。"
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 9,
+          "result": {
+            "status": "failed",
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[2].assertions[0]",
+                "message": "断言['car', 'locks', 'child'] equals True，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[2].assertions[2]",
+                "message": "断言['car', 'seat', 'heat', '1'] equals 2，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[2].assertions[3]",
+                "message": "断言['car', 'seat', 'vent', '1'] equals 2，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[1].assertions[0]",
+                "message": "断言['car', 'locks', 'child'] equals True，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[1].assertions[1]",
+                "message": "断言['outputs', 'final_reply'] exists None，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              }
+            ],
+            "model_calls": 0,
+            "trials_remaining": 2,
+            "trial_action": "executed"
+          }
+        },
+        {
+          "tool": "oakegde_trial",
+          "ok": true,
+          "revision": 9,
+          "result": {
+            "status": "failed",
+            "contract_diagnostics": [
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[2].assertions[0]",
+                "message": "断言['car', 'locks', 'child'] equals True，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[2].assertions[2]",
+                "message": "断言['car', 'seat', 'heat', '1'] equals 2，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[0].steps[2].assertions[3]",
+                "message": "断言['car', 'seat', 'vent', '1'] equals 2，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[1].assertions[0]",
+                "message": "断言['car', 'locks', 'child'] equals True，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              },
+              {
+                "category": "assertion",
+                "code": "ASSERTION_VALUE",
+                "path": "plan.cases[1].steps[1].assertions[1]",
+                "message": "断言['outputs', 'final_reply'] exists None，实际None",
+                "repair_hint": "比较断言与真实状态/输出；测试表达有误时修测试计划，图行为违背需求时修图。遵守计划锁定规则，不自动放宽断言。"
+              }
+            ],
+            "model_calls": 0,
+            "trials_remaining": 1,
+            "trial_action": "executed"
+          }
+        }
+      ]
+    }
+  ],
+  "protected_sha256": {
+    "backend/projects/朵朵生日航海 · 持续互动.json": "87e5bf687c4360372d3ff15d6859283ccb912373f617e195cda5eefdc799fae1",
+    "backend/projects/儿童关怀.json": "7aeabfd401d50b7934fc9701ae63ef715a61d15a85b8f7a056577ede68a6df97",
+    "backend/projects/接小孩放学.json": "87510782e089a2938b8328a8b21649a5737ed162b0cc68e240dd0ddf789fd2de",
+    "backend/projects/selfie-hmi-mock-dev48.json": "f568920c8b49eef5f537462836bddb4217011ca40e13ae496d52d3b385181dc6",
+    "backend/projects/general-birthday-dev56.json": "55d9eefdfdd373cbec1a48c687a5b57aa3d28a656418606cff62e279270237a9",
+    "backend/config/mcp-servers.mock.json": "ef97c56f425af7b3d8864afe0e13bcd98689c9ce1b42466f6d1216683aaee5a7",
+    "backend/config/mcp-servers.example.json": "cebe237f569cfc95d2e82541e38b03c6dc0b7ff796ebf7dc5c6d333e7465f7d3",
+    ".demo-runtime/orchestration-engine.json": "0f8be661887bdeee6454d94c51e8b2826f933eb4c390e6cfe5cc79ba20e4af0a"
+  },
+  "frozen_sha256": {
+    "backend/app/core/site_access.py": "d6c1efffa06abf39f668a7f5ee5c1b1084034415b76027f0d3164452b15222ef",
+    "backend/app/core/branding.py": "042b2ecb2a37e2c8de17fd68abe84613664fdae8a7637b0c47bcac369d1f0bfd",
+    "backend/app/core/memory.py": "52f089b950b8bce03d08fbe96fa4acd579bfc3dbc70c3aa191047bd6ad571479",
+    "backend/app/core/engine.py": "0efd8a50941522653a24be0933457fcba349d42b6a1abc9663db90990a22d3e6",
+    "backend/app/agents/hermes_worker.py": "cf3dce2dd3872aed610d4453b1175db4fbacce88d5cc37cb4e47f27c75ac76af",
+    "backend/app/agents/hermes_authoring.md": "71fd73b7a74c85fd6a68831b1ed4ca9985a868ab479e438db880caf2ebd8711a",
+    "backend/app/schemas/sdk_schema.py": "034e69c68f13da85d8fcc2c82d73162ee30ba5ac39182c216e07a971b338cc95",
+    "backend/app/schemas/inference_schema.py": "8f60237473ca015beb5fa68b83c447b566ff1eeed14bc56d60a2354035f6ed35",
+    "backend/app/schemas/execution_schema.py": "dd1cf386bf1e4cd9008f9b71283625c5129fa58ac9e4faa70b58318d1f5982df",
+    "backend/app/schemas/system_schema.py": "a53d24a3e6d4758b980a6bcc5882bfd1177947ce8899d2e581cb63f4e89508d5",
+    "backend/app/schemas/orchestration_schema.py": "203359fbfbe1ea8f631242facb9b8af569bdd0992ad104aed7cbf2ee9a51c2bf",
+    "backend/app/schemas/edge_schema.py": "363ddfa10228d6b1008e2be9907be81c11297a728bed7cc618662d7e540168d4",
+    "backend/app/schemas/project_schema.py": "f4ce58a1a30622efc02ac41e7148dc983d27db6f8a685f3ea90d948bc5a44a05",
+    "backend/app/schemas/model_schema.py": "4d375e47f70f7bad945168fc130e95759f813ab3a080d3661a5c3854e1691756",
+    "backend/app/api/mcp_catalog.py": "f9518ace5b6a765ffd8343eb347cb72b1e6380dbc7d4d6bb47ff16f7bfd8ec72",
+    "backend/app/api/executions.py": "3d018c7b61b26d130cd9b7747da3ac4e4fc211cff6325abdcfbfcc1d6a2af2bb",
+    "backend/app/api/system.py": "55243b02a5f724f1337156914466cf10275e47e16854e5c52d387378a3e42b6c",
+    "backend/app/api/edge.py": "e17c39bad3da7d2153abeddf17d5def7f96eb89fe3cb7434b4e1ff98135b7932",
+    "backend/app/api/sdk.py": "01610876193a27cfc33b089eec4feef1bd4f2170ab8edf169415caa7f3cc713b",
+    "backend/app/api/models.py": "696b47d5caaa76e3b114dd5673e7ee199771044e7a568dbf50cd966aa0ba7be4",
+    "backend/app/api/deployment.py": "b15d791435cd7bf1f9ecc1661594ec3dc5cabba9e2b5684837a655cba0813a32",
+    "backend/app/api/memory.py": "e8b280825a8314791099e06bdd12eec511dfa7192eb56fcdb24ed965f9ee92e3",
+    "backend/app/api/telemetry.py": "649c9ad60922a7aa9ee200e9a9fdcecb4a8003339b87dda33411d239e58a6a90",
+    "backend/app/api/mcp_runtime.py": "08842b3f697ffdf10027ca3791fff6748588e14d886d7817445bb28832ce635b",
+    "backend/app/api/orchestration.py": "8d64a1cb564adb9857dc11edae41b05ce05e93dc25838e23200b7ce581627779",
+    "backend/app/api/capabilities.py": "aee92b1b7bd085ccccd0b2ccd924c539958b16698c6c0c8f69ccc5bb1d7ab9f8",
+    "backend/app/api/qualcomm_catalog.py": "954f83826fb485f1fadf47ee55a845c6b2e83eb8bac8047facb34cce22dcd3c1",
+    "backend/app/api/inference.py": "c9dc8336eb259691aaf2fea561aad2fa276d54eb23a0cb3e30e92b4de44a736a",
+    "backend/app/api/audio.py": "d0f5ef54bea16f8b1c51069eb80723f2c56334de68f120e71783e19e00aa0c72",
+    "backend/app/api/projects.py": "ea618d4adf26995046c60de9f6f14b65babb52fe7478135218f7e7c6ace04e3d",
+    "backend/app/api/rear_media.py": "de49ca87d7a918418af0bb6dee0f00726d51e16b6878ae57d5978af933f94c9c",
+    "backend/app/services/mcp_catalog.py": "cac58c685b85ca4cff27ea17f4ab61f5e1cb2c3995d00d18c4398137c3309b92",
+    "backend/app/services/qualcomm_catalog_snapshot.json": "180790a474948f17d30623d2fa1e1933ebe2b20116f4591b045ff6fb194bc33f",
+    "backend/app/services/file_paths.py": "39dae51637c263156a5131cc1f8524150619fd5d5d9da33498898390b4e78f68",
+    "backend/app/services/model_providers.py": "3b850f7d4fa9f0db8ef026afc9603f329373991a94e2f10a98c718dbd73d15aa",
+    "backend/app/services/authoring_diagnostics.py": "e3aa8d0c44c1a3fb7acbd8caf68dc339a90d41168c92f91a5db58269f02f9e94",
+    "backend/app/services/flow_loops.py": "9ce2ad76bf195a7d0e757790f0e1cb919c059e0e955022056fd037c84cf7012d",
+    "backend/app/services/qualcomm_card_metadata.json": "428124580e2001e8cb2148edd8a37901c5844c0862cf29c51910335eff106143",
+    "backend/app/services/model_reasoning.py": "0049e276b3e0c40f3fba3f478d47fbe1293061540c5eb4b218b37c09ee39d3de",
+    "backend/app/services/mcp_packages.py": "ec7b6d8e572b082eed2814d62aac497e881f13a0022c2522c055b6b727f46003",
+    "backend/app/services/project_service.py": "be2f09861243c7f79a1c315370093a173aa85a80a577146dbb6cd9f64c3e4b32",
+    "backend/app/services/catalog_model_guard.py": "4ba85a41cd77dd095d0744ecf134c9a6dccb386e194497ba7214e0c7fcffa4e7",
+    "backend/app/services/system_service.py": "6067088dc5c3f62d1262ee252acc97ea8b38959a1eaae9f2476672835d9f3dda",
+    "backend/app/services/host_lite_edge_service.py": "a0fc3aad320041f0c779a00f2c20439bb4f34ad19a0c228d51520d05feaa606c",
+    "backend/app/services/authoring_intake.py": "a8aeccf82dbdd6f0341e0f57be3d7b93e6c8f33a6e3bf892762ffb9003987428",
+    "backend/app/services/child_care_template.json": "b28e578a4aa59bcb60728fa6841e3284e4a24038fbc7e158bb7da1f78423ef8d",
+    "backend/app/services/hermes_tool_arguments.py": "5ecc4b8d20bc519e49b5452146bde1fd4077e7e2c83612bd6035be4818dc7a71",
+    "backend/app/services/node_capabilities.json": "0d13546ba240339947a646447ec832e9d41cb18d84b9ae101c7a3f14de348ad7",
+    "backend/app/services/expression_preflight.py": "172cb9d28cead7a30e417035a49a383f11cb430969f9d31aaa26703cb9a0f76b",
+    "backend/app/services/asr_service.py": "f410fe0f19ea174afb694690c858772f0196706ae4e65cf748c4dd245a5bb1c3",
+    "backend/app/services/inference_service.py": "a0b24b14725ee0b9d98f126083d5702aa64cc3f96eacd26372377d9f4f0de6f4",
+    "backend/app/services/capability_categories.py": "6370af7d0a0ee27c729ee62418cd930b642bc4f1ceb670bd574001786d96a86e",
+    "backend/app/services/capability_library.py": "56f73c641065ea4609c9e33e015eca46c91bb05276aaa4da6a9afd7b09ea7616",
+    "backend/app/services/authoring_checkpoint.py": "9225c7169ddcbc33eeb73ff216f6689bee327537f562636978f8492f444db7c7",
+    "backend/app/services/scenario_execution.py": "3eaae2e69331415a309d306986292924e72c43eebbf5366ade1af1c7ea2246f1",
+    "backend/app/services/scenario_benchmark.py": "ded84501ac0ad9a1c2d7eb481bc7e7d2ec117431c1a6132db2f6c1137ab81265",
+    "backend/app/services/mcp_runtime.py": "3bd8f5720e07407dc0dcca265efa7dd725fa042eae6386c4ba844debaf37877b",
+    "backend/app/services/execution_store.py": "933dcd17c79822e2d3aa57ee1dd7219ed538cecdef626e72ebc02e19b5999201",
+    "backend/app/services/interaction_contract.py": "d6ff47b7f50aa410b553f6485c21b43d0d1e4a38d7d21f9fb9ca16db13f9a074",
+    "backend/app/services/node_capability_service.py": "2acd789fdd242bbdd411e584a761dca1a47c3be531755f8872212c48875545f2",
+    "backend/app/services/node_data_schema.py": "050d7f894bbeb77fc180bead1f40d30522d08b8c289850b8fe474281ec519189",
+    "backend/app/services/hmi_control_contract.py": "00824236dcbc013ae1942bfa767281b4180a6752d10e6e5025b090b6f487f36a",
+    "backend/app/services/edge_service.py": "d22b28c6b871e3f7b0f5ba96c3ed4a5c5bd65a2f4c9a52465f92f78b8d88afa4",
+    "backend/app/services/multimodal_messages.py": "54778b25d6c9258c0631694395fc890c4984726c88326cd8a719e4b68df15f34",
+    "backend/app/services/model_service.py": "c3ca36b3ac0da01cc28edc75003da5c1e51e26fcc4959e937e8edbc9f2414f50",
+    "backend/app/services/orchestration_service.py": "874544135236e5f154ddb5b05e3582115f539c6f7c59477e38e8ea5ed11c7d8e",
+    "backend/app/services/flow_contract.py": "338d0e1fe25d61bc731ab1c019356956a5f6c6b1e6eb61e03bdb94682bad00a3",
+    "backend/app/services/qualcomm_catalog.py": "e57d40516942beb12df4038b8385b170347e41a9e441f45364419b1f0fbb773d",
+    "backend/app/services/hmi_controls.json": "c8b754464c6289e8765ccf7b1506c44fcb0a79055cfeacafcbc8ad727ce4f14b",
+    "backend/app/services/hermes_authoring.py": "6048b0fa4898cda60a4944d1ef0fe3812bb3280b7d8ead31450314919ebf7b06",
+    "backend/app/services/execution_review.py": "54dd24f6708b1537f1b4432e806a76042e4820851ce3891ec4e920b520ade2b2",
+    "backend/app/services/sdk_service.py": "63c16fbea88a83b6e6d140e0b1e8aad922af1bb9a11179b9017158ff0ed98e0b",
+    "backend/app/services/authoring_session.py": "ad8b99e69226ff71c5128d99fd84875bb69720181c758f6cef50b40c48137f1f",
+    "backend/app/services/inference_lifecycle.py": "81bae3e19427270fba0f5967da4765e03b0f1a96d8957952a73ceb6c065587b2",
+    "backend/app/services/mcp_worker.py": "9c6d25bd0833a62ec64a506c94e01bc8ed72528ae6e2f9dfc485f8bbb7d96acb",
+    "backend/app/services/scenario_builder.py": "35255c96a76594ae3f96b5315fe3268e4a743ccfb2843dcf6a63f9182b2f371b",
+    "backend/app/services/authoring_team.py": "9ddf99fa59886bd1b68141c756e45e6f376fe6bd2fc10a40894d3d50a5bd29ba",
+    "backend/app/services/test_plan_preflight.py": "4d912578fbdcee7207e26f09c306ac478c24c49c8e727c95803fe90aff3e26df",
+    "backend/app/services/xlsx_capabilities.py": "701ec77152c3917d4af21f6f84b77afddc7e933b34ad8d91d6af1d9d80ed2274",
+    "backend/app/services/opensparx_service.py": "e5dd1d8a78f7d538d43c95f1ff15a29e399f566547ae85d97d6240fed423e174",
+    "studio/src/App.tsx": "2e4aba1a0aeee466f40969d01f64f87fbb216b9b967d863a9ada836b5bed6508",
+    "studio/src/main.tsx": "f98a3f050711057f568fc6faa4a78ae0aa04be284ad12044b5d4b97448ca5aa8",
+    "studio/src/developer-docs.d.ts": "2792a4afde0e71becefb0fcfc78694d4b2815e504b4ee6d7362c221fe4ea113b",
+    "studio/src/context/AppContext.tsx": "afe7d7689c83b1d7360d0af7db45e8c3c9f182307e1a25633b713d913516de74",
+    "studio/src/utils/GraphEngine.ts": "bb9d6b8a530c32c90cb227f240aa65d6fe364e6ad5d26da1374e950f88d45001",
+    "studio/src/hooks/useHmiSpeech.ts": "4fdb1e6ffcee7475a1b7c17655c60de76b93d72bedf0261edaabb22fc00e7c38",
+    "studio/src/hooks/useVoiceInput.ts": "e8f3d59ed7f75ada462dec3a20ae230de9b616f70d5d4306c1413f02c29fc1f8",
+    "studio/src/lib/voiceCapture.ts": "8bbfd9736b74f82f7065536291dbdf2a38c7071ec97bdad9fad38b0cafa263e7",
+    "studio/src/lib/prepareImage.ts": "9332f37769fd773722c09ccb3d91a8af3eff25340317f59c3b061cc02d5cdaf9",
+    "studio/src/lib/utils.ts": "726cf1d77dbfb6b47be36b52fbd33f651e153ac8ca0d78e2ebddf51ab36eb968",
+    "studio/src/lib/api.ts": "e8fdd74338daa27a9dd0f6d80d5d795562874596027e40c6bde87c79e74f3ab6",
+    "studio/src/lib/speechEndpoint.ts": "456cbc2a0b12983cf170886e1eb2d590a44bdf2af0f20e07c72ca20103a531d6",
+    "studio/src/lib/projectFiles.ts": "4fcd1ca8c8034ace1a0e871ca861042d67dedce46746d6fc91cd6ddc65e7efe6",
+    "studio/src/api/coreClient.ts": "08edf2351a2fe4c43ae0a30f762b8908d2f8b985f9e9ba42968189677bce77c9",
+    "studio/src/i18n/en.json": "1e9848b2762d08d8a1e28e7258c030d36ce1ef1d030c1633e9ca0a7c8db51272",
+    "studio/src/i18n/index.ts": "dc7cfe5bb9127c24d8db9153e4d9d2218e8011e7e559a2432a1a8e930609dd9b",
+    "studio/src/data/childSafetyScenario.ts": "d05b404be52c59f6a4b96089dbc6b5ea0f9f437c16d2c52e40df97ae9bcb57b1",
+    "studio/src/data/teslaAssets.json": "71c602fb7a057cb2e64d8bd1da1e2d779c500858bc70484d0262994c18046fd2",
+    "studio/src/data/selfieAmbientScenario.ts": "5be0a31e6aae147146407c09a0913a282c8f3cb366f2af0ccb492b4b59c68c25",
+    "studio/src/data/inferencePolicy.json": "a66589c1ca47abeb6505696701316e8d1ac33dd62010e645db67854e4574a4ee",
+    "studio/src/data/carControlCatalog.json": "adf52233ac1917f55b38e23fc4d1e23b1460880986bb3c554cf32ddbae68b922",
+    "studio/src/data/nodeCapabilities.json": "0d13546ba240339947a646447ec832e9d41cb18d84b9ae101c7a3f14de348ad7",
+    "studio/src/data/activeCarRig.ts": "fea1f2be4a4fb750e4ef1007ff149b4fb34eaaf22c1eaf97f6854d384ccbd064",
+    "studio/src/data/hmiControls.json": "c8b754464c6289e8765ccf7b1506c44fcb0a79055cfeacafcbc8ad727ce4f14b",
+    "studio/src/data/mcpCatalog.ts": "3936de93102466971bbf83cf35fb158585d3ff5b96cadbe99acc19c4a1ac6a8f",
+    "studio/src/data/rainComfortScenario.ts": "31fce1e19e2d7dad34bb9a7a361e2192f3bf0ad7c09e8fb16ba50c4c6e0fee6d",
+    "studio/src/data/scenarios.ts": "d1571b2548940bcfcd956c05326bba11e05e8ddd48d33059b21890409414a47c",
+    "studio/src/domain/nodeCapabilities.ts": "fc0891410c897cc57fb1a0965de5d162d950688ca15e2312f3ee30fb07af313e",
+    "studio/src/domain/contractErrors.ts": "49b1d9d2764431d7ae21efb92c69d9d33940dbaaebf0182252b915c4ec8db65c",
+    "studio/src/domain/flowSession.ts": "0d3162fddf601e325df347c6fc50712ad366e81d9f6bca203f0947d778cf537b",
+    "studio/src/domain/expression.ts": "8eecf905a9853d9012665e190ede233b7df6bb63c0d8b742051eed4bb71b1f46",
+    "studio/src/domain/modelCatalog.ts": "ac6b2dd4edfb331055fcbd83c8d85d339e579ba134981e5709f7a4e7383022b4",
+    "studio/src/domain/flowContract.ts": "04376b17f17a4750b8539d29be21ba6295f8907f6e8538607b9e88a3c4789e7d",
+    "studio/src/domain/scenarioBuild.ts": "ce0e5458b04e27f27da15625587e9dbbc8877e186852dc3013f1d53c3c17efd0",
+    "studio/src/domain/cockpitAssistant.ts": "74a3d3bae5b31aff47b582cb55dfff166287bb03e662b9db65a7fa6b2442819c",
+    "studio/src/domain/stageView.ts": "c9b94a04acc5297f360af129fe4e76cf7cbfa3760c675cae301922deed7dc970",
+    "studio/src/domain/durableFlow.ts": "945b32b788440a41953db3297f6bb000d4343c2d033a32415d06f38c6f3bf42e",
+    "studio/src/domain/developerDocs.ts": "8c372e2887585153ed537c6bd67523339f86f728aa127e37cf10e762040ad787",
+    "studio/src/domain/modelTest.ts": "4cc303a4b083b85a4a0f62b7bb155f7f672607970308b658c7a3260f3d4e8906",
+    "studio/src/domain/testPlanPreflight.ts": "9bc2c793021cfa84142fec62fb612213cdf43e4f919b2b1461af805e3bc8fafc",
+    "studio/src/domain/capabilityTree.ts": "dc2f4875dbf2405f3d52f0f18506e86b299974e636bc2eb240eaf4e50ae423f4",
+    "studio/src/domain/scenarioSession.ts": "09506ea58941da29f4cfeaa4f6fed35e289489ec12b645a1fd6cdf869aff1783",
+    "studio/src/domain/nodeDeletion.ts": "abacb38d1d789b6d2bd8fee5f4f83bc1fac4fc6d588ee7ff1c5dcee2b138b425",
+    "studio/src/domain/flowLoops.ts": "b6469335be833f427d6800ef71ecea835a3724f38c6ba70831f165fc77fac21e",
+    "studio/src/domain/workflowLayout.ts": "25fe14d68a82dd59590042565b3f4604a2ecbe0ef4ad1dbd0145fd9e458ca74e",
+    "studio/src/domain/qualcommCatalog.ts": "b903fffed9b98099d86c0951316022f7b8e15c4afd3ec66efa230a16eb9be459",
+    "studio/src/domain/runtime.ts": "c6b6734c11738512fcdfa13d9bb54db60199d6f92f10965cc69d4e25290ba7f4",
+    "studio/src/domain/capabilityPresentation.ts": "57f158a4e894fd4a7cf4725430e4fed232d375b07cd1ba343b7b6b4586b9d03a",
+    "studio/src/domain/hmiControls.ts": "c6c97169d616a08d268b7858d89e8b9e4ba32a5bdbc7299ec1ec6a5b20e22c63",
+    "studio/src/domain/scenarioRehearsal.ts": "76e7fa77d22f7ce02467d372beae902b70f7d7f7d3cffcf82262dc58ca09bae9",
+    "studio/src/domain/simulationReport.ts": "b0bdfdd542719be0447834c4822fa9ab6f224063fe5ef5aadad42161d23cafe6",
+    "studio/src/domain/inferencePolicy.ts": "e5cfedd8d6a738e20f2e147113b49716b97f0e053c6e4eed353db036854bb845",
+    "studio/src/domain/projectAutosave.ts": "c792e884240c93617a3b8a70cb7048b0a71ab81dd298be8fe8658236adbc06b0",
+    "studio/src/domain/carRig.ts": "94abb7a282a6c0680ec7ff98e8b14d852bbc2836bf0c7986d9368fb3c5feedd8",
+    "studio/src/domain/videoReplay.ts": "a00e982f01077c575021b5919678762f8130dee0dcb78732ecd8123771818e4b",
+    "studio/src/domain/vehicleWorld.ts": "e310e1a0361af33eea13d2f882a4d4252afa9cbdec8be6517efc1d57011d2206",
+    "studio/src/domain/assistantPresentation.ts": "d435ef895f87aa780547586393035c143c8ba40e78b97ff24b129348cef39fad",
+    "studio/src/domain/chatTimestamps.ts": "8be0fa3ee047f416bc2054cabb5b78f818f45bd57dead0d4db4319023e0e0d4f",
+    "studio/src/domain/scenarioExecution.ts": "4916c1b744001b49fc063ee0fca43d8cf930593856e039ba1967db9699763df8",
+    "studio/src/domain/inputContract.ts": "30b7e18489a6bb8ca48c03c5005d35aec224c48407a58750f6bce4d687d3d931",
+    "studio/src/domain/catalogModelNode.ts": "c95ac60ffd225df6818af41b2356b364b7eced44cfefd7037bb6b3cee3d06d7d",
+    "studio/src/domain/rearVideo.ts": "ad14a03b9c3ada71890088f197d39926e4839d74b34b63a85e53f40fdb6ad3f3",
+    "studio/src/domain/modelOutput.ts": "1bfea6e38a86cad21e2d1b0f6ca5ea419803bad0ab97845f9f84f8e232f7edf3",
+    "studio/src/domain/opensparx.ts": "9b09768de3dc43ec2c54bce58de1f8879184fd5dabf772ffc547341c34024e2c",
+    "studio/src/components/hmi-widgets/HmiWidgetLibrary.tsx": "5ea17845b508847c7c4f5165e557128e39d4dfe92c6478df4814ea0546ee8a2c",
+    "studio/src/components/hmi-widgets/FigmaWidgetArtwork.tsx": "ffc5a752c23bc5980dbf45331ab3fcd70f21cba229472fca9d5a1d443424b082",
+    "studio/src/components/hmi-widgets/catalog.ts": "64b4bd51f2de0d19a3f6c23e77a65527d47a58a97e3364efecbd64034a9332c4",
+    "studio/src/components/ui/RetroComputerLogo.tsx": "3ffda92ec2e879fcfe2dbc8c766430a8db084668f60095bb1c461e2569cf9b0f",
+    "studio/src/components/ui/tabs.tsx": "8340bf784dc5505b723aa78ffe4651ab36bbd54d6e391ac21a5ab616699ace6c",
+    "studio/src/components/ui/card.tsx": "af6fe5855ce8049132ad0761240fba63e015ea4387107cee319336455ec7df3b",
+    "studio/src/components/ui/slider.tsx": "234e38fef59169bd02d8f5b56ca02e5ec13a0bd6846c328927b924e1299f7fb0",
+    "studio/src/components/ui/progress.tsx": "77258897ea867d18486ec1c693b0b9e0b6f79a31c045cb4926667074cf4483ad",
+    "studio/src/components/ui/toaster.tsx": "920a5f72dd4c5678b98043845f2ec3345d634fa52c1c0bf945d27455bdfe0f08",
+    "studio/src/components/ui/SiteAccessGate.tsx": "4c0a1fb72e897be33c02f720b5e0bf2e16b0a13d9169cfa911adfdb0ce20d029",
+    "studio/src/components/ui/sheet.tsx": "b6666b3576a67c71a6c71ade72b610fc1bfe116be641f5fdc4f611d18d7a11c9",
+    "studio/src/components/ui/ResizableSplitter.tsx": "864215d7d0501998d88b7232df42984c6be097599b16aab47a11c874153410e2",
+    "studio/src/components/ui/scroll-area.tsx": "edbaecbc4f5cb6e16ecb39d3678d81b26e1a968dfc273dbb77821de3c8626377",
+    "studio/src/components/ui/label.tsx": "e5d2fe282bbd509054eada8a56eaa47c97777ada083e25228b4988253de2840a",
+    "studio/src/components/ui/accordion.tsx": "6b797ae5251e5c276215dd70364a38c1b91bee03cd1e9fa5b77479ae4b468bcd",
+    "studio/src/components/ui/use-toast.ts": "ef2f995dcdf8e93be32892e6a79da30da309f50396fd5c348359a2b61f1c50b4",
+    "studio/src/components/ui/switch.tsx": "ab2d009e0fa7366f47ae1a6e0ca35d0aac55c6264c5f61718e12366c196163b4",
+    "studio/src/components/ui/AppIcon.tsx": "003684223fda3d538a54b66747c10a4261c47c3c71092fc0300287899bf3a824",
+    "studio/src/components/ui/ProjectConfirmDialog.tsx": "0362ec78e97e4662100427242a954518084bb7122b5377816318ce6ca3952969",
+    "studio/src/components/ui/dialog.tsx": "40aa4e66031736947f87ec7ab367be7b3f2612a84d5009a8d714bba55134ce23",
+    "studio/src/components/ui/badge.tsx": "93e077de42665df20b811bb90cc54b112741c5eec5ddf4b5595149f94ebd8caf",
+    "studio/src/components/ui/separator.tsx": "995c54f1c5c688f712a675fe35d55bcada2b31dba561dcc71553a1ad601e59ec",
+    "studio/src/components/ui/button.tsx": "9f00b7cc98d1840575239ed2d8e1a055989f4e8526d624bc46cfb7571879b4f2",
+    "studio/src/components/ui/toast.tsx": "f8d999f4eaa1231f2eba5117b9585e8182c82275c161f3fcf07d685b116f8098",
+    "studio/src/components/ui/select.tsx": "282a85c81aaafe144ff65d9a390f67c222b0a502a468eb84b14ad871343db88b",
+    "studio/src/components/ui/textarea.tsx": "7bfcee14419a4977b0a3efa647cbf58d17a21d603927591d57fbeab9f0ecf049",
+    "studio/src/components/ui/input.tsx": "5351c1b1de3981bc3edf1b1d7d4e4aa369f62372b332e2407b6d3994514563c5",
+    "studio/src/components/monitors/SafetyMonitor.tsx": "bc618bc8310b651a7f1d4cdf6ee4b9cd09c5ca90d1517e75ae997ce6e7f3bfb7",
+    "studio/src/components/monitors/KernelMonitor.tsx": "790779c540a0eb2885c0126c675646018580e26e7fc66045f2a509787be195d3",
+    "studio/src/components/monitors/MemoryMonitor.tsx": "f13fb9ad484a230e66989246235839a3a9146e2226a0bb9deda56a7c28453999",
+    "studio/src/components/monitors/MiddlewareMonitor.tsx": "bb7693cad0d7fd98f40adb72a5b694233165c00c729a769fe4a821bff4759cd6",
+    "studio/src/components/hmi-tesla/TeslaMedia.tsx": "0d665ebbdb214fee4c3fc528cde45f5c76532bff0c308aa96bf1e2f4241f366d",
+    "studio/src/components/hmi-tesla/TeslaDock.tsx": "7e9f1bc6c1f1a0800c002014069004192883da2e28315e587ca7b81ff7bc05d9",
+    "studio/src/components/hmi-tesla/TeslaNavigation.tsx": "fc708662c5e8f3581547105be95eb16f21e8dce277cb958b8554084a8cbe9a34",
+    "studio/src/components/hmi-tesla/TeslaSettings.tsx": "095f929cf6c743839d590aead3f9ca9b05b2b34207ea70c0be6be1ea6e0f18d3",
+    "studio/src/components/hmi-tesla/assets.tsx": "7c35f986d3b409b4ab16c6b16dfaec766fc5304fe8b0afa5d5d75d81ff361410",
+    "studio/src/components/core/CockpitHmi.tsx": "82a34564077526d0abbb5bbdacc9c7e6e52f528f90155cdb1647bbc4a2ef984b",
+    "studio/src/components/core/RearVideo.tsx": "6de74f4e07840a2debe5b67a9feac804c55062c1f6b0424da5bad9a0f8909635",
+    "studio/src/components/core/HmiChrome.tsx": "73143c1278b0e3b9555635407e39779c190e16924df3d23125c402523adf5b69",
+    "studio/src/components/core/VideoReplay.tsx": "6e12246835ac90a320e8473f5124ca2d44fca907554b83bc72d634c50c670b1f",
+    "studio/src/components/core/FlowCanvas.tsx": "568e8a44979617a96bdbbfb778f7c9b69a2217663ef723186ec51e06c92cce3a",
+    "studio/src/components/core/VehicleSimulator.tsx": "fb0e76ede02fb8424743129ac94ecb74c4e66e671053aef32350f5eef04a8641",
+    "studio/src/components/core/SimulationRunReport.tsx": "e51176975ea1a4982d280b87f8cdf17d0229a1bb6a43b8a23e2617f8ee884746",
+    "studio/src/components/core/SimulationChatSession.tsx": "9c52cd390990d2aa9e27dba43981f30a6f2f56894f60385f2fbba60b23092037",
+    "studio/src/components/core/ModelTestPanel.tsx": "bc28d978b7c8b0c924a94dd347b41720b32194237aac38a3db550db60e5d5439",
+    "studio/src/components/core/CockpitAssistant.tsx": "45c1df2d8b4fc5a48623c367a3816f329bfc4571bd382654668f08aee9a632bd",
+    "studio/src/components/core/WorkflowLayoutControls.tsx": "9275fd2bc3f1ce68c603df668ffc4ccb423e3b4a91bb07c945f321de7ce4a192",
+    "studio/src/components/core/SimulationInputPanel.tsx": "e3bd1baecc5db2fcc65fe6d47adb8b3bdad1fb11551fc292b18c37b7c5ce2db5",
+    "studio/src/components/core/NodeContextMenu.tsx": "e86016f37b80c2b03f8480b151cc3fa5c350cc6e8e54ccbf24213818eb638e67",
+    "studio/src/components/nodes/HmiControlEditor.tsx": "b7879fc7544d11e62215941d7e56e19ba1c127dcce58f894fa71910045faba14",
+    "studio/src/components/nodes/FallbackNode.tsx": "3dad487fb454dfb108da2e6b1ce7a4011a56344eef1ec2f650a7068ec9be65e0",
+    "studio/src/components/nodes/RecognitionNode.tsx": "0949b5b2cae3d947c9a3e3178020d882d855c9dccabfec6990704de2d3247ded",
+    "studio/src/components/nodes/FlowNodes.tsx": "8609fad015156c13e2cd73394e943eab517c9d78837d2dc60eb9e8c2ae4d5fe4",
+    "studio/src/components/nodes/InteractionNode.tsx": "27d2efd071ce374842bb6adcca38ec6eb2c3c272406e1d1719e0bc01f84ae72e",
+    "studio/src/components/nodes/DataNode.tsx": "977cb5d9418a2af8dfd9b0a4110a063556bf2d727e109dce2b1d86f53f7284a1",
+    "studio/src/components/nodes/OpenClawNode.tsx": "dd0e2398e1e023617c93ba5acf809bc5d56f4cbad202600a91df628881202234",
+    "studio/src/components/nodes/EventLogNode.tsx": "8cb6d278e3d7c93a4709903d47eef00c7236f7b3b7a4bd857c50da7d1d0e54ce",
+    "studio/src/components/nodes/CatalogModelNode.tsx": "50c9335032ff6822ab42f5df4c11f7cf6d2b1d4f3513a88e36b7140a7773001d",
+    "studio/src/components/nodes/ToolNode.tsx": "fd9b4b0d73627e88a82b04a62f00d11643b2e584d2cf7503615c4517146f692d",
+    "studio/src/components/nodes/CockpitAlertNode.tsx": "9da393a1589e1b66879b9b9a9b0281415f12e9ab4577073638d3c0465c482625",
+    "studio/src/components/nodes/NodeStatusDecorators.tsx": "af1000d97938512131fbe8532609da6b103a5d6c858d0be447467f85d249f624",
+    "studio/src/components/nodes/SystemInputNode.tsx": "8653b5e1b3500a7d8988856071aff3f505f6cd79406666e6f4a6d887c3aaead7",
+    "studio/src/components/nodes/LogicNode.tsx": "2912288158f1032ee764a57578c5eebac0d522fbe28f698ab85d2353ec7927ed",
+    "studio/src/components/nodes/VideoDisplayNode.tsx": "43bc9538e3df9a439dac7df2bff8d29bc08725325f94a15bed20d195ccf7f188",
+    "studio/src/components/nodes/LLMNode.tsx": "87c8008f72b71bf16884b5f9814f4bd5c758a75be8dbaf44d9e161f8bbb9a5e9",
+    "studio/src/components/nodes/MemoryNode.tsx": "19f14ba73fd70db7835ecc9357afa88d509bb09cb57b66f380ffba47773df1b0",
+    "studio/src/components/nodes/nodeStatus.ts": "ce6a94d96f48c8d282be651427d972d041761fb740007e81fa8918b04bf75f8a",
+    "studio/src/components/nodes/IONode.tsx": "e1f64534e7b531a73e402ac2c6b42fa8fcc4c0a81723fd5cf87046026c226063",
+    "studio/src/components/nodes/RiskMonitorNode.tsx": "23f98c9b7fd3c297de4212aa69ab30cfda4cece875f4d35bf7c8a60cfe3910c6",
+    "studio/src/components/nodes/CarControlNode.tsx": "a96787db2a2af2e106a8d1576c28fc8c8880225fa01219a51e470db2fa3423f1",
+    "studio/src/components/layout/ScenarioSpecPanel.tsx": "6c03e37b8b9e72dac28f1ea1e996ebdf633871b2ad3e5ebeebe61dfdb7b7cca6",
+    "studio/src/components/layout/CatalogChrome.tsx": "05e1db3663326491b2b933029e9197dc1f51ac0e0922f4937d2569c7c8033366",
+    "studio/src/components/layout/CategoryLabel.tsx": "596225bd970d6ea24ee1c82cb8bed2bdc9cca83343a78c31f0b7fcf835f484c5",
+    "studio/src/components/layout/AuthoringModelPicker.tsx": "37e40f56dfaf4da9735ad80552beb01b4c53a60d909ee3c9e134ee01a5231d28",
+    "studio/src/components/layout/McpCatalogPanel.tsx": "3e6dd38472648db5c11ce93946abed76bd6ec8e359ca9a2a9bf92c66bf777ef5",
+    "studio/src/components/layout/IconNav.tsx": "f7c09c9d3aa311feacd71cd011717bf81a9b9978af738556e598960b47c7897a",
+    "studio/src/components/layout/AIModelCatalog.tsx": "efb541df4e5b9a09920902ad39762a653fe04eba896cafce02792f9230948fe1",
+    "studio/src/components/layout/PropertyPanel.tsx": "a326e45eae28648bbc394efaa726b91f3200b0b8ecebae0ef613b967ef84f95f",
+    "studio/src/components/layout/FlowCapabilityEditor.tsx": "f7b7aafb7660b9a223309e5d02f95ec080c846ff27da80106b7f5843fa911ae7",
+    "studio/src/components/layout/CapabilityDetails.tsx": "e2c9695eafa99fc5afc72a62e86df917271e411c66a1a95502de7679c5942a3f",
+    "studio/src/components/layout/ProjectLibraryPanel.tsx": "f2fa6616066873f1a90ecfba59c582be8786aa8d259324e8ace0bdeee8918eea",
+    "studio/src/components/layout/MonitorPanel.tsx": "e0c886a1d2752eae27c1bc505f1b5cc3cb44ef674c73370099093397b44d3e72",
+    "studio/src/components/layout/DeleteProjectButton.tsx": "4f0c0cbca11dc98f6c92e978eff2517186509f5351410cd389f980c652f10446",
+    "studio/src/components/layout/InteractionEditor.tsx": "cf9133e84bfdc808790c5398ed7709d6ed5e2a8fb8b46cd9d8dd1e8eded42d68",
+    "studio/src/components/layout/SettingsPanel.tsx": "0d963842a15202df6d498432588aff092cad7db6b3a1ea074fec156baf1d9dbd",
+    "studio/src/components/layout/DiagnosticPanel.tsx": "88273948e7ae7e27e5ad3166c896f7970da38b4545ccab13d8c8031e72a59195",
+    "studio/src/components/layout/NavigationPanel.tsx": "2591d165d3cc906fd9a3333f907094d1aad15e9e596b42096008233963d4679c",
+    "studio/src/components/layout/ReplyActivity.tsx": "f31eef575a4f0e0635cfc34296e95ec13422e0db9abc81c7e9151286e9023492",
+    "studio/src/components/layout/NodeCapabilityInspector.tsx": "10332b03b7c08aa1fcc9c504bbef9de2801ceb43bc31f32b2618b68ae89b95c6",
+    "studio/src/components/layout/ChildSafetySimulationPanel.tsx": "8a91117c60f503829a3290aa06407a1a472beb50835193ff38bacafeb0c028dd",
+    "studio/src/components/layout/ChatPanel.tsx": "6d38810c87a849037b22512c135666c457fad65eccd86e6ca023b345f6748081",
+    "studio/src/components/layout/Sidebar.tsx": "0d1472ad703ebbf75e699810bc633ea0a1e98cbf195784a3e3d917428977fd57",
+    "studio/src/components/layout/McpArgumentsEditor.tsx": "fdc78a9746b2dc2886787e0b32fda7ae8e44be8f6e36b6f006f5804d7c1c6f48",
+    "studio/src/components/layout/SceneLibraryPanel.tsx": "fd7a118a33abbff14650e0d354acb9a1562757bd44d149f098e841b0cfef2b3d",
+    "studio/src/components/layout/MapStoryboardPanel.tsx": "eaa172789e89469ac16cbcbd9861b1206bad0f09d391102afdb1c2e2f90bbbad",
+    "studio/src/components/backgrounds/Topography.tsx": "20395e285862256418208611b840f14336a0d418fd7c564856e2e1a0722e5b4c",
+    "studio/src/components/backgrounds/Prism.tsx": "73553421ab1805ae1fd6756bfd1c37cd7b6a0b35448000ab00f87b8108fc7d56",
+    "studio/src/components/backgrounds/Topography.LICENSE.md": "f4c33af6739191537738662d223b68d77bc226f4b57ea883e16481d8cc5c73c9",
+    "studio/src/components/backgrounds/Prism.LICENSE.md": "f4c33af6739191537738662d223b68d77bc226f4b57ea883e16481d8cc5c73c9",
+    "studio/src/components/avatar/HmiAssistantAvatar.tsx": "215df97f497958c04370a699174bfc3046a0e975254237ec3ac2e5bd2dc13a5d",
+    "studio/src/components/avatar/BloubAvatar.tsx": "b66b3fb7137bdffcbb72b31c261b55d0d474ad1d959e33192dfe1ac801b0711a",
+    "studio/src/components/avatar/avatarPlayback.ts": "7fba912cb6deb8f02bd0da24ddc30c28847dd3e67553ee16a70268c4ff074b12",
+    "studio/src/components/text/Shuffle.LICENSE.md": "f4c33af6739191537738662d223b68d77bc226f4b57ea883e16481d8cc5c73c9",
+    "studio/src/components/text/Shuffle.tsx": "5e6c6da234686f02f5762141aa31ef9b99cfa8864361fe87f21e5da5eed8c10e",
+    "studio/src/components/text/Shuffle.SOURCE.md": "6338d3580ac0801479d142ad4ddf0eff03cda1e4756d2a192b812fd3bc9a0b1c",
+    "studio/src/components/spatial/SpatialScene.tsx": "5febdb53da2265c5d05cb78f3e05d0c60cf1b2a74528cd99cdb38e7d5d999e60",
+    "studio/src/components/spatial/HmiCarStage.tsx": "b3a18a7f38335f5a7ec5e2776ff39014b4e46716ea6d9dd9a55fdbb442388e9d",
+    "studio/src/components/wizards/SkillLibrary.tsx": "82ade37d6698433735d4bf16acc18323e503a752a21d7d1536ed0bdbb89f1a87",
+    "studio/src/components/wizards/ScenarioSelector.tsx": "dc3246c0293257ee8143eb70a09cd7acdb0f9c237dca8227211571c8d599c923",
+    "studio/src/components/wizards/DeploymentWizard.tsx": "88d0c515a5c79c4bb1b2f1a4d70d64fc09a277f0017008a67adc3ee516bdd7a4",
+    "studio/src/components/wizards/ProjectLoadDialog.tsx": "e2751f739e4a6f1b3325bf6440296d6e1e037042419c53254e64e198af6068fe",
+    "studio/src/components/wizards/ModelRegistry.tsx": "49f307677afa5bdb68ffe6b3e9c57f1466b70bb4070c270f98d06d1c5256215d",
+    "studio/src/components/pages/WorkspacePage.tsx": "ed83fdbc50f99519f6c721cb9bd2d1856baa91d1e19127625d42dbac1801ee15",
+    "studio/src/components/pages/DeveloperDocsPage.tsx": "cfb556aae5324646c2ac7ff057ed4228e01c9594fc9a8190a3ebe6db899ff995",
+    "studio/src/components/pages/AvatarPreviewPage.tsx": "de84a36d1d37457228916898f7d60555993db4b8f284b0f8f7dad14f7631e903",
+    "studio/src/components/pages/HomePage.tsx": "1f5e2ccb9984fb4ca9627efd3722dfea112b4f63fe9fc2a1e696d031cea64122",
+    "studio/src/vendor/bloub/face.ts": "f9ddf7f750b101dbf6fa29acc95fe5fbdeec41c96b2873b1a844df2b5c1bd8c8",
+    "studio/src/vendor/bloub/profiles.ts": "62dc55bc860b9e2b1f7a43168cee8738b68b42bf4d07f668d32984ee886f02d3",
+    "studio/src/vendor/bloub/skins.ts": "2fa0f296e8a49b7b81458eebb98b6ecb44d1073bdc815a46e7846819b743b3c3",
+    "studio/src/vendor/bloub/states.ts": "7b67bfc4ee95011225a2cef542866dacde0a1c044a56f174bee4173b82cec207",
+    "studio/src/vendor/bloub/decor.ts": "6c300f8aaa7d2f95c13b35993753b0542779528d16bd8e1d01507e467fe52d04",
+    "studio/src/vendor/bloub/sha256.json": "74dac396176f0dbfecdacfd04ec75158e6a3dd755f64b8cf6264a92b42ae756a",
+    "studio/src/vendor/bloub/math.ts": "736be559b961109c3ca2a4c88d7992e99ceaff46450a522d47e596c1def99c0f",
+    "studio/src/vendor/bloub/shape.ts": "72020197e3ff117487ed670d915dfb3297b8034f7e9a803f573f15b3dd41d44e",
+    "studio/src/vendor/bloub/SOURCE.md": "34283c74c7702bd396c7252431faeaef93b5a6bc25e920a849b54aee3064dea8",
+    "studio/src/vendor/bloub/engine.ts": "d824c715b6ec38b241fc61ae2ac516d7c1623f9603f88942b4585cdd9307e638",
+    "studio/src/vendor/bloub/cycles.ts": "7567aaecf000fa8dce5900617ec64a4537520a3329c62a67c81526d4e25ed86c",
+    "studio/src/vendor/bloub/expressions.ts": "66c5562afcf376c7fde0c83b6c9cc953f1313d9e2f910e2b94fd24098aa52ae5",
+    "studio/src/vendor/bloub/eyefit.ts": "8da411d7643c24f383d2d994a4668e43292c9810a6f63c257dbfd13f61284e9b",
+    "studio/src/vendor/bloub/repere.ts": "2f74419387868a13c2f887a714c7442b130753d938732d91f39905f39ab2030e",
+    "studio/scripts/test-typography.mjs": "d4d2b69961dc2aeef5830563dce337b2c4e5582d81e72496a4a0844af538d9e1",
+    "studio/scripts/test-general-flow.mjs": "d1e3d1c8951b1f9793d3f04ddd4caaea3337b9883fc9258a8c249efaf8b51009",
+    "studio/scripts/inspect-test-plan.mjs": "b53973143d9afce2dbcbb5d285217c3cd7d5fe7d0f1625328acd6bb53926aeb1",
+    "studio/scripts/audit-typography.mjs": "f739666c9de303fde9e8d7d35dc2a928417b7ea10f30a4f5816a07002a38041c",
+    "studio/scripts/test-hmi.mjs": "6c552f465627232f0fd802a8941d8eeb29f175bfafbb2d650bb30e6274def20f",
+    "studio/scripts/test-scenario-execution.mjs": "96398ce23784db76634971f9cd9914830e7239c2592c78511c6de8a789a197ca",
+    "studio/scripts/test-assistant-presentation.mjs": "68db77c1d0e5351e4436af1461ea5f715f9fc5ef43f1bf08a716f69c32ac8dac",
+    "studio/scripts/test-node-deletion.mjs": "4416731c474833140ffc2272d0d0e0337f369a147f273a72741ee6bad3056906",
+    "studio/scripts/test-site-access.mjs": "9e3ca1e9c48c46dc376188b8a35289a6c7a340d2f4f451535f110055088d2329",
+    "studio/scripts/test-mcp-library.mjs": "286447645bb17b204134bda29130580da73b54a27db6b2ddaff3bfaaf1c2c998",
+    "studio/scripts/test-icon-motion.mjs": "e83031a5ee9b0e8a17094204d7920f3058596819a8aa05ddedb8cf32e7742f84",
+    "studio/scripts/scenario-benchmark-runtime.mjs": "fbc7bee7c9a5e4666900646a8066738075d322866f2e554de6018891097707a0",
+    "studio/scripts/test-project-navigation.mjs": "22ab36566418ca4141aa9e4ce84bfe9db07501625c34783ad8335ec580de840d",
+    "studio/scripts/test-hmi-controls.mjs": "8d3ec45d321bfe7909dfc2e8ce55e813908dc7d53a730748324e235381d44e53",
+    "studio/scripts/scenario-execution.ts": "61af750c7047abfc6c9d25867ba3d3573e32e49d32a02347acd991b9074def5c",
+    "studio/scripts/test-workspace-requests.mjs": "87a0c8e91a5da88c3170c98f389d0d931647e74455aad076ed024ce1dc03bdc4",
+    "studio/scripts/test-check-docs.mjs": "45469ee6831750bfeaf3cd831eeb4d31dac79ca4954bfdaccdf87571f967950b",
+    "studio/scripts/test-node-capabilities.mjs": "d590a1846bf44d914c1130c4c3e20075c963c806fa23a0b214f7d9f4daf5a101",
+    "studio/scripts/test-scenario-build.mjs": "1e2a4e280a99949f18e97a71c2dba18cc9bc174e01190fc14a167640cefbc132",
+    "studio/scripts/test-scenario-session-dom.mjs": "29e9b76048a1295c7f94d996fed856152bb11e9bd2eefe23b856008ff3123649",
+    "studio/scripts/test-avatar-preview.mjs": "94a9d66ba3949bc899c82c938ccbc853e03430992fe045699b178ff9aa4b568a",
+    "studio/scripts/test-project-autosave.mjs": "346a9f54e44c993a0ddb5de8e57958df439bbcd5b8ca0fcf9fab5389aabe7e51",
+    "studio/scripts/test-localization.mjs": "ff61d5be667c77340b131c93f762d0083daa53406cb2dbefa900e837dde025cb",
+    "studio/scripts/test-developer-docs.mjs": "45e75e474819b93325b8c0c96de8ec23fe7fe47711f5b1c6a652f3bc8d078bcf",
+    "studio/scripts/test-diagnostics.mjs": "b307a8cc9d27b9c2bddc20766062f3ff42bcbb0208801acbb8eb613b42ab3806",
+    "studio/scripts/test-hmi-widgets.mjs": "6c43cb4874ee706a85f10a71d2bab5151f2788d3929dc0d75c233cf7e463789c",
+    "studio/scripts/audit-localization.mjs": "b9a45214a53d757002b94bf748b35e7baaeb58dc0ead437262303ea2d331077d",
+    "studio/scripts/load-model-for-test.mjs": "b982f0be88d51d0a2d9b84884c63bf20bc975ecc7c659c5d5740f28005bec467",
+    "studio/scripts/test-qualcomm-catalog.mjs": "8bcd1bbb66978b592bf27a6c464dafdde1b50633ccb3d192123c6f5b5e101727",
+    "studio/scripts/test-workflow-layout.mjs": "f57b0d624d86880af4cc4c8ef68120159b2c6d4a15a91c5e5dd0fd27f6d86616",
+    "studio/scripts/check-docs.mjs": "f64121c96a08453742cf1977e23a7bf38e87d0704c477492fd21811db4538d7d",
+    "studio/scripts/test-simulation-report.mjs": "0b5fbdc9fee32fe06f6b381cfb82cfa0a2b1fd773ac82039ff0a0299679951f8",
+    "studio/scripts/test-voice-input.mjs": "24f7d06f99d340773a1fd12c10a7f0a3103a62711f65f5387d332f58b775e0d9",
+    "studio/scripts/test-scenario-generation.mjs": "43353f1a1417beaa72e993ca57f236cc1a17a12441d2a896f035c6e274366bf5",
+    "studio/scripts/test-hmi-chrome.mjs": "b0094013eaccc24a07fe7a5ccb0b34359d6d1fb3d230ab2e4c45d9b19da5353b",
+    "studio/scripts/test-video-replay.mjs": "4819225a2eb0e3134c7263adf0b0bee4b31a351fefc6e72f798c7c1c5c067021",
+    "studio/scripts/scenario-benchmark-runtime.ts": "035347bf3eea6b5b1aa0732b4f2a6d1b8242729bd995cec34abd4530e7e02925",
+    "studio/scripts/test-runner-exit-codes.mjs": "f950d8ba9d6f80d595fe1000f8665bbc940e2f589fe4e5e7b2e62b4cab8f0f4c",
+    "studio/scripts/test-image-upload.mjs": "a4b2ea985dabfa4a77347e77578e97d66f95f9032642eeee920c811811e710a2",
+    "studio/scripts/test-feishu-refinements.mjs": "1a740a2f8a5368dcd8f517d7e2dfe722525608bb31425d08f74582f41b5326a2",
+    "studio/scripts/test-chat-composer.mjs": "0494ce78715f6cd283a7149e6c5a2c9cc181383107d5b2a61efc874f181a1a5c",
+    "studio/scripts/test-component-library.mjs": "d1cf4cf549d566297a8b7dcb017b17a73f9dafe4efc2d6b12d5d23f699887ac5",
+    "studio/scripts/inspect-expressions.mjs": "254493425f725e544548b13c44046f92a121c417bdae61aca280cb274bc75278",
+    "studio/scripts/test-hmi-assistant-avatar.mjs": "6dc49e0254e20126b47aea13f57622c128a13a533d6c9c0fcd18a495e91401ea",
+    "studio/scripts/test-model-picker.mjs": "bec812a9f217d3227221bef394dc34b82b7d40836adb3187655d34a0adbb2d9f",
+    "studio/scripts/developer-docs-plugin.ts": "3367ffa341cdb2e611b65d86d06acf2bd51efb7e3540d5f49d978c0eb6e6e536",
+    "studio/scripts/test-ambient-light.mjs": "b1d7926ea8f6712b48ae498a051be66444614dbcfd0c382ecc73936565759668",
+    "studio/scripts/test-node-capabilities-dom.mjs": "f5a546da33ca0a7b41d799ef8a84632a3f87e0d83e59638566a42e63feef885d",
+    "studio/scripts/test-scenario-session.mjs": "a997aaeb5e68ddc736fb0fd56201203dfd7dbb1ef7cf79ad8bf7b9c2a54da935",
+    "studio/scripts/test-car-rig.mjs": "d29e258a2db59778f95c5b1e3e416de5954ba65adb4dc0e3e80cc672b1f1c9d7",
+    "studio/scripts/test-scenario-benchmark.mjs": "1d907077947260b556479fec5c7da332a820c7a06c981cc65cd6ddd9df54beea",
+    "studio/scripts/build-scenario-execution.mjs": "2bde2a094e80d86c0a0a425f1379b74ff0efa1646de8d88119e56b9c5e152454"
+  },
+  "protected_matched": true,
+  "frozen_matched": true,
+  "final_engine_replay": [
+    {
+      "run": "C-Claude-1",
+      "status": "passed",
+      "model_calls": 0,
+      "case_count": 3,
+      "scope": "final_engine_replay_no_new_authoring_or_review"
+    },
+    {
+      "run": "C-Claude-2",
+      "status": "passed",
+      "model_calls": 0,
+      "case_count": 3,
+      "scope": "final_engine_replay_no_new_authoring_or_review"
+    }
+  ],
+  "post_experiment_changes": {
+    "reason": "JSON inputFormat takes precedence over media type/content detection; ordinary image behavior retained",
+    "final_sha256": {
+      "studio/src/utils/GraphEngine.ts": "ea5ceb83400c8feac06651b4b3d979a94adabe2617b42a199fd5ceb5aee19928",
+      "studio/src/domain/flowSession.ts": "5fd6aa47d8c5d38d489aa6eb5ff99a6099391676edc920cb8b796042e6193f43"
+    },
+    "tests": "10 frontend + 10 backend input-contract tests; final full suite separately recorded",
+    "live_experiments_rerun": false
+  },
+  "protected_matched_final": true,
+  "project_file_set_matched": true,
+  "sdk_commit": "d0288be5b3330d2442e3907185b8e9d0958297bb",
+  "sdk_status": "clean",
+  "affected_release_links": "passed",
+  "cleanup": {
+    "removed_temporary_requests_sse_scripts": true,
+    "retained_candidates": "/tmp/oakegde-dev105-candidates/",
+    "retained_local_work": "/tmp/oakegde-dev105-work/ contains sanitized hashes, diffs, test logs and running development server log; no full requests/SSE",
+    "no_commit": true,
+    "stable_untouched": true
+  }
+}

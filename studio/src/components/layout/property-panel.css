@@ -1,0 +1,12 @@
+.property-panel { max-width: 100vw; }
+.property-panel-scroll { width: 100%; min-width: 0; scrollbar-gutter: stable; overflow-x: hidden; }
+.property-panel [role="tabpanel"], .property-panel [role="tablist"] { width: 100%; min-width: 0; }
+.property-panel [role="tabpanel"] { overflow-wrap: anywhere; }
+.property-panel .property-model-tabs { height: auto; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; padding: 4px; }
+.property-panel .property-model-tabs [role="tab"] { min-width: 0; min-height: 36px; padding: 6px 2px; font-size: var(--text-label-size); line-height: var(--text-label-line); white-space: normal; text-align: center; font-weight: var(--text-label-weight); }
+.property-panel [role="combobox"] { min-width: 0; max-width: 100%; gap: 8px; }
+.property-panel [role="combobox"] > span { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
+.property-panel [role="combobox"] > svg { flex-shrink: 0; }
+.property-panel input, .property-panel textarea { min-width: 0; max-width: 100%; }
+.property-panel textarea { line-height: 1.6; }
+.property-panel label { font-size: var(--text-label-size); line-height: var(--text-label-line); font-weight: var(--text-label-weight); }

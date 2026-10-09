@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "id": "car-concept-test",
+  "model": "/__rig-fixtures/CarConcept.glb",
+  "modelSha256": "c272098089d78c5cd9fd9f24ff50ee8acf8d932c55f2d55fc10adb6c8998966b",
+  "source": {
+    "url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/CarConcept",
+    "author": "Eric Chadwick / Darmstadt Graphics Group GmbH",
+    "license": "CC-BY-4.0 (logos excluded)",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "notes": "仅测试夹具，不替换默认车型；Khronos和3D Commerce标志未授权用于产品。"
+  },
+  "rotationY": 0,
+  "componentPrecision": 4,
+  "doors": {
+    "fl": {
+      "selectors": [
+        {
+          "node": "BodyDoorLColor1",
+          "descendants": true
+        }
+      ],
+      "pivot": [
+        1.0886822938919067,
+        0.6430185437202454,
+        0.9975706934928894
+      ],
+      "axis": "y",
+      "angle": -1.05,
+      "hotspot": [
+        0.13,
+        0.2,
+        -0.7
+      ],
+      "side": "left"
+    },
+    "fr": {
+      "selectors": [
+        {
+          "node": "BodyDoorRColor1",
+          "descendants": true
+        }
+      ],
+      "pivot": [
+        -1.0871999263763428,
+        0.6429661512374878,
+        0.997542679309845
+      ],
+      "axis": "y",
+      "angle": 1.05,
+      "hotspot": [
+        -0.13,
+        0.2,
+        -0.7
+      ],
+      "side": "right"
+    }
+  },
+  "windows": {
+    "fl": {
+      "selectors": [
+        {
+          "node": "BodyDoorLWindow"
+        }
+      ],
+      "travel": [
+        0,
+        -0.25,
+        0
+      ]
+    },
+    "fr": {
+      "selectors": [
+        {
+          "node": "BodyDoorRWindow"
+        }
+      ],
+      "travel": [
+        0,
+        -0.25,
+        0
+      ]
+    }
+  },
+  "lights": {
+    "headlights": {
+      "selectors": [
+        {
+          "node": "BodyHeadlights"
+        }
+      ]
+    },
+    "taillights": {
+      "selectors": [
+        {
+          "node": "BodyTaillights"
+        }
+      ]
+    },
+    "turnLeft": null,
+    "turnRight": null
+  },
+  "trunk": {
+    "selectors": [
+      {
+        "node": "BodyRearPanelsColor1",
+        "descendants": true
+      }
+    ]
+  },
+  "bodyColorMaterials": [
+    "Paint 1 Carmine"
+  ],
+  "unsupported": {
+    "doors.rl": "此车型不支持",
+    "doors.rr": "此车型不支持",
+    "windows.rl": "此车型不支持",
+    "windows.rr": "此车型不支持"
+  }
+}

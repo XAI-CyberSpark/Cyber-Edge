@@ -1,0 +1,21 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="984" height="824.306" viewBox="0 0 984 824.306" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Mask group" opacity="0.52">
+<mask id="mask0_0_184" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="984" height="825">
+<path id="Rectangle 34626405" d="M0 12C0 5.3726 5.37258 0 12 0H972C978.627 0 984 5.37258 984 12V812.306C984 818.934 978.627 824.306 972 824.306H12C5.37257 824.306 0 818.934 0 812.306V12Z" fill="url(#paint0_linear_0_184)"/>
+</mask>
+<g mask="url(#mask0_0_184)">
+<foreignObject x="-78.1" y="-78.1098" width="1140.2" height="979.833"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(39.05px);clip-path:url(#bgblur_0_0_184_clip_path);height:100%;width:100%"></div></foreignObject><path id="Rectangle 34626404" data-figma-bg-blur-radius="78.1" d="M0 11.9902C0 5.36281 5.37258 -0.00976562 12 -0.00976562H972C978.627 -0.00976562 984 5.36282 984 11.9902V811.623C984 818.251 978.627 823.623 972 823.623H12C5.37257 823.623 0 818.251 0 811.623V11.9902Z" fill="url(#paint1_radial_0_184)" fill-opacity="0.5"/>
+</g>
+</g>
+<defs>
+<clipPath id="bgblur_0_0_184_clip_path" transform="translate(78.1 78.1098)"><path d="M0 11.9902C0 5.36281 5.37258 -0.00976562 12 -0.00976562H972C978.627 -0.00976562 984 5.36282 984 11.9902V811.623C984 818.251 978.627 823.623 972 823.623H12C5.37257 823.623 0 818.251 0 811.623V11.9902Z"/>
+</clipPath><linearGradient id="paint0_linear_0_184" x1="492" y1="0" x2="492" y2="824.306" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D9D9D9"/>
+<stop offset="1" stop-color="#737373" stop-opacity="0.84"/>
+</linearGradient>
+<radialGradient id="paint1_radial_0_184" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(139.358 -0.239321) rotate(90) scale(167.477 391.092)">
+<stop stop-color="#4475F8"/>
+<stop offset="1" stop-color="#4497F8" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

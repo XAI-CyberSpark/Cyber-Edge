@@ -1,0 +1,1724 @@
+{
+  "version": "2.0-flow",
+  "scope": "studio-behavioral-simulation",
+  "nodes": {
+    "input": {
+      "name": "用户输入",
+      "source": "输入已接入",
+      "description": "手动文字或单张图片，不代表持续感知。 inputFormat=json 时将测试事件按 outputFields 校验并放到 input.data，来源标记 simulated-event；simulationSamples=[{label,input:JSON字符串}] 在仿真输入区提供样例。 JSON 输入节点 inputFormat=json 的 step.input 推荐直接给对象，例如 {\"temp\":22}；也接受 JSON 字符串或 {\"text\":\"{\\\"temp\\\":22}\"} 包装（存在 text 字段时取 text 解析）。outputFields 声明所有必需字段及 string/number/boolean/array/object 类型，逐项严格校验、不转换类型，结果仅保留声明字段并放入 outputs.<入口>.data。具名入口用 {\"$event\":{\"name\":\"入口eventName\",\"value\":{\"temp\":22}}}，不使用 $event.data。",
+      "inputs": "文字 / 图片",
+      "outputs": "本次输入",
+      "fields": {
+        "aliases": {
+          "label": "aliases",
+          "type": "array",
+          "enum": null,
+          "required": false,
+          "example": [
+            "启动"
+          ],
+          "description": "普通message文字事件别名列表，不注册结构化事件。",
+          "validation": "node",
+          "bindable": false,
+          "items": {
+            "type": "string"
+          }
+        },
+        "eventName": {
+          "label": "eventName",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "custom_event",
+          "description": "可选事件入口名称；普通起点不需要。",
+          "validation": "node",
+          "bindable": false
+        },
+        "interrupt": {
+          "label": "interrupt",
+          "type": "boolean",
+          "enum": null,
+          "required": false,
+          "example": false,
+          "description": "事件入口触发时是否中断其他待执行路径。",
+          "validation": "node",
+          "bindable": false
+        },
+        "inputFormat": {
+          "label": "inputFormat",
+          "type": "string",
+          "enum": [
+            "text",
+            "json"
+          ],
+          "required": false,
+          "example": "json",
+          "description": "json按outputFields校验，本次业务对象放input.data。",
+          "validation": "node",
+          "bindable": false
+        },
+        "outputFields": {
+          "label": "outputFields",
+          "type": "object",
+          "enum": null,
+          "required": false,
+          "example": {
+            "summary": "string",
+            "score": "number"
+          },
+          "description": "json模式必填，字段名映射到string/number/boolean/array/object，不是JSON Schema。",
+          "validation": "node",
+          "required_when": "inputFormat=json或outputFormat=json",
+          "bindable": false
+        }
+      },
+      "generatable": true
+    },
+    "systemInput": {
+      "name": "环境输入",
+      "source": "按输入来源配置",
+      "description": "天气读取仿真状态；相机使用本次图片或已有单帧。CAN、通用传感器和麦克风节点尚未接入。 JSON 输入节点 inputFormat=json 的 step.input 推荐直接给对象，例如 {\"temp\":22}；也接受 JSON 字符串或 {\"text\":\"{\\\"temp\\\":22}\"} 包装（存在 text 字段时取 text 解析）。outputFields 声明所有必需字段及 string/number/boolean/array/object 类型，逐项严格校验、不转换类型，结果仅保留声明字段并放入 outputs.<入口>.data。具名入口用 {\"$event\":{\"name\":\"入口eventName\",\"value\":{\"temp\":22}}}，不使用 $event.data。",
+      "inputs": "环境状态 / 图片",
+      "outputs": "天气与车窗 / 本次图片",
+      "fields": {
+        "inputType": {
+          "label": "输入来源",
+          "required": true,
+          "enum": [
+            "weather",
+            "camera",
+            "rear_camera",
+            "image"
+          ],
+          "example": "weather",
+          "type": "string",
+          "bindable": false
+        },
+        "aliases": {
+          "label": "aliases",
+          "type": "array",
+          "enum": null,
+          "required": false,
+          "example": [
+            "启动"
+          ],
+          "description": "普通message文字事件别名列表，不注册结构化事件。",
+          "validation": "node",
+          "bindable": false,
+          "items": {
+            "type": "string"
+          }
+        },
+        "eventName": {
+          "label": "eventName",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "custom_event",
+          "description": "可选事件入口名称；普通起点不需要。",
+          "validation": "node",
+          "bindable": false
+        },
+        "interrupt": {
+          "label": "interrupt",
+          "type": "boolean",
+          "enum": null,
+          "required": false,
+          "example": false,
+          "description": "事件入口触发时是否中断其他待执行路径。",
+          "validation": "node",
+          "bindable": false
+        }
+      },
+      "generatable": true
+    },
+    "llm": {
+      "name": "模型推理",
+      "source": "真实服务调用·待运行验证",
+      "description": "调用所选模型；离线、空响应或无效结果会失败，不使用规则冒充推理。 text 返回文字；json 按 outputFields 校验，字段位于下游 input.data；actions 返回受控动作。 模型指令必须使用data.systemPrompt，prompt/promptTemplate不执行；text输出text/reply，json输出data对象。 outputFields必须是字段名到类型字符串的对象，例如{\"summary\":\"string\",\"score\":\"number\"}；类型只允许string/number/boolean/array/object。不是字段名数组，也不是JSON Schema的properties或{type:...}对象。字段名称必须与systemPrompt和下游input.data引用完全一致。 jsonRepairAttempts为0–2整数，默认0，仅json模式可启用；仅修复JSON/字段类型错误，共用60秒节点期限，不重放上游，不重试服务错误、取消、空/截断/模拟响应。无效回答超过32000字符不修复；格式通过不代表语义正确。",
+      "inputs": "文字 / 图片 / 上游上下文",
+      "outputs": "模型文本 / 结构化结果",
+      "fields": {
+        "model": {
+          "label": "模型",
+          "required": true,
+          "type": "string",
+          "description": "具体模型ID，取自connections中的model；服务商ID如minimax不是模型ID。宿主不自动填值或覆盖显式绑定。",
+          "example": "MiniMax-M3",
+          "enum": null,
+          "bindable": false
+        },
+        "temperature": {
+          "label": "温度",
+          "min": 0,
+          "max": 2,
+          "example": 0.7,
+          "type": "number",
+          "enum": null,
+          "required": false,
+          "bindable": false
+        },
+        "maxTokens": {
+          "label": "最大输出 Token",
+          "min": 1,
+          "max": 32768,
+          "example": 1024,
+          "type": "integer",
+          "enum": null,
+          "required": false,
+          "bindable": false
+        },
+        "outputFormat": {
+          "label": "输出格式",
+          "enum": [
+            "auto",
+            "text",
+            "json",
+            "actions"
+          ],
+          "example": "auto",
+          "type": "string",
+          "required": false,
+          "bindable": false
+        },
+        "jsonRepairAttempts": {
+          "label": "JSON格式额外修复次数",
+          "min": 0,
+          "max": 2,
+          "example": 0,
+          "type": "integer",
+          "enum": null,
+          "required": false,
+          "bindable": false
+        },
+        "providerId": {
+          "type": "string",
+          "description": "服务商ID，取自connections中的id；必须与model成对显式配置。",
+          "example": "minimax",
+          "label": "providerId",
+          "enum": null,
+          "required": false,
+          "validation": "node",
+          "bindable": false
+        },
+        "systemPrompt": {
+          "type": "string",
+          "description": "模型指令，不是prompt/promptTemplate。",
+          "example": "概括输入内容",
+          "label": "systemPrompt",
+          "enum": null,
+          "required": false,
+          "validation": "node",
+          "bindable": true
+        },
+        "outputFields": {
+          "label": "outputFields",
+          "type": "object",
+          "enum": null,
+          "required": false,
+          "example": {
+            "summary": "string",
+            "score": "number"
+          },
+          "description": "json模式必填，字段名映射到string/number/boolean/array/object，不是JSON Schema。",
+          "validation": "node",
+          "required_when": "inputFormat=json或outputFormat=json",
+          "bindable": false
+        },
+        "prompt": {
+          "label": "prompt",
+          "type": "null",
+          "enum": [],
+          "required": false,
+          "example": null,
+          "description": "此字段不执行，改用systemPrompt。",
+          "validation": "node",
+          "forbidden": true,
+          "replacement_example": {
+            "systemPrompt": "概括输入内容"
+          },
+          "bindable": false
+        },
+        "promptTemplate": {
+          "label": "promptTemplate",
+          "type": "null",
+          "enum": [],
+          "required": false,
+          "example": null,
+          "description": "此字段不执行，改用systemPrompt。",
+          "validation": "node",
+          "forbidden": true,
+          "replacement_example": {
+            "systemPrompt": "概括输入内容"
+          },
+          "bindable": false
+        }
+      },
+      "generatable": true
+    },
+    "recognition": {
+      "name": "解析识别结果",
+      "source": "按结果来源配置",
+      "description": "校验上游视觉结果的格式和字段，不重复识别；模型自评分未经校准，不代表准确率。预设模式仅模拟。 vision分支专用于normal/risk/unknown、confidence、summary、risk_action与source_image契约；不是通用JSON解析器。其他识别字段使用LLM json校验后直接连接logic，读input.data。",
+      "inputs": "视觉模型输出与本次图片",
+      "outputs": "normal / risk / unknown、confidence",
+      "fields": {
+        "threshold": {
+          "label": "阈值",
+          "min": 0,
+          "max": 1,
+          "example": 0.8,
+          "type": "number",
+          "enum": null,
+          "required": false,
+          "bindable": false
+        },
+        "confidence": {
+          "label": "预设置信度",
+          "min": 0,
+          "max": 1,
+          "example": 0.8,
+          "type": "number",
+          "enum": null,
+          "required": false,
+          "bindable": false
+        },
+        "resultSource": {
+          "label": "resultSource",
+          "type": "string",
+          "enum": [
+            "vision",
+            "preset"
+          ],
+          "required": false,
+          "example": "vision",
+          "description": "vision须直接接模型；其他来源仅预设模拟，不证明准确率。",
+          "validation": "node",
+          "bindable": false
+        }
+      },
+      "generatable": true
+    },
+    "logic": {
+      "name": "条件判断",
+      "source": "规则执行",
+      "description": "按明确条件选择 true / false 分支；条件无效时失败。",
+      "inputs": "上游数据",
+      "outputs": "原数据与 condition_result",
+      "fields": {
+        "logic_type": {
+          "label": "logic_type",
+          "type": "string",
+          "enum": [
+            "if",
+            "filter"
+          ],
+          "required": false,
+          "example": "if",
+          "description": "只支持if/filter；if使用true/false出口，filter只传递成立路径；不支持switch。省略时兼容旧type，否则默认if。",
+          "validation": "node",
+          "bindable": false
+        },
+        "condition": {
+          "label": "condition",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "input.confidence >= 0.8",
+          "description": "纯数据表达式，从input或value读取；不可裸用state/outputs/event。if/filter均须配置非空条件。",
+          "validation": "node",
+          "required_when": "condition与旧script至少一个非空",
+          "bindable": false
+        },
+        "type": {
+          "label": "type",
+          "type": "string",
+          "enum": [
+            "if",
+            "filter"
+          ],
+          "required": false,
+          "example": "if",
+          "description": "仅兼容已有项目；logic_type优先，新配置只用logic_type。",
+          "validation": "node",
+          "deprecated": true,
+          "replacement": "logic_type",
+          "bindable": false
+        },
+        "script": {
+          "label": "script",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "input.confidence >= 0.8",
+          "description": "旧条件字段；新配置使用condition。",
+          "validation": "node",
+          "deprecated": true,
+          "replacement": "condition",
+          "bindable": false
+        }
+      },
+      "generatable": true
+    },
+    "memory": {
+      "name": "短期记忆",
+      "source": "真实服务调用·待运行验证",
+      "description": "读取或写入后端短期记忆；向量检索配置当前未接入此执行器。",
+      "inputs": "上下文",
+      "outputs": "上下文与记忆条目",
+      "fields": {
+        "type": {
+          "label": "记忆模式",
+          "required": true,
+          "enum": [
+            "buffer"
+          ],
+          "example": "buffer",
+          "type": "string",
+          "bindable": false
+        },
+        "window": {
+          "label": "记忆条数",
+          "min": 1,
+          "max": 100,
+          "example": 5,
+          "type": "integer",
+          "enum": null,
+          "required": false,
+          "bindable": false
+        }
+      },
+      "generatable": true
+    },
+    "car_control": {
+      "name": "车辆动作",
+      "source": "仅仿真执行",
+      "description": "车窗支持实际开度与卡窗反馈；紧急/警示动作仅改变仿真状态，不代表实车执行。 HMI氛围灯支持 action=ambient_light.set / ambient_light.restore，必须 executionMode=hmi_mock 且不填 module/signalKey/function。set 节点可直接配置 color(#RRGGBB)、brightness(0–100)、reason、poseTips，支持{{...}}和$ref绑定；省略配置时才从上游 input.data 读取 light_color、light_brightness、light_reason、pose_tips。这些 light_* 名称不能写为节点顶层配置。set 更新共享灯光与HMI建议；restore恢复进入体验前灯光。此明确模拟动作可接JSON模型，不需要实车连接，覆盖状态为simulated。 HMI 共享控制：executionMode=hmi, controlId（见 hmiControls 注册表）, controlOperation=set/get, controlValue 类型严格匹配。可显式 valueField 从 input.data 取值；JSON 模型仅在指定字段时允许接入。执行器返回 actual/revision，不连接实车。旧 Seat 加热/通风 get/set、遮阳帘 get/set 已映射共享状态；subscribe 未实现。 共享 controlId 注册表：{\"ac.on\":{\"type\":\"boolean\"},\"ac.temp\":{\"type\":\"number\",\"min\":16,\"max\":30},\"ac.mode\":{\"type\":\"string\",\"options\":{\"auto\":\"自动\",\"cool\":\"制冷\",\"heat\":\"制热\"}},\"ac.fan\":{\"type\":\"number\",\"min\":0,\"max\":10},\"ac.frontDefrost\":{\"type\":\"boolean\"},\"ac.rearDefrost\":{\"type\":\"boolean\"},\"doors.locked\":{\"type\":\"boolean\"},\"locks.walkUp\":{\"type\":\"boolean\"},\"locks.walkAway\":{\"type\":\"boolean\"},\"locks.child\":{\"type\":\"boolean\"},\"locks.parkUnlock\":{\"type\":\"boolean\"},\"lights.headlights\":{\"type\":\"string\",\"options\":{\"off\":\"关闭\",\"parking\":\"示宽灯\",\"on\":\"开启\",\"auto\":\"自动\"}},\"lights.fog\":{\"type\":\"boolean\"},\"lights.dome\":{\"type\":\"string\",\"options\":{\"off\":\"关闭\",\"on\":\"开启\",\"auto\":\"自动\"}},\"lights.ambient\":{\"type\":\"boolean\"},\"lights.color\":{\"type\":\"string\",\"format\":\"color\"},\"lights.brightness\":{\"type\":\"number\",\"min\":0,\"max\":100},\"lights.hazard\":{\"type\":\"boolean\"},\"display.mode\":{\"type\":\"string\",\"options\":{\"day\":\"日间\",\"night\":\"夜间\",\"auto\":\"自动\"}},\"display.brightness\":{\"type\":\"number\",\"min\":20,\"max\":100},\"display.distance\":{\"type\":\"string\",\"options\":{\"km\":\"公里\",\"mi\":\"英里\"}},\"display.temperature\":{\"type\":\"string\",\"options\":{\"F\":\"°F\",\"C\":\"°C\"}},\"mirrors.folded\":{\"type\":\"boolean\"},\"mirrors.horizontal\":{\"type\":\"number\",\"min\":-30,\"max\":30},\"mirrors.vertical\":{\"type\":\"number\",\"min\":-20,\"max\":20},\"steering.height\":{\"type\":\"number\",\"min\":0,\"max\":100},\"steering.reach\":{\"type\":\"number\",\"min\":0,\"max\":100},\"driving.steering\":{\"type\":\"string\",\"options\":{\"comfort\":\"舒适\",\"standard\":\"标准\",\"sport\":\"运动\"}},\"driving.regen\":{\"type\":\"string\",\"options\":{\"standard\":\"标准\",\"low\":\"低\"}},\"driving.slipStart\":{\"type\":\"boolean\"},\"driving.creep\":{\"type\":\"boolean\"},\"autopilot.distance\":{\"type\":\"number\",\"min\":1,\"max\":7},\"autopilot.autosteer\":{\"type\":\"boolean\"},\"autopilot.laneChange\":{\"type\":\"boolean\"},\"safety.parkingBrake\":{\"type\":\"boolean\"},\"safety.power\":{\"type\":\"boolean\"},\"service.wiper\":{\"type\":\"boolean\"},\"service.headlightHeight\":{\"type\":\"number\",\"min\":-5,\"max\":5},\"glovebox.open\":{\"type\":\"boolean\"},\"seat.heat.0\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.vent.0\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.heat.1\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.vent.1\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.heat.2\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.vent.2\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.heat.3\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.vent.3\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.position.0\":{\"type\":\"number\",\"min\":0,\"max\":100},\"seat.position.1\":{\"type\":\"number\",\"min\":0,\"max\":100},\"sunshade.1\":{\"type\":\"boolean\"},\"sunshade.2\":{\"type\":\"boolean\"},\"sunshade.3\":{\"type\":\"boolean\"},\"sunshade.4\":{\"type\":\"boolean\"}} 完整节点输出为{action,action_result,reply}，共享HMI实际回执在action_result.actual，不能引用节点根actual。",
+      "inputs": "固定参数 / 显式 JSON 字段 / 上游动作计划",
+      "outputs": "action_result.success、actual、revision / 车窗实际开度",
+      "fields": {
+        "executionMode": {
+          "type": "string",
+          "description": "共享HMI使用hmi；ambient_light.set/restore使用hmi_mock。字段均直接写在set_data，不包进action对象。",
+          "enum": [
+            "hmi",
+            "hmi_mock"
+          ],
+          "example": "hmi",
+          "label": "executionMode",
+          "required": false,
+          "validation": "node",
+          "bindable": false
+        },
+        "controlId": {
+          "type": "string",
+          "enum": [
+            "ac.on",
+            "ac.temp",
+            "ac.mode",
+            "ac.fan",
+            "ac.frontDefrost",
+            "ac.rearDefrost",
+            "doors.locked",
+            "locks.walkUp",
+            "locks.walkAway",
+            "locks.child",
+            "locks.parkUnlock",
+            "lights.headlights",
+            "lights.fog",
+            "lights.dome",
+            "lights.ambient",
+            "lights.color",
+            "lights.brightness",
+            "lights.hazard",
+            "display.mode",
+            "display.brightness",
+            "display.distance",
+            "display.temperature",
+            "mirrors.folded",
+            "mirrors.horizontal",
+            "mirrors.vertical",
+            "steering.height",
+            "steering.reach",
+            "driving.steering",
+            "driving.regen",
+            "driving.slipStart",
+            "driving.creep",
+            "autopilot.distance",
+            "autopilot.autosteer",
+            "autopilot.laneChange",
+            "safety.parkingBrake",
+            "safety.power",
+            "service.wiper",
+            "service.headlightHeight",
+            "glovebox.open",
+            "seat.heat.0",
+            "seat.vent.0",
+            "seat.heat.1",
+            "seat.vent.1",
+            "seat.heat.2",
+            "seat.vent.2",
+            "seat.heat.3",
+            "seat.vent.3",
+            "seat.position.0",
+            "seat.position.1",
+            "sunshade.1",
+            "sunshade.2",
+            "sunshade.3",
+            "sunshade.4"
+          ],
+          "description": "executionMode=hmi时必填；值类型和范围见hmi_controls。",
+          "example": "ac.on",
+          "label": "controlId",
+          "required": false,
+          "validation": "node",
+          "required_when": "executionMode=hmi",
+          "bindable": false,
+          "enum_source": "hmi_controls"
+        },
+        "controlOperation": {
+          "type": "string",
+          "enum": [
+            "get",
+            "set"
+          ],
+          "example": "get",
+          "label": "controlOperation",
+          "required": false,
+          "validation": "node",
+          "bindable": false
+        },
+        "controlValue": {
+          "description": "set时按hmi_controls[controlId]的type/min/max/options配置；通用流程可用单字段$ref对象保留类型。",
+          "example": 22,
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "label": "controlValue",
+          "enum": null,
+          "required": false,
+          "validation": "node",
+          "required_when": "executionMode=hmi且controlOperation=set，未配置valueField",
+          "bindable": true
+        },
+        "valueField": {
+          "type": "string",
+          "description": "显式从上游input.data读取的字段名。",
+          "example": "temperature",
+          "label": "valueField",
+          "enum": null,
+          "required": false,
+          "validation": "node",
+          "bindable": false
+        },
+        "action": {
+          "type": "string",
+          "description": "仅需动作模式时使用，不能是嵌套配置对象；hmi模式不要求action，且不得配置module/signalKey/function。",
+          "enum": [
+            "windows",
+            "windows.open_all",
+            "windows.close_all",
+            "auto",
+            "emergency.protocol",
+            "hazard_lights",
+            "hazard_lights.on",
+            "ambient_light.set",
+            "ambient_light.restore"
+          ],
+          "example": "ambient_light.set",
+          "label": "action",
+          "required": false,
+          "validation": "node",
+          "bindable": false
+        },
+        "color": {
+          "type": "string",
+          "description": "ambient_light.set模拟氛围灯颜色，#RRGGBB，或通用流程的绑定。",
+          "example": "#FFFFFF",
+          "label": "color",
+          "enum": null,
+          "required": false,
+          "validation": "node",
+          "bindable": true
+        },
+        "brightness": {
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "description": "ambient_light.set模拟亮度，或通用流程的绑定。",
+          "example": 40,
+          "label": "brightness",
+          "enum": null,
+          "required": false,
+          "validation": "node",
+          "bindable": true
+        },
+        "device_type": {
+          "label": "device_type",
+          "type": "string",
+          "enum": [
+            "car"
+          ],
+          "required": false,
+          "example": "car",
+          "description": "仅车辆仿真。",
+          "validation": "node",
+          "bindable": false
+        },
+        "module": {
+          "label": "module",
+          "type": "string",
+          "enum": [
+            "vehicleControl",
+            "seat"
+          ],
+          "required": false,
+          "example": "vehicleControl",
+          "description": "旧信号接口；hmi模式禁止同时配置module/signalKey/function。",
+          "validation": "node",
+          "bindable": false
+        },
+        "signalKey": {
+          "label": "signalKey",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "WINDOW_POSITION",
+          "description": "旧接口：WINDOW_POSITION、SUNSHADE_SLIDING_OPEN、SEAT_HEAT_STATUS/SEAT_VENTILATION_STATUS及_0至_3。",
+          "validation": "node",
+          "bindable": false
+        },
+        "function": {
+          "label": "function",
+          "type": "string",
+          "enum": [
+            "get",
+            "set"
+          ],
+          "required": false,
+          "example": "set",
+          "description": "旧信号操作；车窗只接入set。",
+          "validation": "node",
+          "bindable": false
+        },
+        "area": {
+          "label": "area",
+          "type": "number",
+          "enum": null,
+          "required": false,
+          "example": 1,
+          "description": "旧车窗区域0–6；遮阳帘1–4。",
+          "validation": "node",
+          "bindable": false
+        },
+        "targetStatus": {
+          "label": "targetStatus",
+          "type": "number",
+          "enum": null,
+          "required": false,
+          "example": 50,
+          "description": "旧车窗0–100；遮阳帘0/1。",
+          "validation": "node",
+          "bindable": false
+        },
+        "level": {
+          "label": "level",
+          "type": "number",
+          "enum": null,
+          "required": false,
+          "example": 2,
+          "description": "旧座椅档位0–3整数。",
+          "validation": "node",
+          "bindable": false
+        },
+        "parameter": {
+          "label": "parameter",
+          "type": "string",
+          "enum": [
+            "open_all",
+            "close_all"
+          ],
+          "required": false,
+          "example": "close_all",
+          "description": "action=windows时使用。",
+          "validation": "node",
+          "bindable": false
+        },
+        "reason": {
+          "label": "reason",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "调整氛围",
+          "description": "模拟氛围灯说明，可绑定。",
+          "validation": "node",
+          "bindable": true
+        },
+        "poseTips": {
+          "label": "poseTips",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "请调整姿势",
+          "description": "模拟氛围灯姿态文字，可绑定。",
+          "validation": "node",
+          "bindable": true
+        },
+        "light_color": {
+          "label": "light_color",
+          "type": "null",
+          "enum": [],
+          "required": false,
+          "example": null,
+          "description": "禁止作为氛围灯节点配置；改用color。仅上游input.data可使用旧键。",
+          "validation": "node",
+          "forbidden": true,
+          "replacement_example": {
+            "color": "#FFFFFF"
+          },
+          "bindable": false
+        },
+        "light_brightness": {
+          "label": "light_brightness",
+          "type": "null",
+          "enum": [],
+          "required": false,
+          "example": null,
+          "description": "禁止作为氛围灯节点配置；改用brightness。仅上游input.data可使用旧键。",
+          "validation": "node",
+          "forbidden": true,
+          "replacement_example": {
+            "brightness": 40
+          },
+          "bindable": false
+        },
+        "light_reason": {
+          "label": "light_reason",
+          "type": "null",
+          "enum": [],
+          "required": false,
+          "example": null,
+          "description": "禁止作为氛围灯节点配置；改用reason。仅上游input.data可使用旧键。",
+          "validation": "node",
+          "forbidden": true,
+          "replacement_example": {
+            "reason": "调整氛围"
+          },
+          "bindable": false
+        },
+        "pose_tips": {
+          "label": "pose_tips",
+          "type": "null",
+          "enum": [],
+          "required": false,
+          "example": null,
+          "description": "禁止作为氛围灯节点配置；改用poseTips。仅上游input.data可使用旧键。",
+          "validation": "node",
+          "forbidden": true,
+          "replacement_example": {
+            "poseTips": "请调整姿势"
+          },
+          "bindable": false
+        }
+      },
+      "generatable": true,
+      "hmi_controls": {
+        "ac.on": {
+          "type": "boolean"
+        },
+        "ac.temp": {
+          "type": "number",
+          "min": 16,
+          "max": 30,
+          "step": 1
+        },
+        "ac.mode": {
+          "type": "string",
+          "options": {
+            "auto": "自动",
+            "cool": "制冷",
+            "heat": "制热"
+          }
+        },
+        "ac.fan": {
+          "type": "number",
+          "min": 0,
+          "max": 10,
+          "step": 1
+        },
+        "ac.frontDefrost": {
+          "type": "boolean"
+        },
+        "ac.rearDefrost": {
+          "type": "boolean"
+        },
+        "doors.locked": {
+          "type": "boolean"
+        },
+        "locks.walkUp": {
+          "type": "boolean"
+        },
+        "locks.walkAway": {
+          "type": "boolean"
+        },
+        "locks.child": {
+          "type": "boolean"
+        },
+        "locks.parkUnlock": {
+          "type": "boolean"
+        },
+        "lights.headlights": {
+          "type": "string",
+          "options": {
+            "off": "关闭",
+            "parking": "示宽灯",
+            "on": "开启",
+            "auto": "自动"
+          }
+        },
+        "lights.fog": {
+          "type": "boolean"
+        },
+        "lights.dome": {
+          "type": "string",
+          "options": {
+            "off": "关闭",
+            "on": "开启",
+            "auto": "自动"
+          }
+        },
+        "lights.ambient": {
+          "type": "boolean"
+        },
+        "lights.color": {
+          "type": "string",
+          "format": "color"
+        },
+        "lights.brightness": {
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        "lights.hazard": {
+          "type": "boolean"
+        },
+        "display.mode": {
+          "type": "string",
+          "options": {
+            "day": "日间",
+            "night": "夜间",
+            "auto": "自动"
+          }
+        },
+        "display.brightness": {
+          "type": "number",
+          "min": 20,
+          "max": 100,
+          "step": 1
+        },
+        "display.distance": {
+          "type": "string",
+          "options": {
+            "km": "公里",
+            "mi": "英里"
+          }
+        },
+        "display.temperature": {
+          "type": "string",
+          "options": {
+            "F": "°F",
+            "C": "°C"
+          }
+        },
+        "mirrors.folded": {
+          "type": "boolean"
+        },
+        "mirrors.horizontal": {
+          "type": "number",
+          "min": -30,
+          "max": 30,
+          "step": 1
+        },
+        "mirrors.vertical": {
+          "type": "number",
+          "min": -20,
+          "max": 20,
+          "step": 1
+        },
+        "steering.height": {
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        "steering.reach": {
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        "driving.steering": {
+          "type": "string",
+          "options": {
+            "comfort": "舒适",
+            "standard": "标准",
+            "sport": "运动"
+          }
+        },
+        "driving.regen": {
+          "type": "string",
+          "options": {
+            "standard": "标准",
+            "low": "低"
+          }
+        },
+        "driving.slipStart": {
+          "type": "boolean"
+        },
+        "driving.creep": {
+          "type": "boolean"
+        },
+        "autopilot.distance": {
+          "type": "number",
+          "min": 1,
+          "max": 7,
+          "step": 1
+        },
+        "autopilot.autosteer": {
+          "type": "boolean"
+        },
+        "autopilot.laneChange": {
+          "type": "boolean"
+        },
+        "safety.parkingBrake": {
+          "type": "boolean"
+        },
+        "safety.power": {
+          "type": "boolean"
+        },
+        "service.wiper": {
+          "type": "boolean"
+        },
+        "service.headlightHeight": {
+          "type": "number",
+          "min": -5,
+          "max": 5,
+          "step": 1
+        },
+        "glovebox.open": {
+          "type": "boolean"
+        },
+        "seat.heat.0": {
+          "type": "number",
+          "min": 0,
+          "max": 3,
+          "step": 1
+        },
+        "seat.vent.0": {
+          "type": "number",
+          "min": 0,
+          "max": 3,
+          "step": 1
+        },
+        "seat.heat.1": {
+          "type": "number",
+          "min": 0,
+          "max": 3,
+          "step": 1
+        },
+        "seat.vent.1": {
+          "type": "number",
+          "min": 0,
+          "max": 3,
+          "step": 1
+        },
+        "seat.heat.2": {
+          "type": "number",
+          "min": 0,
+          "max": 3,
+          "step": 1
+        },
+        "seat.vent.2": {
+          "type": "number",
+          "min": 0,
+          "max": 3,
+          "step": 1
+        },
+        "seat.heat.3": {
+          "type": "number",
+          "min": 0,
+          "max": 3,
+          "step": 1
+        },
+        "seat.vent.3": {
+          "type": "number",
+          "min": 0,
+          "max": 3,
+          "step": 1
+        },
+        "seat.position.0": {
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        "seat.position.1": {
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        "sunshade.1": {
+          "type": "boolean"
+        },
+        "sunshade.2": {
+          "type": "boolean"
+        },
+        "sunshade.3": {
+          "type": "boolean"
+        },
+        "sunshade.4": {
+          "type": "boolean"
+        }
+      },
+      "configuration_examples": [
+        {
+          "executionMode": "hmi",
+          "controlId": "display.mode",
+          "controlOperation": "set",
+          "controlValue": "auto"
+        },
+        {
+          "executionMode": "hmi_mock",
+          "action": "ambient_light.set",
+          "color": "#FFFFFF",
+          "brightness": 40,
+          "reason": "模拟灯光"
+        }
+      ]
+    },
+    "tool": {
+      "name": "应用动作",
+      "summary": "执行音乐、导航或电话界面仿真，或调用已登记的 MCP 工具。真实调用需连接可用并满足权限条件；自动试跑需单独授权。",
+      "source": "按工具连接配置",
+      "description": "music/nav/call_phone仅界面仿真。真实MCP使用tool_id=mcp、serverId、toolName、arguments对象；只能选mcp_connections中已登记且可用的工具，arguments按真实input_schema配置，支持$ref绑定，JSON Schema不是outputFields。返回data为真实structuredContent，content/text为原始工具内容；未提供结构化数据时不能编造data字段。工具失败走error出口，无自动重试。连接地址和凭据不属于节点字段；自动试跑需allow_trials=true。",
+      "inputs": "显式参数对象 / 上游绑定",
+      "outputs": "MCP结构化data与原始content/text / 界面仿真回执",
+      "fields": {
+        "tool_id": {
+          "type": "string",
+          "enum": [
+            "music",
+            "nav",
+            "call_phone",
+            "mcp"
+          ],
+          "description": "字段名tool_id，不是toolId，也不是providerId；前三项仅界面仿真，真实动作必须使用已登记MCP。",
+          "example": "music",
+          "label": "tool_id",
+          "required": false,
+          "validation": "node",
+          "bindable": false
+        },
+        "serverId": {
+          "type": "string",
+          "description": "MCP模式从mcp_connections选择真实服务ID。",
+          "example": "registered_server",
+          "label": "serverId",
+          "enum": null,
+          "required": false,
+          "validation": "node",
+          "required_when": "tool_id=mcp",
+          "bindable": false
+        },
+        "toolName": {
+          "type": "string",
+          "description": "MCP模式使用该服务实际登记的工具名。",
+          "example": "registered_tool",
+          "label": "toolName",
+          "enum": null,
+          "required": false,
+          "validation": "node",
+          "required_when": "tool_id=mcp",
+          "bindable": false
+        },
+        "arguments": {
+          "type": "object",
+          "description": "MCP真实input_schema对应的参数对象，可用$ref绑定。",
+          "example": {},
+          "label": "arguments",
+          "enum": null,
+          "required": false,
+          "validation": "node",
+          "bindable": true
+        },
+        "tool": {
+          "label": "tool",
+          "type": "string",
+          "enum": [
+            "music",
+            "nav",
+            "call_phone",
+            "mcp"
+          ],
+          "required": false,
+          "example": "music",
+          "description": "仅旧项目兼容，新图使用tool_id。",
+          "validation": "node",
+          "deprecated": true,
+          "replacement": "tool_id",
+          "bindable": false
+        }
+      },
+      "generatable": true
+    },
+    "output": {
+      "name": "展示输出",
+      "source": "HMI 文字反馈",
+      "description": "向HMI助手呈现文字；本机支持中文语音时播报，音频状态由HMI显示。",
+      "inputs": "文字 / reply",
+      "outputs": "已展示文字",
+      "fields": {
+        "responseText": {
+          "label": "responseText",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "已完成",
+          "description": "固定展示文字或{{input.text}}绑定；省略时读取上游reply/text。输出是字符串，无text子字段。",
+          "validation": "node",
+          "bindable": true
+        }
+      },
+      "generatable": true
+    },
+    "fallback": {
+      "name": "固定反馈",
+      "source": "HMI 文字反馈",
+      "description": "展示配置的反馈文字；是否符合需求仍需场景测试。 错误处理必须从上游 error 出口连接；trigger 文字不构成错误路由。",
+      "inputs": "上游状态",
+      "outputs": "原状态与 reply",
+      "fields": {
+        "responseText": {
+          "label": "反馈文字",
+          "required": true,
+          "example": "已完成",
+          "type": "string",
+          "enum": null,
+          "bindable": true
+        }
+      },
+      "generatable": true
+    },
+    "cockpit_alert": {
+      "name": "座舱提醒",
+      "source": "HMI 提醒",
+      "description": "向HMI助手发送提醒与本机语音请求；不据时间流逝判断风险解除。",
+      "inputs": "识别结果 / 本次图片",
+      "outputs": "提醒展示状态",
+      "fields": {},
+      "generatable": true
+    },
+    "risk_monitor": {
+      "name": "等待后续证据",
+      "source": "未接入连续监测",
+      "description": "仅标记等待下一帧，不能证明风险已解除或正在后台监控。",
+      "inputs": "当前识别结果",
+      "outputs": "awaiting_next_frame",
+      "fields": {},
+      "generatable": false
+    },
+    "event_log": {
+      "name": "事件记录",
+      "source": "会话记录",
+      "description": "记录在当前会话运行时间线，刷新清空，不代表永久存储。",
+      "inputs": "上游状态",
+      "outputs": "本次判断、模型来源、输入引用、会话记录",
+      "fields": {},
+      "generatable": true
+    },
+    "tts": {
+      "name": "文字输出（旧节点）",
+      "source": "HMI 文字反馈",
+      "description": "兼容旧项目，只显示文字，没有语音播报。",
+      "inputs": "文字 / reply",
+      "outputs": "已展示文字",
+      "fields": {
+        "responseText": {
+          "label": "responseText",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "已完成",
+          "description": "固定展示文字或{{input.text}}绑定；省略时读取上游reply/text。输出是字符串，无text子字段。",
+          "validation": "node",
+          "bindable": true
+        }
+      },
+      "generatable": false
+    },
+    "video_display": {
+      "name": "中控展示后排视频",
+      "source": "独立后排视频源",
+      "description": "识别照片中的风险后，在中控左上角显示独立后排视频。可连接浏览器支持的 HTTP(S) 视频地址；本地录像仅用于演示。",
+      "inputs": "已确认风险分支",
+      "outputs": "视频实际播放状态",
+      "fields": {
+        "source": {
+          "label": "视频来源",
+          "required": true,
+          "enum": [
+            "local_replay",
+            "browser_stream"
+          ],
+          "example": "local_replay",
+          "type": "string",
+          "bindable": false
+        },
+        "streamUrl": {
+          "label": "视频流地址",
+          "required": false,
+          "example": "https://example.com/live.mp4",
+          "type": "string",
+          "enum": null,
+          "bindable": false
+        }
+      },
+      "generatable": true
+    },
+    "interaction": {
+      "name": "持续互动",
+      "source": "会话状态与文字互动",
+      "description": "分阶段创作、等待回答、记录线索、暂停继续；进度保留至本页面刷新。下一站和到达由聊天模拟，未接真实导航；语音依赖本机中文语音，未提供图形游戏。 旧项目兼容节点；新场景使用通用图中的等待、状态、模型、输出与动作。",
+      "inputs": "文字回答 / 暂停 / 继续 / 下一站 / 到达了",
+      "outputs": "reply、session.index/status/rewards；等待期间不执行下游",
+      "fields": {
+        "plan": {
+          "label": "plan",
+          "type": "object",
+          "enum": null,
+          "required": true,
+          "example": {
+            "mode": "authored",
+            "premise": "演示",
+            "ending": "结束",
+            "steps": [
+              {
+                "id": "step1",
+                "title": "演示",
+                "waitFor": "continue",
+                "content": {
+                  "message": "请继续"
+                }
+              }
+            ]
+          },
+          "description": "旧互动完整计划；新图用wait/state。",
+          "validation": "node",
+          "bindable": false
+        }
+      },
+      "generatable": false
+    },
+    "stage": {
+      "name": "子流程阶段",
+      "source": "通用图执行器",
+      "description": "可展开的节点分组，内部节点真实执行；容器不直接连接动作。",
+      "inputs": "上游输出 / 会话事件",
+      "outputs": "会话状态 / 事件结果",
+      "fields": {},
+      "generatable": true
+    },
+    "wait": {
+      "name": "等待事件",
+      "source": "通用图执行器",
+      "description": "按场景配置等待事件或回答，恢复时不重复上游动作；精确匹配或接收任意输入。 hintInputs是请求提示的口令（如“给点提示”），不是选项、输入样例或答案；选择题选项放answers并设match=exact，普通自由回答用match=any。 inputType=any（默认）/text/image指定接收类型；image等待本次上传图片，恢复后input.type=image和input.content保留，文字不复用旧图。 repeat=true允许下游返回该等待点，每轮必须有新输入；state保留，上游初始化不重跑，下游输出/分支在新一轮清理。返回路径全部决定后重新等待；maxIterations为本次会话接受次数预算，默认1000。退出由下游logic配置。环路必须经过声明重复的wait，不支持无等待自动循环。",
+      "inputs": "上游输出 / 会话事件",
+      "outputs": "会话状态 / 事件结果",
+      "fields": {
+        "eventName": {
+          "label": "事件名称",
+          "required": true,
+          "example": "message",
+          "type": "string",
+          "enum": null,
+          "bindable": false
+        },
+        "inputType": {
+          "label": "接收输入类型",
+          "enum": [
+            "any",
+            "text",
+            "image"
+          ],
+          "example": "any",
+          "type": "string",
+          "required": false,
+          "bindable": false
+        },
+        "repeat": {
+          "label": "repeat",
+          "type": "boolean",
+          "enum": null,
+          "required": false,
+          "example": false,
+          "description": "true允许下游返回此等待点，每轮必须有新输入。",
+          "validation": "node",
+          "bindable": false
+        },
+        "maxIterations": {
+          "label": "maxIterations",
+          "type": "integer",
+          "enum": null,
+          "required": false,
+          "example": 1000,
+          "description": "当前会话可接受次数1–100000，默认1000。",
+          "validation": "node",
+          "min": 1,
+          "max": 100000,
+          "bindable": false
+        },
+        "match": {
+          "label": "match",
+          "type": "string",
+          "enum": [
+            "any",
+            "exact"
+          ],
+          "required": false,
+          "example": "any",
+          "description": "exact需answers；语义判断用模型和分支。",
+          "validation": "node",
+          "bindable": false
+        },
+        "answers": {
+          "label": "answers",
+          "type": "array",
+          "enum": null,
+          "required": false,
+          "example": [
+            "确认"
+          ],
+          "description": "exact非空字符串列表；不得与hintInputs重合。",
+          "validation": "node",
+          "required_when": "match=exact",
+          "bindable": false,
+          "items": {
+            "type": "string"
+          }
+        },
+        "hintInputs": {
+          "label": "hintInputs",
+          "type": "array",
+          "enum": null,
+          "required": false,
+          "example": [
+            "给点提示"
+          ],
+          "description": "请求提示的文字，不能写正确答案。",
+          "validation": "node",
+          "bindable": false,
+          "items": {
+            "type": "string"
+          }
+        },
+        "aliases": {
+          "label": "aliases",
+          "type": "array",
+          "enum": null,
+          "required": false,
+          "example": [
+            "确认"
+          ],
+          "description": "message文字事件别名列表。",
+          "validation": "node",
+          "bindable": false,
+          "items": {
+            "type": "string"
+          }
+        },
+        "storeAs": {
+          "label": "storeAs",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "answer",
+          "description": "保存事件值的状态字段，字母开头，仅字母数字下划线。",
+          "validation": "node",
+          "bindable": false
+        },
+        "prompt": {
+          "label": "prompt",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "请回复",
+          "description": "等待时展示的文字。",
+          "validation": "node",
+          "bindable": true
+        },
+        "hint": {
+          "label": "hint",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "请仔细阅读",
+          "description": "请求提示时展示的文字。",
+          "validation": "node",
+          "bindable": true
+        },
+        "retryMessage": {
+          "label": "retryMessage",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "请再试一次",
+          "description": "未匹配反馈。",
+          "validation": "node",
+          "bindable": true
+        },
+        "successMessage": {
+          "label": "successMessage",
+          "type": "string",
+          "enum": null,
+          "required": false,
+          "example": "已收到",
+          "description": "匹配成功后的可选反馈。",
+          "validation": "node",
+          "bindable": true
+        }
+      },
+      "generatable": true
+    },
+    "state": {
+      "name": "会话状态",
+      "source": "通用图执行器",
+      "description": "保存字段或增加计数；下游通过 state 字段绑定，状态属于当前会话。",
+      "inputs": "上游输出 / 会话事件",
+      "outputs": "会话状态 / 事件结果",
+      "fields": {
+        "values": {
+          "label": "values",
+          "type": "object",
+          "enum": null,
+          "required": false,
+          "example": {
+            "ready": false
+          },
+          "description": "写入状态，可用$ref绑定；键是字母开头的标识符。",
+          "validation": "node",
+          "bindable": false
+        },
+        "increments": {
+          "label": "increments",
+          "type": "object",
+          "enum": null,
+          "required": false,
+          "example": {
+            "count": 1
+          },
+          "description": "状态增量映射；值须为有限数值，不能为布尔。",
+          "validation": "node",
+          "bindable": false
+        }
+      },
+      "generatable": true
+    }
+  },
+  "common_fields": {
+    "joinMode": {
+      "label": "joinMode",
+      "type": "string",
+      "enum": [
+        "all",
+        "any"
+      ],
+      "required": false,
+      "example": "any",
+      "description": "多入边的执行节点必须配置data.joinMode；all等待所有已决定路径，跳过分支不等待；any任一路径到达执行一次。重复wait的返回边不计首次汇合。",
+      "validation": "node",
+      "required_when": "非stage节点有超过一条普通入边",
+      "bindable": false
+    },
+    "flowVersion": {
+      "label": "flowVersion",
+      "type": "integer",
+      "enum": [
+        2
+      ],
+      "required": false,
+      "example": 2,
+      "description": "新input使用整数2；宿主新增input时已默认填写，不接受字符串。",
+      "validation": "node",
+      "bindable": false
+    },
+    "displayDelayMs": {
+      "label": "displayDelayMs",
+      "type": "number",
+      "enum": null,
+      "required": false,
+      "example": 0,
+      "description": "展示延迟（毫秒），0–60000。",
+      "validation": "node",
+      "min": 0,
+      "max": 60000,
+      "bindable": false
+    },
+    "eventBudget": {
+      "label": "eventBudget",
+      "type": "integer",
+      "enum": null,
+      "required": false,
+      "example": 100,
+      "description": "显式事件预算，1–100000；不修改系统默认预算。",
+      "validation": "node",
+      "min": 1,
+      "max": 100000,
+      "bindable": false
+    },
+    "executionBudget": {
+      "label": "executionBudget",
+      "type": "integer",
+      "enum": null,
+      "required": false,
+      "example": 100,
+      "description": "显式执行预算，1–100000；不修改系统默认预算。",
+      "validation": "node",
+      "min": 1,
+      "max": 100000,
+      "bindable": false
+    },
+    "designOnly": {
+      "label": "designOnly",
+      "type": "boolean",
+      "enum": null,
+      "required": false,
+      "example": false,
+      "description": "设计草稿标记；true时禁止执行。",
+      "validation": "node",
+      "bindable": false
+    },
+    "name": {
+      "label": "name",
+      "type": "string",
+      "enum": null,
+      "required": false,
+      "example": "节点说明",
+      "description": "展示/运行元数据，不作为数据绑定解析。",
+      "validation": "node",
+      "bindable": false
+    },
+    "label": {
+      "label": "label",
+      "type": "string",
+      "enum": null,
+      "required": false,
+      "example": "节点说明",
+      "description": "展示/运行元数据，不作为数据绑定解析。",
+      "validation": "node",
+      "bindable": false
+    },
+    "description": {
+      "label": "description",
+      "type": "string",
+      "enum": null,
+      "required": false,
+      "example": "节点说明",
+      "description": "展示/运行元数据，不作为数据绑定解析。",
+      "validation": "node",
+      "bindable": false
+    },
+    "designIssue": {
+      "label": "designIssue",
+      "type": "string",
+      "enum": null,
+      "required": false,
+      "example": "节点说明",
+      "description": "展示/运行元数据，不作为数据绑定解析。",
+      "validation": "node",
+      "bindable": false
+    },
+    "status": {
+      "label": "status",
+      "type": "string",
+      "enum": null,
+      "required": false,
+      "example": "节点说明",
+      "description": "展示/运行元数据，不作为数据绑定解析。",
+      "validation": "node",
+      "bindable": false
+    },
+    "effectivePrompt": {
+      "label": "effectivePrompt",
+      "type": "string",
+      "enum": null,
+      "required": false,
+      "example": "节点说明",
+      "description": "展示/运行元数据，不作为数据绑定解析。",
+      "validation": "node",
+      "bindable": false
+    },
+    "collapsed": {
+      "label": "collapsed",
+      "type": "boolean",
+      "enum": null,
+      "required": false,
+      "example": false,
+      "description": "展示元数据。",
+      "validation": "node",
+      "bindable": false
+    },
+    "activationIndex": {
+      "label": "activationIndex",
+      "type": "integer",
+      "enum": null,
+      "required": false,
+      "example": 0,
+      "description": "运行元数据。",
+      "validation": "node",
+      "bindable": false
+    },
+    "trace": {
+      "label": "trace",
+      "type": "array",
+      "enum": null,
+      "required": false,
+      "example": [],
+      "description": "运行元数据。",
+      "validation": "node",
+      "bindable": false,
+      "items": {}
+    },
+    "output": {
+      "label": "output",
+      "type": [
+        "string",
+        "object",
+        "array",
+        "number",
+        "boolean",
+        "null"
+      ],
+      "enum": null,
+      "required": false,
+      "example": "",
+      "description": "运行结果元数据，不是节点输入配置。",
+      "validation": "node",
+      "bindable": false,
+      "items": {}
+    }
+  },
+  "field_contract": "节点data字段 = common_fields + nodes[节点类型].fields。通用字段只声明一次；enum=null表示开放值域，[]且forbidden=true表示无合法配置值，example=null表示应省略，replacement_example提供合法替代。required为无条件必填，required_when为条件必填。validation=node由既有专项校验器处理，不新增执行能力。deprecated字段仅兼容旧项目，新图使用replacement。",
+  "connection_contract": {
+    "version": 1,
+    "producers": {
+      "llm": {
+        "format_field": "outputFormat",
+        "default": "auto",
+        "formats": {
+          "text": {
+            "purpose": "文字生成",
+            "shape": {
+              "text": "string",
+              "reply": "string",
+              "raw_model_output": "string",
+              "requested_model": "string",
+              "model_id": "string"
+            },
+            "repair": "需要动作决策时改 outputFormat=actions；需要字段提取时改 json 并声明 outputFields。"
+          },
+          "json": {
+            "purpose": "数据提取",
+            "shape": {
+              "data": "outputFields",
+              "raw_model_output": "string",
+              "text": "string",
+              "json_repair_attempts": "number"
+            },
+            "repair": "用显式 HMI valueField/controlValue.$ref 或 MCP arguments 绑定 data 字段；JSON 数据不是动作。"
+          },
+          "actions": {
+            "purpose": "动作决策",
+            "shape": {
+              "actions": "array",
+              "action": "string",
+              "parameters": "object",
+              "reply": "string",
+              "intent": "string",
+              "text": "string",
+              "confidence": "number",
+              "strict_inference": "boolean",
+              "raw_model_output": "string",
+              "raw_command": "string",
+              "has_image": "boolean"
+            },
+            "repair": "动作必须在实际下游支持集合内；普通工具读取 actions/parameters，不能把 data 当动作。"
+          }
+        },
+        "auto_note": "auto 由运行时可执行下游与 promptProfile 决定；静态检查不冒称已知格式，显式 text/json/actions 才作确定诊断。"
+      }
+    },
+    "consumers": {
+      "ordinary": {
+        "accepts": [
+          "actions"
+        ],
+        "expected": "actions 动作协议（actions/name/parameters），按普通 tool_id 或车控 action 的支持集合执行",
+        "repairs": [
+          "将负责动作决策的上游 llm.outputFormat 改为 actions，并同步 systemPrompt",
+          "保留数据提取，在这条路径插入已支持的 llm 动作决策节点，outputFormat=actions",
+          "将连线改到兼容的数据消费者：显式 HMI 字段绑定或 MCP arguments 绑定；先确认目录有该能力"
+        ]
+      },
+      "hmi": {
+        "accepts": [
+          "text",
+          "json",
+          "actions"
+        ],
+        "expected": "显式 controlId + controlValue（可用 $ref）或 valueField→input.data；actions 模式另须授权 hmi.set",
+        "repairs": [
+          "valueField 需要 JSON outputFields 中的同名字段；改上游 outputFormat=json 并声明字段",
+          "改用能力目录允许的 controlValue 常量或有效 $ref；删除无效 valueField",
+          "动作模式保留 actions，使用显式 controlValue 且由 hmi.set 授权"
+        ]
+      },
+      "mcp": {
+        "accepts": [
+          "text",
+          "json",
+          "actions"
+        ],
+        "expected": "显式 serverId/toolName/arguments；arguments 的 $ref 必须来自实际输出字段，遵守已登记 MCP inputSchema",
+        "repairs": [
+          "将 arguments.$ref 改为上游实际存在且类型匹配的字段",
+          "需要结构化字段时使用 json/outputFields；文字使用 input.text 或 input.reply",
+          "插入已支持的 llm JSON 提取节点后显式绑定 MCP arguments"
+        ]
+      },
+      "ambient": {
+        "accepts": [
+          "text",
+          "json",
+          "actions"
+        ],
+        "expected": "显式 color/brightness 或 input.data 对应字段（HMI 仿真）",
+        "repairs": [
+          "配置显式 color/brightness，或通过 json/outputFields 提供所需字段"
+        ]
+      }
+    },
+    "output_boundaries": [
+      "llm",
+      "interaction",
+      "output",
+      "tts",
+      "input",
+      "systemInput"
+    ],
+    "scope": "沿非 error 连线追踪，穿过透传/合并节点；到重新生成输出的节点停止旧来源传播。动态绑定类型不能静态证明时留给 trial，不假定已执行。"
+  }
+}

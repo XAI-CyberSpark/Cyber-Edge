@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-20",
+  "repository": "https://github.com/s1gmamale1/apple-design-skills",
+  "commit": "8a3fbea8b561405e5719d682ebd1d14c952aecd7",
+  "installed": {
+    "apple-design": {
+      "path": "/Users/sherry/.codex/skills/apple-design",
+      "files_sha256": {
+        "SKILL.md": "8503572395c308ebb017e49b34477cb3d0c7bfcf67cc2033e8f7b2904f55dfa6",
+        "references/philosophy-and-evolution.md": "3dc16d4bf3f758488bab2575d489df2a81039e90167cb05275162fbdf75c0c28",
+        "references/restraint-and-antislop.md": "96fc746e48d947f44e6f82ef63c0c199a0300711198e05754441cd3320769791"
+      }
+    },
+    "apple-design-foundations": {
+      "path": "/Users/sherry/.codex/skills/apple-design-foundations",
+      "files_sha256": {
+        "SKILL.md": "7a459e003ea4e59b89efde20db6875f50f958d2e6688503e889646a682057478",
+        "references/layout-grid-spacing.md": "9e3eddfc0bb536a929c58869fa6a9dafb31eb2228174bc622a4dc0f478937f69",
+        "references/typography.md": "409f2f0c337fb231775acdd22aa3fca5070ad7ae3351275800966f2b58a8929b",
+        "references/color-systems.md": "8a505900ead2af835c0ff594eceb054ed8b261ff0e19be81d4015be3bb939dde"
+      }
+    },
+    "apple-design-materials": {
+      "path": "/Users/sherry/.codex/skills/apple-design-materials",
+      "files_sha256": {
+        "SKILL.md": "251e5e748df5f951fb223d6036ec660cd682aefa09aa6a72ca31501677e2a087",
+        "references/iconography-sf-symbols.md": "92633509e5413554a40bb3c69360fcd118dc92939bb1dc25292f7faa0dc07415",
+        "references/materials-liquid-glass.md": "9d7e1ed4abaee51bfa7f147fab46274643e4e4613aaa9a55e9de46b5abb86692"
+      }
+    },
+    "apple-design-motion": {
+      "path": "/Users/sherry/.codex/skills/apple-design-motion",
+      "files_sha256": {
+        "SKILL.md": "016bcbe2660dd3b8d126463ed82fa91c33f618eabdd3b757bb13f93470d73b04",
+        "references/motion-animation.md": "6620a4e9bd05b788f0d95e9384273ff7894b8190fcbea607579d93a04bdff3cb",
+        "references/microinteractions-feedback.md": "78d636fddece233631e7f301a3beb6cfe17d6bec3b2196ef030265a08ab291c8",
+        "references/gestures-interaction.md": "2de83b2b77b0bdc45c7bd6d65f212ef559ac3d7fc43e1168919ddc44061792f4"
+      }
+    }
+  },
+  "validation": "frontmatter, SKILL reference files, exact match against reviewed content; no runtime code changed",
+  "scope": "design tooling only; product remains 2.8.0-dev.17"
+}

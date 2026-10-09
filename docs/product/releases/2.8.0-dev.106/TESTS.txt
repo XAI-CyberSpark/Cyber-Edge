@@ -1,0 +1,197 @@
+backend-final.txt
+Executing <Task finished name='Task-38' coro=<AssertionContractTests.test_submit_type_and_path_reject_before_lock() done, defined at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_assertion_contract.py:15> result=None created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.458 seconds
+Executing <Task finished name='Task-61' coro=<ArgumentNormalizationTests.test_top_level_patch_only_if_whole_schema_valid() done, defined at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_budget_repairs.py:20> result=None created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.169 seconds
+Executing <Task pending name='Task-70' coro=<BudgetFinalizationTests.test_failed_trial_or_review_never_submits() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_budget_repairs.py:74> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.324 seconds
+Executing <Task pending name='Task-80' coro=<BudgetFinalizationTests.test_finalize_only_current_untried_plan() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_budget_repairs.py:51> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.205 seconds
+Executing <Task finished name='Task-90' coro=<BudgetFinalizationTests.test_missing_plan_stale_failed_already_trialed_do_not_run() done, defined at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_budget_repairs.py:56> result=None created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.611 seconds
+Executing <Task finished name='Task-95' coro=<HostFinalizationAccountingTests.test_insufficient_time_skips_without_mutation() done, defined at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_budget_repairs.py:89> result=None created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.135 seconds
+Executing <Task finished name='Task-100' coro=<HostFinalizationAccountingTests.test_review_unavailable_retries_only_review_and_counts() done, defined at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_budget_repairs.py:79> result=None created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.196 seconds
+Executing <Task finished name='Task-161' coro=<StatusRevisionTests.test_status_only_change_and_removal_without_evidence() done, defined at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_reliability.py:9> result=None created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.324 seconds
+Executing <Task pending name='Task-215' coro=<AuthoringTests.test_actual_graph_trial_and_latest_submission() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:304> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.143 seconds
+Executing <Task pending name='Task-225' coro=<AuthoringTests.test_agent_budget_stop_keeps_latest_draft_but_cannot_apply() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:371> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.137 seconds
+Executing <Task pending name='Task-240' coro=<AuthoringTests.test_bad_stored_node_shape_has_actionable_patch_contract_without_mutating_graph() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:242> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.137 seconds
+Executing <Task pending name='Task-260' coro=<AuthoringTests.test_caller_plan_is_locked_before_first_tool_and_drives_real_repair() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:388> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.142 seconds
+Executing <Task pending name='Task-275' coro=<AuthoringTests.test_changed_graph_reexecutes_and_cannot_reuse_prior_review() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:144> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.130 seconds
+Executing <Task pending name='Task-290' coro=<AuthoringTests.test_changes_invalidate_trial_and_old_revision_cannot_submit() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:322> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.136 seconds
+Executing <Task pending name='Task-300' coro=<AuthoringTests.test_content_failure_blocks_apply_and_repairs_with_locked_plan() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:213> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.132 seconds
+Executing <Task pending name='Task-315' coro=<AuthoringTests.test_engine_feedback_drives_local_repair_preserving_test() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:335> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.141 seconds
+Executing <Task pending name='Task-315' coro=<AuthoringTests.test_engine_feedback_drives_local_repair_preserving_test() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:341> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.173 seconds
+Executing <Task pending name='Task-330' coro=<AuthoringTests.test_failed_runtime_does_not_call_content_reviewer() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:238> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.138 seconds
+Executing <Task pending name='Task-350' coro=<AuthoringTests.test_interrupted_review_keeps_execution_and_counts_against_review_budget() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:158> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.140 seconds
+Executing <Task pending name='Task-360' coro=<AuthoringTests.test_invalid_flow_version_is_atomic_and_loaded_graph_cannot_trial() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:38> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.240 seconds
+Executing <Task pending name='Task-375' coro=<AuthoringTests.test_last_execution_can_retry_review_after_execution_budget_is_used() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:131> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.141 seconds
+Executing <Task pending name='Task-410' coro=<AuthoringTests.test_pass_or_semantic_rejection_is_cached_without_reroll() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:106> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.142 seconds
+Executing <Task pending name='Task-410' coro=<AuthoringTests.test_pass_or_semantic_rejection_is_cached_without_reroll() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:106> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.307 seconds
+Executing <Task finished name='Task-410' coro=<AuthoringTests.test_pass_or_semantic_rejection_is_cached_without_reroll() done, defined at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:101> result=None created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.172 seconds
+Executing <Task pending name='Task-425' coro=<AuthoringTests.test_removing_node_and_its_explicit_incident_edges_is_one_atomic_patch() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:178> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.133 seconds
+Executing <Task pending name='Task-440' coro=<AuthoringTests.test_review_error_or_missing_review_cannot_reuse_runtime_pass() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:228> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.135 seconds
+Executing <Task pending name='Task-440' coro=<AuthoringTests.test_review_error_or_missing_review_cannot_reuse_runtime_pass() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:228> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.142 seconds
+Executing <Task pending name='Task-455' coro=<AuthoringTests.test_review_error_retries_same_evidence_without_replaying_executor() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:90> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.157 seconds
+Executing <Task pending name='Task-465' coro=<AuthoringTests.test_review_retry_budget_exhaustion_preserves_failure_without_reexecution() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:117> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.140 seconds
+Executing <Task finished name='Task-465' coro=<AuthoringTests.test_review_retry_budget_exhaustion_preserves_failure_without_reexecution() done, defined at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:113> result=None created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.175 seconds
+Executing <Task pending name='Task-475' coro=<AuthoringTests.test_review_retry_receives_prior_error_copy_without_extra_execution_or_budget() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:50> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.142 seconds
+Executing <Task pending name='Task-475' coro=<AuthoringTests.test_review_retry_receives_prior_error_copy_without_extra_execution_or_budget() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:56> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.199 seconds
+Executing <Task pending name='Task-490' coro=<AuthoringTests.test_reviewer_cannot_mutate_preserved_execution_evidence() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:174> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.134 seconds
+Executing <Task pending name='Task-500' coro=<AuthoringTests.test_reviewer_exception_or_invalid_result_never_exposes_body_or_unlocks() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:166> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.138 seconds
+Executing <Task pending name='Task-525' coro=<AuthoringTests.test_unknown_or_duplicate_edge_removal_still_rejects_without_partial_mutation() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_session.py:190> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.140 seconds
+Executing <Task finished name='Task-578' coro=<HmiPreflightTests.test_inspect_checks_graph_and_initial_controls_without_execution() done, defined at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_trial_repairs.py:30> result=None created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.279 seconds
+Executing <Task pending name='Task-615' coro=<WaitingFeedbackTests.test_explicit_wait_repair_executes_answer_without_resetting_trials() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_trial_repairs.py:74> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.136 seconds
+Executing <Task pending name='Task-615' coro=<WaitingFeedbackTests.test_explicit_wait_repair_executes_answer_without_resetting_trials() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_authoring_trial_repairs.py:79> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.191 seconds
+Executing <Task finished name='Task-951' coro=<InputContractTests.test_inspect_rechecks_after_graph_changes_and_trial_does_not_run() done, defined at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_input_contract.py:32> result=None created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.138 seconds
+Executing <Task pending name='Task-960' coro=<InputContractTests.test_json_business_media_fields_match_preflight_and_runtime() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_input_contract.py:92> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.119 seconds
+Executing <Task pending name='Task-960' coro=<InputContractTests.test_json_business_media_fields_match_preflight_and_runtime() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_input_contract.py:92> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.113 seconds
+Executing <Task pending name='Task-960' coro=<InputContractTests.test_json_business_media_fields_match_preflight_and_runtime() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_input_contract.py:92> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.103 seconds
+Executing <Task finished name='Task-999' coro=<InputContractTests.test_submission_rejects_with_location_and_does_not_lock() done, defined at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_input_contract.py:24> result=None created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.349 seconds
+Executing <Task pending name='Task-1004' coro=<InputContractTests.test_supported_input_shapes_use_real_trial_adapter() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_input_contract.py:22> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.185 seconds
+Executing <Task pending name='Task-1004' coro=<InputContractTests.test_supported_input_shapes_use_real_trial_adapter() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_input_contract.py:22> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.179 seconds
+Executing <Task pending name='Task-1004' coro=<InputContractTests.test_supported_input_shapes_use_real_trial_adapter() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_input_contract.py:22> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.175 seconds
+----------------------------------------------------------------------
+Ran 402 tests in 45.825s
+
+OK (skipped=9)
+
+
+front-final.txt
+✔ catalog derives flat control IDs, graph IDs, output fields and closest legal paths (8.145583ms)
+✔ known types and node statuses reject wrong values without coercing strict assertions (0.441708ms)
+✔ invalid assertions in a later case block all execution (0.630375ms)
+✔ state references warn across cases by writer fields and read bindings, no scene names (0.363875ms)
+✔ assertion paths cannot resolve inherited prototype properties (2.333625ms)
+✔ memory output shape follows the graph-derived buffer role (3.660333ms)
+✔ new runtime each turn restores loops, deduplication, HMI and original ambient baseline (18.092542ms)
+✔ pause, resume, explicit restart and separate project stores survive restoration (8.319209ms)
+✔ changed edge identities or graph configuration reject old snapshots without actions (1.339042ms)
+✔ unknown node, corrupt status or incomplete vehicle data is rejected before replacing live state (0.755084ms)
+✔ lost completion response prevents further execution and never replays committed physical callback (1.427375ms)
+✔ concurrent tabs cannot both run the same saved checkpoint (1.838958ms)
+✔ lease renewal failure aborts execution and leaves ambiguous turn fenced (5.795666ms)
+✔ stable namespace and graph signatures ignore display-only changes (4.049583ms)
+✔ an already loaded revision preserves manual HMI edits between turns (3.029542ms)
+✔ editing a live graph fails before claiming a lease, so restart remains immediately available (1.068917ms)
+✔ brand migration preserves browser identity and existing execution key (0.421791ms)
+✔ JSON entry accepts object, JSON string and text wrapper without a model (9.670208ms)
+✔ missing input field is attributed to input with field and case location (0.340708ms)
+✔ static JSON errors locate case, step, entry and field with separate codes (1.148208ms)
+✔ all declared JSON field types are checked without coercion (0.133417ms)
+✔ named event payloads share object/string/text wrapper contract and skip dormant entries (4.325833ms)
+✔ runtime input failures preserve category in both graph engines (1.30225ms)
+✔ actual model output failure retains model category through trial (18.42325ms)
+✔ waiting warnings follow paths, exclude unreachable waits, and do not validate replies as JSON entry (1.182083ms)
+✔ cross case memory warning uses graph roles, same-case setup removes warning (0.782625ms)
+✔ JSON business fields named type/content do not invoke media validation or get an injected text wrapper (0.737292ms)
+✔ explicit typed MCP arguments reach adapter and actual values choose branches (33.183584ms)
+✔ MCP failures take error branch and do not masquerade as successful business data (1.019583ms)
+✔ missing adapter and mismatched receipts fail explicitly (3.631584ms)
+✔ node cannot provide URL, credentials or process instructions (0.562ms)
+✔ JSON model output can bind MCP parameters without claiming a vehicle action (1.676083ms)
+﹣ managed Fetch runs through the production graph and real backend (0.063458ms) # SKIP
+﹣ managed multi-tool selection executes Time and routes invalid input to the error branch (0.038334ms) # SKIP
+✔ message repeats same nodes, retains state, initializes once and exits through configured branch (16.96075ms)
+✔ item_review repeats same nodes, retains state, initializes once and exits through configured branch (8.789083ms)
+✔ repeat wait deduplicates, ignores unmatched events, pauses, and resumes without consuming control as answer (6.852209ms)
+✔ all return paths settle; alternate paths can return on different rounds without stale skipped edges (3.175042ms)
+✔ cycles without a declared repeat wait and secondary entries into a loop body are rejected (0.379083ms)
+✔ repeat budget fails explicitly before another iteration and cannot be bypassed by retry (2.656292ms)
+✔ two independent repeated waits keep separate event and reset regions (6.833042ms)
+✔ nested repeated waits finish inner loop before rearming outer loop (5.793167ms)
+✔ real model adapter executes once per accepted round and failures retry without redoing committed state (16.514208ms)
+✔ automatic UI rehearsal declines inventing loop answers; explicit plans still execute (0.35075ms)
+✔ looped HMI actions preserve initial snapshot and restore once on configured exit (3.362958ms)
+✔ unbound variables in untaken expressions fail preflight instead of hiding behind short circuit (1.057ms)
+✔ explicit restart clears loop counters and state; cancelled traversal never replays a committed action (3.42175ms)
+✔ bounded string splitting supports format checks without regular expressions or truncating success (3.462833ms)
+✔ result predicates catch keyword-only false positives and compare actual outputs (32.47125ms)
+✔ all predicate syntax is checked before any case executes a model or tool (0.676ms)
+✔ predicate missing data and nonboolean results retain evidence as failed assertions (1.916333ms)
+✔ data expressions preserve real branch operations and short circuit (0.485584ms)
+✔ code, global access, mutation and constructor escapes cannot execute (0.677166ms)
+✔ assertions compare objects independent of key order and missing differs from null (0.099208ms)
+✔ one executor handles different event/state configurations and repeat events without repeated actions (5.71875ms)
+✔ real branch execution has independent cases and records actual HMI feedback (1.422208ms)
+✔ model transport is explicit, actual JSON feeds action, invalid JSON cannot act (1.739167ms)
+✔ failed assertions cannot be reported as success (1.899666ms)
+✔ a model after wait receives the latest user answer and its text reaches HMI (1.911583ms)
+✔ unsupported model prompt fields are blocked before a cloud call (0.229166ms)
+✔ answer and hint command conflicts fail before waiting forever (1.470417ms)
+✔ one turn retains visible result before its next prompt, without replay on duplicate events (1.936791ms)
+✔ image waits ignore text and pass this turn image unchanged to the real model transport (2.256542ms)
+✔ a later text response clears stale image while structured image events retain current bytes (2.075083ms)
+✔ direct empty images cannot silently become text-only inference; HTTPS image references stay images (2.053875ms)
+✔ typed references reach ambient actions across a presentation node; upstream field names are not configuration (2.0305ms)
+✔ action-only resumed turns display their actual receipt and duplicates do not replay it (0.676625ms)
+ℹ tests 67
+ℹ suites 0
+ℹ pass 65
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 2
+ℹ todo 0
+ℹ duration_ms 148.346334
+
+
+general.txt
+✔ 生日 reuses generic wait/state/event graph and restores without replay (3.36725ms)
+✔ 博物馆导览 reuses generic wait/state/event graph and restores without replay (0.821875ms)
+✔ early event skips unresolved stages and preserves actual earned state (0.198125ms)
+✔ any wait only consumes user events; stop and duplicate restart cannot replay actions (0.191958ms)
+✔ diamond all and any joins execute once with declared input ports (0.159541ms)
+✔ all join waits for a pending branch across messages; missing policy rejected (0.189375ms)
+✔ retry resumes failed operation without replaying committed upstream; error path does not claim success (0.273833ms)
+✔ state updates are atomic and invalid counters are not silently coerced (0.177292ms)
+✔ collapse is only a projection; canonical children and real edge endpoints survive (0.258583ms)
+✔ real graph engine performs HMI stage action once between waits (1.704833ms)
+✔ selfie graph uses same scheduler with injected model and actual HMI mock state (14.725584ms)
+✔ generic isolated rehearsal works for two unrelated fixtures without external calls (7.33275ms)
+✔ cancellation checkpoints prior success and blocks later operations (0.291292ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 71.164375
+
+
+tsc-final.txt
+
+
+sdk-truncation.txt
+minimax passed: two charged calls, one retry, doubled token limit
+openai passed: two charged calls, one retry, doubled token limit
+anthropic passed: two charged calls, one retry, doubled token limit
+minimax passed: repeated truncation stops with two charged calls and retry_limit
+
+
+typography.txt
+{
+  "files": 148,
+  "entries": 2431,
+  "violations": []
+}
+
+
+install.txt
+Collecting jsonschema<5,>=4 (from -r backend/requirements-test.txt (line 2))
+  Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting attrs>=22.2.0 (from jsonschema<5,>=4->-r backend/requirements-test.txt (line 2))
+  Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema<5,>=4->-r backend/requirements-test.txt (line 2))
+  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting referencing>=0.28.4 (from jsonschema<5,>=4->-r backend/requirements-test.txt (line 2))
+  Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.25.0 (from jsonschema<5,>=4->-r backend/requirements-test.txt (line 2))
+  Downloading rpds_py-2026.9.1-cp312-cp312-macosx_11_0_arm64.whl.metadata (4.1 kB)
+Collecting typing-extensions>=4.4.0 (from referencing>=0.28.4->jsonschema<5,>=4->-r backend/requirements-test.txt (line 2))
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+Downloading rpds_py-2026.9.1-cp312-cp312-macosx_11_0_arm64.whl (341 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Installing collected packages: typing-extensions, rpds-py, attrs, referencing, jsonschema-specifications, jsonschema
+Successfully installed attrs-26.1.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 referencing-0.37.0 rpds-py-2026.9.1 typing-extensions-4.16.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: /Users/Shared/sherry/OAKEgde Studio/backend/.venv_macos/bin/python -m pip install --upgrade pip

@@ -1,0 +1,600 @@
+{
+  "snapshot_date": "2026-09-25",
+  "scope": "本次主目录原有引用；不含随后并行 dev.40 变化",
+  "auto_sync": false,
+  "documents": {
+    "docs/research/AI_REQUIREMENTS_WORKFLOW_COMPETITORS.md": {
+      "document_id": "LJR9dexgPoj0WXx9YvLcitQdnEd",
+      "url": "https://bi98l1v0z9.feishu.cn/docx/LJR9dexgPoj0WXx9YvLcitQdnEd"
+    },
+    "docs/README.md": {
+      "document_id": "Vz86dZhreoLgPYxrS4sc1fSrn2f",
+      "url": "https://bi98l1v0z9.feishu.cn/docx/Vz86dZhreoLgPYxrS4sc1fSrn2f"
+    },
+    "docs/product/NODE_CONTRACTS.md": {
+      "document_id": "GBfcdwEVWoHgBDxyfZkcvjAEnGh",
+      "revision_id": 4,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/GBfcdwEVWoHgBDxyfZkcvjAEnGh",
+      "source": "docs/product/NODE_CONTRACTS.md",
+      "sha256": "7d06fd2b4ffa5b5c0acab99a0dc9b66cf4171e33ee7e8c53bc684a57aea2b96a",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · 场景编排：节点定义 v0.1"
+    },
+    "docs/product/DESIGN_GUIDELINES.md": {
+      "document_id": "EL0ydEKMJoxbQYxHqZFc3xMuntz",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/EL0ydEKMJoxbQYxHqZFc3xMuntz",
+      "source": "docs/product/DESIGN_GUIDELINES.md",
+      "sha256": "8c0e50e05f275aaa23b9e1e44d1e1b8af08785d687a12fba457e3447b68bde46",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · CyberEdge 设计规范"
+    },
+    "CONTEXT.md": {
+      "document_id": "JSLZdZ9zpoY7Vnxm4J9cIKNkn9g",
+      "revision_id": 5,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/JSLZdZ9zpoY7Vnxm4J9cIKNkn9g",
+      "source": "CONTEXT.md",
+      "sha256": "2aee93ea450ee8d29810aad856831157b3acbae2de6832fc9ca08c655425b5f8",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · CyberEdge 智能座舱场景编排"
+    },
+    "docs/product/PRD.md": {
+      "document_id": "MJ1Ndc5FLog6yPxKDY4cnqmin0f",
+      "revision_id": 4,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/MJ1Ndc5FLog6yPxKDY4cnqmin0f",
+      "source": "docs/product/PRD.md",
+      "sha256": "975a6148ac25535038ca55bbafa2c774fe0d0d495a9ce8dc948b32907c471750",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · CyberEdge 产品需求文档（PRD）"
+    },
+    "docs/product/PRODUCT_WORKFLOW.md": {
+      "document_id": "NfApdsKmFolRLGxTr2jcyDR0n9b",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/NfApdsKmFolRLGxTr2jcyDR0n9b",
+      "source": "docs/product/PRODUCT_WORKFLOW.md",
+      "sha256": "286e4461480df8b184078fde6c273a3d22831711b49ea66cf604765f67feaf16",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · CyberEdge 产品开发流程"
+    },
+    "docs/product/ITERATION_TEMPLATE.md": {
+      "document_id": "XLaHdF2xQob8rlxhOOfcL6oAnDy",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/XLaHdF2xQob8rlxhOOfcL6oAnDy",
+      "source": "docs/product/ITERATION_TEMPLATE.md",
+      "sha256": "714dbe963adbd6d17e87afe8aed0ca38f38d2067c1a16932d01c90afe1076a0c",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · 迭代文档模板"
+    },
+    "docs/product/VERSIONING.md": {
+      "document_id": "XqL2dF4TYoVkMCxDEEDcOPzrn7b",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/XqL2dF4TYoVkMCxDEEDcOPzrn7b",
+      "source": "docs/product/VERSIONING.md",
+      "sha256": "65d79ca919e337d6152609f12371be142dee41a22c234fa182789fa5c2e6b59f",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · CyberEdge 版本管理规则"
+    },
+    "docs/product/APPLE_DESIGN_SKILLS.md": {
+      "document_id": "VsvWd0F2Qol2xyxzwmFc8CsBnxg",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/VsvWd0F2Qol2xyxzwmFc8CsBnxg",
+      "source": "docs/product/APPLE_DESIGN_SKILLS.md",
+      "sha256": "d2b978ffaf6af8ccef482c9dff3e1aa4d698637895be307e0b7764143e5fdc7b",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · CyberEdge：Apple 设计技能使用约定"
+    },
+    "CHANGELOG.md": {
+      "document_id": "TaP9d8N0BoMNmQxNcnGcCinhnlh",
+      "revision_id": 5,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/TaP9d8N0BoMNmQxNcnGcCinhnlh",
+      "source": "CHANGELOG.md",
+      "sha256": "3b04cffcdd1fb9a3ddc48a1040c181ecebc630fd29830cdd7bb3ca2f926f525e",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · CyberEdge 产品变更记录"
+    },
+    "docs/product/releases/2.8.0-dev.39/PRD.md": {
+      "document_id": "RlkxdhqFgogUzNxB9EscQOq7n0c",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/RlkxdhqFgogUzNxB9EscQOq7n0c",
+      "source": "docs/product/releases/2.8.0-dev.39/PRD.md",
+      "sha256": "a17b0f5895380b96ad83aa7b79822c95d2c4dd8fd27761db72cffe712a57ac5b",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · 2.8.0-dev.39 · 需求"
+    },
+    "docs/product/releases/2.8.0-dev.39/TASKS.md": {
+      "document_id": "CQdJdgzVhoD48bxtLB1c6nmFnQc",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/CQdJdgzVhoD48bxtLB1c6nmFnQc",
+      "source": "docs/product/releases/2.8.0-dev.39/TASKS.md",
+      "sha256": "5d710a2587deaee8112e37f05759c1de8f87bb58ca952415388d0b8d7a737085",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · 2.8.0-dev.39 · 任务"
+    },
+    "docs/product/releases/2.8.0-dev.39/ACCEPTANCE.md": {
+      "document_id": "Wulyd7Geto5Qc0xENOQchEUNnif",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/Wulyd7Geto5Qc0xENOQchEUNnif",
+      "source": "docs/product/releases/2.8.0-dev.39/ACCEPTANCE.md",
+      "sha256": "7b399211ee577d14a473248ce16395f53916b7681c8a57849aae82917940a62c",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · 2.8.0-dev.39 · 验收"
+    },
+    "docs/product/releases/2.8.0-dev.33/ACCEPTANCE.md": {
+      "document_id": "ADKvdOYbSooEwgxEwWgcCesDnkb",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/ADKvdOYbSooEwgxEwWgcCesDnkb",
+      "source": "docs/product/releases/2.8.0-dev.33/ACCEPTANCE.md",
+      "sha256": "92e79c3f5a4cac65ef5a4c2031cf89d58ea983ec43d3f2890128be105535e13a",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · 2.8.0-dev.33 · 验收"
+    },
+    "docs/product/releases/2.8.0-dev.34/TASKS.md": {
+      "document_id": "XlHzdb4FIoFE8Wx5CEkcmUmnnve",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/XlHzdb4FIoFE8Wx5CEkcmUmnnve",
+      "source": "docs/product/releases/2.8.0-dev.34/TASKS.md",
+      "sha256": "3779084868f2638cac14c6e7248424cb6af7ee8875c55853f7bb62ce15bd360f",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · 2.8.0-dev.34 · 任务"
+    },
+    "docs/product/releases/2.8.0-dev.29/ACCEPTANCE.md": {
+      "document_id": "KGvidaerUoxKxmxQ7nbcZUpTnXb",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/KGvidaerUoxKxmxQ7nbcZUpTnXb",
+      "source": "docs/product/releases/2.8.0-dev.29/ACCEPTANCE.md",
+      "sha256": "2fdbaf9c27fd041027f8fc0798014e384d61599f5afcf7264c80514d8a8ee202",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · 2.8.0-dev.29 · 验收"
+    },
+    "docs/product/releases/2.8.0-dev.33/PRD.md": {
+      "document_id": "JBZBd8G9CoFFCmx6TnEcquMQnah",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/JBZBd8G9CoFFCmx6TnEcquMQnah",
+      "source": "docs/product/releases/2.8.0-dev.33/PRD.md",
+      "sha256": "545cde4e7143cce6f8d9255e5ecc316bca2d115164a703d2d70a34b753f40508",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · 2.8.0-dev.33 · 需求"
+    },
+    "AGENTS.md": {
+      "document_id": "IlaKdUyqno3GwdxvBVwcbQY2n3b",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/IlaKdUyqno3GwdxvBVwcbQY2n3b",
+      "source": "AGENTS.md",
+      "sha256": "224b46a9b3d2005f49f8c37bfe380c9e5cf87c4d571be2381bbf2da9aad78067",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · CyberEdge 仓库协作约定"
+    },
+    "docs/devops/05_macOS_Local.md": {
+      "document_id": "T7XBdXDQjo6f8rx9RdIcrtX6nCb",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/T7XBdXDQjo6f8rx9RdIcrtX6nCb",
+      "source": "docs/devops/05_macOS_Local.md",
+      "sha256": "d128ea78defca7b0eceac8eeb5ac9b1b4703b207a85774941641211fe25bb9f7",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · macOS 本地启动与迁移"
+    },
+    "docs/devops/01_Maintainability_Guide.md": {
+      "document_id": "HbTsd2rMEokzjrxZle6cJNaqnjf",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/HbTsd2rMEokzjrxZle6cJNaqnjf",
+      "source": "docs/devops/01_Maintainability_Guide.md",
+      "sha256": "3647d52a972a07456214858c14b81b148996a7595955ed909963afa793e252c0",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · G-Edge 运维与可维护性保障手册"
+    },
+    "README开发文档.md": {
+      "document_id": "IQ6Ids7Xqo8sA2xlQSDcG12xnyb",
+      "revision_id": 5,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/IQ6Ids7Xqo8sA2xlQSDcG12xnyb",
+      "source": "README开发文档.md",
+      "sha256": "a1d91253e3f827a4b7a966727e95afa1eb33143fc11541d3e3748a538a927ad6",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · Cyber-Edge-Agent v2.5"
+    },
+    "DELIVERY_README使用文档.md": {
+      "document_id": "LVMXdjANuo3ISExZgw6cDxBunZg",
+      "new_blocks": [
+        {
+          "block_id": "doxcn5gSiX38pOmmTJTopyBm7Pb",
+          "block_token": "J1uFbAWb2oANYoxVfKkcQlM9nlg",
+          "block_type": "image"
+        }
+      ],
+      "revision_id": 4,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/LVMXdjANuo3ISExZgw6cDxBunZg",
+      "source": "DELIVERY_README使用文档.md",
+      "sha256": "a18c25583b4578c365a272e4b19e5b321d812ee2250db19737b11a7a80782dbf",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · Cyber-Edge SA8397 使用说明（奔驰）"
+    },
+    "Atomic_service_car_control_http_api.md": {
+      "document_id": "LYrxdc4FRo6sdyxn6pUcH3LVnFg",
+      "revision_id": 5,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/LYrxdc4FRo6sdyxn6pUcH3LVnFg",
+      "source": "Atomic_service_car_control_http_api.md",
+      "sha256": "bcbd8976195deb9337652fbb876329fc8f94a0602249b4d9d82e3205f0836cf3",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · Car Control HTTP API Specification（最下面有中文版）"
+    },
+    "docs/api/01_OpenAPI_Guide.md": {
+      "document_id": "LWwFd5GAfoHXAAxMctcchelznBd",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/LWwFd5GAfoHXAAxMctcchelznBd",
+      "source": "docs/api/01_OpenAPI_Guide.md",
+      "sha256": "a62a6d8f6c4c5881bc1b5046ca9bc6d529c56ea8df3602a6285c67ec6d1178c5",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · G-Edge OpenAPI / Swagger 文档说明"
+    },
+    "docs/api/02_FastVLM_Guide.md": {
+      "document_id": "Ko4PdUVrBoD7IOxIUFac9JqVngc",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/Ko4PdUVrBoD7IOxIUFac9JqVngc",
+      "source": "docs/api/02_FastVLM_Guide.md",
+      "sha256": "d7fe849f6a6adf1d3f982ada18892fcca74387ec5564bed60cb346577de4d9b5",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · FastVLM 最小接口说明"
+    },
+    "docs/devops/02_SDK_Export_Guide.md": {
+      "document_id": "KAgKdCJPGoyT4nxXD9TcoS7WnAd",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/KAgKdCJPGoyT4nxXD9TcoS7WnAd",
+      "source": "docs/devops/02_SDK_Export_Guide.md",
+      "sha256": "2f471cf6c55df4047dd2f69113fef8237645ef2aba02c67e0c6dd6df906086b0",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · SDK 导出说明"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part1": {
+      "document_id": "I9YFdZ8NtodfaWxzBL0cQe5GnxF",
+      "new_blocks": [
+        {
+          "block_id": "doxcnXAP7IoJ3SW20qFYzGb5c0f",
+          "block_token": "UjQGbEV3qoVbRRxKwKxcRevlnIh",
+          "block_type": "image"
+        },
+        {
+          "block_id": "doxcnRO9YOPlhOL9JWQgtaDUMmc",
+          "block_token": "Km3UbZsQioRfGPxyggYcNoC6nYf",
+          "block_type": "image"
+        },
+        {
+          "block_id": "doxcnAgLVDa5XyKoWYSInA4k7Ch",
+          "block_token": "YEQCbLb38oagrIxyForcPG00nUe",
+          "block_type": "image"
+        }
+      ],
+      "revision_id": 5,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/I9YFdZ8NtodfaWxzBL0cQe5GnxF",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 1,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（1/14）"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part2": {
+      "document_id": "KYHAd2DEuogX5xxMDoacBYGEnmc",
+      "revision_id": 4,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/KYHAd2DEuogX5xxMDoacBYGEnmc",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 2,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（2/14）"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part3": {
+      "document_id": "FHVPdXpSzox6AZxrZTQcIzsHnwe",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/FHVPdXpSzox6AZxrZTQcIzsHnwe",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 3,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（3/14）"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part4": {
+      "document_id": "XLw7dwZFyoLUigxfTypcqpt6nYg",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/XLw7dwZFyoLUigxfTypcqpt6nYg",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 4,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（4/14）"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part5": {
+      "document_id": "ZZsFdssnroZUEAxpW2DcFsUPnff",
+      "new_blocks": [
+        {
+          "block_id": "doxcnYfpsl3YYI8dk5uM55UX1sc",
+          "block_token": "TXyJbVFQsoHZpzx2P9McTJmwnec",
+          "block_type": "image"
+        }
+      ],
+      "revision_id": 4,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/ZZsFdssnroZUEAxpW2DcFsUPnff",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 5,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（5/14）"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part6": {
+      "document_id": "OFGedViRgoYPJuxaukrczq8mnQf",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/OFGedViRgoYPJuxaukrczq8mnQf",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 6,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（6/14）"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part7": {
+      "document_id": "TKojdLdt3o6KQXxqGr9cDD45nDh",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/TKojdLdt3o6KQXxqGr9cDD45nDh",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 7,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（7/14）"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part8": {
+      "document_id": "EqO3dwxdsofF2FxQPEXc8MljnYe",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/EqO3dwxdsofF2FxQPEXc8MljnYe",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 8,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（8/14）"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part9": {
+      "document_id": "V6OId7MTnojbqyxYqmacZv7On4e",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/V6OId7MTnojbqyxYqmacZv7On4e",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 9,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（9/14）"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part10": {
+      "document_id": "HGISdMcsDopcp9xgBckcfy82neh",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/HGISdMcsDopcp9xgBckcfy82neh",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 10,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（10/14）"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part11": {
+      "document_id": "UnFZduQ7kodxsUxMdEDcF03Tn6U",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/UnFZduQ7kodxsUxMdEDcF03Tn6U",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 11,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（11/14）"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part12": {
+      "document_id": "M32xdWcRyoZ9pDxN1UncnC3inCe",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/M32xdWcRyoZ9pDxN1UncnC3inCe",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 12,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（12/14）"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part13": {
+      "document_id": "BGDadFOkRoIzGnxDSJrcezxan4d",
+      "new_blocks": [
+        {
+          "block_id": "doxcn6Rtl5EGLm4M7K3UhQLH7dg",
+          "block_token": "NdDBbipKvo2K9Rxmz6JcgH3gnSb",
+          "block_type": "image"
+        }
+      ],
+      "revision_id": 4,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/BGDadFOkRoIzGnxDSJrcezxan4d",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 13,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（13/14）"
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md::part14": {
+      "document_id": "KGUzd4AZZogYSUxCK52cBUaTnLb",
+      "revision_id": 5,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/KGUzd4AZZogYSUxCK52cBUaTnLb",
+      "source": "docs/devops/03_SA8397_ADB_Deployment_Log.md",
+      "sha256": "0d66b9a7d6da4ed2a08a832b7d65992c8e7232f9b711eb7dc6e58ef830fe9c47",
+      "part": 14,
+      "parts": 14,
+      "title": "CyberEdge · SA8397 ADB Deployment Log（14/14）"
+    },
+    "docs/devops/04_Web_Studio_Production_Deployment.md": {
+      "document_id": "VsBodqDx1osemzx8stmcHH4znog",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/VsBodqDx1osemzx8stmcHH4znog",
+      "source": "docs/devops/04_Web_Studio_Production_Deployment.md",
+      "sha256": "006a5b3f99e1ffc2399d0dd6dd0799591c0afe9d87d70007226c6832509e26a0",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · CyberEdge Web Studio 生产部署"
+    },
+    "desktop/README.md": {
+      "document_id": "Yk7bdFGv6oh88kxR6jAc4vkYnFc",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/Yk7bdFGv6oh88kxR6jAc4vkYnFc",
+      "source": "desktop/README.md",
+      "sha256": "e7f17e3b8a8f85c2d9fe5d6a7b7222481920785eea2163a3359678702af5f756",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · CyberEdge Studio Desktop"
+    },
+    "docs/architecture/01_System_Architecture.md": {
+      "document_id": "ET2rdUfDCodMNax52efclz6EnCd",
+      "new_blocks": [
+        {
+          "block_id": "doxcnpjeKrIZibLZPx5Dh5sDu0d",
+          "block_token": "DuQWwa1v9hE5u6bwSWicccAFncf",
+          "block_type": "whiteboard"
+        },
+        {
+          "block_id": "doxcnP0uOnSNNAXMuhpGOKVdbgf",
+          "block_token": "EPH0wUdgchc6t2bHuiOcxZDIn6b",
+          "block_type": "whiteboard"
+        }
+      ],
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/ET2rdUfDCodMNax52efclz6EnCd",
+      "source": "docs/architecture/01_System_Architecture.md",
+      "sha256": "2ed2f4f8666f4307e0dd49c0082875c84fead53ad9a471ad91c9270fecc49214",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · G-Edge 端侧智能体一体化开发平台 - 系统架构设计文档 (V2.0 工程化重构版)"
+    },
+    "docs/product/PRODUCT_REVIEW.md": {
+      "document_id": "K2S8dl0vaoBJxZx2JNWcfcsVnob",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/K2S8dl0vaoBJxZx2JNWcfcsVnob",
+      "source": "docs/product/PRODUCT_REVIEW.md",
+      "sha256": "f4b3f057c109f7da9998b1f90c0fc4672a26f25af593841335614f8b96f73fa5",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · CyberEdge 产品评审与版本管理核查"
+    },
+    "docs/maintenance/CLEANUP_REPORT.md": {
+      "document_id": "EzwGduGqqoFAD9xi2mFc99ESnGe",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/EzwGduGqqoFAD9xi2mFc99ESnGe",
+      "source": "docs/maintenance/CLEANUP_REPORT.md",
+      "sha256": "6c00d2712178b594947b59597878bd5d3591def4bc7f4f161faf852b57d6fbef",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · CyberEdge 规范化执行记录"
+    },
+    "studio/README.md": {
+      "document_id": "WVArdT7FsopEeyx5oCOc3taLnwe",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/WVArdT7FsopEeyx5oCOc3taLnwe",
+      "source": "studio/README.md",
+      "sha256": "75c22f3330f38e5bd514b9353ea2d476826e600cd6eb2970e87df38a359543fe",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · CyberEdge Studio v1.0.0"
+    },
+    "docs/product/releases/2.8.0-dev.37/PRD.md": {
+      "document_id": "UHBAdo32so4yb9xGn9YchhQbntL",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/UHBAdo32so4yb9xGn9YchhQbntL",
+      "source": "docs/product/releases/2.8.0-dev.37/PRD.md",
+      "sha256": "662669bbaddfd8c213e35d0b87876fc49e536a112757147ec05230c847be7092",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · 2.8.0-dev.37 · 需求"
+    },
+    "docs/product/releases/2.8.0-dev.37/TASKS.md": {
+      "document_id": "JthidqpePomqxGxugiAc98oFnEh",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/JthidqpePomqxGxugiAc98oFnEh",
+      "source": "docs/product/releases/2.8.0-dev.37/TASKS.md",
+      "sha256": "ace7857b8f8683430b8cda1d5aa60546a08c828138b0d27e05a84bc3552f6928",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · 2.8.0-dev.37 · 任务"
+    },
+    "docs/product/releases/2.8.0-dev.37/ACCEPTANCE.md": {
+      "document_id": "JNxhd6nQFodXRgxnZAxcCGn9nVg",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/JNxhd6nQFodXRgxnZAxcCGn9nVg",
+      "source": "docs/product/releases/2.8.0-dev.37/ACCEPTANCE.md",
+      "sha256": "c43e307887c151cabbddd652411f2f2811aa3cb18eebaf612075101857b255e6",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · 2.8.0-dev.37 · 验收"
+    },
+    "docs/adr/0001-smart-cockpit-mvp-scope.md": {
+      "document_id": "McQgdwOVvoeNBix66vyc277gnUf",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/McQgdwOVvoeNBix66vyc277gnUf",
+      "source": "docs/adr/0001-smart-cockpit-mvp-scope.md",
+      "sha256": "2952ceacc947239e059f2d81eca9e1cc36dcbdf34588c20fa0d4642becf5e434",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · Scope the MVP to Smart Cockpit"
+    },
+    "docs/adr/0002-behavioral-closed-loop-before-physical-fidelity.md": {
+      "document_id": "WIqzdH6C3oiV0Sxd8BKcnJ8Jn3n",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/WIqzdH6C3oiV0Sxd8BKcnJ8Jn3n",
+      "source": "docs/adr/0002-behavioral-closed-loop-before-physical-fidelity.md",
+      "sha256": "fb247a7f190a99e07eb56ffbd48b94285256e46194475ea7ff4e6d2e5075a7de",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · Prioritize Behavioral Closed Loop Before Physical Fidelity"
+    },
+    "docs/adr/0003-business-semantic-node-instances.md": {
+      "document_id": "EUA1d1e1LoHXWqxno7DcTG96nVb",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/EUA1d1e1LoHXWqxno7DcTG96nVb",
+      "source": "docs/adr/0003-business-semantic-node-instances.md",
+      "sha256": "e50ed308eaeb01d1ec46e0ed59abc58dbe93b30a63574605200db5c1fcd50cad",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · Business-semantic node instances over generic capability nodes"
+    },
+    "docs/adr/0004-hmi-as-simulation-surface.md": {
+      "document_id": "EjYEdzd6soSwL6xCF7EcrO7PnBf",
+      "revision_id": 3,
+      "url": "https://bi98l1v0z9.feishu.cn/docx/EjYEdzd6soSwL6xCF7EcrO7PnBf",
+      "source": "docs/adr/0004-hmi-as-simulation-surface.md",
+      "sha256": "9ab17c2ef6fa052ed37ed0603ffaf6e0322c13913a99668b8597889729de2072",
+      "part": 1,
+      "parts": 1,
+      "title": "CyberEdge · HMI 作为体验仿真的主界面"
+    },
+    "docs/adr": {
+      "document_id": "Vz86dZhreoLgPYxrS4sc1fSrn2f",
+      "url": "https://bi98l1v0z9.feishu.cn/docx/Vz86dZhreoLgPYxrS4sc1fSrn2f#doxcnlPpWUFwscsAVihXzsNZVph",
+      "section": true
+    },
+    "docs/product/releases": {
+      "document_id": "Vz86dZhreoLgPYxrS4sc1fSrn2f",
+      "url": "https://bi98l1v0z9.feishu.cn/docx/Vz86dZhreoLgPYxrS4sc1fSrn2f#doxcnTpXrbRLsrFir6wxC6MsZ5N",
+      "section": true
+    },
+    "docs/devops/03_SA8397_ADB_Deployment_Log.md": {
+      "document_id": "Vz86dZhreoLgPYxrS4sc1fSrn2f",
+      "url": "https://bi98l1v0z9.feishu.cn/docx/Vz86dZhreoLgPYxrS4sc1fSrn2f#doxcnGSYFdL5GpdBC3lumHnW8Jc",
+      "section": true
+    }
+  }
+}

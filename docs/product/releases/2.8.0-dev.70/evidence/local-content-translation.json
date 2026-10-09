@@ -1,0 +1,12 @@
+{
+  "status": 503,
+  "sources": [
+    "朵朵生日航海 · 座舱体验",
+    "我希望后排儿童站起来时显示后排画面，不要锁窗。",
+    "检测到后排儿童可能存在危险，已显示后排画面。",
+    "## 功能说明\n读取车窗开度。调用 `vehicle.get_window`，范围为 0–100。文档：https://example.com/manual"
+  ],
+  "response": {
+    "detail": "Local translation is unavailable or incomplete. Original text is preserved; retry when OpenSparX is ready."
+  }
+}

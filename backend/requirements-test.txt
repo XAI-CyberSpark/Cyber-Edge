@@ -1,0 +1,2 @@
+# Schema regression tests only; install alongside the chosen backend runtime.
+jsonschema>=4,<5

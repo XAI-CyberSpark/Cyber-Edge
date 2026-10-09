@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="left turn" opacity="0.4">
+<path id="line" d="M30 45V7" stroke="white" stroke-opacity="0.6" stroke-width="6" stroke-linecap="round"/>
+<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M0 11.9999L17.164 2.46436C15.304 4.1887 13.9494 6.45055 13.3471 9.00295C24.2327 9.18822 33 18.0703 33 29V45C33 46.6569 31.6569 48 30 48C28.3431 48 27 46.6569 27 45V29C27 21.3846 20.9197 15.1894 13.3489 15.0043C13.952 17.5537 15.3058 19.8128 17.164 21.5355L0 11.9999Z" fill="white"/>
+</g>
+</svg>

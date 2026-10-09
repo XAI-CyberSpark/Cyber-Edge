@@ -1,0 +1,1415 @@
+{
+  "version": "0.63.0",
+  "models": {
+    "bevformer": {
+      "headline": "Transform temporal multi-view images into a unified bird's eye scene.",
+      "description": "Bevformer is a SOTA model of interest to the Auto BU.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/bevformer/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/bevformer/releases/v0.63.0/info.pb"
+    },
+    "centerpoint": {
+      "headline": "3D object detection model optimized for LiDAR-based autonomous driving scenarios.",
+      "description": "CenterPoint is a LiDAR-based 3D object detection model that detects objects by predicting their centers and regressing other attributes. It is designed for high accuracy and real-time performance in autonomous driving applications.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/centerpoint/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/centerpoint/releases/v0.63.0/info.pb"
+    },
+    "act": {
+      "headline": "Action Chunking with Transformers.",
+      "description": "ACT (Action Chunking with Transformers) is a robotic policy model that is trained to predict the next chunk of actions that the robotic hand is expected to perform.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/act/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/act/releases/v0.63.0/info.pb"
+    },
+    "cavaface": {
+      "headline": "Comprehensive facial analysis by extracting face features.",
+      "description": "A PyTorch-based framework for training face recognition models that generates facial embeddings for verification and identification tasks",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/cavaface/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/cavaface/releases/v0.63.0/info.pb"
+    },
+    "bevfusion_det": {
+      "headline": "Construct a bird’s eye view from sensors mounted on a vehicle.",
+      "description": "BeVFusion is a machine learning model for generating a birds eye view represenation from the sensors(cameras) mounted on a vehicle.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/bevfusion_det/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/bevfusion_det/releases/v0.63.0/info.pb"
+    },
+    "bert_base_uncased_hf": {
+      "headline": "Language model for masked language modeling and general-purpose NLP tasks.",
+      "description": "Bert is a lightweight BERT model designed for efficient self-supervised learning of language representations. It can be used for masked language modeling and as a backbone for various NLP tasks.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/bert_base_uncased_hf/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/bert_base_uncased_hf/releases/v0.63.0/info.pb"
+    },
+    "centernet_3d": {
+      "headline": "Construct a bird’s eye view from sensors mounted on a vehicle.",
+      "description": "CenterNet is a machine learning model for generating a birds eye view represenation from the sensors(cameras) mounted on a vehicle.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/centernet_3d/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/centernet_3d/releases/v0.63.0/info.pb"
+    },
+    "conditional_detr_resnet50": {
+      "headline": "Transformer based object detector with ResNet50 backbone.",
+      "description": "DETR is a machine learning model that can detect objects (trained on COCO dataset).",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/conditional_detr_resnet50/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/conditional_detr_resnet50/releases/v0.63.0/info.pb"
+    },
+    "aotgan": {
+      "headline": "High resolution image in-painting on-device.",
+      "description": "AOT-GAN is a machine learning model that allows to erase and in-paint part of given input image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/aotgan/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/aotgan/releases/v0.63.0/info.pb"
+    },
+    "centernet_pose": {
+      "headline": "Human pose estimation.",
+      "description": "CenterNet-Pose is a machine learning model that detects human pose and returns a location and confidence for each of 17 joints.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/centernet_pose/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/centernet_pose/releases/v0.63.0/info.pb"
+    },
+    "centernet_2d": {
+      "headline": "Object Detection.",
+      "description": "CenterNet-2D is machine learning model that detects objects by finding their center points.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/centernet_2d/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/centernet_2d/releases/v0.63.0/info.pb"
+    },
+    "albert_base_v2_hf": {
+      "headline": "Language model for masked language modeling and general-purpose NLP tasks.",
+      "description": "ALBERT is a lightweight BERT model designed for efficient self-supervised learning of language representations. It can be used for masked language modeling and as a backbone for various NLP tasks.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/albert_base_v2_hf/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/albert_base_v2_hf/releases/v0.63.0/info.pb"
+    },
+    "controlnet_canny": {
+      "headline": "Generating visual arts from text prompt and input guiding image.",
+      "description": "On-device, high-resolution image synthesis from text and image prompts. ControlNet guides Stable-diffusion with provided input image to generate accurate images from given input prompt.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/controlnet_canny/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/controlnet_canny/releases/v0.63.0/info.pb"
+    },
+    "beit": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "Beit is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/beit/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/beit/releases/v0.63.0/info.pb"
+    },
+    "bevdet": {
+      "headline": "Construct a bird’s eye view from sensors mounted on a vehicle.",
+      "description": "BEVDet is a machine learning model for generating a birds eye view represenation from the sensors(cameras) mounted on a vehicle.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/bevdet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/bevdet/releases/v0.63.0/info.pb"
+    },
+    "convnext_base": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "ConvNextBase is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/convnext_base/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/convnext_base/releases/v0.63.0/info.pb"
+    },
+    "crestereo": {
+      "headline": "Cascaded recurrent stereo matching network for high-accuracy disparity estimation.",
+      "description": "CREStereo (Cascaded Recurrent Network with Adaptive Correlation) is a CVPR 2022 Oral paper that achieves state-of-the-art stereo matching accuracy.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/crestereo/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/crestereo/releases/v0.63.0/info.pb"
+    },
+    "cvt": {
+      "headline": "Construct a map view from sensors mounted on a vehicle.",
+      "description": "Cross-View Transformer generates real-time bird's-eye view maps from multiple vehicle cameras for autonomous driving.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/cvt/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/cvt/releases/v0.63.0/info.pb"
+    },
+    "ddcolor": {
+      "headline": "Colorize image from the black-and-white image.",
+      "description": "DDColor is a coloring algorithm that produces natural, vivid color results from incoming black and white images.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ddcolor/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ddcolor/releases/v0.63.0/info.pb"
+    },
+    "deepspeech2": {
+      "headline": "End-to-end speech recognition model using CNN and bidirectional RNN layers with CTC loss.",
+      "description": "DeepSpeech2 is an end-to-end automatic speech recognition (ASR) model. It uses convolutional layers for feature extraction followed by bidirectional recurrent layers and CTC for sequence-to-sequence learning.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/deepspeech2/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/deepspeech2/releases/v0.63.0/info.pb"
+    },
+    "ddrnet23_slim": {
+      "headline": "Segment images or video by class in real-time on device.",
+      "description": "DDRNet23Slim is a machine learning model that segments an image into semantic classes, specifically designed for road-based scenes. It is designed for the application of self-driving cars.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ddrnet23_slim/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ddrnet23_slim/releases/v0.63.0/info.pb"
+    },
+    "depth_anything": {
+      "headline": "Deep Convolutional Neural Network model for depth estimation.",
+      "description": "Depth Anything is designed for estimating depth at each point in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/depth_anything/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/depth_anything/releases/v0.63.0/info.pb"
+    },
+    "depth_anything_v2": {
+      "headline": "Deep Convolutional Neural Network model for depth estimation.",
+      "description": "Depth Anything is designed for estimating depth at each point in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/depth_anything_v2/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/depth_anything_v2/releases/v0.63.0/info.pb"
+    },
+    "depth_anything_v3": {
+      "headline": "Deep Convolutional Neural Network model for depth estimation.",
+      "description": "Depth Anything 3 (DA3), a model that predicts spatially consistent geometry from arbitrary visual inputs, with or without known camera poses.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/depth_anything_v3/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/depth_anything_v3/releases/v0.63.0/info.pb"
+    },
+    "convnext_tiny": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "ConvNextTiny is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/convnext_tiny/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/convnext_tiny/releases/v0.63.0/info.pb"
+    },
+    "deeplabv3_plus_mobilenet": {
+      "headline": "Deep Convolutional Neural Network model for semantic segmentation.",
+      "description": "DeepLabV3 is designed for semantic segmentation at multiple scales, trained on the various datasets. It uses MobileNet as a backbone.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/deeplabv3_plus_mobilenet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/deeplabv3_plus_mobilenet/releases/v0.63.0/info.pb"
+    },
+    "densenet121": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "Densenet is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/densenet121/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/densenet121/releases/v0.63.0/info.pb"
+    },
+    "deeplab_xception": {
+      "headline": "Deep Convolutional Neural Network model for semantic segmentation.",
+      "description": "DeepLabXception is a semantic segmentation model supporting multiple backbones like ResNet-101 and Xception, with flexible dataset compatibility including COCO, VOC, and Cityscapes.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/deeplab_xception/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/deeplab_xception/releases/v0.63.0/info.pb"
+    },
+    "detr_resnet101": {
+      "headline": "Transformer based object detector with ResNet101 backbone.",
+      "description": "DETR is a machine learning model that can detect objects (trained on COCO dataset).",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/detr_resnet101/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/detr_resnet101/releases/v0.63.0/info.pb"
+    },
+    "deepbox": {
+      "headline": "Real-time 3D object detection.",
+      "description": "3D Deep Box is a machine learning model that predicts 3D bounding boxes and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/deepbox/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/deepbox/releases/v0.63.0/info.pb"
+    },
+    "detr_resnet101_dc5": {
+      "headline": "Transformer based object detector with ResNet101 backbone (dilated C5 stage).",
+      "description": "DETR is a machine learning model that can detect objects (trained on COCO dataset).",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/detr_resnet101_dc5/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/detr_resnet101_dc5/releases/v0.63.0/info.pb"
+    },
+    "detr_resnet50": {
+      "headline": "Transformer based object detector with ResNet50 backbone.",
+      "description": "DETR is a machine learning model that can detect objects (trained on COCO dataset).",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/detr_resnet50/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/detr_resnet50/releases/v0.63.0/info.pb"
+    },
+    "distil_whisper": {
+      "headline": "Distilled Whisper model for fast English automatic speech recognition (ASR).",
+      "description": "Distil-Whisper Small English is a distilled version of Whisper Small, optimized for fast and efficient automatic speech recognition.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/distil_whisper/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/distil_whisper/releases/v0.63.0/info.pb"
+    },
+    "detr_resnet50_dc5": {
+      "headline": "Transformer based object detector with ResNet50 backbone (dilated C5 stage).",
+      "description": "DETR is a machine learning model that can detect objects (trained on COCO dataset).",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/detr_resnet50_dc5/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/detr_resnet50_dc5/releases/v0.63.0/info.pb"
+    },
+    "detectron2_detection": {
+      "headline": "A next-generation library for object detection.",
+      "description": "Detectron2-Detection is a machine learning model that can detect objects (trained on COCO dataset).",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/detectron2_detection/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/detectron2_detection/releases/v0.63.0/info.pb"
+    },
+    "efficientformer": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "EfficientFormer is a vision transformer model that can classify images from the Imagenet dataset.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientformer/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientformer/releases/v0.63.0/info.pb"
+    },
+    "dla102x": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "dla is a machine learning model that can classify images from the Imagenet dataset. It is a architecture which can be used as backbone.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/dla102x/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/dla102x/releases/v0.63.0/info.pb"
+    },
+    "distil_bert_base_uncased_hf": {
+      "headline": "Language model for masked language modeling and general-purpose NLP tasks.",
+      "description": "DistilBERT is a lightweight BERT model designed for efficient self-supervised learning of language representations. It can be used for masked language modeling and as a backbone for various NLP tasks.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/distil_bert_base_uncased_hf/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/distil_bert_base_uncased_hf/releases/v0.63.0/info.pb"
+    },
+    "dncnn": {
+      "headline": "Remove Gaussian noise from grayscale images in real-time.",
+      "description": "DnCNN is a 17-layer denoising convolutional neural network that uses residual learning to remove Gaussian noise (sigma=25) from grayscale images. The network predicts the noise residual and subtracts it from the input to produce a clean image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/dncnn/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/dncnn/releases/v0.63.0/info.pb"
+    },
+    "efficientnet_b0": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "EfficientNetB0 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientnet_b0/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientnet_b0/releases/v0.63.0/info.pb"
+    },
+    "efficientnet_lite4": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "EfficientNet-Lite4 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientnet_lite4/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientnet_lite4/releases/v0.63.0/info.pb"
+    },
+    "efficientnet_v2_s": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "EfficientNetV2-s is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientnet_v2_s/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientnet_v2_s/releases/v0.63.0/info.pb"
+    },
+    "easyocr": {
+      "headline": "Ready-to-use OCR with 80+ supported languages and all popular writing scripts.",
+      "description": "EasyOCR is a machine learning model that can recognize text in images. It supports 80+ supported languages and all popular writing scripts.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/easyocr/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/easyocr/releases/v0.63.0/info.pb"
+    },
+    "efficientvit_b2_cls": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "EfficientViT is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientvit_b2_cls/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientvit_b2_cls/releases/v0.63.0/info.pb"
+    },
+    "efficientvit_l2_cls": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "EfficientViT is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientvit_l2_cls/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientvit_l2_cls/releases/v0.63.0/info.pb"
+    },
+    "efficientnet_b4": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "EfficientNetB4 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientnet_b4/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/efficientnet_b4/releases/v0.63.0/info.pb"
+    },
+    "electra_bert_base_discrim_google": {
+      "headline": "Language model for masked language modeling and general-purpose NLP tasks.",
+      "description": "ELECTRABERT is a lightweight BERT model designed for efficient self-supervised learning of language representations. It can be used for identify unnatural or artificially modified text and as a backbone for various NLP tasks.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/electra_bert_base_discrim_google/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/electra_bert_base_discrim_google/releases/v0.63.0/info.pb"
+    },
+    "esrgan": {
+      "headline": "Upscale images and remove image noise.",
+      "description": "ESRGAN is a machine learning model that upscales an image with minimal loss in quality.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/esrgan/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/esrgan/releases/v0.63.0/info.pb"
+    },
+    "falcon_v3_7b_instruct": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "Falcon3 family of Open Foundation Models is a set of pretrained and instruct LLMs ranging from 1B to 10B.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/falcon_v3_7b_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/falcon_v3_7b_instruct/releases/v0.63.0/info.pb"
+    },
+    "eyegaze": {
+      "headline": "Eye gaze estimation from cropped eye images.",
+      "description": "Predicts gaze direction (pitch, yaw) from 96x160 grayscale eye images using the EyeNet model.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/eyegaze/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/eyegaze/releases/v0.63.0/info.pb"
+    },
+    "facemap_3dmm": {
+      "headline": "Real-time 3D facial landmark detection optimized for mobile and edge.",
+      "description": "Detects facial landmarks (eg, nose, mouth, etc.). This model's architecture was developed by Qualcomm. The model was trained by Qualcomm on a proprietary dataset of faces, but can be used on any image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/facemap_3dmm/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/facemap_3dmm/releases/v0.63.0/info.pb"
+    },
+    "face_attrib_net": {
+      "headline": "Comprehensive facial analysis by extracting face features.",
+      "description": "Detects attributes (eye closeness, mask presence, eyeglasses presence, sunglasses presence) that apply to a given face. This model's architecture was developed by Qualcomm. The model was trained by Qualcomm on a proprietary dataset of faces, but can be used on any image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/face_attrib_net/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/face_attrib_net/releases/v0.63.0/info.pb"
+    },
+    "edgetam": {
+      "headline": "Real-time on-device track-anything video segmentation and tracking.",
+      "description": "EdgeTAM is a lightweight and efficient version of SAM 2, optimized for on-device tracking and segmenting any object in videos and low memory usage by using a novel 2D Spatial Perceiver and RepViT backbone.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/edgetam/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/edgetam/releases/v0.63.0/info.pb"
+    },
+    "fastsam_x": {
+      "headline": "Generate high quality segmentation mask on device.",
+      "description": "The Fast Segment Anything Model (FastSAM) is a novel, real-time CNN-based solution for the Segment Anything task. This task is designed to segment any object within an image based on various possible user interaction prompts. The model performs competitively despite significantly reduced computation, making it a practical choice for a variety of vision tasks.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/fastsam_x/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/fastsam_x/releases/v0.63.0/info.pb"
+    },
+    "face_det_lite": {
+      "headline": "Lightweight and efficient face detector.",
+      "description": "A small and accurate model for detecting bounding boxes for faces in images. This model's architecture was developed by Qualcomm. The model was trained by Qualcomm on a proprietary dataset of faces, but can be used on any image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/face_det_lite/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/face_det_lite/releases/v0.63.0/info.pb"
+    },
+    "fomm": {
+      "headline": "Animation of Still Image from Source Video.",
+      "description": "FOMM is a machine learning model that animates a still image to mirror the movements from a target video.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/fomm/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/fomm/releases/v0.63.0/info.pb"
+    },
+    "fastsam_s": {
+      "headline": "Generate high quality segmentation mask on device.",
+      "description": "The Fast Segment Anything Model (FastSAM) is a novel, real-time CNN-based solution for the Segment Anything task. This task is designed to segment any object within an image based on various possible user interaction prompts. The model performs competitively despite significantly reduced computation, making it a practical choice for a variety of vision tasks.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/fastsam_s/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/fastsam_s/releases/v0.63.0/info.pb"
+    },
+    "fcn_resnet50": {
+      "headline": "Fully-convolutional network model for image segmentation.",
+      "description": "FCN_ResNet50 is a machine learning model that can segment images from the COCO dataset. It uses ResNet50 as a backbone.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/fcn_resnet50/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/fcn_resnet50/releases/v0.63.0/info.pb"
+    },
+    "ffnet_122ns_lowres": {
+      "headline": "Semantic segmentation for automotive street scenes.",
+      "description": "FFNet-122NS-LowRes is a \"fuss-free network\" that segments street scene images with per-pixel classes like road, sidewalk, and pedestrian. Trained on the Cityscapes dataset.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ffnet_122ns_lowres/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ffnet_122ns_lowres/releases/v0.63.0/info.pb"
+    },
+    "ffnet_40s": {
+      "headline": "Semantic segmentation for automotive street scenes.",
+      "description": "FFNet-40S is a \"fuss-free network\" that segments street scene images with per-pixel classes like road, sidewalk, and pedestrian. Trained on the Cityscapes dataset.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ffnet_40s/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ffnet_40s/releases/v0.63.0/info.pb"
+    },
+    "gemma_4_e2b_it": {
+      "headline": "Lightweight multimodal model from Google DeepMind handling text and image input.",
+      "description": "Gemma is a family of open models built by Google DeepMind. Gemma 4 models are multimodal, handling text and image input (with audio supported on small models) and generating text output. This release includes open-weights models in both pre-trained and instruction-tuned variants. Gemma 4 features a context window of up to 256K tokens and maintains multilingual support in over 140 languages.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/gemma_4_e2b_it/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/gemma_4_e2b_it/releases/v0.63.0/info.pb"
+    },
+    "funasr_conformer_en": {
+      "headline": "English speech recognition with Conformer encoder and CTC decoder.",
+      "description": "FunASR Conformer-EN is a large-scale English ASR model from Alibaba DAMO Academy, trained on ~50,000 hours of English speech. It uses a 32-block Conformer encoder(512 hidden dim, 16 attention heads) with a CTC head for decoding. The model accepts raw 16kHz audio and outputs transcribed text via CTC greedy decoding.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/funasr_conformer_en/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/funasr_conformer_en/releases/v0.63.0/info.pb"
+    },
+    "ffnet_78s": {
+      "headline": "Semantic segmentation for automotive street scenes.",
+      "description": "FFNet-78S is a \"fuss-free network\" that segments street scene images with per-pixel classes like road, sidewalk, and pedestrian. Trained on the Cityscapes dataset.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ffnet_78s/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ffnet_78s/releases/v0.63.0/info.pb"
+    },
+    "ffnet_78s_lowres": {
+      "headline": "Semantic segmentation for automotive street scenes.",
+      "description": "FFNet-78S-LowRes is a \"fuss-free network\" that segments street scene images with per-pixel classes like road, sidewalk, and pedestrian. Trained on the Cityscapes dataset.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ffnet_78s_lowres/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ffnet_78s_lowres/releases/v0.63.0/info.pb"
+    },
+    "foot_track_net": {
+      "headline": "Multi-task Human detector.",
+      "description": "Real-time multiple person detection with accurate feet localization optimized for mobile and edge.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/foot_track_net/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/foot_track_net/releases/v0.63.0/info.pb"
+    },
+    "ffnet_54s": {
+      "headline": "Semantic segmentation for automotive street scenes.",
+      "description": "FFNet-54S is a \"fuss-free network\" that segments street scene images with per-pixel classes like road, sidewalk, and pedestrian. Trained on the Cityscapes dataset.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ffnet_54s/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ffnet_54s/releases/v0.63.0/info.pb"
+    },
+    "granite_4_0_micro": {
+      "headline": "Compact language model from IBM optimized for enterprise tasks.",
+      "description": "Granite 4.0 is a family of open language models from IBM designed for enterprise AI workloads including code generation, summarization, and retrieval-augmented generation.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/granite_4_0_micro/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/granite_4_0_micro/releases/v0.63.0/info.pb"
+    },
+    "gemma_4_e4b_it": {
+      "headline": "Multimodal model from Google DeepMind handling text and image input.",
+      "description": "Gemma is a family of open models built by Google DeepMind. Gemma 4 models are multimodal, handling text and image input (with audio supported on small models) and generating text output. This release includes open-weights models in both pre-trained and instruction-tuned variants. Gemma 4 features a context window of up to 256K tokens and maintains multilingual support in over 140 languages.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/gemma_4_e4b_it/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/gemma_4_e4b_it/releases/v0.63.0/info.pb"
+    },
+    "gpt_oss_20b": {
+      "headline": "State-of-the-art Mixture of Experts large language model with extended context length for text generation tasks.",
+      "description": "GPT-OSS-20B is a 20.9B parameter Mixture of Experts (MoE) language model with 32 experts (4 active per token). It features an extended 131K context length with YARN rope scaling and uses a GPT-4o compatible tokenizer. The model is quantized to MXFP4 for efficient on-device deployment.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/gpt_oss_20b/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/gpt_oss_20b/releases/v0.63.0/info.pb"
+    },
+    "ibm_granite_v3_1_8b_instruct": {
+      "headline": "State-of-the-art large language model useful on a variety of code understanding and generation tasks.",
+      "description": "Granite-3.1-8B-Instruct is a 8B parameter long-context instruct model finetuned from Granite-3.1-8B-Base using a combination of open source instruction datasets with permissive license and internally collected synthetic datasets tailored for solving long context problems. This model is developed using a diverse set of techniques with a structured chat format, including supervised finetuning, model alignment using reinforcement learning, and model merging.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ibm_granite_v3_1_8b_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ibm_granite_v3_1_8b_instruct/releases/v0.63.0/info.pb"
+    },
+    "gear_guard_net": {
+      "headline": "Object detection for personal protective equipments (PPE).",
+      "description": "Detect if a person is wearing personal protective equipments (PPE) in real-time.  This model's architecture was developed by Qualcomm. The model was trained by Qualcomm on a proprietary dataset, but can be used on any image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/gear_guard_net/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/gear_guard_net/releases/v0.63.0/info.pb"
+    },
+    "gkt": {
+      "headline": "Construct a bird’s eye view from sensors mounted on a vehicle.",
+      "description": "Geometry-guided Kernel Transformer is a machine learning model for generating a birds eye view represenation from the sensors(cameras) mounted on a vehicle.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/gkt/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/gkt/releases/v0.63.0/info.pb"
+    },
+    "indus_1b": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "Indus is today a 1.2 billion parameter model and has been supervised fine tuned for Hindi and dialects.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/indus_1b/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/indus_1b/releases/v0.63.0/info.pb"
+    },
+    "hrnet_w48_ocr": {
+      "headline": "Semantic segmentation in higher resolution.",
+      "description": "HRNet-W48-OCR is a machine learning model that can segment images from the Cityscape dataset. It has lightweight and hardware-efficient operations and thus delivers significant speedup on diverse hardware platforms",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/hrnet_w48_ocr/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/hrnet_w48_ocr/releases/v0.63.0/info.pb"
+    },
+    "googlenet": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "GoogLeNet is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/googlenet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/googlenet/releases/v0.63.0/info.pb"
+    },
+    "jais_6p7b_chat": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "JAIS 6.7B is a bilingual large language model (LLM) for both Arabic and English developed by Inception, a G42 company in partnership with MBZUAI and Cerebras. This is a 6.7 billion parameter LLM, trained on a dataset containing 141 billion Arabic tokens and 339 billion English/code tokens. The model is based on transformer-based decoder-only (GPT-3) architecture and uses SwiGLU non-linearity. It implements ALiBi position embeddings, enabling the model to extrapolate to long sequence lengths, providing improved context handling and model precision. The JAIS family of models is a comprehensive series of bilingual English-Arabic LLMs. These models are optimized to excel in Arabic while having strong English capabilities.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/jais_6p7b_chat/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/jais_6p7b_chat/releases/v0.63.0/info.pb"
+    },
+    "hrnet_face": {
+      "headline": "Comprehensive facial analysis by extracting face features.",
+      "description": "Detects attributes (liveness, eye closeness, mask presence, glasses presence, sunglasses presence) that apply to a given face.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/hrnet_face/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/hrnet_face/releases/v0.63.0/info.pb"
+    },
+    "inception_v4": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "InceptionNetV4 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/inception_v4/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/inception_v4/releases/v0.63.0/info.pb"
+    },
+    "gpunet": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "GPUNet is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/gpunet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/gpunet/releases/v0.63.0/info.pb"
+    },
+    "llama_v3_1_sea_lion_3_5_8b_r": {
+      "headline": "Llama-SEA-LION-v3.5-8B-R is a hybrid model offering versatile functionality, handling both complex reasoning tasks and general text generation, with mode selection managed through the tokenizer's chat template.",
+      "description": "SEA-LION is a collection of Large Language Models (LLMs) which have been pretrained and instruct-tuned for the Southeast Asia (SEA) region. The model is quantized to w4a16 (4-bit weights and 16-bit activations) and part of the model is quantized to w8a16 (8-bit weights and 16-bit activations) making it suitable for on-device deployment. For Prompt and output length specified below, the time to first token is Llama-PromptProcessor-Quantized's latency and average time per addition token is Llama-TokenGenerator-Quantized's latency.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_1_sea_lion_3_5_8b_r/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_1_sea_lion_3_5_8b_r/releases/v0.63.0/info.pb"
+    },
+    "intern3_5_vl_2b": {
+      "headline": "Multimodal 2B vision-language model for text and image understanding.",
+      "description": "InternVL3.5 is a vision-language model from OpenGVLab capable of understanding both text and images for multimodal reasoning tasks such as visual question answering and image captioning.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/intern3_5_vl_2b/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/intern3_5_vl_2b/releases/v0.63.0/info.pb"
+    },
+    "llama_v3_1_8b_instruct": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "Llama 3 is a family of LLMs. The model is quantized to w4a16 (4-bit weights and 16-bit activations) and part of the model is quantized to w8a16 (8-bit weights and 16-bit activations) making it suitable for on-device deployment. For Prompt and output length specified below, the time to first token is Llama-PromptProcessor-Quantized's latency and average time per addition token is Llama-TokenGenerator-Quantized's latency.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_1_8b_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_1_8b_instruct/releases/v0.63.0/info.pb"
+    },
+    "lama_dilated": {
+      "headline": "High resolution image in-painting on-device.",
+      "description": "LaMa-Dilated is a machine learning model that allows to erase and in-paint part of given input image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/lama_dilated/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/lama_dilated/releases/v0.63.0/info.pb"
+    },
+    "hrnet_pose": {
+      "headline": "Perform accurate human pose estimation.",
+      "description": "HRNet performs pose estimation in high-resolution representations.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/hrnet_pose/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/hrnet_pose/releases/v0.63.0/info.pb"
+    },
+    "inception_v3": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "InceptionNetV3 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/inception_v3/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/inception_v3/releases/v0.63.0/info.pb"
+    },
+    "intern3_5_vl_4b": {
+      "headline": "Multimodal 4B vision-language model for text and image understanding.",
+      "description": "InternVL3.5 is a vision-language model from OpenGVLab capable of understanding both text and images for multimodal reasoning tasks such as visual question answering and image captioning.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/intern3_5_vl_4b/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/intern3_5_vl_4b/releases/v0.63.0/info.pb"
+    },
+    "llama_v3_2_1b_instruct": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "Llama 3 is a family of LLMs. The model is quantized to w4 (4-bit weights) and part of the model is quantized to w8 (8-bit weights) making it suitable for on-device deployment.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_2_1b_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_2_1b_instruct/releases/v0.63.0/info.pb"
+    },
+    "grootn15": {
+      "headline": "State-of-the-art vision-language-action model for dexterous robot manipulation, enabling zero-shot generalization across diverse embodiments via diffusion-based action generation.",
+      "description": "GR00T N1.5 is a vision-language-action (VLA) model for generalist robot control. The model supports multiple robot embodiments and is designed for dexterous, long-horizon manipulation tasks.\n",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/grootn15/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/grootn15/releases/v0.63.0/info.pb"
+    },
+    "internimage": {
+      "headline": "InternImage Large-Scale Vision Foundation Model.",
+      "description": "InternImage employs DCNv3 as its core operator to equips the model with dynamic and effective receptive fields required for downstream tasks like object detection and segmentation, while enabling adaptive spatial aggregation.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/internimage/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/internimage/releases/v0.63.0/info.pb"
+    },
+    "llama_v3_2_3b_instruct_ssd": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks, with Self Speculative Decoding offering faster token rates.",
+      "description": "Llama 3 is a family of LLMs. The model is quantized to w4a16 (4-bit weights and 16-bit activations) and part of the model is quantized to w8a16 (8-bit weights and 16-bit activations) making it suitable for on-device deployment. This variant uses Self Speculative Decoding (SSD), inference acceleration solution that achieves on-target speed up with guaranteed output accuracy identical to the base model. Choose this variant over llama_v3_2_3b_instruct for faster token generation on supported devices.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_2_3b_instruct_ssd/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_2_3b_instruct_ssd/releases/v0.63.0/info.pb"
+    },
+    "llama_v3_taide_8b_chat": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "The Llama3-TAIDE-LX-8B-Chat-Alpha1 LLM model is based on Meta's released LLaMA3-8b model, fine-tuned on Traditional Chinese data, and enhanced for office tasks and multi-turn dialogue capabilities through instruction tuning. The TAIDE model is incorporating text and training materials from various fields in Taiwan to enhance the model's ability to respond in Traditional Chinese and perform specific tasks such as automatic summarization, writing emails, articles, and translating between Chinese and English.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_taide_8b_chat/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_taide_8b_chat/releases/v0.63.0/info.pb"
+    },
+    "litehrnet": {
+      "headline": "Human pose estimation.",
+      "description": "LiteHRNet is a machine learning model that detects human pose and returns a location and confidence for each of 17 joints.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/litehrnet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/litehrnet/releases/v0.63.0/info.pb"
+    },
+    "llama_v3_elyza_jp_8b": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "Llama-3-ELYZA-JP-8B is a lightweight LLM with only 8 billion parameters, yet achieves Japanese language performance comparable to GPT-3.5 Turbo. The model has undergone additional pre-training and post-training of Japanese to expand instruction-following capabilities in Japanese.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_elyza_jp_8b/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_elyza_jp_8b/releases/v0.63.0/info.pb"
+    },
+    "llama_v3_8b_instruct": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "Llama 3 is a family of LLMs. The model is quantized to w4a16 (4-bit weights and 16-bit activations) and part of the model is quantized to w8a16 (8-bit weights and 16-bit activations) making it suitable for on-device deployment. For Prompt and output length specified below, the time to first token is Llama-PromptProcessor-Quantized's latency and average time per addition token is Llama-TokenGenerator-Quantized's latency.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_8b_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_8b_instruct/releases/v0.63.0/info.pb"
+    },
+    "llama_v3_2_3b_instruct": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "Llama 3 is a family of LLMs. The model is quantized to w4a16 (4-bit weights and 16-bit activations) and part of the model is quantized to w8a16 (8-bit weights and 16-bit activations) making it suitable for on-device deployment.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_2_3b_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/llama_v3_2_3b_instruct/releases/v0.63.0/info.pb"
+    },
+    "maskrcnn": {
+      "headline": "Instance segmentation for object detection and masking.",
+      "description": "Mask R-CNN is a machine learning model that extends Faster R-CNN to perform instance segmentation by detecting objects in an image while simultaneously generating a high-quality segmentation mask for each instance. It adds a branch for predicting segmentation masks in parallel with the existing branch for bounding box recognition.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/maskrcnn/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/maskrcnn/releases/v0.63.0/info.pb"
+    },
+    "levit": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "LeViT is a vision transformer model that can classify images from the Imagenet dataset.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/levit/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/levit/releases/v0.63.0/info.pb"
+    },
+    "mediapipe_hand": {
+      "headline": "Real-time hand detection optimized for mobile and edge.",
+      "description": "The MediaPipe Hand Landmark Detector is a machine learning pipeline that predicts bounding boxes and pose skeletons of hands in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mediapipe_hand/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mediapipe_hand/releases/v0.63.0/info.pb"
+    },
+    "mask2former": {
+      "headline": "Real-time object segmentation.",
+      "description": "Mask2Former is a machine learning model that predicts masks and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mask2former/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mask2former/releases/v0.63.0/info.pb"
+    },
+    "mistral_7b_instruct_v0_3": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "Mistral AI's first open source dense model released September 2023. Mistral-7B-Instruct-v0.3 Large Language Model (LLM) is an instruct fine‑tuned version of the Mistral‑7B‑v0.3. It has an extended vocabulary and supports the v3 Tokenizer, enhancing language understanding and generation. Additionally function calling is enabled.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mistral_7b_instruct_v0_3/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mistral_7b_instruct_v0_3/releases/v0.63.0/info.pb"
+    },
+    "ministral_3_3b_instruct_2512": {
+      "headline": "Efficient 3B parameter instruction-tuned model from Mistral AI.",
+      "description": "Ministral is a compact language model from Mistral AI designed for on-device deployment, offering strong instruction-following capabilities with low latency.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ministral_3_3b_instruct_2512/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/ministral_3_3b_instruct_2512/releases/v0.63.0/info.pb"
+    },
+    "midas": {
+      "headline": "Deep Convolutional Neural Network model for depth estimation.",
+      "description": "Midas is designed for estimating depth at each point in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/midas/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/midas/releases/v0.63.0/info.pb"
+    },
+    "melotts_zh": {
+      "headline": "High-quality text-to-speech for Chinese.",
+      "description": "MeloTTS is a high-quality multi-lingual text-to-speech library for English, Chinese and Spanish language.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/melotts_zh/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/melotts_zh/releases/v0.63.0/info.pb"
+    },
+    "melotts_es": {
+      "headline": "High-quality text-to-speech for Spanish.",
+      "description": "MeloTTS is a high-quality multi-lingual text-to-speech library for English, Chinese and Spanish language.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/melotts_es/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/melotts_es/releases/v0.63.0/info.pb"
+    },
+    "minilm_v2": {
+      "headline": "Lightweight sentence embedding model for semantic similarity and search.",
+      "description": "All-MiniLM-L6-v2 maps sentences to a 384-dimensional dense vector space. Trained on 1B+ sentence pairs, it excels at semantic search, clustering, and sentence similarity tasks while being small enough to run on mobile devices.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/minilm_v2/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/minilm_v2/releases/v0.63.0/info.pb"
+    },
+    "melotts_en": {
+      "headline": "High-quality text-to-speech for English.",
+      "description": "MeloTTS is a high-quality multi-lingual text-to-speech library for English, Chinese and Spanish language.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/melotts_en/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/melotts_en/releases/v0.63.0/info.pb"
+    },
+    "mediapipe_pose": {
+      "headline": "Detect and track human face, hand, and torso in real-time images and video streams.",
+      "description": "The MediaPipe Pose Landmark Detector is a machine learning pipeline that predicts bounding boxes and pose skeletons of the face, hands, and torso in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mediapipe_pose/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mediapipe_pose/releases/v0.63.0/info.pb"
+    },
+    "mediapipe_face": {
+      "headline": "Detect faces and locate facial features in real-time video and image streams.",
+      "description": "Designed for sub-millisecond processing, this model predicts bounding boxes and pose skeletons (left eye, right eye, nose tip, mouth, left eye tragion, and right eye tragion) of faces in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mediapipe_face/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mediapipe_face/releases/v0.63.0/info.pb"
+    },
+    "mnasnet05": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "MNASNet05 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mnasnet05/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mnasnet05/releases/v0.63.0/info.pb"
+    },
+    "mediapipe_selfie": {
+      "headline": "Segments the person from background in a selfie image and realtime background segmentation in video conferencing.",
+      "description": "Light-weight model that segments a person from the background in square or landscape selfie and video conference imagery.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mediapipe_selfie/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mediapipe_selfie/releases/v0.63.0/info.pb"
+    },
+    "mobile_facenet": {
+      "headline": "Lightweight real-time face verification on-device.",
+      "description": "MobileFaceNet is an efficient CNN that maps a 112x112 face image to a compact 128-dimensional embedding. Two embeddings are compared via cosine similarity to determine whether they belong to the same person, achieving 99.48% accuracy on the LFW benchmark. The model uses depthwise-separable convolutions and inverted residual blocks (MobileNetV2-style) to stay under 1M parameters, making it well-suited for real-time face verification on mobile and edge devices. Trained with ArcFace loss on MS-Celeb-1M.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobile_facenet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobile_facenet/releases/v0.63.0/info.pb"
+    },
+    "mobile_bert_uncased_google": {
+      "headline": "Language model for masked language modeling and general-purpose NLP tasks.",
+      "description": "MOBILEBERT is a lightweight BERT model designed for efficient self-supervised learning of language representations. It can be used for masked language modeling and as a backbone for various NLP tasks.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobile_bert_uncased_google/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobile_bert_uncased_google/releases/v0.63.0/info.pb"
+    },
+    "mediapipe_hand_gesture": {
+      "headline": "Real-time hand gesture recognition optimized for mobile and edge.",
+      "description": "The MediaPipe Gesture Recognizer is a real-time machine learning pipeline that detects hands, predicts 21 hand landmarks, determines handedness (left/right), and classifies gestures from a predefined set",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mediapipe_hand_gesture/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mediapipe_hand_gesture/releases/v0.63.0/info.pb"
+    },
+    "mobile_vit": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "MobileVit is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobile_vit/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobile_vit/releases/v0.63.0/info.pb"
+    },
+    "mobilesam": {
+      "headline": "Faster Segment Anything: Towards lightweight SAM for mobile applications.",
+      "description": "Transformer based encoder-decoder where prompts specify what to segment in an image thereby allowing segmentation without the need for additional training. The image encoder generates embeddings and the lightweight decoder operates on the embeddings for point and mask based image segmentation.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobilesam/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobilesam/releases/v0.63.0/info.pb"
+    },
+    "nafssr": {
+      "headline": "Upscale images in real time using stereo technique.",
+      "description": "NAFNET is designed for lightweight real-time upscaling of images.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/nafssr/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/nafssr/releases/v0.63.0/info.pb"
+    },
+    "movenet": {
+      "headline": "Perform accurate human pose estimation.",
+      "description": "Movenet performs pose estimation on human images.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/movenet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/movenet/releases/v0.63.0/info.pb"
+    },
+    "nomic_embed_text": {
+      "headline": "Resizable Production Embeddings.",
+      "description": "A text encoder that surpasses OpenAI text-embedding-ada-002 and text-embedding-3-small performance on short and long context tasks.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/nomic_embed_text/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/nomic_embed_text/releases/v0.63.0/info.pb"
+    },
+    "nafnet_denoise": {
+      "headline": "Denoise images in real time.",
+      "description": "NAFNET is designed for lightweight real-time denoising of images.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/nafnet_denoise/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/nafnet_denoise/releases/v0.63.0/info.pb"
+    },
+    "mobilenet_v2": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "MobileNetV2 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobilenet_v2/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobilenet_v2/releases/v0.63.0/info.pb"
+    },
+    "mobilenet_v3_small": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "MobileNetV3Small is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobilenet_v3_small/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobilenet_v3_small/releases/v0.63.0/info.pb"
+    },
+    "nasnet": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "NASNet is a CNN-based architecture discovered via Neural Architecture Search (NAS) that can classify images from the Imagenet dataset.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/nasnet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/nasnet/releases/v0.63.0/info.pb"
+    },
+    "opus_mt_es_en": {
+      "headline": "OpusMT Spanish to English neural machine translation model based on MarianMT transformer architecture.",
+      "description": "OpusMT Spanish to English translation model is a state-of-the-art neural machine translation system designed for translating Spanish text into English. This model is based on the Marian transformer architecture and has been optimized for edge inference by splitting into encoder and decoder components with modified attention mechanisms. It exhibits robust performance for real-world translation tasks, making it highly reliable for practical applications. The model supports input sequences up to 256 tokens and can generate English translations with high accuracy.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/opus_mt_es_en/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/opus_mt_es_en/releases/v0.63.0/info.pb"
+    },
+    "opus_mt_en_es": {
+      "headline": "OpusMT English to Spanish neural machine translation model based on MarianMT transformer architecture.",
+      "description": "OpusMT English to Spanish translation model is a state-of-the-art neural machine translation system designed for translating English text into Spanish. This model is based on the Marian transformer architecture and has been optimized for edge inference by splitting into encoder and decoder components with modified attention mechanisms. It exhibits robust performance for real-world translation tasks, making it highly reliable for practical applications. The model supports input sequences up to 256 tokens and can generate Spanish translations with high accuracy.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/opus_mt_en_es/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/opus_mt_en_es/releases/v0.63.0/info.pb"
+    },
+    "opus_mt_en_zh": {
+      "headline": "OpusMT English to Chinese neural machine translation model based on MarianMT transformer architecture.",
+      "description": "OpusMT English to Chinese translation model is a state-of-the-art neural machine translation system designed for translating English text into Chinese. This model is based on the Marian transformer architecture and has been optimized for edge inference by splitting into encoder and decoder components with modified attention mechanisms. It exhibits robust performance for real-world translation tasks, making it highly reliable for practical applications. The model supports input sequences up to 256 tokens and can generate Chinese translations with high accuracy.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/opus_mt_en_zh/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/opus_mt_en_zh/releases/v0.63.0/info.pb"
+    },
+    "mobilenet_v3_large": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "MobileNet-v3-Large is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobilenet_v3_large/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/mobilenet_v3_large/releases/v0.63.0/info.pb"
+    },
+    "openai_clip": {
+      "headline": "Multi-modal foundational model for vision and language tasks like image/text similarity and for zero-shot image classification.",
+      "description": "Contrastive Language-Image Pre-Training (CLIP) uses a ViT like transformer to get visual features and a causal language model to get the text features. Both the text and visual features can then be used for a variety of zero-shot learning tasks.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/openai_clip/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/openai_clip/releases/v0.63.0/info.pb"
+    },
+    "opus_mt_zh_en": {
+      "headline": "OpusMT Chinese to English neural machine translation model based on MarianMT transformer architecture.",
+      "description": "OpusMT Chinese to English translation model is a state-of-the-art neural machine translation system designed for translating Chinese text into English. This model is based on the Marian transformer architecture and has been optimized for edge inference by splitting into encoder and decoder components with modified attention mechanisms. It exhibits robust performance for real-world translation tasks, making it highly reliable for practical applications. The model supports input sequences up to 256 tokens and can generate English translations with high accuracy.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/opus_mt_zh_en/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/opus_mt_zh_en/releases/v0.63.0/info.pb"
+    },
+    "nafnet_deblur": {
+      "headline": "Deblur images in real time.",
+      "description": "NAFNET is designed for lightweight real-time deblurring of images.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/nafnet_deblur/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/nafnet_deblur/releases/v0.63.0/info.pb"
+    },
+    "owlv2": {
+      "headline": "Open-Vocabulary Object Detection with Vision Transformers.",
+      "description": "OWL-V2 (Open-World Localization with Vision Transformers) is an open-vocabulary object detector that uses a CLIP-based ViT-B/16 backbone. Given an image and one or more free-form text queries, the model predicts bounding boxes and confidence scores for each query.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/owlv2/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/owlv2/releases/v0.63.0/info.pb"
+    },
+    "phi_3_5_mini_instruct": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "Phi-3.5-mini is a lightweight, state-of-the-art open model built upon datasets used for Phi-3 - synthetic data and filtered publicly available websites - with a focus on very high-quality, reasoning dense data. The model belongs to the Phi-3 model family and supports 128K token context length. The model underwent a rigorous enhancement process, incorporating both supervised fine-tuning, proximal policy optimization, and direct preference optimization to ensure precise instruction adherence and robust safety measures.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/phi_3_5_mini_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/phi_3_5_mini_instruct/releases/v0.63.0/info.pb"
+    },
+    "plamo_1b": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "PLaMo-1B is the first small language model (SLM) in the PLaMo™ Lite series from Preferred Networks (PFN), designed to power AI applications for edge devices including mobile, automotive, and robots across various industrial sectors. This model builds on the advancements of PLaMo-100B, a 100-billion parameter large language model (LLM) developed from the ground up by PFN’s subsidiary Preferred Elements (PFE). Leveraging high-quality Japanese and English text data generated by PLaMo-100B, PLaMo-1B has been pre-trained on a total of 4 trillion tokens. As a result, it delivers exceptional performance in Japanese benchmarks, outperforming other SLMs with similar parameter sizes. In evaluations such as Jaster 0-shot and 4-shot, PLaMo-1B has demonstrated performance on par with larger LLMs, making it a highly efficient solution for edge-based AI tasks.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/plamo_1b/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/plamo_1b/releases/v0.63.0/info.pb"
+    },
+    "phi_4_mini_instruct": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "Phi-4-mini-instruct is a lightweight open model built upon synthetic data and filtered publicly available websites - with a focus on high-quality, reasoning dense data.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/phi_4_mini_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/phi_4_mini_instruct/releases/v0.63.0/info.pb"
+    },
+    "pointnet": {
+      "headline": "Deep learning model for 3D object classification using point cloud data.",
+      "description": "PointNet is a pioneering neural network architecture designed to directly consume unordered point cloud data for tasks such as classification and segmentation. It learns spatial features from raw 3D points without requiring voxelization or image projections.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pointnet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pointnet/releases/v0.63.0/info.pb"
+    },
+    "owl_vit": {
+      "headline": "Open-Vocabulary Object Detection with Vision Transformers.",
+      "description": "OWL-ViT (Open-World Localization with Vision Transformers) is an open-vocabulary object detector that uses a CLIP-based ViT-B/32 backbone. Given an image and one or more free-form text queries, the model predicts bounding boxes and confidence scores for each query.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/owl_vit/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/owl_vit/releases/v0.63.0/info.pb"
+    },
+    "osnet": {
+      "headline": "Omni-scale person re-identification network for robust identity embeddings.",
+      "description": "OSNet is a compact convolutional architecture for person re-identification. It extracts discriminative embeddings that can be compared with cosine similarity for person matching across camera views.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/osnet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/osnet/releases/v0.63.0/info.pb"
+    },
+    "qwen2_7b_instruct": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "The Qwen2-7B-Instruct is a state-of-the-art multilingual language model with 7.07 billion parameters, excelling in language understanding, generation, coding, and mathematics.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen2_7b_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen2_7b_instruct/releases/v0.63.0/info.pb"
+    },
+    "pipertts_de": {
+      "headline": "High-quality text-to-speech for German.",
+      "description": "PiperTTS is a high-quality multi-lingual text-to-speech library.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pipertts_de/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pipertts_de/releases/v0.63.0/info.pb"
+    },
+    "pidnet": {
+      "headline": "Segment images or video by class in real-time on device.",
+      "description": "PIDNet (Proportional-Integral-Derivative Network) is a real-time semantic segmentation model based on  PID controllers",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pidnet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pidnet/releases/v0.63.0/info.pb"
+    },
+    "pipertts_it": {
+      "headline": "High-quality text-to-speech for Italian.",
+      "description": "PiperTTS is a high-quality multi-lingual text-to-speech library.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pipertts_it/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pipertts_it/releases/v0.63.0/info.pb"
+    },
+    "pi05": {
+      "headline": "State-of-the-art generalist robotic foundation model trained on vision, language, and action to enable dexterous, zero-shot physical task execution across diverse robot platforms.",
+      "description": "Pi0.5 is a vision-language-action model that co-trains on diverse data sources (robot demos, web data, semantic subtasks) to enable open-world generalization for long-horizon robotic manipulation.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pi05/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pi05/releases/v0.63.0/info.pb"
+    },
+    "pipertts_en": {
+      "headline": "High-quality text-to-speech for English.",
+      "description": "PiperTTS is a high-quality multi-lingual text-to-speech library.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pipertts_en/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pipertts_en/releases/v0.63.0/info.pb"
+    },
+    "pspnet": {
+      "headline": "Deep learning model for pixel-level semantic segmentation using pyramid pooling.",
+      "description": "PSPNet (Pyramid Scene Parsing Network) is a semantic segmentation model that captures global context information by applying pyramid pooling modules. It is designed to improve scene understanding by aggregating contextual features at multiple scales.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pspnet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/pspnet/releases/v0.63.0/info.pb"
+    },
+    "quicksrnetlarge": {
+      "headline": "Upscale images and remove image noise.",
+      "description": "QuickSRNet Large is designed for upscaling images on mobile platforms to sharpen in real-time.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/quicksrnetlarge/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/quicksrnetlarge/releases/v0.63.0/info.pb"
+    },
+    "posenet_mobilenet": {
+      "headline": "Perform accurate human pose estimation.",
+      "description": "Posenet performs pose estimation on human images.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/posenet_mobilenet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/posenet_mobilenet/releases/v0.63.0/info.pb"
+    },
+    "qwen3_0_6b": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "The Qwen3-0.6B is a state-of-the-art multilingual language model with 0.6 billion parameters, excelling in language understanding, generation, coding, and mathematics.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_0_6b/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_0_6b/releases/v0.63.0/info.pb"
+    },
+    "qwen3_4b": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "The Qwen3-4B is a state-of-the-art multilingual base language model with 4 billion parameters, excelling in language understanding, generation, coding, and mathematics.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_4b/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_4b/releases/v0.63.0/info.pb"
+    },
+    "qwen2_5_vl_7b_instruct": {
+      "headline": "State-of-the-art vision-language model capable of understanding images and generating text responses.",
+      "description": "Qwen2.5-VL-7B-Instruct is a multimodal vision-language model with 7 billion parameters that can process both images and text, enabling visual question answering, image description, and other vision-language tasks.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen2_5_vl_7b_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen2_5_vl_7b_instruct/releases/v0.63.0/info.pb"
+    },
+    "quicksrnetmedium": {
+      "headline": "Upscale images and remove image noise.",
+      "description": "QuickSRNet Medium is designed for upscaling images on mobile platforms to sharpen in real-time.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/quicksrnetmedium/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/quicksrnetmedium/releases/v0.63.0/info.pb"
+    },
+    "qwen3_1_7b": {
+      "headline": "Multilingual 1.7B parameter language model excelling in reasoning and code generation.",
+      "description": "Qwen3 is a multilingual large language model series from Alibaba Cloud, excelling in language understanding, generation, coding, and mathematics.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_1_7b/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_1_7b/releases/v0.63.0/info.pb"
+    },
+    "qwen3_vl_2b_instruct": {
+      "headline": "Multimodal 2B vision-language model capable of understanding text and images.",
+      "description": "Qwen3-VL is a vision-language model from Alibaba Cloud capable of understanding both text and images for multimodal reasoning tasks such as visual question answering and image captioning.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_vl_2b_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_vl_2b_instruct/releases/v0.63.0/info.pb"
+    },
+    "quicksrnetsmall": {
+      "headline": "Upscale images and remove image noise.",
+      "description": "QuickSRNet Small is designed for upscaling images on mobile platforms to sharpen in real-time.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/quicksrnetsmall/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/quicksrnetsmall/releases/v0.63.0/info.pb"
+    },
+    "qwen3_vl_8b_instruct": {
+      "headline": "Multimodal 8B vision-language model with enhanced visual reasoning capabilities.",
+      "description": "Qwen3-VL is a vision-language model from Alibaba Cloud capable of understanding both text and images for multimodal reasoning tasks such as visual question answering and image captioning.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_vl_8b_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_vl_8b_instruct/releases/v0.63.0/info.pb"
+    },
+    "qwen3_5_0_8b": {
+      "headline": "Ultra-compact 0.8B parameter model from the Qwen3.5 series for edge deployment.",
+      "description": "Qwen3.5 is the latest multilingual language model series from Alibaba Cloud with improved reasoning and instruction-following capabilities over Qwen3.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_5_0_8b/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_5_0_8b/releases/v0.63.0/info.pb"
+    },
+    "qwen3_5_2b": {
+      "headline": "Balanced 2B parameter model from the Qwen3.5 series for on-device inference.",
+      "description": "Qwen3.5 is the latest multilingual language model series from Alibaba Cloud with improved reasoning and instruction-following capabilities over Qwen3.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_5_2b/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_5_2b/releases/v0.63.0/info.pb"
+    },
+    "qwen3_8b": {
+      "headline": "State-of-the-art large language model useful on a variety of language understanding and generation tasks.",
+      "description": "The Qwen3-8B is a state-of-the-art multilingual base language model with 8 billion parameters, excelling in language understanding, generation, coding, and mathematics.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_8b/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_8b/releases/v0.63.0/info.pb"
+    },
+    "qwen3_4b_instruct_2507": {
+      "headline": "State-of-the-art large language model with instruct-only training, useful on a variety of language understanding and generation tasks.",
+      "description": "The Qwen3-4B-Instruct-2507 is a state-of-the-art multilingual instruct language model with 4 billion parameters, excelling in language understanding, generation, coding, and mathematics. Unlike the base Qwen3-4B, this variant has only instruct training without thinking mode support.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_4b_instruct_2507/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_4b_instruct_2507/releases/v0.63.0/info.pb"
+    },
+    "qwen3_vl_4b_instruct": {
+      "headline": "Multimodal 4B vision-language model with enhanced visual reasoning capabilities.",
+      "description": "Qwen3-VL is a vision-language model from Alibaba Cloud capable of understanding both text and images for multimodal reasoning tasks such as visual question answering and image captioning.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_vl_4b_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/qwen3_vl_4b_instruct/releases/v0.63.0/info.pb"
+    },
+    "rangenet_plus_plus": {
+      "headline": "Real-time LiDAR point cloud semantic segmentation using range images.",
+      "description": "RangeNet-Plus-Plus (also stylized as RangeNet++) projects a LiDAR point cloud onto a 5-channel range image (depth, x, y, z, intensity) and applies a DarkNet-53 encoder with a decoder head to predict per-point semantic class labels in real time.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/rangenet_plus_plus/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/rangenet_plus_plus/releases/v0.63.0/info.pb"
+    },
+    "real_esrgan_general_x4v3": {
+      "headline": "Upscale images and remove image noise.",
+      "description": "Real-ESRGAN is a machine learning model that upscales an image with minimal loss in quality.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/real_esrgan_general_x4v3/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/real_esrgan_general_x4v3/releases/v0.63.0/info.pb"
+    },
+    "resnet34_ssd1200": {
+      "headline": "Object detection model combining ResNet34 backbone with SSD architecture.",
+      "description": "ResNet34-SSD is a single-stage object detection model that integrates the ResNet34 backbone with the SSD (Single Shot MultiBox Detector) framework. It is optimized for real-time detection tasks and supports multiple deployment backends including PyTorch, TensorFlow, and ONNX.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet34_ssd1200/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet34_ssd1200/releases/v0.63.0/info.pb"
+    },
+    "real_esrgan_x4plus": {
+      "headline": "Upscale images and remove image noise.",
+      "description": "Real-ESRGAN is a machine learning model that upscales an image with minimal loss in quality. The implementation is a derivative of the Real-ESRGAN-x4plus architecture, a larger and more powerful version compared to the Real-ESRGAN-general-x4v3 architecture.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/real_esrgan_x4plus/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/real_esrgan_x4plus/releases/v0.63.0/info.pb"
+    },
+    "repvit": {
+      "headline": "Imagenet classifier optimized for mobile devices.",
+      "description": "RepViT is a lightweight pure CNN model for mobile devices, incorporating efficient architectural designs from Vision Transformers into CNNs. It achieves over 80% top-1 accuracy on ImageNet with 1ms latency on an iPhone 12.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/repvit/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/repvit/releases/v0.63.0/info.pb"
+    },
+    "resnet_3d": {
+      "headline": "Sports and human action recognition in videos.",
+      "description": "ResNet 3D is a network with 3D convolutions used for video understanding.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet_3d/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet_3d/releases/v0.63.0/info.pb"
+    },
+    "regnet": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "RegNet is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/regnet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/regnet/releases/v0.63.0/info.pb"
+    },
+    "resnet101": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "ResNet101 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet101/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet101/releases/v0.63.0/info.pb"
+    },
+    "resnet_2plus1d": {
+      "headline": "Sports and human action recognition in videos.",
+      "description": "ResNet (2+1)D Convolutions is a network which explicitly factorizes 3D convolution into two separate and successive operations, a 2D spatial convolution and a 1D temporal convolution. It used for video understanding applications.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet_2plus1d/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet_2plus1d/releases/v0.63.0/info.pb"
+    },
+    "regnet_y_800mf": {
+      "headline": "Lightweight convolutional neural network for image classification.",
+      "description": "RegNet_Y_800MF is part of the RegNet family of models designed for efficient and scalable image classification. It uses a simple yet effective design space to balance performance and computational cost, making it suitable for mobile and edge devices.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/regnet_y_800mf/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/regnet_y_800mf/releases/v0.63.0/info.pb"
+    },
+    "resnet18": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "ResNet18 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet18/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet18/releases/v0.63.0/info.pb"
+    },
+    "resnet_mixed": {
+      "headline": "Sports and human action recognition in videos.",
+      "description": "ResNet Mixed Convolutions is a network with a mixture of 2D and 3D convolutions used for video understanding.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet_mixed/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet_mixed/releases/v0.63.0/info.pb"
+    },
+    "rf_detr": {
+      "headline": "Transformer based object detection model architecture developed by Roboflow.",
+      "description": "DETR is a machine learning model that can detect objects (trained on COCO dataset).",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/rf_detr/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/rf_detr/releases/v0.63.0/info.pb"
+    },
+    "rtmdet": {
+      "headline": "Real-time object detection optimized for mobile and edge.",
+      "description": "RTMDet is a highly efficient model for real-time object detection,capable of predicting both the bounding boxes and classes of objects within an image.It is highly optimized for real-time applications, making it reliable for industrial and commercial use",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/rtmdet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/rtmdet/releases/v0.63.0/info.pb"
+    },
+    "resnet50": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "ResNet50 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet50/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnet50/releases/v0.63.0/info.pb"
+    },
+    "resnext101": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "ResNeXt101 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnext101/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnext101/releases/v0.63.0/info.pb"
+    },
+    "sam3": {
+      "headline": "Open-vocabulary segmentation with text and visual prompts for any concept.",
+      "description": "SAM3 (Segment Anything with Concepts) extends SAM2 with open-vocabulary segmentation, producing bounding boxes and masks for objects matching a natural-language prompt.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/sam3/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/sam3/releases/v0.63.0/info.pb"
+    },
+    "resnext50": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "ResNeXt50 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnext50/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/resnext50/releases/v0.63.0/info.pb"
+    },
+    "salsanext": {
+      "headline": "Semantic segmentation model optimized for LiDAR point cloud data.",
+      "description": "SalsaNext is a LiDAR-based model designed for efficient and accurate semantic segmentation.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/salsanext/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/salsanext/releases/v0.63.0/info.pb"
+    },
+    "rtmpose_body2d": {
+      "headline": "Human pose estimation.",
+      "description": "RTMPose is a machine learning model that detects human pose and returns a location and confidence for each of 133 joints.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/rtmpose_body2d/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/rtmpose_body2d/releases/v0.63.0/info.pb"
+    },
+    "sequencer2d": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "Sequencer2D is a vision transformer model that can classify images from the Imagenet dataset.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/sequencer2d/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/sequencer2d/releases/v0.63.0/info.pb"
+    },
+    "smollm2_1_7b_it": {
+      "headline": "Compact language model capable of solving a wide range of tasks while being lightweight.",
+      "description": "A 1.7B parameter instruction-tuned variant of SmolLM2, fine-tuned for conversational and instruction-following tasks, optimized for efficient on-device inference on Qualcomm Snapdragon platforms.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/smollm2_1_7b_it/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/smollm2_1_7b_it/releases/v0.63.0/info.pb"
+    },
+    "sesr_m5": {
+      "headline": "Upscale images in real time.",
+      "description": "SESR M5 performs efficient on-device upscaling of images.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/sesr_m5/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/sesr_m5/releases/v0.63.0/info.pb"
+    },
+    "smolvlm2_2_2b_instruct": {
+      "headline": "Multimodal 2.2B vision-language model capable of understanding text and images.",
+      "description": "SmolVLM2 is a lightweight vision-language model from Hugging Face capable of understanding text and images for tasks such as visual question answering, image captioning, and optical character recognition.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/smolvlm2_2_2b_instruct/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/smolvlm2_2_2b_instruct/releases/v0.63.0/info.pb"
+    },
+    "segformer_base": {
+      "headline": "Real-time object segmentation.",
+      "description": "Segformer Base is a machine learning model that predicts masks and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/segformer_base/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/segformer_base/releases/v0.63.0/info.pb"
+    },
+    "statetransformer": {
+      "headline": "Multi-agent trajectory prediction model for autonomous driving.",
+      "description": "StateTransformer is a transformer-based model designed for trajectory prediction in self-driving scenarios. It integrates rasterized map data, agent context, and temporal dynamics to generate accurate future trajectories.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/statetransformer/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/statetransformer/releases/v0.63.0/info.pb"
+    },
+    "sinet": {
+      "headline": "Lightweight portrait segmentation for background removal.",
+      "description": "SINet is a machine learning model that is designed to segment people from close-up portrait images in real time.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/sinet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/sinet/releases/v0.63.0/info.pb"
+    },
+    "shufflenet_v2": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "ShufflenetV2 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/shufflenet_v2/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/shufflenet_v2/releases/v0.63.0/info.pb"
+    },
+    "sam2": {
+      "headline": "High-quality segmentation in images and videos with real-time performance and minimal user interaction.",
+      "description": "SAM 2, the successor to Meta's Segment Anything Model (SAM), is a cutting-edge tool designed for comprehensive object segmentation in both images and videos. It excels in handling complex visual data through a unified, promptable model architecture that supports real-time processing and zero-shot generalization.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/sam2/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/sam2/releases/v0.63.0/info.pb"
+    },
+    "sixd_repnet": {
+      "headline": "Head pose estimation using 6D rotation representation and RepVGG backbone.",
+      "description": "6DRepNet predicts head pose (pitch, yaw, roll) from a face image using a RepVGG-B1g2 backbone and a continuous 6D rotation representation, achieving robust and accurate head pose estimation.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/sixd_repnet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/sixd_repnet/releases/v0.63.0/info.pb"
+    },
+    "stereonet": {
+      "headline": "Real-time stereo matching network for disparity estimation.",
+      "description": "StereoNet is an end-to-end deep architecture for real-time stereo matching that produces high-quality, edge-preserved disparity maps from a rectified stereo image pair.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/stereonet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/stereonet/releases/v0.63.0/info.pb"
+    },
+    "siglip2": {
+      "headline": "Zero-shot image-text similarity and classification using SigLIP2.",
+      "description": "SigLIP2 (Sigmoid Loss for Language-Image Pre-training 2) is a vision-language model from Google that computes cosine-similarity scores between images and text prompts. It can be used for zero-shot image classification, image search, and content moderation without any task-specific fine-tuning.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/siglip2/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/siglip2/releases/v0.63.0/info.pb"
+    },
+    "stable_diffusion_v2_1": {
+      "headline": "State-of-the-art generative AI model used to generate detailed images conditioned on text descriptions.",
+      "description": "Generates high resolution images from text prompts using a latent diffusion model. This model uses CLIP ViT-L/14 as text encoder, U-Net based latent denoising, and VAE based decoder to generate the final image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/stable_diffusion_v2_1/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/stable_diffusion_v2_1/releases/v0.63.0/info.pb"
+    },
+    "stable_diffusion_v1_5": {
+      "headline": "State-of-the-art generative AI model used to generate detailed images conditioned on text descriptions.",
+      "description": "Generates high resolution images from text prompts using a latent diffusion model. This model uses CLIP ViT-L/14 as text encoder, U-Net based latent denoising, and VAE based decoder to generate the final image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/stable_diffusion_v1_5/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/stable_diffusion_v1_5/releases/v0.63.0/info.pb"
+    },
+    "squeezenet1_1": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "SqueezeNet is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/squeezenet1_1/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/squeezenet1_1/releases/v0.63.0/info.pb"
+    },
+    "swin_small": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "SwinSmall is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/swin_small/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/swin_small/releases/v0.63.0/info.pb"
+    },
+    "swin_tiny": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "SwinTiny is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/swin_tiny/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/swin_tiny/releases/v0.63.0/info.pb"
+    },
+    "swinv2_base": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "SwinV2Base is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/swinv2_base/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/swinv2_base/releases/v0.63.0/info.pb"
+    },
+    "track_anything": {
+      "headline": "High-performance interactive tracking and segmentation in videos.",
+      "description": "Track-Anything is a video based machine learning model to track an object in a video.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/track_anything/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/track_anything/releases/v0.63.0/info.pb"
+    },
+    "video_mae": {
+      "headline": "Sports and human action recognition in videos.",
+      "description": "Video MAE (Masked Auto Encoder) is a network for doing video classification that uses the ViT (Vision Transformer) backbone.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/video_mae/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/video_mae/releases/v0.63.0/info.pb"
+    },
+    "trocr": {
+      "headline": "Transformer based model for state-of-the-art optical character recognition (OCR) on both printed and handwritten text.",
+      "description": "End-to-end text recognition approach with pre-trained image transformer and text transformer models for both image understanding and wordpiece-level text generation.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/trocr/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/trocr/releases/v0.63.0/info.pb"
+    },
+    "swin_base": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "SwinBase is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/swin_base/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/swin_base/releases/v0.63.0/info.pb"
+    },
+    "unet_segmentation": {
+      "headline": "Real-time segmentation optimized for mobile and edge.",
+      "description": "UNet is a machine learning model that produces a segmentation mask for an image. The most basic use case will label each pixel in the image as being in the foreground or the background. More advanced usage will assign a class label to each pixel. This version of the model was trained on the data from Kaggle's Carvana Image Masking Challenge (see https://www.kaggle.com/c/carvana-image-masking-challenge) and is used for vehicle segmentation.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/unet_segmentation/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/unet_segmentation/releases/v0.63.0/info.pb"
+    },
+    "wedetect": {
+      "headline": "Real-time text-conditioned object detection optimized for mobile and edge.",
+      "description": "WeDetect is a text-conditioned object detection model that uses a prompt-then-detect strategy. Text class names are reparameterized into the model weights before export, producing a fixed-vocabulary detector that runs efficiently on-device. The model uses LTRB (Left-Top-Right-Bottom) regression with multi-scale feature maps at strides 8, 16, and 32.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/wedetect/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/wedetect/releases/v0.63.0/info.pb"
+    },
+    "whisper_large_v3_turbo": {
+      "headline": "Transformer-based automatic speech recognition (ASR) model for multilingual transcription and translation available on HuggingFace.",
+      "description": "Whisper large-v3-turbo is a finetuned version of a pruned Whisper large-v3. In other words, it's the exact same model, except that the number of decoding layers have reduced from 32 to 4. As a result, the model is way faster, at the expense of a minor quality degradation. This model is based on the transformer architecture and has been optimized for edge inference by replacing Multi-Head Attention (MHA) with Single-Head Attention (SHA) and linear layers with convolutional (conv) layers. It exhibits robust performance in realistic, noisy environments, making it highly reliable for real-world applications. Specifically, it excels in long-form transcription, capable of accurately transcribing audio clips up to 30 seconds long. Time to the first token is the encoder's latency, while time to each additional token is decoder's latency, where we assume a max decoded length specified below.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_large_v3_turbo/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_large_v3_turbo/releases/v0.63.0/info.pb"
+    },
+    "whisper_base": {
+      "headline": "Transformer-based automatic speech recognition (ASR) model for multilingual transcription and translation available on HuggingFace.",
+      "description": "HuggingFace Whisper-Base ASR (Automatic Speech Recognition) model is a state-of-the-art system designed for transcribing spoken language into written text. This model is based on the transformer architecture and has been optimized for edge inference by replacing Multi-Head Attention (MHA) with Single-Head Attention (SHA) and linear layers with convolutional (conv) layers. It exhibits robust performance in realistic, noisy environments, making it highly reliable for real-world applications. Specifically, it excels in long-form transcription, capable of accurately transcribing audio clips up to 30 seconds long. Time to the first token is the encoder's latency, while time to each additional token is decoder's latency, where we assume a max decoded length specified below.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_base/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_base/releases/v0.63.0/info.pb"
+    },
+    "whisper_medium": {
+      "headline": "Transformer-based automatic speech recognition (ASR) model for multilingual transcription and translation available on HuggingFace.",
+      "description": "HuggingFace Whisper-Medium ASR (Automatic Speech Recognition) model is a state-of-the-art system designed for transcribing spoken language into written text. This model is based on the transformer architecture and has been optimized for edge inference by replacing Multi-Head Attention (MHA) with Single-Head Attention (SHA) and linear layers with convolutional (conv) layers. It exhibits robust performance in realistic, noisy environments, making it highly reliable for real-world applications. Specifically, it excels in long-form transcription, capable of accurately transcribing audio clips up to 30 seconds long. Time to the first token is the encoder's latency, while time to each additional token is decoder's latency, where we assume a max decoded length specified below.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_medium/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_medium/releases/v0.63.0/info.pb"
+    },
+    "whisper_large_v3_turbo_quantized": {
+      "headline": "Transformer-based automatic speech recognition (ASR) model for multilingual transcription and translation available on HuggingFace.",
+      "description": "We have applied w8a16 quantization to significantly enhance performance and efficiency. Whisper large-v3-turbo is a finetuned version of a pruned Whisper large-v3, with the number of decoding layers reduced from 32 to 4. This model is based on the transformer architecture and has been optimized for edge inference by replacing Multi-Head Attention (MHA) with Single-Head Attention (SHA) and linear layers with convolutional (conv) layers. It exhibits robust performance in realistic, noisy environments, making it highly reliable for real-world applications. Specifically, it excels in long-form transcription, capable of accurately transcribing audio clips up to 30 seconds long. Time to the first token is the encoder's latency, while time to each additional token is decoder's latency, where we assume a max decoded length specified below.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_large_v3_turbo_quantized/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_large_v3_turbo_quantized/releases/v0.63.0/info.pb"
+    },
+    "whisper_small": {
+      "headline": "Transformer-based automatic speech recognition (ASR) model for multilingual transcription and translation available on HuggingFace.",
+      "description": "HuggingFace Whisper-Small ASR (Automatic Speech Recognition) model is a state-of-the-art system designed for transcribing spoken language into written text. This model is based on the transformer architecture and has been optimized for edge inference by replacing Multi-Head Attention (MHA) with Single-Head Attention (SHA) and linear layers with convolutional (conv) layers. It exhibits robust performance in realistic, noisy environments, making it highly reliable for real-world applications. Specifically, it excels in long-form transcription, capable of accurately transcribing audio clips up to 30 seconds long. Time to the first token is the encoder's latency, while time to each additional token is decoder's latency, where we assume a max decoded length specified below.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_small/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_small/releases/v0.63.0/info.pb"
+    },
+    "vit": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "VIT is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/vit/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/vit/releases/v0.63.0/info.pb"
+    },
+    "whisper_tiny": {
+      "headline": "Transformer-based automatic speech recognition (ASR) model for multilingual transcription and translation available on HuggingFace.",
+      "description": "HuggingFace Whisper-Tiny ASR (Automatic Speech Recognition) model is a state-of-the-art system designed for transcribing spoken language into written text. This model is based on the transformer architecture and has been optimized for edge inference by replacing Multi-Head Attention (MHA) with Single-Head Attention (SHA) and linear layers with convolutional (conv) layers. It exhibits robust performance in realistic, noisy environments, making it highly reliable for real-world applications. Specifically, it excels in long-form transcription, capable of accurately transcribing audio clips up to 30 seconds long. Time to the first token is the encoder's latency, while time to each additional token is decoder's latency, where we assume a max decoded length specified below.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_tiny/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_tiny/releases/v0.63.0/info.pb"
+    },
+    "yolo26_pose": {
+      "headline": "Real-time pose estimation optimized for mobile and edge by Ultralytics.",
+      "description": "Ultralytics YOLO26-Pose is a machine learning model that predicts human body keypoints and bounding boxes in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolo26_pose/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolo26_pose/releases/v0.63.0/info.pb"
+    },
+    "wideresnet50": {
+      "headline": "Imagenet classifier and general purpose backbone.",
+      "description": "WideResNet50 is a machine learning model that can classify images from the Imagenet dataset. It can also be used as a backbone in building more complex models for specific use cases.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/wideresnet50/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/wideresnet50/releases/v0.63.0/info.pb"
+    },
+    "whisper_small_quantized": {
+      "headline": "Transformer-based automatic speech recognition (ASR) model for multilingual transcription and translation available on HuggingFace.",
+      "description": "We have applied w8a16 quantization to significantly enhance performance and efficiency. HuggingFace Whisper-Small ASR (Automatic Speech Recognition) model is a state-of-the-art system designed for transcribing spoken language into written text. This model is based on the transformer architecture and has been optimized for edge inference by replacing Multi-Head Attention (MHA) with Single-Head Attention (SHA) and linear layers with convolutional (conv) layers. It exhibits robust performance in realistic, noisy environments, making it highly reliable for real-world applications. Specifically, it excels in long-form transcription, capable of accurately transcribing audio clips up to 30 seconds long. Time to the first token is the encoder's latency, while time to each additional token is decoder's latency, where we assume a max decoded length specified below.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_small_quantized/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/whisper_small_quantized/releases/v0.63.0/info.pb"
+    },
+    "yolo26_det": {
+      "headline": "Real-time object detection optimized for mobile and edge by Ultralytics.",
+      "description": "Ultralytics YOLO26 is a machine learning model that predicts bounding boxes and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolo26_det/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolo26_det/releases/v0.63.0/info.pb"
+    },
+    "yolo26_seg": {
+      "headline": "Real-time object segmentation optimized for mobile and edge by Ultralytics.",
+      "description": "Ultralytics YOLO26 is a machine learning model that predicts bounding boxes, segmentation masks and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolo26_seg/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolo26_seg/releases/v0.63.0/info.pb"
+    },
+    "xlsr": {
+      "headline": "Upscale images in real time.",
+      "description": "XLSR is designed for lightweight real-time upscaling of images.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/xlsr/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/xlsr/releases/v0.63.0/info.pb"
+    },
+    "yolor": {
+      "headline": "Real-time object detection optimized for mobile and edge.",
+      "description": "YoloR is a machine learning model that predicts bounding boxes and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolor/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolor/releases/v0.63.0/info.pb"
+    },
+    "yolov10_det": {
+      "headline": "Real-time object detection optimized for mobile and edge by Ultralytics.",
+      "description": "Ultralytics YOLOv10 is a machine learning model that predicts bounding boxes and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov10_det/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov10_det/releases/v0.63.0/info.pb"
+    },
+    "yolov11_seg": {
+      "headline": "Real-time object segmentation optimized for mobile and edge by Ultralytics.",
+      "description": "Ultralytics YOLOv11 is a machine learning model that predicts bounding boxes, segmentation masks and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov11_seg/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov11_seg/releases/v0.63.0/info.pb"
+    },
+    "yolov11_pose": {
+      "headline": "Real-time pose estimation optimized for mobile and edge by Ultralytics.",
+      "description": "Ultralytics YOLOv11-Pose is a machine learning model that predicts human body keypoints and bounding boxes in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov11_pose/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov11_pose/releases/v0.63.0/info.pb"
+    },
+    "yamnet": {
+      "headline": "Audio Event classification Model.",
+      "description": "An audio event classifier trained on the AudioSet dataset to predict audio events from the AudioSet ontology employing the Mobilenet_v1 depthwise-separable convolution architecture.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yamnet/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yamnet/releases/v0.63.0/info.pb"
+    },
+    "yoloe_seg": {
+      "headline": "Real-time object segmentation optimized for mobile and edge by Ultralytics.",
+      "description": "Ultralytics YOLOE is a machine learning model that predicts bounding boxes, segmentation masks and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yoloe_seg/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yoloe_seg/releases/v0.63.0/info.pb"
+    },
+    "yolov11_det": {
+      "headline": "Real-time object detection optimized for mobile and edge by Ultralytics.",
+      "description": "Ultralytics YOLOv11 is a machine learning model that predicts bounding boxes and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov11_det/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov11_det/releases/v0.63.0/info.pb"
+    },
+    "yolov3": {
+      "headline": "Real-time object detection optimized for mobile and edge.",
+      "description": "YoloV3 is a machine learning model that predicts bounding boxes and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov3/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov3/releases/v0.63.0/info.pb"
+    },
+    "yolo_world": {
+      "headline": "Real-time prompt based object detection optimized for mobile and edge by Ultralytics.",
+      "description": "Ultralytics YOLO-World is an open-vocabulary object detection model that uses a prompt-then-detect strategy to predict bounding boxes for user-specified classes.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolo_world/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolo_world/releases/v0.63.0/info.pb"
+    },
+    "yolov4": {
+      "headline": "Real-time object detection optimized for mobile and edge.",
+      "description": "YoloV4 is a machine learning model that predicts bounding boxes and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov4/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov4/releases/v0.63.0/info.pb"
+    },
+    "yolov6": {
+      "headline": "Real-time object detection optimized for mobile and edge.",
+      "description": "YoloV6 is a machine learning model that predicts bounding boxes and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov6/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov6/releases/v0.63.0/info.pb"
+    },
+    "yolov5_face": {
+      "headline": "Real-time face detection with 5-point facial landmark estimation on mobile and edge devices.",
+      "description": "YoloV5-Face-Nano is a lightweight single-class face detector based on the YoloV5 backbone (StemBlock + ShuffleV2Block). Each detected face is accompanied by 5 facial landmark predictions (left eye, right eye, nose, left mouth corner, right mouth corner). Trained on the WiderFace dataset.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov5_face/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov5_face/releases/v0.63.0/info.pb"
+    },
+    "yolov5": {
+      "headline": "Real-time object detection optimized for mobile and edge.",
+      "description": "YoloV5 is a machine learning model that predicts bounding boxes and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov5/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov5/releases/v0.63.0/info.pb"
+    },
+    "yolov8_obb": {
+      "headline": "Real-time oriented object detection optimized for mobile and edge by Ultralytics.",
+      "description": "Ultralytics YOLOv8-OBB is a machine learning model that predicts oriented bounding boxes (OBB) and classes of objects in an image. It is designed for detecting objects that are not axis-aligned, such as aerial imagery or tilted text.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov8_obb/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov8_obb/releases/v0.63.0/info.pb"
+    },
+    "yolov7": {
+      "headline": "Real-time object detection optimized for mobile and edge.",
+      "description": "YoloV7 is a machine learning model that predicts bounding boxes and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov7/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov7/releases/v0.63.0/info.pb"
+    },
+    "yolov9_det": {
+      "headline": "Real-time object detection optimized for mobile and edge by Ultralytics.",
+      "description": "Ultralytics YOLOv9 is a machine learning model that predicts bounding boxes and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov9_det/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov9_det/releases/v0.63.0/info.pb"
+    },
+    "yolov8_seg": {
+      "headline": "Real-time object segmentation optimized for mobile and edge by Ultralytics.",
+      "description": "Ultralytics YOLOv8 is a machine learning model that predicts bounding boxes, segmentation masks and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov8_seg/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov8_seg/releases/v0.63.0/info.pb"
+    },
+    "yolov8_det": {
+      "headline": "Real-time object detection optimized for mobile and edge by Ultralytics.",
+      "description": "Ultralytics YOLOv8 is a machine learning model that predicts bounding boxes and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov8_det/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolov8_det/releases/v0.63.0/info.pb"
+    },
+    "zipformer": {
+      "headline": "Transformer-based automatic speech recognition (ASR) model for English and Chinese language.",
+      "description": "Zipformer streaming ASR (Automatic Speech Recognition) model is a state-of-the-art system designed for transcribing spoken language into written text streamingly. This model is based on the transformer architecture and has been optimized for edge inference by replacing linear layers with convolutional (conv) layers. It exhibits robust performance in realistic, noisy environments, making it highly reliable for real-world applications. Specifically, it excels in long-form transcription, capable of accurately transcribing audios. Time to the first token is the encoder's latency, while time to each additional token is joiner's latency, where we assume a max decoded length specified below.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/zipformer/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/zipformer/releases/v0.63.0/info.pb"
+    },
+    "yolox": {
+      "headline": "Real-time object detection optimized for mobile and edge.",
+      "description": "YoloX is a machine learning model that predicts bounding boxes and classes of objects in an image.",
+      "image_url": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolox/web-assets/model_demo.png",
+      "metadata_source": "https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/yolox/releases/v0.63.0/info.pb"
+    }
+  }
+}

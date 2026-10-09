@@ -1,0 +1,75 @@
+{
+  "provider": {
+    "id": "anthropic",
+    "model": "claude-sonnet-5",
+    "base_url": "https://www.fucheers.top/v1"
+  },
+  "validation": {
+    "passed": true,
+    "errors": [],
+    "warnings": [
+      "当前仅检查结构与配置；模型推理、业务用例和真实设备尚未验证。"
+    ]
+  },
+  "tests": [
+    {
+      "name": "live_model_generation",
+      "passed": true,
+      "details": "远程模型已返回非空编排结果。"
+    },
+    {
+      "name": "schema_validation",
+      "passed": true,
+      "details": "结构与配置检查通过；未执行业务测试。"
+    },
+    {
+      "name": "graph_connectivity",
+      "passed": true,
+      "details": "至少存在一条从输入节点到终点节点的可达路径。"
+    },
+    {
+      "name": "scenario_quality_checks",
+      "passed": true,
+      "details": "需求对应、确定性内容检查与模型辅助审查；不代表业务运行或事实已核验。"
+    }
+  ],
+  "build_report": {
+    "status": "preview",
+    "attempts": [
+      {
+        "attempt": 1,
+        "passed": false,
+        "issues": [
+          "候选格式或内容检查未完成，需要重新生成有效结构。",
+          "字段 ：Input should be a valid dictionary or instance of Experience"
+        ]
+      },
+      {
+        "attempt": 2,
+        "passed": true,
+        "issues": []
+      }
+    ],
+    "calls": [
+      {
+        "stage": "understand",
+        "duration_ms": 22881
+      },
+      {
+        "stage": "build",
+        "duration_ms": 29280
+      },
+      {
+        "stage": "repair",
+        "duration_ms": 22990
+      },
+      {
+        "stage": "review",
+        "duration_ms": 8609
+      }
+    ],
+    "runtime_verified": false
+  },
+  "node_count": 2,
+  "saved_project": false
+}

@@ -1,0 +1,10 @@
+{
+  "defaultTimeoutMs": 60000,
+  "transportGraceMs": 5000,
+  "models": {
+    "opensparx-cabin-intent:3b": {
+      "timeoutMs": 180000,
+      "imageMaxEdge": 2560
+    }
+  }
+}

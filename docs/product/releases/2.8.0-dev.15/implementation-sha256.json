@@ -1,0 +1,9 @@
+{
+  "studio/src/main.tsx": "c13e7abb5b75f7644b473fbde100beb59fd00dde3dec6d7c1de9ec22187f2bb9",
+  "studio/src/components/avatar/BloubAvatar.tsx": "6a10cfff22fd1c59bba829e6d25072bd9ce73c9f3e39f9f9675493717823ee7e",
+  "studio/src/components/avatar/avatarPlayback.ts": "7fba912cb6deb8f02bd0da24ddc30c28847dd3e67553ee16a70268c4ff074b12",
+  "studio/src/components/pages/AvatarPreviewPage.tsx": "ced8843712c5471786228b5d5b47df85d756da357e2adc78d7a76fde89aeeff6",
+  "studio/src/components/pages/avatar-preview.css": "2b6b083ad8e1edff3d5136bff2bc0f4878c547c7e898b7e1d5ef055230ee64b0",
+  "studio/scripts/test-avatar-preview.mjs": "94a9d66ba3949bc899c82c938ccbc853e03430992fe045699b178ff9aa4b568a",
+  "studio/tests/avatar-preview.dom.tsx": "e225ac3fe355a44cb726f271f6dfefda9f47d6d9bc2d3909d6eb849d9362c867"
+}

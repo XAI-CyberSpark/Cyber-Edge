@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import { build } from 'esbuild';
+const result = await build({ entryPoints: ['src/lib/utils.ts'], bundle: true, platform: 'node', format: 'esm', write: false });
+const { cn } = await import('data:text/javascript;base64,' + Buffer.from(result.outputFiles[0].text).toString('base64'));
+assert.equal(cn('type-body text-red-500', 'type-caption'), 'text-red-500 type-caption');
+assert.equal(cn('type-caption', 'type-body'), 'type-body');
+assert.equal(cn('text-sm', 'type-label'), 'type-label');
+assert.equal(cn('type-label', 'text-lg'), 'text-lg');
+assert.equal(cn('type-label md:type-body', 'md:type-caption'), 'type-label md:type-caption');
+assert.equal(cn('type-body text-red-500', 'text-green-500'), 'type-body text-green-500');
+console.log('PASS: semantic size overrides, responsive overrides and text colors remain independent (6 assertions).');

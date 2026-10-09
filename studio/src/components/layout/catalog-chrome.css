@@ -1,0 +1,23 @@
+/* Model and MCP catalogs share structure; cards keep their domain-specific design. */
+.catalog-toolbar { flex-shrink:0; padding:16px 16px 0; }
+.catalog-search-row { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:8px; }
+.catalog-toolbar .cl-search { min-height:40px; margin:0; }
+.catalog-toolbar .cl-search input { font-size:var(--text-label-size); line-height:var(--text-label-line); font-weight:var(--text-label-weight); }
+.catalog-toolbar .cl-search > button { flex-shrink:0; width:24px; height:24px; display:grid; place-items:center; }
+.catalog-toolbar .cl-icon-button { width:36px; height:36px; flex-shrink:0; display:inline-flex; align-items:center; justify-content:center; }
+.catalog-filter-row { display:flex; align-items:center; gap:8px; margin-top:8px; min-height:36px; }
+.catalog-filter-row > select { flex:1; min-width:0; width:100%; min-height:36px; max-width:none; padding:6px 10px; border:1px solid hsl(var(--border)); border-radius:8px; background:hsl(var(--background)); color:hsl(var(--foreground)); font-size:var(--text-label-size); line-height:var(--text-label-line); font-weight:var(--text-label-weight); }
+.catalog-summary { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:48px; color:hsl(var(--muted-foreground)); }
+.catalog-summary > span { flex-shrink:0; }
+.catalog-source { display:flex; align-items:center; justify-content:flex-end; gap:6px; min-width:0; }
+.catalog-source a { display:inline-flex; align-items:center; gap:4px; min-width:0; overflow-wrap:anywhere; }
+.catalog-source svg { flex-shrink:0; }
+.catalog-toolbar :is(button,a,select):focus-visible,.catalog-pagination button:focus-visible { outline:2px solid hsl(var(--ring)); outline-offset:2px; }
+.catalog-pagination { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:4px 8px; flex-shrink:0; padding:8px 16px; border-top:1px solid hsl(var(--divider)); color:hsl(var(--muted-foreground)); }
+.catalog-page-actions { display:flex; align-items:center; gap:8px; }
+.catalog-page-actions button { display:grid; place-items:center; width:36px; height:36px; border-radius:8px; }
+.catalog-page-actions button:hover:not(:disabled) { background:hsl(var(--accent)); color:hsl(var(--foreground)); }
+.catalog-pagination button:disabled { opacity:.4; cursor:not-allowed; }
+.catalog-page-note { flex-basis:100%; margin:0; overflow-wrap:anywhere; }
+
+.cl-model-library .ai-model-grid { padding-inline:16px; }

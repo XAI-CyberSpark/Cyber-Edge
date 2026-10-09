@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  # --------------------------------------------------------
+  # 1. API Gateway & Reverse Proxy
+  # --------------------------------------------------------
+  gateway:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - web
+      - backend
+
+  # --------------------------------------------------------
+  # 2. Frontend (G-Edge Studio)
+  # --------------------------------------------------------
+  web:
+    build: 
+      context: ./web
+      dockerfile: Dockerfile
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000/v1
+    ports:
+      - "5173:80" # Nginx inside the web container
+    restart: always
+
+  # --------------------------------------------------------
+  # 3. Backend (Agent Core Service)
+  # --------------------------------------------------------
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - ENV=staging
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/${POSTGRES_DB:-oakegde}
+      - REDIS_URL=redis://redis:6379/0
+      - CHROMA_DB_PATH=/data/chromadb
+      # OpenTelemetry Configs (For future Zipkin/Jaeger integration)
+      - OTEL_SERVICE_NAME=backend-service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - chroma_data:/data/chromadb
+    depends_on:
+      - db
+      - redis
+    restart: always
+
+  # --------------------------------------------------------
+  # 4. Data Access Layer
+  # --------------------------------------------------------
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=${POSTGRES_DB:-oakegde}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    restart: always
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: always
+
+volumes:
+  pg_data:
+  redis_data:
+  chroma_data:

@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-985",
+  "object": "chat.completion",
+  "created": 1789405805,
+  "model": "opensparx-cabin-intent:3b",
+  "system_fingerprint": "fp_ollama",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "空调已调至23度，请安心驾驶 <|SPEECH_END|>  <|TAG|> temperature"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 308,
+    "prompt_tokens_details": {
+      "cached_tokens": 307
+    },
+    "completion_tokens": 24,
+    "total_tokens": 332
+  }
+}

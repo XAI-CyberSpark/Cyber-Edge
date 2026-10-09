@@ -1,0 +1,48 @@
+[
+  {
+    "prompt": "你好",
+    "status": 200,
+    "plan": {
+      "kind": "reply",
+      "text": "你好，有什么可以帮到您？"
+    }
+  },
+  {
+    "prompt": "空调调到23度",
+    "status": 200,
+    "plan": {
+      "kind": "climate",
+      "temperature": 23,
+      "on": true
+    }
+  },
+  {
+    "prompt": "打开右后车窗",
+    "status": 200,
+    "plan": {
+      "kind": "windows",
+      "targets": {
+        "rr": 1
+      }
+    }
+  },
+  {
+    "prompt": "再低一点",
+    "status": 200,
+    "plan": {
+      "kind": "climate",
+      "temperature": 22,
+      "on": true
+    }
+  },
+  {
+    "prompt": "打开一点",
+    "status": 200,
+    "plan": {
+      "kind": "windows",
+      "targets": {
+        "rl": 1
+      }
+    }
+  }
+]

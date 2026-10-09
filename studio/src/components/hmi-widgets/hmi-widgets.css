@@ -1,0 +1,48 @@
+/* The authored 2× artwork remains local to each card; surrounding controls use HMI roles. */
+.cockpit-minimal .hmi-widget-dialog { width: 1060px; max-height: 90dvh; }
+.hmi-widget-library { color: #f5f5f7; font-family: var(--font-studio); }
+.hmi-widget-library button { color: inherit; cursor: pointer; min-height: 44px; border-radius: 12px; padding: 8px 12px; background: #242426; }
+.hmi-widget-library button:disabled { opacity: .45; cursor: wait; }
+.hmi-widget-library button:focus-visible { outline: 2px solid #9bcaff; outline-offset: 2px; }
+.hmi-widget-toolbar, .hmi-widget-tabs, .hmi-widget-detail-heading, .hmi-widget-detail-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.hmi-widget-toolbar, .hmi-widget-detail-heading { justify-content: space-between; }
+.hmi-widget-tabs button[aria-pressed=true], .hmi-widget-detail-actions button[aria-pressed=true] { background: #124573; color: #fff; }
+.hmi-widget-mode, .hmi-widget-intro { color: #b5b5bf; }
+.hmi-widget-intro { margin: 12px 0 20px; }
+.hmi-widget-grid { display: grid; grid-template-columns: repeat(auto-fill, 108px); gap: 24px 16px; align-items: start; justify-content: start; }
+.hmi-widget-item { grid-column: span 2; min-width: 0; }
+.hmi-widget-item.is-small { grid-column: span 1; }
+.hmi-widget-item > h3 { margin: 0 0 8px; color: #b5b5bf; }
+.hmi-widget-frame { position: relative; width: var(--widget-width); height: var(--widget-height); border-radius: 18px; background: #202023; isolation: isolate; }
+.hmi-widget-canvas { position: absolute; width: calc(var(--widget-width)*2); height: calc(var(--widget-height)*2); transform: scale(.5); transform-origin: top left; pointer-events: none; overflow: clip; border-radius: 36px; line-height: normal; }
+.hmi-widget-canvas p { margin: 0; }
+.hmi-widget-library .hmi-widget-open { position: absolute; inset: 0; width: 100%; height: 100%; background: transparent; border-radius: 18px; }
+.hmi-widget-nav-actions { position: absolute; top: 22px; left: 16px; display: flex; gap: 8px; }
+.hmi-widget-nav-actions.is-map { top: 156px; }
+.hmi-widget-library .hmi-widget-nav-actions button { width: 44px; height: 72px; padding: 0; background: transparent; }
+.hmi-widget-player-actions { position: absolute; top: 46px; left: 86px; display: flex; gap: 6px; }
+.hmi-widget-library .hmi-widget-player-actions button { width: 44px; height: 44px; padding: 0; display: grid; place-items: center; background: transparent; }
+.hmi-widget-player-actions button[aria-pressed=true]:last-child { box-shadow: inset 0 0 0 1px #0a84ff; }
+.hmi-widget-frame[data-playing=false] [data-node-id='I1:19869;5658:38409'] { visibility: hidden; }
+.hmi-widget-player-actions .hmi-widget-play-icon { width: 16px; height: 16px; color: white; }
+.hmi-widget-feedback { display: flex; align-items: center; gap: 12px; margin: 24px 0 0; color: #b5b5bf; }
+.hmi-widget-feedback.has-error { color: #edbd89; }
+.hmi-widget-detail { margin-top: 20px; padding: 20px; border: 1px solid #ffffff24; border-radius: 18px; background: #171719; }
+.hmi-widget-detail-heading { margin-bottom: 16px; }
+.hmi-widget-detail h3, .hmi-widget-detail p { margin: 0; }
+.hmi-widget-detail p + p { margin-top: 8px; }
+.hmi-widget-detail form { display: flex; flex-wrap: wrap; gap: 12px; }
+.hmi-widget-detail form label, .hmi-widget-detail form p { width: 100%; }
+.hmi-widget-detail input { flex: 1; min-width: 120px; border: 1px solid #ffffff30; background: #080808; color: #fff; border-radius: 10px; padding: 10px 12px; }
+.hmi-widget-gallery-preview { margin-bottom: 12px; }
+.hmi-widget-library + .hmi-detail { border-top: 1px solid #ffffff24; margin-top: 24px; padding-top: 20px; }
+@media (max-width: 440px) { .cockpit-minimal .hmi-widget-dialog .hmi-dialog-content { padding: 20px 16px; } .hmi-widget-detail { padding: 12px; } }
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) { .hmi-widget-canvas { background: #242426; } }
+/* System Chinese fonts can be wider than MiSans: keep short labels in their assigned slots. */
+.hmi-widget-canvas [data-node-id='1:20004'] { white-space: nowrap; width: 120px; overflow: hidden; text-overflow: ellipsis; }
+.hmi-widget-canvas [data-node-id='1:20069'] { font-size: var(--hfw-hmi-label-size); white-space: nowrap; }
+.hmi-widget-play-icon { stroke: #171719; fill: #171719; }
+/* Host HMI button hover must not paint over the card artwork. */
+.hmi-widget-library .hmi-widget-open:hover,
+.hmi-widget-library .hmi-widget-nav-actions button:hover,
+.hmi-widget-library .hmi-widget-player-actions button:hover { background: #ffffff0a; }

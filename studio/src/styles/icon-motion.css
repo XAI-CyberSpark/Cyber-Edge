@@ -1,0 +1,39 @@
+/* Shared interaction feedback, including portals and the original Figma HMI assets.
+   Individual scale composes with existing rotations, translations and loading spins.
+   Illustrations, photographs, charts and the Bloub avatar are deliberately not targets. */
+:root {
+  --icon-response: 220ms;
+  --icon-spring: linear(0, 0.22 8%, 0.57 20%, 0.84 35%, 0.98 52%, 1.02 67%, 1.01 82%, 1);
+}
+:where(.lucide, .hmi-chrome-icon, .react-flow__controls-button > svg) {
+  transform-origin: center;
+  transition: transform var(--icon-response) var(--icon-spring), scale var(--icon-response) var(--icon-spring), opacity 140ms linear;
+}
+.app-icon { flex-shrink: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @media (hover: hover) and (pointer: fine) {
+    :where(button, a[href], [role="button"], summary):not(:disabled):not([aria-disabled="true"]):hover
+    :where(.lucide, .hmi-chrome-icon, .react-flow__controls-button > svg):not(:where([disabled] *, [aria-disabled="true"] *, [data-icon-motion="off"] *)) {
+      scale: 1.1;
+    }
+  }
+  :where(button, a[href], [role="button"], summary):not(:disabled):not([aria-disabled="true"]):focus-visible
+  :where(.lucide, .hmi-chrome-icon, .react-flow__controls-button > svg):not(:where([disabled] *, [aria-disabled="true"] *, [data-icon-motion="off"] *)) {
+    scale: 1.08;
+  }
+  :where(button, a[href], [role="button"], summary):not(:disabled):not([aria-disabled="true"]):active
+  :where(.lucide, .hmi-chrome-icon, .react-flow__controls-button > svg):not(:where([disabled] *, [aria-disabled="true"] *, [data-icon-motion="off"] *)) {
+    scale: 0.9;
+    transition-duration: 80ms;
+  }
+}
+@keyframes app-icon-spin { to { rotate: 360deg; } }
+.app-icon--spinning { animation: app-icon-spin 1s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  :where(.lucide, .hmi-chrome-icon, .react-flow__controls-button > svg) {
+    transition: none !important;
+    animation: none !important;
+    scale: none !important;
+  }
+}

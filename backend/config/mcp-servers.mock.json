@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "mock_vehicle": {
+      "url": "http://127.0.0.1:8765/mcp",
+      "tools": {
+        "window.set": {"allow_trials": true},
+        "window.status": {"allow_trials": true}
+      }
+    }
+  }
+}

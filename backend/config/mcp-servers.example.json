@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "your_service": {
+      "url": "https://example.org/mcp",
+      "headers_env": {"Authorization": "OAKEGDE_YOUR_SERVICE_AUTH"},
+      "tools": {"search": {"allow_trials": false}}
+    }
+  }
+}

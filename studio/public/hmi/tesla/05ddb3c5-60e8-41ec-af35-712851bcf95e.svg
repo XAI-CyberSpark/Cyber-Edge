@@ -1,0 +1,5 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="battery level">
+<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M46.7744 2C46.7744 0.895522 45.8789 0.000148421 44.7744 0H2C0.895431 0 0 0.895431 0 2V18C0 19.1046 0.895431 20 2 20H44.7744C45.8789 19.9999 46.7744 19.1045 46.7744 18V2ZM44.7744 18H2V2H44.7744V18ZM49.999 9C49.999 7.89543 49.1036 7 47.999 7H47.5801V15H47.999C49.1036 15 49.999 14.1046 49.999 13V9ZM34 4H4V16H34V4Z" fill="black" fill-opacity="0.4"/>
+</g>
+</svg>

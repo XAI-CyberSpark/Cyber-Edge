@@ -1,0 +1,4 @@
+/* Shared lower header: 53px shared header reduced by a further approximately 10%. */
+.workspace-page { --workspace-content-header-height: 48px; }
+.workspace-project-bar { height: var(--workspace-content-header-height, 48px); }
+.workspace-chat-toggle { top: calc((var(--workspace-content-header-height, 48px) - 32px) / 2); }

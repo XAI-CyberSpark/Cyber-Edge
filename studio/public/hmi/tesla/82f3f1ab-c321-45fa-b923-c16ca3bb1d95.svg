@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="36" height="32" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group">
+<rect id="Rectangle 14" width="36" height="32" rx="10" fill="#E82127"/>
+<g id="Vector 31">
+<path d="M20 7H17C16.4477 7 16 7.44772 16 8V9.90706C16 9.96889 16.0057 10.0306 16.0171 10.0913L17.3471 17.1843C17.4357 17.6573 17.8487 18 18.3299 18H18.6701C19.1513 18 19.5643 17.6573 19.6529 17.1843L20.9829 10.0913C20.9943 10.0306 21 9.96889 21 9.90706V8C21 7.44772 20.5523 7 20 7Z" fill="white"/>
+<path d="M20 20H17C16.4477 20 16 20.4477 16 21V23C16 23.5523 16.4477 24 17 24H20C20.5523 24 21 23.5523 21 23V21C21 20.4477 20.5523 20 20 20Z" fill="white"/>
+</g>
+</g>
+</svg>

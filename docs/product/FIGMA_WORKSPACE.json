@@ -1,0 +1,302 @@
+{
+  "fileKey": "j2UreD9xQMXUEP6nFSYhzp",
+  "fileUrl": "https://www.figma.com/design/j2UreD9xQMXUEP6nFSYhzp",
+  "date": "2026-10-05",
+  "status": "UI baseline imported; SU7 static image pending",
+  "source": "Development workspace snapshot dev.92–93; uncommitted workspace",
+  "pages": [
+    {
+      "name": "设计规范",
+      "id": "15:2"
+    },
+    {
+      "name": "组件总览",
+      "id": "56:494"
+    },
+    {
+      "name": "首页",
+      "id": "39:2",
+      "source": "studio/src/components/pages/HomePage.tsx"
+    },
+    {
+      "name": "编排与对话",
+      "id": "40:2",
+      "source": "studio/src/components/pages/WorkspacePage.tsx"
+    },
+    {
+      "name": "模型库",
+      "id": "47:2"
+    },
+    {
+      "name": "MCP 服务",
+      "id": "47:1257"
+    },
+    {
+      "name": "组件库",
+      "id": "47:2292"
+    },
+    {
+      "name": "项目库",
+      "id": "47:2858"
+    },
+    {
+      "name": "场景库",
+      "id": "47:3540"
+    },
+    {
+      "name": "运行记录",
+      "id": "47:4168"
+    },
+    {
+      "name": "设备连接",
+      "id": "47:4700"
+    },
+    {
+      "name": "HMI",
+      "id": "50:2",
+      "source": "studio/src/components/core/CockpitHmi.tsx",
+      "limitation": "SU7 static canvas image pending"
+    },
+    {
+      "name": "部署",
+      "id": "53:2",
+      "source": "studio/src/components/wizards/DeploymentWizard.tsx"
+    }
+  ],
+  "components": [
+    {
+      "id": "24:60",
+      "name": "Navigation/IconNav",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:85",
+      "name": "Navigation/WorkspaceModeBar",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:161",
+      "name": "Chat/ChatPanel",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:188",
+      "name": "Canvas/Controls",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:210",
+      "name": "Node/Input",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:236",
+      "name": "Node/Recognition",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:269",
+      "name": "Node/Condition",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:295",
+      "name": "Node/Alert",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:315",
+      "name": "Node/Normal",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:335",
+      "name": "Node/Unknown",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:354",
+      "name": "Node/Video",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:373",
+      "name": "Node/EventLog",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:390",
+      "name": "Controls/Button",
+      "type": "COMPONENT_SET"
+    },
+    {
+      "id": "24:374",
+      "name": "Style=Primary, State=Default",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:376",
+      "name": "Style=Primary, State=Disabled",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:378",
+      "name": "Style=Outline, State=Default",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:380",
+      "name": "Style=Outline, State=Disabled",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:382",
+      "name": "Style=Ghost, State=Default",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:384",
+      "name": "Style=Ghost, State=Disabled",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:386",
+      "name": "Style=Destructive, State=Default",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "24:388",
+      "name": "Style=Destructive, State=Disabled",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "35:30",
+      "name": "Node/Model",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "35:41",
+      "name": "Home/ProjectCard",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "35:52",
+      "name": "Home/NewProject",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "35:56",
+      "name": "Brand/RetroComputerLogo",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "35:59",
+      "name": "Controls/ProjectSearch",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "35:80",
+      "name": "Resource/ModelCard",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "38:755",
+      "name": "Screen/EditingWorkspace",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "46:766",
+      "name": "Panel/模型库",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "46:1311",
+      "name": "Panel/MCP 服务",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "46:1387",
+      "name": "Panel/组件库",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "46:1579",
+      "name": "Panel/项目库",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "46:1717",
+      "name": "Panel/场景库",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "46:1759",
+      "name": "Panel/运行记录",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "46:1872",
+      "name": "Panel/设备连接",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "46:1940",
+      "name": "Panel/部署向导",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "49:435",
+      "name": "HMI/StatusBar",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "49:455",
+      "name": "HMI/Assistant",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "49:499",
+      "name": "HMI/Dock",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "49:531",
+      "name": "HMI/SimulationInput",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "49:556",
+      "name": "Navigation/ModeSimulation",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "49:581",
+      "name": "Navigation/ModeDeploy",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "49:773",
+      "name": "HMI/Cockpit",
+      "type": "COMPONENT"
+    }
+  ],
+  "tokens": {
+    "variables": 102,
+    "textStyles": 14,
+    "colorModes": [
+      "Light",
+      "Dark"
+    ]
+  },
+  "fontFallback": {
+    "system": "Noto Sans SC",
+    "monospace": "Roboto Mono",
+    "brand": "Press Start 2P"
+  },
+  "sync": "Explicit per-frame requests only; no automatic bidirectional sync",
+  "pending": {
+    "su7AssetCapture": "7b709444-23bc-46c9-9d95-160f017ecce9",
+    "status": "pending: foreground preview required",
+    "annotationNode": "65:299"
+  }
+}

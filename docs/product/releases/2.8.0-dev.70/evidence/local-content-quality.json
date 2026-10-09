@@ -1,0 +1,21 @@
+{
+  "status": "failed_semantic_acceptance",
+  "local_model": "opensparx-cabin-intent:3b",
+  "cases": [
+    {
+      "source": "朵朵生日航海 · 座舱体验",
+      "output": "Dot Dot’s Birthday Nautical Voyage ·舱舱体验",
+      "issue": "Chinese text remains; rejected by validation"
+    },
+    {
+      "source": "我希望后排儿童站起来时显示后排画面，不要锁窗。",
+      "output": "I want the rear child to stand up and display the rear screen when the window is not locked.",
+      "issue": "Negation changed to a condition; not accepted"
+    },
+    {
+      "source": "## 功能说明\n读取车窗开度。调用 `vehicle.get_window`，范围为 0–100。文档：https://example.com/manual",
+      "issue": "Heading omitted, code and URL placeholder values retained"
+    }
+  ],
+  "action": "Production translation endpoint disabled; cloud authorization requested; no external translation requests sent."
+}

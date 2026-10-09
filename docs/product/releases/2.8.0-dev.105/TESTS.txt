@@ -1,0 +1,54 @@
+dev.105 自动验证（2026-10-09，未提交工作区）
+初始红：input-contract.test 2项均失败；对象输入空串解析失败，缺字段误报模型输出。
+媒体边界红：JSON type=image/content业务字段误触发旧媒体处理，新增回归先失败。
+最终新增前端10项、后端10项输入契约回归。
+命令：backend/.venv_macos/bin/python -c（详见ACCEPTANCE中的全量discover命令）
+命令：node studio/scripts/test-scenario-execution.mjs input-contract.test scenario-execution.test repeated-flow.test durable-flow.test mcp-flow.test
+命令：node studio/scripts/test-general-flow.mjs
+命令（studio目录）：npx tsc -b
+命令（studio目录）：node scripts/audit-typography.mjs --write
+
+backend-final.txt
+Executing <Task pending name='Task-915' coro=<InputContractTests.test_json_business_media_fields_match_preflight_and_runtime() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_input_contract.py:92> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.171 seconds
+Executing <Task finished name='Task-954' coro=<InputContractTests.test_submission_rejects_with_location_and_does_not_lock() done, defined at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_input_contract.py:24> result=None created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.237 seconds
+Executing <Task pending name='Task-959' coro=<InputContractTests.test_supported_input_shapes_use_real_trial_adapter() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_input_contract.py:22> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.186 seconds
+Executing <Task pending name='Task-959' coro=<InputContractTests.test_supported_input_shapes_use_real_trial_adapter() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_input_contract.py:22> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.182 seconds
+Executing <Task pending name='Task-959' coro=<InputContractTests.test_supported_input_shapes_use_real_trial_adapter() running at /Users/Shared/sherry/OAKEgde Studio/backend/tests/test_input_contract.py:22> wait_for=<Future pending cb=[Task.task_wakeup()] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:448> cb=[_run_until_complete_cb() at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /Users/sherry/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.211 seconds
+----------------------------------------------------------------------
+Ran 388 tests in 41.737s
+
+OK (skipped=9)
+
+frontend-final.txt
+✔ action-only resumed turns display their actual receipt and duplicates do not replay it (0.769958ms)
+ℹ tests 61
+ℹ suites 0
+ℹ pass 59
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 2
+ℹ todo 0
+ℹ duration_ms 184.154125
+
+general-final.txt
+✔ cancellation checkpoints prior success and blocks later operations (0.513792ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 91.304458
+
+tsc-final.txt
+exit 0，无诊断输出
+
+typography.txt
+{
+  "files": 148,
+  "entries": 2431,
+  "violations": []
+}
+
+文档检查前后：42错误/24警告，既有问题无新增。git diff --check通过。前端2跳过为未配置托管MCP真实URL，不以替身验证替代；无完整浏览器验收。

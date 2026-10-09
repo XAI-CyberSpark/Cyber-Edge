@@ -1,0 +1,7 @@
+import type {Node,Edge} from '@xyflow/react';
+export function stageView(nodes:Node[],edges:Edge[],toggle:(id:string)=>void){
+ const map=new Map(nodes.map(n=>[n.id,n]));
+ const visibleId=(id:string)=>{let n=map.get(id),result=id;const seen=new Set<string>();while(n?.parentId&&!seen.has(n.id)){seen.add(n.id);n=map.get(n.parentId);if(n?.data.collapsed)result=n.id;}return result;};
+ const ordered=[...nodes].sort((a,b)=>{const depth=(n:Node)=>{let d=0;const seen=new Set<string>();while(n.parentId&&map.has(n.parentId)&&!seen.has(n.id)){seen.add(n.id);n=map.get(n.parentId)!;d++;}return d;};return depth(a)-depth(b);});
+ return {nodes:ordered.filter(n=>visibleId(n.id)===n.id).map(n=>n.type==='stage'?{...n,style:{...n.style,width:n.data.collapsed?280:Number(n.style?.width)||680,height:n.data.collapsed?128:Number(n.style?.height)||480},data:{...n.data,onToggle:()=>toggle(n.id),activeLabels:nodes.filter(c=>c.parentId===n.id&&(c.data.status==='running'||(c.data.output as any)?.waiting)).map(c=>c.data.label)}}:{...n,data:{...n.data,__flowPorts:[...new Set(edges.filter(e=>e.target===n.id&&e.targetHandle).map(e=>e.targetHandle))]}}),edges:edges.flatMap(e=>{const source=visibleId(e.source),target=visibleId(e.target);if(source===target)return [];const proxy=source!==e.source||target!==e.target;return [{...e,...(proxy?{id:`view:${e.id}`,source,target,sourceHandle:undefined,targetHandle:undefined,deletable:false}: {})}];})};
+}

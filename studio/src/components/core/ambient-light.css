@@ -1,0 +1,12 @@
+.hmi-ambient-feedback { position:absolute; z-index:8; left:24px; bottom:94px; width:min(370px,calc(100% - 48px)); max-height:42%; overflow:auto; border:1px solid #303030; border-radius:16px; background:#111; color:#f1f1f1; }
+.hmi-ambient-strip { height:8px; transition:background-color .2s,opacity .2s; }
+.hmi-ambient-content { padding:16px; }
+.hmi-ambient-heading { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.hmi-ambient-heading span,.hmi-ambient-content .type-hmi-caption { color:#b9b9b9; }
+.hmi-ambient-content p { margin:8px 0 0; overflow-wrap:anywhere; }
+.hmi-ambient-content button { min-height:44px; margin-top:8px; text-decoration:underline; text-underline-offset:4px; }
+.simulation-samples { padding:12px 16px; border-top:1px solid var(--border); }
+.simulation-samples > div { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+.simulation-samples button { min-height:40px; padding:6px 10px; border:1px solid currentColor; border-radius:8px; }
+@container (max-width:740px) { .hmi-ambient-feedback { left:12px; bottom:84px; width:min(340px,calc(100% - 24px)); } }
+@media (prefers-reduced-motion:reduce) { .hmi-ambient-strip { transition:none; } }

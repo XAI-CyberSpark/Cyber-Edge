@@ -1,0 +1,424 @@
+{
+  "version": 1,
+  "id": "su7",
+  "model": "/models/su7/sm_car.glb",
+  "modelSha256": "31c38a3bbfe8e175db0badf71408e5f6140759d9b21b4fad48c01b6994e70306",
+  "source": {
+    "url": "release-hmi/hmi/win-unpacked/resources/app/su7/su7/1.0.1/",
+    "author": "未确认",
+    "license": "用户提供；未取得可确认的独立模型授权",
+    "notes": "沿用现有素材；本表不授予额外权利。组件索引由dev.97实际拆分结果固化，升级模型必须重验。"
+  },
+  "environment": "/models/su7/t_env_light.hdr",
+  "rotationY": -1.5707963267948966,
+  "componentPrecision": 4,
+  "splitNodes": [
+    "body",
+    "Object_37009",
+    "Object_37009_1",
+    "body_smoothblack",
+    "dingbuleida",
+    "DiPan001",
+    "Glass",
+    "Object_31006",
+    "Object_31006_1",
+    "interior",
+    "interior011",
+    "Light002"
+  ],
+  "doors": {
+    "fl": {
+      "selectors": [
+        {
+          "node": "Object_37009",
+          "components": [
+            4,
+            5
+          ]
+        },
+        {
+          "node": "DiPan001",
+          "components": [
+            2
+          ]
+        },
+        {
+          "node": "Glass",
+          "components": [
+            0
+          ]
+        },
+        {
+          "node": "Object_31006",
+          "components": [
+            0
+          ]
+        },
+        {
+          "node": "Object_31006_1",
+          "components": [
+            0,
+            1
+          ]
+        },
+        {
+          "node": "interior",
+          "components": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69
+          ]
+        },
+        {
+          "node": "interior011",
+          "components": [
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "pivot": [
+        0.87,
+        0.65,
+        0.96
+      ],
+      "axis": "y",
+      "angle": -1.05,
+      "hotspot": [
+        0.13,
+        0.2,
+        -0.92
+      ],
+      "side": "left"
+    },
+    "fr": {
+      "selectors": [
+        {
+          "node": "Object_37009",
+          "components": [
+            18,
+            19
+          ]
+        },
+        {
+          "node": "DiPan001",
+          "components": [
+            5
+          ]
+        },
+        {
+          "node": "Glass",
+          "components": [
+            5
+          ]
+        },
+        {
+          "node": "Object_31006",
+          "components": [
+            1
+          ]
+        },
+        {
+          "node": "Object_31006_1",
+          "components": [
+            2,
+            3
+          ]
+        },
+        {
+          "node": "interior",
+          "components": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ]
+        },
+        {
+          "node": "interior011",
+          "components": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "pivot": [
+        -0.87,
+        0.65,
+        0.96
+      ],
+      "axis": "y",
+      "angle": 1.05,
+      "hotspot": [
+        -0.13,
+        0.2,
+        -0.92
+      ],
+      "side": "right"
+    },
+    "rl": {
+      "selectors": [
+        {
+          "node": "Object_37009",
+          "components": [
+            2
+          ]
+        },
+        {
+          "node": "DiPan001",
+          "components": [
+            1
+          ]
+        },
+        {
+          "node": "Glass",
+          "components": [
+            2
+          ]
+        },
+        {
+          "node": "interior",
+          "components": [
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47
+          ]
+        }
+      ],
+      "pivot": [
+        0.87,
+        0.65,
+        -0.18
+      ],
+      "axis": "y",
+      "angle": -1.05,
+      "hotspot": [
+        0.13,
+        0.2,
+        -0.82
+      ],
+      "side": "left"
+    },
+    "rr": {
+      "selectors": [
+        {
+          "node": "Object_37009",
+          "components": [
+            16
+          ]
+        },
+        {
+          "node": "DiPan001",
+          "components": [
+            4
+          ]
+        },
+        {
+          "node": "Glass",
+          "components": [
+            7
+          ]
+        },
+        {
+          "node": "interior",
+          "components": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        }
+      ],
+      "pivot": [
+        -0.87,
+        0.65,
+        -0.18
+      ],
+      "axis": "y",
+      "angle": 1.05,
+      "hotspot": [
+        -0.13,
+        0.2,
+        -0.82
+      ],
+      "side": "right"
+    }
+  },
+  "windows": {
+    "fl": {
+      "selectors": [
+        {
+          "node": "Glass",
+          "components": [
+            0
+          ]
+        }
+      ],
+      "travel": [
+        0,
+        -0.48,
+        0
+      ],
+      "clippingPlane": [
+        0,
+        1,
+        0,
+        -0.98
+      ]
+    },
+    "fr": {
+      "selectors": [
+        {
+          "node": "Glass",
+          "components": [
+            5
+          ]
+        }
+      ],
+      "travel": [
+        0,
+        -0.48,
+        0
+      ],
+      "clippingPlane": [
+        0,
+        1,
+        0,
+        -0.98
+      ]
+    },
+    "rl": {
+      "selectors": [
+        {
+          "node": "Glass",
+          "components": [
+            2
+          ]
+        }
+      ],
+      "travel": [
+        0,
+        -0.48,
+        0
+      ],
+      "clippingPlane": [
+        0,
+        1,
+        0,
+        -0.98
+      ]
+    },
+    "rr": {
+      "selectors": [
+        {
+          "node": "Glass",
+          "components": [
+            7
+          ]
+        }
+      ],
+      "travel": [
+        0,
+        -0.48,
+        0
+      ],
+      "clippingPlane": [
+        0,
+        1,
+        0,
+        -0.98
+      ]
+    }
+  },
+  "lights": {
+    "headlights": null,
+    "taillights": null,
+    "turnLeft": null,
+    "turnRight": null
+  },
+  "trunk": null,
+  "bodyColorMaterials": [
+    "Car_body"
+  ],
+  "appearance": [
+    {
+      "materials": [
+        "Car_body"
+      ],
+      "color": "#79aaa7",
+      "metalness": 0.65,
+      "roughness": 0.3,
+      "removeAO": true
+    },
+    {
+      "nodes": [
+        "Glass"
+      ],
+      "color": "#243e48",
+      "opacity": 0.75,
+      "doubleSided": true
+    }
+  ],
+  "unsupported": {
+    "lights": "现有模型未验收独立灯组动画，保持静态",
+    "trunk": "现有模型未验收后备箱动画，保持静态"
+  }
+}

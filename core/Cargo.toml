@@ -1,0 +1,18 @@
+[package]
+name = "g-edge-core"
+version = "2.0.0"
+edition = "2021"
+description = "Microkernel for G-Edge Agent Platform"
+
+[dependencies]
+tokio = { version = "1.32", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+[features]
+default = []
+mock_simulator = []
+telemetry_ui = []

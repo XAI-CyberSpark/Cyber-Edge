@@ -1,0 +1,43 @@
+/* Figma 556:3522 / 556:3524. Only the status bar and Dock use these styles. */
+.cockpit-hmi .hmi-figma-status,
+.cockpit-hmi .hmi-figma-dock{font-family:var(--font-studio);color:#fff}
+.cockpit-hmi .hmi-figma-status{height:68px;padding:0 1.85%;background:#000}
+.hmi-chrome-driving{display:flex;align-items:center;gap:clamp(9px,1cqw,16px)}
+.hmi-chrome-time{font-size:var(--text-hmi-clock-size);font-weight:400;line-height:1.2;font-variant-numeric:tabular-nums}
+.hmi-chrome-range{width:clamp(56px,7.06cqw,88px);font-size:var(--text-hmi-caption-size);line-height:var(--text-hmi-caption-line)}
+.hmi-chrome-range>div{display:flex;justify-content:space-between;align-items:center;line-height:1.5}
+.cockpit-hmi .hmi-chrome-range small{font:inherit;color:#ffffff80}
+.hmi-chrome-range-track{display:block;height:3px;background:#d9d9d933;border-radius:9px}
+.hmi-chrome-gears{display:flex;gap:clamp(5px,.43cqw,8px);margin-left:clamp(10px,2.55cqw,32px);font-size:var(--text-hmi-label-size);color:#ffffff4d;line-height:var(--text-hmi-label-line);font-weight:var(--text-hmi-label-weight)}
+.hmi-chrome-gears .is-current{color:#fff}
+.hmi-chrome-connections{display:flex;align-items:center;gap:clamp(3px,.415cqw,7px)}
+.cockpit-hmi .hmi-chrome-status-icon{position:relative;display:flex;align-items:center;justify-content:center;width:clamp(25px,2.49cqw,34px);height:34px;min-height:0;padding:0;border:0}
+.hmi-chrome-icon{display:block;width:100%;height:100%;object-fit:contain;flex-shrink:0;pointer-events:none}
+.hmi-chrome-status-icon .hmi-chrome-icon{width:24px;height:24px}
+.hmi-chrome-status-icon img[src$='connect.svg']{width:17px;height:17px}
+.hmi-chrome-notification{position:absolute;width:4px;height:4px;right:2px;top:4px;background:#f4b66d;border-radius:50%}
+.cockpit-hmi .hmi-figma-dock{display:block;height:clamp(58px,5.208cqw,78px);padding:0;border:0;background:#00000080;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);overflow-x:auto;overflow-y:hidden}
+.hmi-chrome-dock-items{display:flex;align-items:center;justify-content:space-between;gap:clamp(4px,1.8cqw,25px);height:100%;min-width:620px;padding:0 3.85%}
+.cockpit-hmi .hmi-chrome-dock-button{position:relative;flex:none;min-width:0;min-height:0;width:clamp(30px,2.894cqw,42px);height:42px;padding:5px;border:0;gap:0}
+.hmi-chrome-dock-button .hmi-chrome-icon{width:100%;height:100%}
+.cockpit-hmi .hmi-figma-dock button[aria-pressed=true]::after{display:none}
+.cockpit-hmi .hmi-figma-dock button[aria-pressed=false][aria-label='切换空调']{opacity:.4}
+.hmi-chrome-temperature{display:flex;align-items:center;justify-content:center;flex:none;gap:1px}
+.cockpit-hmi .hmi-chrome-temperature button{min-width:0;min-height:0;height:42px;padding:0 4px;border:0;gap:0}
+.hmi-chrome-temperature-value{font-size:var(--text-hmi-temperature-size);line-height:1.2;font-weight:400;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cockpit-hmi .hmi-chrome-temperature-value small{font-size:var(--text-hmi-caption-size);color:#fff;line-height:var(--text-hmi-caption-line)}
+.hmi-chrome-temperature .hmi-chrome-arrow{width:8px;height:5px}
+.hmi-chrome-arrow--left{transform:rotate(-90deg)}
+.hmi-chrome-arrow--right{transform:rotate(90deg)}
+.hmi-chrome-unavailable{display:flex;flex:none}
+.hmi-chrome-front-defrost{position:relative;display:block;width:100%;height:100%}
+.hmi-chrome-front-defrost .hmi-chrome-icon:first-child{position:absolute;top:9%;left:0;width:100%;height:59%}
+.hmi-chrome-front-defrost .hmi-chrome-icon:last-child{position:absolute;left:30%;top:34%;width:40%;height:50%}
+.cockpit-hmi .hmi-chrome-media{display:flex;align-items:center;justify-content:flex-start;flex:0 1 120px;min-width:72px;max-width:140px;height:42px;min-height:0;gap:5px;padding:0;border:0;text-align:left;overflow:hidden}
+.hmi-chrome-album{width:clamp(24px,2.315cqw,32px);height:clamp(24px,2.315cqw,32px);border-radius:4px;object-fit:cover;flex:none}
+.hmi-chrome-track{display:flex;flex-direction:column;gap:9px;min-width:0;flex:1;font-size:var(--text-hmi-caption-size);line-height:var(--text-hmi-caption-line)}
+.hmi-chrome-track>span:first-child{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.hmi-chrome-track-line{height:1px;background:#ffffff40;width:100%}
+/* Keep the existing centered assistant clear of the imported status items. */
+@container(max-width:900px){.cockpit-hmi .hmi-figma-status{height:92px;padding-top:50px}}
+@container(max-width:460px){.hmi-chrome-gears{margin-left:8px}.hmi-chrome-driving{gap:8px}.hmi-chrome-dock-items{padding:0 14px;gap:9px}}

@@ -1,0 +1,11 @@
+import {build} from 'esbuild';
+import {spawnSync} from 'node:child_process';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {mkdir, rm} from 'node:fs/promises';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const out=root+'/node_modules/.tmp/workspace-requests.dom.mjs';
+await mkdir(path.dirname(out),{recursive:true});
+await build({entryPoints:[root+'/tests/workspace-requests.dom.tsx'],bundle:true,platform:'node',format:'esm',outfile:out,packages:'external',nodePaths:[root+'/node_modules'],tsconfig:root+'/tsconfig.app.json',loader:{'.css':'empty'},define:{'import.meta.env.VITE_API_URL':'""'},plugins:[{name:'mock',setup(b){b.onResolve({filter:/^@\/components\/(core\/FlowCanvas|layout\/(ChatPanel|MapStoryboardPanel))$/},a=>({path:a.path.split('/').at(-1),namespace:'mock'}));b.onLoad({filter:/.*/,namespace:'mock'},a=>({contents:a.path==='FlowCanvas'?`import React,{forwardRef,useState,useImperativeHandle} from 'react';export const FlowCanvas=forwardRef((p,ref)=>{globalThis.flow=p;const [nodes,setNodes]=useState(p.initialProject.nodes);const [edges,setEdges]=useState(p.initialProject.edges);useImperativeHandle(ref,()=>({getNodes:()=>nodes,getEdges:()=>edges,replaceWorkflow:x=>{setNodes(x.nodes);setEdges(x.edges);}}));return <div/>;});`:a.path==='ChatPanel'?`export function ChatPanel(p){globalThis.chat=p;return null;}`:`export function ${a.path}(){return null}`,loader:'tsx',resolveDir:root}));}}]});
+const bootstrap=`import {JSDOM} from 'file://${root}/node_modules/jsdom/lib/api.js';const dom=new JSDOM('<div id="root"></div>',{url:'http://localhost'});for(const k of ['window','document','navigator','HTMLElement','Element','Node','NodeFilter','CustomEvent','HTMLInputElement','MutationObserver','getComputedStyle'])Object.defineProperty(globalThis,k,{value:k==='window'?dom.window:dom.window[k],configurable:true});`;
+const result=spawnSync(process.execPath,['--import','data:text/javascript;base64,'+Buffer.from(bootstrap).toString('base64'),out],{stdio:'inherit'});await rm(out,{force:true});process.exitCode=result.status??1;

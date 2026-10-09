@@ -1,0 +1,56 @@
+apiVersion: gedge.io/v1
+kind: SystemProfile
+metadata:
+  name: smart-cabin-v2
+  version: "2.0.0"
+  description: "Declarative configuration for G-Edge smart cabin scenario"
+
+spec:
+  platform:
+    autoDetect: true
+    supported:
+      - nvidia-orin-agx
+      - qualcomm-sa8295p
+      - mock-simulator
+
+  providers:
+    inference:
+      - name: local-vlm
+        type: inference.vlm
+        driver: ollama
+        config:
+          model: qwen2-vl-7b-int4
+          base_url: "http://localhost:11434"
+    perception:
+      - name: mock-camera
+        type: perception.camera
+        driver: mock_simulator
+        config:
+          fps: 10
+    execution:
+      - name: virtual-car-chassis
+        type: execution.can_bus
+        driver: mock_simulator
+        config:
+          interface: vcan0
+
+  workflows:
+    - name: child-detection
+      trigger: mock-camera.motion_detected
+      nodes:
+        - name: scene_perception
+          type: perception.vlm
+          providerRef: local-vlm
+          config:
+            prompt: "Analyze the cabin environment. Is there a child left unattended?"
+            qos:
+              maxLatency: 100ms
+              priority: critical
+
+  selfHealing:
+    enabled: true
+    policies:
+      - name: provider-crash
+        condition: "provider.restart_count > 3 in 5m"
+        action: 
+          type: openclaw_fix

@@ -1,0 +1,221 @@
+{
+  "baseUrlTemplate": "http://<device-ip>:8080",
+  "endpoints": [
+    {
+      "id": "control",
+      "label": "Vehicle Control API",
+      "method": "POST",
+      "path": "/api/vehicle/control"
+    },
+    {
+      "id": "signals",
+      "label": "Signal Catalog API",
+      "method": "GET",
+      "path": "/api/vehicle/signals"
+    }
+  ],
+  "modules": [
+    {
+      "id": "seat",
+      "label": "Seat",
+      "functions": ["subscribe", "get", "set"],
+      "signals": [
+        {
+          "id": "SEAT_HEAT_STATUS_0",
+          "label": "Driver seat heating",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 0, "max": 3, "default": 1 }
+          }
+        },
+        {
+          "id": "SEAT_HEAT_STATUS_1",
+          "label": "Passenger seat heating",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 0, "max": 3, "default": 1 }
+          }
+        },
+        {
+          "id": "SEAT_HEAT_STATUS_2",
+          "label": "Rear left seat heating",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 0, "max": 3, "default": 1 }
+          }
+        },
+        {
+          "id": "SEAT_HEAT_STATUS_3",
+          "label": "Rear right seat heating",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 0, "max": 3, "default": 1 }
+          }
+        },
+        {
+          "id": "SEAT_HEAT_STATUS",
+          "label": "All seat heating",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 0, "max": 3, "default": 1 }
+          }
+        },
+        {
+          "id": "SEAT_VENTILATION_STATUS_0",
+          "label": "Driver seat ventilation",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 0, "max": 3, "default": 1 }
+          }
+        },
+        {
+          "id": "SEAT_VENTILATION_STATUS_1",
+          "label": "Passenger seat ventilation",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 0, "max": 3, "default": 1 }
+          }
+        },
+        {
+          "id": "SEAT_VENTILATION_STATUS_2",
+          "label": "Rear left seat ventilation",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 0, "max": 3, "default": 1 }
+          }
+        },
+        {
+          "id": "SEAT_VENTILATION_STATUS_3",
+          "label": "Rear right seat ventilation",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 0, "max": 3, "default": 1 }
+          }
+        },
+        {
+          "id": "SEAT_VENTILATION_STATUS",
+          "label": "All seat ventilation",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 0, "max": 3, "default": 1 }
+          }
+        },
+        {
+          "id": "SEAT_OCCUPATION_STATUS_CHANGED_SEAT_OCCUPATION_STATUS_0",
+          "label": "Driver seat occupation",
+          "functions": ["subscribe", "get"]
+        },
+        {
+          "id": "SEAT_OCCUPATION_STATUS_CHANGED_SEAT_OCCUPATION_STATUS_1",
+          "label": "Passenger seat occupation",
+          "functions": ["subscribe", "get"]
+        },
+        {
+          "id": "SEAT_OCCUPATION_STATUS_CHANGED_SEAT_OCCUPATION_STATUS_2",
+          "label": "Rear left seat occupation",
+          "functions": ["subscribe", "get"]
+        },
+        {
+          "id": "SEAT_OCCUPATION_STATUS_CHANGED_SEAT_OCCUPATION_STATUS_3",
+          "label": "Rear right seat occupation",
+          "functions": ["subscribe", "get"]
+        }
+      ]
+    },
+    {
+      "id": "light",
+      "label": "Light",
+      "functions": ["subscribe", "get", "set"],
+      "signals": [
+        {
+          "id": "AMBIENCE_LIGHT_EFFECT_OPERATIONAL_FEEDBACK",
+          "label": "Operational feedback light effect",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 0, "max": 3, "default": 1 }
+          }
+        },
+        {
+          "id": "AMBIENCE_LIGHT_EFFECT_WARNING_AID",
+          "label": "Warning aid light effect",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 0, "max": 3, "default": 1 }
+          }
+        },
+        {
+          "id": "AMBIENCE_LIGHT_EFFECT_DYNAMIC_MULTICOLORE",
+          "label": "Dynamic multicolor light effect",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 0, "max": 3, "default": 1 }
+          }
+        },
+        {
+          "id": "AMBIENCE_LIGHT_SINGLE_COLOR",
+          "label": "Single color ambient light",
+          "functions": ["get", "set"],
+          "setParams": {
+            "level": { "type": "int", "min": 1, "max": 64, "default": 32 }
+          }
+        }
+      ]
+    },
+    {
+      "id": "vehicleControl",
+      "label": "Vehicle Control",
+      "functions": ["subscribe", "get", "set"],
+      "signals": [
+        {
+          "id": "AIR_TEMP_OUTSIDE",
+          "label": "Outside temperature",
+          "functions": ["subscribe", "get"]
+        },
+        {
+          "id": "AIR_TEMP_INSIDE",
+          "label": "Inside temperature",
+          "functions": ["subscribe", "get"]
+        },
+        {
+          "id": "WINDOW_POSITION",
+          "label": "Window position control",
+          "functions": ["subscribe", "get", "set"],
+          "setParams": {
+            "area": {
+              "type": "int",
+              "default": 0,
+              "options": [
+                { "value": 0, "label": "All windows" },
+                { "value": 1, "label": "Driver" },
+                { "value": 2, "label": "Passenger" },
+                { "value": 3, "label": "Rear left" },
+                { "value": 4, "label": "Rear right" },
+                { "value": 5, "label": "Front row" },
+                { "value": 6, "label": "Rear row" }
+              ]
+            },
+            "status": { "type": "int", "min": 0, "max": 100, "step": 10, "default": 0 }
+          }
+        },
+        {
+          "id": "SUNSHADE_SLIDING_OPEN",
+          "label": "Sunshade open/close control",
+          "functions": ["get", "set"],
+          "setParams": {
+            "area": {
+              "type": "int",
+              "default": 1,
+              "options": [
+                { "value": 1, "label": "Sunroof sunshade" },
+                { "value": 2, "label": "Rear windshield sunshade" },
+                { "value": 3, "label": "Rear left" },
+                { "value": 4, "label": "Rear right" }
+              ]
+            },
+            "status": { "type": "int", "min": 0, "max": 1, "default": 0 }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "case": "greeting",
+    "status": 200,
+    "elapsed_seconds": 0.73,
+    "response": {
+      "id": "chatcmpl-107",
+      "object": "chat.completion",
+      "created": 1789453764,
+      "model": "opensparx-cabin-intent:3b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "你好，很高兴为您服务。"
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 17,
+        "completion_tokens": 7,
+        "total_tokens": 24
+      }
+    }
+  },
+  {
+    "case": "image",
+    "status": 200,
+    "elapsed_seconds": 11.02,
+    "response": {
+      "id": "chatcmpl-467",
+      "object": "chat.completion",
+      "created": 1789453775,
+      "model": "opensparx-cabin-intent:3b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "蓝色"
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1050,
+        "completion_tokens": 2,
+        "total_tokens": 1052
+      }
+    }
+  }
+]

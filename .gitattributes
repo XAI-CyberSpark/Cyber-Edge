@@ -1,0 +1,6 @@
+# Keep source and documentation diffs stable across Windows and Unix environments.
+* text=auto eol=lf
+
+# Windows command scripts, if added later, retain their native line endings.
+*.bat text eol=crlf
+*.cmd text eol=crlf

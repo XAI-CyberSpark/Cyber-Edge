@@ -1,0 +1,22 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="power station toggle / light">
+<g id="Ellipse 11" filter="url(#filter0_d_0_39)">
+<circle cx="44" cy="40" r="40" fill="#F0F0F0"/>
+</g>
+<circle id="Ellipse 11_2" cx="44" cy="40" r="20" fill="black" fill-opacity="0.4"/>
+<g id="power">
+<path id="scale" fill-rule="evenodd" clip-rule="evenodd" d="M44.1316 37.625V29.7083L39.4314 40.9904C39.157 41.6491 39.6404 42.375 40.3543 42.375H43.868V50.2917L48.5682 39.0096C48.8426 38.3509 48.3592 37.625 47.6453 37.625H44.1316Z" fill="black"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_39" x="0" y="0" width="88" height="88" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_39"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_39" result="shape"/>
+</filter>
+</defs>
+</svg>

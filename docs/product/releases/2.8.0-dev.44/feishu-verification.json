@@ -1,0 +1,11 @@
+{
+  "revision": 715,
+  "requirements": [
+    21,
+    22,
+    23
+  ],
+  "verified_purple_strikethrough": true,
+  "reference_images_preserved": true,
+  "excerpt": "<p id=\"doxcn6dogc5DlX8pIcBSOxv6jAh\"><del><span text-color=\"rgb(100,37,208)\">21、节点的美观程度</span></del></p><p id=\"doxcnN16oJMe4QQXIM2ITT1n4we\"><span text-color=\"rgb(100,37,208)\">已完成 · CE-21 · 2.8.0-dev.44：17类节点统一公共外壳与标题，输入/模型卡片按参考细化；保留真实状态与端口。浅深色、长标题、提示词展开、公共尺寸检查及7组节点回归通过。复杂内部细节待按CE-23规范逐步收敛，非全部节点真实运行验收。</span></p><img id=\"ORyadYVZfof3NGxEpLhceEW9nKg\" name=\"image.png\" alt=\"图片展示的是一个开始节点的界面。左侧有一个绿色的“开始”图标，右侧有绿色的对勾标识。下方有一个输入框，提示“input_text”且标注“必填”。右上角有一个蓝色箭头指向的蓝色圆点。该图片与文档中对节点美观程度及设计规范的定义相关，是对节点设计参考示例的呈现，用于辅助说明节点设计规范等内容。\" height=\"72\" mime=\"image/png\" scale=\"1.000000\" src=\"KtKDbd0O3ovlTHxCq1QcWcFqnfh\" width=\"224\"/><img id=\"UX7Ydw6whoKZ3LxNKnYcDvkonhh\" name=\"image.png\" alt=\"图片展示的是一个大语言模型节点界面。左侧有一个蓝色边框的节点图标，内有白色齿轮图案。节点名称为“大语言模型”，下方显示模型为“gpt-5.4-mini”，并有“CHAT”标签。右侧有一个绿色勾选标志和一个蓝色加号。下方提示“阅读文本并写出简短摘要”。该图片与文档中对节点美观程度、间距、圆角等设计规范的定义相关，是参考示例之一。\" height=\"155\" mime=\"image/png\" scale=\"1.000000\" src=\"Y2mQbkD89oTyCExc1iVcgQ1dnVg\" width=\"325\"/><p id=\"doxcngFoprZzc3ohIBWHwZtkgNf\"><del><span text-color=\"rgb(100,37,208)\">22、右边的聊天窗口参考，但是不要云端和旁边的图标</span></del></p><p id=\"doxcnjYl8d3LHXyDMbxncmkf38e\"><span text-color=\"rgb(100,37,208)\">已完成 · CE-22 · 2.8.0-dev.44：上层自适应输入、下层模型与圆形发送按钮；按后续要求保留加号，支持txt/md文字导入草稿（64KB以内），不会自动发送。欢迎区采用OpenSparX X与“想创造怎样的座舱体验？”，建议仅填草稿。未增加云端标签或未接入的麦克风；3组共创回归、实际页面及构建通过。</span></p><img id=\"NMzrdj3stoXpOOxwfC6cATORnNb\" name=\"image.png\" height=\"143\" mime=\"image/png\" scale=\"1.000000\" src=\"GhXhbq3EYoysJqxCD5Ac9sC0n6g\" width=\"459\"/><p id=\"doxcnSVoMxdAAKFRRAQQwyRRbaf\"><del><span text-color=\"rgb(100,37,208)\">23、参考对节点的美观程度的修改，定义出节点的间距，圆角等等，励志让每一个节点都是精致的，定义好设计规范</span></del></p><p id=\"doxcnxYUbipsQzUiaubrc134l1b\"><span text-color=\"rgb(100,37,208)\">已完成 · CE-23 · 2.8.0-dev.44：项目节点规范NODE_DESIGN.md已建立并关联AI工作约定。标准宽280px（输入240px），内边距/圆角16px，内部间距4/8/12/16px，图标框32px，标题14px/正文12px；定义长内容、选中、运行状态、端口和验收规则。推荐列间80px/行间48px，不自动移动已有节点。公共框架已应用17类节点；部分旧内部字号与模板布局仍需后续按规范迁移。</span></p>"
+}

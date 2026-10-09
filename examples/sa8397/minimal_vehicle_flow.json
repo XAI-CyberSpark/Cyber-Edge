@@ -1,0 +1,69 @@
+{
+  "name": "sa8397_minimal_vehicle_flow",
+  "nodes": [
+    {
+      "id": "start",
+      "type": "systemInput",
+      "data": {
+        "label": "Vehicle Event Input",
+        "inputType": "event"
+      }
+    },
+    {
+      "id": "intent_llm",
+      "type": "llm",
+      "data": {
+        "label": "Gemma4 Intent Classifier",
+        "systemPrompt": "Classify the user input for in-vehicle execution. Output only one label: control_windows or other."
+      }
+    },
+    {
+      "id": "check_window_control",
+      "type": "logic",
+      "data": {
+        "label": "Need Window Control?",
+        "condition": "intent == \"control_windows\""
+      }
+    },
+    {
+      "id": "window_close",
+      "type": "car_control",
+      "data": {
+        "label": "Close All Windows",
+        "action": "windows",
+        "parameter": "close_all"
+      }
+    },
+    {
+      "id": "fallback",
+      "type": "output",
+      "data": {
+        "label": "No Vehicle Control"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start",
+      "target": "intent_llm"
+    },
+    {
+      "id": "e2",
+      "source": "intent_llm",
+      "target": "check_window_control"
+    },
+    {
+      "id": "e3",
+      "source": "check_window_control",
+      "target": "window_close",
+      "sourceHandle": "true"
+    },
+    {
+      "id": "e4",
+      "source": "check_window_control",
+      "target": "fallback",
+      "sourceHandle": "false"
+    }
+  ]
+}

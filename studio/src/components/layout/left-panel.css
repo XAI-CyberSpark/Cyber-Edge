@@ -1,0 +1,12 @@
+/* Legacy monitor styles. Navigation surfaces use NavigationPanel. */
+.left-panel { max-width: 100%; font-size: var(--text-body-size); line-height: var(--text-body-line); }
+
+.left-panel .left-panel-header { height: 56px; min-height: 56px; padding: 0 16px; gap: 12px; flex-shrink: 0; }
+.left-panel-header h2 { margin: 0; padding: 0; font-size: var(--text-panel-size); line-height: var(--text-panel-line); font-weight: var(--text-panel-weight); }
+.left-panel-header button { width: 32px; height: 32px; border-radius: 8px; color: hsl(var(--muted-foreground)); }
+.left-panel-header button:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+.left-panel .left-panel-content { padding: 16px; }
+.left-panel h3 { font-size: var(--text-section-size); line-height: var(--text-section-line); font-weight: var(--text-section-weight); letter-spacing: normal; }
+.left-panel h4 { font-size: var(--text-section-size); line-height: var(--text-section-line); font-weight: var(--text-section-weight); }
+.left-panel [role="tab"] { font-size: var(--text-label-size); line-height: var(--text-label-line); min-height: 32px; font-weight: var(--text-label-weight); }
+@media (prefers-reduced-motion: reduce) { .left-panel { animation: none; } }

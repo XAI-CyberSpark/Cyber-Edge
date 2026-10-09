@@ -1,0 +1,6 @@
+{
+  "source": "real official Fetch package over stdio",
+  "reuse_without_install": true,
+  "content": "Contents of https://example.com/:\nThis domain is for use in documentation examples without needing permission. Thi\n\n<error>Content truncated. Call the fetch tool with a start_index of 80 to get more content.</error>",
+  "invalid_parameter_error": "MCP参数不符合工具Schema：url"
+}

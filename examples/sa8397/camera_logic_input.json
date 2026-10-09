@@ -1,0 +1,10 @@
+{
+  "text": "请检查车内画面",
+  "image_path": "/data/local/tmp/cabin_frame.jpg",
+  "confidence": 0.95,
+  "camera": {
+    "occupied": true,
+    "seatbelt_fastened": false
+  },
+  "source": "camera_runtime"
+}

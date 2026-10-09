@@ -1,0 +1,927 @@
+{
+  "service:imgNavBg": {
+    "file": "64173ab3-7781-45df-bc74-669b43b21b9e.svg",
+    "width": 500.0,
+    "height": 1120.0
+  },
+  "service:imgGlovebox": {
+    "file": "ac729d1c-0eee-4d96-be85-5382c4635729.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "service:imgService": {
+    "file": "542f06c4-5106-4bf1-8351-007a5d40b049.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "service:imgSafetyAndSecurity": {
+    "file": "7ef879ae-9a29-4f50-80bc-78c556157c46.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "service:imgSteeringWheelSmall": {
+    "file": "bd1f1e84-f183-44c6-85a5-33f2b8a8877f.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "service:imgModel3IconSmall": {
+    "file": "e3d22c1c-5014-49f3-b4bb-00c5eefef7b4.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "service:imgGroup": {
+    "file": "60aad94d-7341-4328-9a92-bd22f0383c39.svg",
+    "width": 30.0001,
+    "height": 22.0
+  },
+  "service:imgLock": {
+    "file": "6d8caed3-7145-4c62-85e6-615a6bb31ae8.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "service:imgLights": {
+    "file": "8fc73e6a-e066-4b25-a2e6-7c07cf562ea8.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "service:imgQuickControls": {
+    "file": "ceb64036-5e49-4c19-827a-9f76075eb9e3.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "service:imgSettingsBg": {
+    "file": "69c07728-d4fb-435d-b613-3cb572ac51ac.svg",
+    "width": 808.0,
+    "height": 1128.0
+  },
+  "service:imgHeadlightsSmall": {
+    "file": "b1c72261-289b-43eb-933e-158344d7cffc.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "service:imgWiper": {
+    "file": "b8d859f7-297e-4111-a06a-ceee279682d3.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "service:imgExit": {
+    "file": "35b950ec-4bcf-44f9-b976-1592d9e1dd2e.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "music:imgAlbumCover": {
+    "file": "72cc6060-b714-4e33-af22-9c4dd8247f0c.png",
+    "width": 146,
+    "height": 146
+  },
+  "music:imgAlbumCover1": {
+    "file": "f4da1ed6-652e-4579-ac37-bc52996f0342.png",
+    "width": 100,
+    "height": 150
+  },
+  "music:imgAlbumCover2": {
+    "file": "3ca9d801-2e6d-43eb-b525-8ede4305f8c2.png",
+    "width": 104,
+    "height": 104
+  },
+  "music:imgAlbumCover3": {
+    "file": "a020440f-9299-4a62-a1ac-b5e16507dc38.png",
+    "width": 130,
+    "height": 130
+  },
+  "music:imgAlbumCover4": {
+    "file": "514df9ae-f339-4b30-b949-ab73b71f0d6e.png",
+    "width": 137,
+    "height": 137
+  },
+  "music:imgAlbumCover5": {
+    "file": "2f6d3964-ba11-4737-9b49-7f08afafafdf.png",
+    "width": 146,
+    "height": 146
+  },
+  "music:imgAlbumCover6": {
+    "file": "637febe4-8ef5-4c2a-9f74-392bb9c37a79.png",
+    "width": 150,
+    "height": 150
+  },
+  "music:imgAlbumCover7": {
+    "file": "1f617ca4-ecf4-4c16-ad8d-e2e8ae5baca6.png",
+    "width": 135,
+    "height": 135
+  },
+  "music:imgAlbumCover8": {
+    "file": "09f9e686-c74c-468e-ade1-d64418376595.png",
+    "width": 146,
+    "height": 146
+  },
+  "music:imgAlbumCover9": {
+    "file": "e7cf97c5-3658-47e8-a433-24a66e3a8a41.png",
+    "width": 145,
+    "height": 145
+  },
+  "music:imgAlbumCover10": {
+    "file": "afc7c056-5c50-4bb6-ab55-1acdb0b200cb.png",
+    "width": 131,
+    "height": 131
+  },
+  "music:imgAlbumCover11": {
+    "file": "259178db-f89f-40c2-ac69-fc9a56f485aa.png",
+    "width": 131,
+    "height": 131
+  },
+  "music:imgAlbumCover12": {
+    "file": "360daaf6-9c99-45bf-acba-c6f6c4a60348.png",
+    "width": 150,
+    "height": 150
+  },
+  "music:imgAlbumCover13": {
+    "file": "6a535060-1cb6-47da-9c48-3b875183c709.png",
+    "width": 137,
+    "height": 137
+  },
+  "music:imgAlbumCover14": {
+    "file": "daaabe22-d772-4605-8efc-99f4331e3439.png",
+    "width": 128,
+    "height": 104
+  },
+  "music:imgAlbumCover15": {
+    "file": "30e14925-4a80-4114-be28-ddc9dcfff0e6.png",
+    "width": 149,
+    "height": 149
+  },
+  "music:imgAlbumCover16": {
+    "file": "3762fe2b-efdb-4ef9-9f83-5c304f5878db.png",
+    "width": 150,
+    "height": 150
+  },
+  "music:imgAlbumCover17": {
+    "file": "60437bec-662b-40aa-92e4-a14d5dc15943.png",
+    "width": 129,
+    "height": 129
+  },
+  "music:imgAlbumCover18": {
+    "file": "f287ce66-4c9d-4cd5-a4b6-4cc62049a2cb.png",
+    "width": 137,
+    "height": 137
+  },
+  "music:imgAlbumCover19": {
+    "file": "d4997fed-4b0e-4062-8e14-23443e2f2f29.png",
+    "width": 150,
+    "height": 150
+  },
+  "music:imgAlbumCover20": {
+    "file": "cc41336a-a248-420e-b558-5e3e8c11204c.png",
+    "width": 131,
+    "height": 131
+  },
+  "music:imgAlbumCover21": {
+    "file": "8d50038f-73ef-420f-aedb-1150783601b5.png",
+    "width": 131,
+    "height": 131
+  },
+  "music:imgAlbumCover22": {
+    "file": "c0d590e2-bf0f-478f-8814-014729dcab8d.png",
+    "width": 134,
+    "height": 134
+  },
+  "music:imgAlbumCover23": {
+    "file": "0c9bb7ac-e7cb-4226-98ba-99869cb6aafe.png",
+    "width": 146,
+    "height": 146
+  },
+  "music:imgAlbumCover24": {
+    "file": "d85f13ac-672e-447f-8c3b-275b8dd0ab98.png",
+    "width": 500,
+    "height": 500
+  },
+  "music:imgSearch": {
+    "file": "141e0b5e-77ed-48ea-ad75-b7ecece072aa.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "music:imgExpandMusic": {
+    "file": "180cccf7-88cb-4ae1-ad5b-9560faec0081.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "music:imgNexttrack": {
+    "file": "7c86443f-6525-47a1-a945-b127f8a9c3bc.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "music:imgPause": {
+    "file": "b22839e9-2d56-46d7-936e-8c6a62473691.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "music:imgPrevtrack": {
+    "file": "84a5f36b-6497-417a-afbf-4558cda8dce4.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "music:imgHeart": {
+    "file": "533ec991-33ea-4d85-ae27-48d7aa2686fc.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "dock:imgBackground": {
+    "file": "e55f883b-c24d-461f-abb9-1b345f44c776.svg",
+    "width": 1920.0,
+    "height": 128.0
+  },
+  "dock:imgArrow": {
+    "file": "595daf28-7c6d-4635-999b-18f1cbfe4388.svg",
+    "width": 50.0,
+    "height": 30.0
+  },
+  "dock:imgArrow1": {
+    "file": "9549fce7-9941-44f4-9dae-6f767b753b78.svg",
+    "width": 50.0,
+    "height": 30.0
+  },
+  "dock:imgVolume": {
+    "file": "a304dd9a-1062-45eb-bcef-9cc9d2408e33.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "dock:imgPhone": {
+    "file": "94f39e9b-1bf1-446b-9c21-f1478c7ee82e.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "dock:imgMusic": {
+    "file": "a8e4f75c-d4ef-41a6-baa7-3e46efa44291.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "dock:imgSeat": {
+    "file": "d9df9db1-6be1-4646-af0a-224581cad741.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "dock:imgFan": {
+    "file": "76a190de-5d0c-429e-aa85-60f5817be701.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "dock:imgSeat1": {
+    "file": "2b3013ed-1bfd-481d-ae8f-02b49a7dd68a.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "dock:imgHeater": {
+    "file": "50a74a9a-ba74-4e16-b288-7ff9c8f8f08b.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "dock:imgDefrost": {
+    "file": "9a0e3a2f-80e2-412a-86d2-d03c9e2780bb.svg",
+    "width": 52.0,
+    "height": 50.0
+  },
+  "dock:imgModel3Icon": {
+    "file": "a4ddac8d-d98a-4cff-9942-7855dd85dbdb.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "safety:imgNavBg": {
+    "file": "41385ba4-e7e6-448f-a693-888920c9d41a.svg",
+    "width": 500.0,
+    "height": 1120.0
+  },
+  "safety:imgGlovebox": {
+    "file": "b990663e-38b8-4c3c-83f7-0932109419aa.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "safety:imgService": {
+    "file": "907d5d0a-8205-4871-b8ca-65a6b037ec9e.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "safety:imgSafetyAndSecurity": {
+    "file": "9cd27bef-1576-42fe-bc05-7efdf1251c6e.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "safety:imgSteeringWheelSmall": {
+    "file": "cfd70b20-4dbd-4d74-9ad0-6fa312206397.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "safety:imgModel3IconSmall": {
+    "file": "c9d9e132-16b4-4451-a05f-151be6477699.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "safety:imgGroup": {
+    "file": "7861b0cd-8b0f-4aff-8e39-402f9c57b840.svg",
+    "width": 30.0001,
+    "height": 22.0
+  },
+  "safety:imgLock": {
+    "file": "996fb77e-8567-4543-a5cd-69036c0b2250.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "safety:imgLights": {
+    "file": "f47f0d2a-a4ea-4ebb-8b72-c585b6bd02fe.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "safety:imgQuickControls": {
+    "file": "2b11edc2-af70-416b-a066-a787f162b723.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "safety:imgSettingsBg": {
+    "file": "e94188b1-9826-450a-baee-e90981de3f30.svg",
+    "width": 808.0,
+    "height": 1128.0
+  },
+  "safety:imgEllipse2": {
+    "file": "db91f1c6-1297-41ef-853f-72fcaa830845.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "safety:imgEllipse18": {
+    "file": "9d435bda-6c30-4c7e-bbb1-051a50fcd3b1.svg",
+    "width": 68.0,
+    "height": 54.5189
+  },
+  "safety:imgExit": {
+    "file": "7bc95297-63e3-4567-bb3b-882210ae2216.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "nav-497-13861:imgMapBg": {
+    "file": "6ea7ce0c-b0cd-409d-bdb5-a3b5d702a302.png",
+    "width": 4011,
+    "height": 2959
+  },
+  "nav-497-13861:imgLight": {
+    "file": "00d2f947-5914-4b32-82d8-3a5f36ef8f5a.png",
+    "width": 3840,
+    "height": 2400
+  },
+  "nav-497-13861:imgRoute": {
+    "file": "13cf08b2-249f-4450-aa9b-4cd7eede2840.svg",
+    "width": 307.0,
+    "height": 818.001
+  },
+  "nav-497-13861:imgGroup": {
+    "file": "0c0a454a-1652-4040-b7f9-03e29d12a296.svg",
+    "width": 48.1057,
+    "height": 43.0902
+  },
+  "nav-497-13861:imgChargingStation": {
+    "file": "407990f0-9e37-408f-bd4d-99e2ad250ae5.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "nav-497-13867:imgPowerStationToggleLight": {
+    "file": "71cf3f47-f643-4b5d-b3bb-3bcaf080aa41.svg",
+    "width": 88.0,
+    "height": 88.0
+  },
+  "nav-497-13866:imgPlus": {
+    "file": "833895b1-712b-4bab-8180-0fce2735570e.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "locks:imgNavBg": {
+    "file": "635c92d0-c3bd-45d2-9bbf-561473b61821.svg",
+    "width": 500.0,
+    "height": 1120.0
+  },
+  "locks:imgGlovebox": {
+    "file": "28788b34-f71d-42df-bc1a-b756eb1ef842.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "locks:imgService": {
+    "file": "7218b41a-b6e2-425e-90ed-b32449f55ae2.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "locks:imgSafetyAndSecurity": {
+    "file": "1190fb85-d729-4d90-94fb-1197ac43a11c.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "locks:imgSteeringWheelSmall": {
+    "file": "122bc0e2-d9e7-4f66-99fe-149257c6e6af.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "locks:imgModel3IconSmall": {
+    "file": "9091c0e1-8c4b-4121-95f6-1a463dbda539.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "locks:imgGroup": {
+    "file": "0e0aecf0-da96-470c-aa27-145041723ae1.svg",
+    "width": 30.0001,
+    "height": 22.0
+  },
+  "locks:imgLock": {
+    "file": "d1254b5f-25a5-4af7-83fe-612a4496aa73.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "locks:imgLights": {
+    "file": "4177249b-35f3-48a4-a7f5-056e7c47ae0e.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "locks:imgQuickControls": {
+    "file": "a79bb1bb-0fd8-47d9-b1d1-7b7ad5cba0ed.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "locks:imgSettingsBg": {
+    "file": "db1fa33e-74ba-45a0-a19b-353f7572ac44.svg",
+    "width": 808.0,
+    "height": 1128.0
+  },
+  "locks:imgExit": {
+    "file": "278f7607-3477-4247-81f5-1fa9c7bcbeaa.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "nav-497-13870:imgLeftTurn": {
+    "file": "fc337007-6980-4d64-b73d-3b617f425460.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "nav-497-13870:imgRightTurn4Way": {
+    "file": "f6e77e37-5aed-42fb-ada0-117dd057b790.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "nav-497-13870:imgDestination": {
+    "file": "c2d25e2a-9b5a-4a6c-b0b8-33cba90fd4d5.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "nav-497-13870:imgBatteryLevel": {
+    "file": "05ddb3c5-60e8-41ec-af35-712851bcf95e.svg",
+    "width": 50.0,
+    "height": 20.0
+  },
+  "nav-497-13870:imgRightTurn": {
+    "file": "25f05de6-5175-4fea-97ac-68074ae5153a.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "nav-497-13870:imgNav": {
+    "file": "d8739627-238f-4af7-97cd-17bd0b587e62.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "nav-497-13865:imgEllipse11": {
+    "file": "1e80c0c9-2443-443c-b005-0476a6ef7bf1.svg",
+    "width": 88.0,
+    "height": 88.0
+  },
+  "nav-497-13865:imgDirection": {
+    "file": "db15fc87-4386-4cf8-8230-07e317625783.svg",
+    "width": 50.0,
+    "height": 50.0
+  },
+  "nav-497-13868:imgMapSettingsLight": {
+    "file": "7a207576-814e-4463-ac35-82a1b5196a44.svg",
+    "width": 88.0,
+    "height": 88.0
+  },
+  "nav-497-13869:imgGroup": {
+    "file": "7d95d08f-70c6-4240-b647-76cbfa1f97bf.svg",
+    "width": 20.393,
+    "height": 17.6618
+  },
+  "nav-497-13869:imgArrow": {
+    "file": "bb7aba73-8429-432e-ad9f-de5fedd57630.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "sidebar:imgEllipse6": {
+    "file": "452d032e-c56a-4cd8-ab7d-e8419df52a17.svg",
+    "width": 10.0,
+    "height": 10.0
+  },
+  "sidebar:imgMicrophone": {
+    "file": "b05c0e97-9ad0-4e69-8c72-6ef2367493fe.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "sidebar:imgCamera": {
+    "file": "e054d96b-90a7-49e4-9194-f8530e329283.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "sidebar:imgPower": {
+    "file": "25280afa-c872-462c-a235-46c9cf78924a.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "sidebar:imgHeadlights": {
+    "file": "93c39b95-d2a7-42e8-b5a6-ae9b3e8a580a.svg",
+    "width": 263.0,
+    "height": 220.0
+  },
+  "sidebar:imgModel3": {
+    "file": "b8a153c1-940e-4ee2-b58a-5e490b83307c.svg",
+    "width": 166.889,
+    "height": 354.011
+  },
+  "sidebar:imgPower1": {
+    "file": "148cbf2b-330b-4584-96fc-3b17b424a56e.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "sidebar:imgBattery": {
+    "file": "4f31240f-f7a0-4f6e-a160-a3ab50b1a1d2.svg",
+    "width": 62.0,
+    "height": 20.0
+  },
+  "sidebar:imgHeadlights1": {
+    "file": "07814bd2-80bb-4676-b2a6-aa8895f3465d.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "sidebar:imgGroup": {
+    "file": "eabec166-cb8a-4232-9393-e65f36eae6e1.svg",
+    "width": 38.0,
+    "height": 33.0
+  },
+  "driving:imgNavBg": {
+    "file": "c63270b4-3d2d-45b0-99ff-875d8cabd6c6.svg",
+    "width": 500.0,
+    "height": 1120.0
+  },
+  "driving:imgGlovebox": {
+    "file": "bf97500f-4860-49c7-8a10-f8776d26f7e8.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "driving:imgService": {
+    "file": "55960560-93f4-46c2-a29f-3887ec975077.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "driving:imgSafetyAndSecurity": {
+    "file": "14d94a09-b59e-43f7-bda0-a98dff3f7145.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "driving:imgSteeringWheelSmall": {
+    "file": "0b73b8d4-1bf9-4db2-a6f2-11f4a31ea372.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "driving:imgModel3IconSmall": {
+    "file": "5922aaa4-48f6-4ea5-b7aa-62b647382a4c.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "driving:imgGroup": {
+    "file": "9c57dc14-747b-4ef1-ab9f-339e4a58c2ee.svg",
+    "width": 30.0001,
+    "height": 22.0
+  },
+  "driving:imgLock": {
+    "file": "9203326c-91a9-4604-941c-85f69f5d6389.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "driving:imgLights": {
+    "file": "71754870-b770-4a46-a7e7-adc1388bbedd.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "driving:imgQuickControls": {
+    "file": "19519e09-7bb9-43e8-8ed7-5fca5ff6d9b2.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "driving:imgSettingsBg": {
+    "file": "976a10ec-47de-43e8-8099-006bf0326db2.svg",
+    "width": 808.0,
+    "height": 1128.0
+  },
+  "driving:imgExit": {
+    "file": "eae73059-09d6-45ce-86f6-293c8ba35744.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "autopilot:imgNavBg": {
+    "file": "2c49a19a-03ec-430e-9fb1-e18d9080dc79.svg",
+    "width": 500.0,
+    "height": 1120.0
+  },
+  "autopilot:imgGlovebox": {
+    "file": "8e8a8fe6-a73c-4cd7-a736-e1515b927635.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "autopilot:imgService": {
+    "file": "d56dc9b8-a401-4e66-92b6-1a1d87aa1220.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "autopilot:imgSafetyAndSecurity": {
+    "file": "e99f6715-dc87-44ca-a46a-2de08cfdb9f6.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "autopilot:imgSteeringWheelSmall": {
+    "file": "4373b33d-76f1-41e6-ac4c-6e8733b30d10.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "autopilot:imgModel3IconSmall": {
+    "file": "3d9f2570-25b6-4d53-9627-72456d66eba6.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "autopilot:imgGroup": {
+    "file": "78343b48-fbc2-4ed8-8e46-c2b45148294a.svg",
+    "width": 30.0001,
+    "height": 22.0
+  },
+  "autopilot:imgLock": {
+    "file": "87f2282a-1c85-4e27-9a3c-837785879559.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "autopilot:imgLights": {
+    "file": "030cbb53-0ed8-491d-a2b3-c967118cdd1a.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "autopilot:imgQuickControls": {
+    "file": "b538e781-12ea-47a7-ad13-dcbd6a505f4b.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "autopilot:imgSettingsBg": {
+    "file": "7221b163-50cc-4ace-9401-7c7fd0685ed5.svg",
+    "width": 808.0,
+    "height": 1128.0
+  },
+  "autopilot:imgArrow": {
+    "file": "9ba8c09a-f023-4af1-afea-5d727cb41189.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "autopilot:imgArrow1": {
+    "file": "a7d04b23-6d7d-473b-b3fc-03ef3d1a4a27.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "autopilot:imgExit": {
+    "file": "f493f615-f1ef-4947-a7b1-1ab2fd472e59.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "status:imgLock": {
+    "file": "cc3fdb8c-59f7-4361-8e44-12b1fec9878d.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "status:imgBluetooth": {
+    "file": "e2bae24e-3b0a-45c0-a48f-3c2d20eb7ed3.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "status:imgCellSignal": {
+    "file": "1abfe404-cbd5-4efc-b90d-48e966a81f0f.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "status:imgGroup": {
+    "file": "82f3f1ab-c321-45fa-b923-c16ca3bb1d95.svg",
+    "width": 36.0,
+    "height": 32.0
+  },
+  "status:imgTeslaLogo": {
+    "file": "f86fcbb0-eb33-42ea-ac13-20cf608ff9db.svg",
+    "width": 40.0,
+    "height": 40.0
+  },
+  "lights:imgNavBg": {
+    "file": "aa9c326e-6943-45ad-be24-9cc63e089ae8.svg",
+    "width": 500.0,
+    "height": 1120.0
+  },
+  "lights:imgGlovebox": {
+    "file": "851a3279-ca2f-48fd-9395-9ce84b31e1af.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "lights:imgService": {
+    "file": "f77f7a59-51de-436f-b804-e34a10199c72.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "lights:imgSafetyAndSecurity": {
+    "file": "0c32d3aa-c9f3-49a6-90fb-b73f00355298.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "lights:imgSteeringWheelSmall": {
+    "file": "5dbc1821-b60b-423e-ab94-ccab8301ca06.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "lights:imgModel3IconSmall": {
+    "file": "7eafad10-5c40-4140-80bb-63b7f549d1ac.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "lights:imgGroup": {
+    "file": "5d229524-a843-4c8b-860d-0d80a1545f28.svg",
+    "width": 30.0001,
+    "height": 22.0
+  },
+  "lights:imgLock": {
+    "file": "f73bd850-e02d-4caa-9a82-510813fdc7b9.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "lights:imgLights": {
+    "file": "9706593f-1639-4e1a-a061-a5c4eec9d391.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "lights:imgQuickControls": {
+    "file": "666ba711-604e-4dc9-8a9f-f9d6c053f861.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "lights:imgSettingsBg": {
+    "file": "b4bf5aa7-2f44-4c5c-a153-1761159bc7c1.svg",
+    "width": 808.0,
+    "height": 1128.0
+  },
+  "lights:imgExit": {
+    "file": "7e74396f-454a-4918-94bb-b07209e9aa32.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgNavBg": {
+    "file": "94f756de-b334-4c3f-8032-dd5755330265.svg",
+    "width": 500.0,
+    "height": 1120.0
+  },
+  "quick:imgGlovebox": {
+    "file": "b91073f7-af93-436f-91fc-3087944614bb.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgService": {
+    "file": "53dc1c03-e16f-45d5-990d-3363e3e6d62b.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgSafetyAndSecurity": {
+    "file": "7fb1a1c0-e07c-49c5-8ca8-24f6a78b9dd8.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgSteeringWheelSmall": {
+    "file": "3ee10099-80c2-405d-95cc-b5a49a48ddb9.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgModel3IconSmall": {
+    "file": "bbcd0cbb-8fbe-4f15-ad8b-62039b3c8ab3.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgGroup": {
+    "file": "0d59b1ee-6e9e-416c-81c0-f2f57d072fef.svg",
+    "width": 30.0001,
+    "height": 22.0
+  },
+  "quick:imgLock": {
+    "file": "65c2a0dc-17f2-4b02-81fe-8d878d879bc2.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgLights": {
+    "file": "1299f7e2-f698-4742-afa8-ecb1f1e3b15b.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgQuickControls": {
+    "file": "0e281a83-7e48-4a0a-af31-736ad6818997.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgSettingsBg": {
+    "file": "dc76ced0-6ddf-4023-9c31-7986fbe00549.svg",
+    "width": 808.0,
+    "height": 1128.0
+  },
+  "quick:imgSteeringWheelSmall1": {
+    "file": "eae8e094-cd5c-42d1-87bd-47bc6c8af9ff.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgMirror": {
+    "file": "86b28666-be1a-40ed-93b7-15f275448e84.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgMirror1": {
+    "file": "aea15b5c-8655-4ebe-8807-5af94a7bdad4.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgAdjustments": {
+    "file": "7983b4af-55b7-49ab-b9c2-7b7e4d0a0271.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgHeadlightsSmall": {
+    "file": "1235c168-45ba-4c23-8c2b-2acfe7cc3013.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgBrightness": {
+    "file": "85a20814-0cbd-4cee-b587-76714fcdf7f0.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "quick:imgExit": {
+    "file": "0510b7fd-d68c-4d12-97ac-1e9c3b51108b.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "display:imgNavBg": {
+    "file": "48e12d41-e8a7-4fb8-99fb-57470153e08d.svg",
+    "width": 500.0,
+    "height": 1120.0
+  },
+  "display:imgGlovebox": {
+    "file": "00652d4f-54da-430b-a2b2-0fa6ab313a25.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "display:imgService": {
+    "file": "cae0733f-c31c-4b1c-b4ce-a1c4ab8047b0.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "display:imgSafetyAndSecurity": {
+    "file": "c259ef3b-499e-40c4-ab44-cbf3bfde1ee0.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "display:imgSteeringWheelSmall": {
+    "file": "5a582a80-cb58-49b0-ba73-e061711c0068.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "display:imgModel3IconSmall": {
+    "file": "23bcbd21-ee3a-49fd-9c1e-f39574245a29.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "display:imgGroup": {
+    "file": "f53e51b3-6d77-4879-a94e-5bd69c8513a3.svg",
+    "width": 30.0001,
+    "height": 22.0
+  },
+  "display:imgLock": {
+    "file": "d08c4e9f-76ee-4d65-88d6-e7942968d41f.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "display:imgLights": {
+    "file": "df61bcc8-e007-4354-86ec-726220d6eb84.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "display:imgQuickControls": {
+    "file": "844dfa93-8b45-4430-9b2f-0fec1d425254.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "display:imgSettingsBg": {
+    "file": "3d50d640-6979-4db4-9dc5-38000725559a.svg",
+    "width": 808.0,
+    "height": 1128.0
+  },
+  "display:imgBrightness": {
+    "file": "763ef17c-3f29-4cc3-8ed8-bcac9e044f3d.svg",
+    "width": 48.0,
+    "height": 48.0
+  },
+  "display:imgExit": {
+    "file": "edbd6d1e-9b52-4484-9686-39fb73283260.svg",
+    "width": 48.0,
+    "height": 48.0
+  }
+}

@@ -290,3 +290,5 @@ Latest chat fix: [2.8.0-dev.51](<product/releases/2.8.0-dev.51/PRD.md) - [tasks]
 
 
 本轮进行中：用户20场景single/team对照，固定MiniMax-M3和源码，各场景两种模式首次结果分别留档。规程与进度见[dev.68验收](product/releases/2.8.0-dev.68/ACCEPTANCE.md)；当前不预告成功率。
+
+运行资源交付补充（2026-10-10，版本仍dev.107）：源码仓库补齐本地图片、字体和SU7资源；按最新指示排除语音识别模型；取得方式见[快速开始](developer/QUICKSTART.md)，[资源清单](developer/RUNTIME_ASSETS.json)登记路径/字节/SHA-256。用途为可复核的资产交付清单，主依据为资源原文件与旁置来源声明；不代表日常5175或产品正式发布。

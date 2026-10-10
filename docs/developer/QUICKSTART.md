@@ -108,3 +108,17 @@ npm run build
 两个独立终端分别 Ctrl+C 停止各自服务。不要因为端口被占用就批量杀死 Python 或 Node 进程。
 
 迁移电脑时重新建立虚拟环境和 Node 依赖；保存项目、状态、模型及服务配置。数据位置见[配置与接入](CONFIGURATION.md)。Git 提交不自动包含业务数据、被忽略的运行配置和模型，也不能代表全部未提交修改已经备份。
+
+## 从代码仓取得运行资源（2026-10-10，dev.107交付补充）
+
+[Cyber-Edge](https://github.com/XAI-CyberSpark/Cyber-Edge) 的源码快照补齐Studio/HMI图片、站点图标、Maple的191个WOFF2文件、SU7 GLB/HDR和开发者页预览图，使用原路径、普通Git分发。SHA-256与字节数见[运行资源清单](RUNTIME_ASSETS.json)，它是交付清单，来源与许可证以资源目录旁的文件为主依据。已有克隆在仓库根目录执行：
+
+```bash
+git pull --ff-only
+```
+
+按用户最新要求，不上传语音识别模型权重及配套资源，也不新增LFS要求。需要本地ASR时，继续使用原有 `scripts/download_asr_model.py` 和 `backend/requirements-asr.txt` 自行准备；本轮未改这些脚本或依赖。语音播报由浏览器调用本机已安装的中文语音（`localService=true`），没有独立TTS音色包可上传；本机没有中文语音时须先在操作系统安装。场景中的示例歌曲名是展示数据，不代表已接入音乐音源。
+
+Maple保留OFL及主题MIT声明。SU7来自用户指定release-hmi素材，独立分发授权仍未从原包确认，补传不构成新的许可声明，详见[原来源记录](../../studio/public/models/su7/SOURCE.md)。本轮不上传个人录音、日常项目、密钥、依赖目录、构建副本或多GB本地模型。
+
+本节记录资产交付方式，不代表全新机器安装或稳定编排验收。具体检查范围见[dev.107交付验收](../product/releases/2.8.0-dev.107/ACCEPTANCE.md#运行资源补传2026-10-10)。

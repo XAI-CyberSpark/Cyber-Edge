@@ -1,0 +1,2875 @@
+{
+  "version": "2.8.0-dev.107",
+  "maintained": "2026-10-10",
+  "purpose": "Runtime images, car geometry/textures and fonts; excludes speech-recognition weights, user data, caches, build output and private credentials. Source/licensing notes remain beside each asset.",
+  "files": [
+    {
+      "path": "studio/public/docs/studio-preview.jpg",
+      "bytes": 92767,
+      "sha256": "7cf18cece83d2cce82c9f40d8830b92f8e95841893485d555edd5812fe0dabd7",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/favicon-figma-110-147-16.png",
+      "bytes": 483,
+      "sha256": "ebaecbc6021656c1ad5f3b89d311eb13a56e10843d8a9c318b15611a7f7bd16b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/favicon-figma-110-147-32.png",
+      "bytes": 937,
+      "sha256": "9854f4ef61a40462c0ff5b7b29e86fb742a0ac53d16bbaabe4cb699053c08fcf",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/favicon-figma-110-147-48.png",
+      "bytes": 1427,
+      "sha256": "1dc1d4ccc28d7889d548c0a063b8d716fea7c5d9fa46ed1a61446b7b8e0a8493",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/favicon-figma-110-147-compact-16.png",
+      "bytes": 542,
+      "sha256": "d6bebed67aaa975750f4661e94b2dc4bfa0c8de3e6fe2ba3628754bc8a7328d2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/favicon-figma-110-147-compact-32.png",
+      "bytes": 1067,
+      "sha256": "e81160c665c38636478cae2053484a3ec16e50dbb4ad627042bc8447593aedf3",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/favicon-figma-110-147-compact-48.png",
+      "bytes": 1652,
+      "sha256": "820f67ad30d94251a5b040a03ab81c5b7e68170a99417fb73cc895902060dfad",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/favicon-source.json",
+      "bytes": 1087,
+      "sha256": "eac3d5b24b456a3268290ab0cee900606d1afccc8891ada8134da21956157c31",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/favicon.ico",
+      "bytes": 3315,
+      "sha256": "1d76acd01a3f293668b9508131b31444b64b8e1430b8d370fa3c1a47e14f6cc6",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/002566a54bf010e0.woff2",
+      "bytes": 47792,
+      "sha256": "aca13cbfc8b9077ce6bcc3f12a4020c59ce25e00f5151f54b5ae9c57edcb7756",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/012e6c62cbb57d91.woff2",
+      "bytes": 114936,
+      "sha256": "2b36a5eb7c43aa3a9867bfa76a48705bdf2d46a98128f5aa6fccd00457159982",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/03499e3e475acdf1.woff2",
+      "bytes": 63240,
+      "sha256": "25bd643ec8c523a37f7bebd5fcc122a85c96b69b2a86280692fcbfa5de80ccdd",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/05f3dcfa707c75c4.woff2",
+      "bytes": 83156,
+      "sha256": "9b34448a9298382d710cc6597809e39ae1d5e9481947cfab56768180f7194410",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/06c76d71fd42b020.woff2",
+      "bytes": 5580,
+      "sha256": "f00febf384d4dc199ebe57194bad17d91572df9fbb40634a6f1aa6d5e763c467",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/06e6b935f9333141.woff2",
+      "bytes": 50940,
+      "sha256": "5562f39a3e0068e8e6a189b133bb060a08ee57d5b2a4df4ce975d4805fc7bfbf",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/097fac6875f76e5b.woff2",
+      "bytes": 88976,
+      "sha256": "4c84c2afd3e8fd18b539ff0e52b7beee5fa7aea00f58455378274c7575d9143e",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/0a01958bf8ed55cd.woff2",
+      "bytes": 73168,
+      "sha256": "835a172c253968335445cf82a4d7e71a40a3f8c4ab75b6a352810d282de1db41",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/0b0ae6bd602a4980.woff2",
+      "bytes": 101548,
+      "sha256": "5055f0e62360c33c4c965f21cc4559313eedcbb45414750c03a844e6297136e0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/0f66d29a792a7eb6.woff2",
+      "bytes": 93092,
+      "sha256": "06e5457c8ae6a6eafe141721f6c7ded1ea4c734731923dc9ae8ca5659e10772d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/0fdc1ccd4fd675da.woff2",
+      "bytes": 54872,
+      "sha256": "ed55cb3199983997b78b97772bd85bf32b3339bdd448c802e0e69920b6a13f1f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/16b670842e6c9733.woff2",
+      "bytes": 88536,
+      "sha256": "d4f8f19cf72a287a53723400a9eed3ce9f0356ee6b81bf5b9ae427b277853dcb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/173722868defd862.woff2",
+      "bytes": 23364,
+      "sha256": "adcb2924d11f5a9ee2685819421fd6d6e63018e7fb0edea7ef641b53b00f13d6",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/180b80d4baf64cd9.woff2",
+      "bytes": 10932,
+      "sha256": "ddda3b1c756ef9fafd765c60f5ffc19cfc78949e07e3e8ee3d72dfdaffb074c9",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/1850b49a83570e38.woff2",
+      "bytes": 92560,
+      "sha256": "be8a000c125a384f11bf7dd11737f0b38f624a2b406ed9b0bed85e30d7ff3371",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/19d3d1df07571e55.woff2",
+      "bytes": 100256,
+      "sha256": "17b14f20c4a26216211d4d13415b177d304341d12af23dca0b4ba26afd97af94",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/1b1f76930c09e519.woff2",
+      "bytes": 10384,
+      "sha256": "1ff198ab7a842ce6fd318297925e47d3731f109e448a70301b6a21a26fa45d98",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/1de36f98c2fb4663.woff2",
+      "bytes": 83568,
+      "sha256": "55c114db355058c0bdb596c355a92e73c71381d3e0200296d4a7d91ab2b39449",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/1f07a5182d0f6707.woff2",
+      "bytes": 99312,
+      "sha256": "64e72e5d76dcf8dfc9fc656e050e5f32fcbbd533d75e429c61bcb6bd617db2f8",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/1f605431cd1eab53.woff2",
+      "bytes": 53352,
+      "sha256": "6eb5a838fee44d07d2fe5732aa59ec93a8604d73d9cbd605a67111528fb12a54",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/1fa808a5fb01ff1e.woff2",
+      "bytes": 40188,
+      "sha256": "8bd9e5452c7c3e083db8d4dde8ab15b6afcacf29032a07a8db03d64fa43479a5",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/1faa6f99c83d5946.woff2",
+      "bytes": 46848,
+      "sha256": "439d92ca79a2b009e003d90d7a433ee8476fe88bac4283de4df53fcca4a3cae2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/21da507ae571f832.woff2",
+      "bytes": 38816,
+      "sha256": "e957c946958c57789c4ba4ed0bb3297f63da7ac14652cac9b6a1fa435e01c96b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/2250bd678432f05a.woff2",
+      "bytes": 98940,
+      "sha256": "bc58c83d47def46b311afa98c0a634a9fce82626ecb8ab32ad6f0865e007e87c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/237a818c1b603a63.woff2",
+      "bytes": 24120,
+      "sha256": "f9629d40be684ca741fe48621c5b470cf50a1bcb92797f9169be185df1347698",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/24da1ab797624b89.woff2",
+      "bytes": 20924,
+      "sha256": "a69f2c8de766989f55d71080dac8f42c3514ddbe9d0177bdc999398e0f645d49",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/277d8e0430ef9608.woff2",
+      "bytes": 11372,
+      "sha256": "258a3a9b161cfffa239d98916df6218dd2721359c6c4e8b80e7d82640cc090a8",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/2822e99af785195b.woff2",
+      "bytes": 91900,
+      "sha256": "7ffb1151dcd0742b8f906ad126964be34d1f8fac368228718ece9ae693a91537",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/28c4dbb6806887b7.woff2",
+      "bytes": 58536,
+      "sha256": "80afee970cf5c79a6060300cb78b2401b02d780b71902420f2994b98c8c94968",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/2a30db4278a6675d.woff2",
+      "bytes": 42916,
+      "sha256": "2a2a7b4af88ab852f820ce269d19154e048f5db76521f8e2209d66cf22821c5b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/2b1daf59aace4383.woff2",
+      "bytes": 56904,
+      "sha256": "595e8d1711d26b2d0bdc097f31d66d7d4daf1ab3193d74a52ded8cde7983dcf0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/2bb754f5c9be7ee5.woff2",
+      "bytes": 98364,
+      "sha256": "4ac59c4e7759f3369965358445033736d61d8b12b97607318edcd8482010faa5",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/2d827e13a6c15118.woff2",
+      "bytes": 55444,
+      "sha256": "4ebdf359c0a4c8ad5b0858c5b8d6b255edeec5d5a53122f046c272b4c52ebff0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/2ec1dd4fa17c22f3.woff2",
+      "bytes": 101892,
+      "sha256": "b8ef9824727c67a2e42e427b8af31a650f4de527164be3915cbbec24d217b4b7",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/2f13e3573a1f13cd.woff2",
+      "bytes": 56424,
+      "sha256": "c96b197d2d3aa380b463aa84509d916b23ec634f3340f74956f19557d9484ef7",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/2f4c0fd4e50c6f37.woff2",
+      "bytes": 64716,
+      "sha256": "0e827fa780da19bb5bcfe28cb53d3e2268c7f17318a1de0b6dc9cfca93e2bd70",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/31221959124c3f86.woff2",
+      "bytes": 74940,
+      "sha256": "fb8d6ff8a9722a7670afce873fcd1816ad156ba8383f1159754d92d7700b4ad7",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/31997323a9d8bf0d.woff2",
+      "bytes": 59908,
+      "sha256": "39e7d2a1b164fd934ac4d6b447138b77e00ef2dce38449db265f65c4fb928695",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/34151e82f474f368.woff2",
+      "bytes": 23152,
+      "sha256": "26cc1085b9b53cd76f225b6f6c67ea1352575ca82f1ce0b06d9dcff0c616ff62",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/346512eca84e92b4.woff2",
+      "bytes": 99856,
+      "sha256": "24687377e3b092f7433c7f9468ad1a07b3d1100cd9c3651b6ca5c64b5a561baf",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/34a5b88ee47f8cc1.woff2",
+      "bytes": 71016,
+      "sha256": "a0808acd1a455ea8ef814add75d3d2784a5c23d53dcfc8d0e2704f7f784ce09f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/35c4c13d0ba339c4.woff2",
+      "bytes": 56608,
+      "sha256": "062a68b0461f92ad03e1c13f02731b1158c085eaa0c232080df04f129dbd2223",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/365779a2356af3a9.woff2",
+      "bytes": 79316,
+      "sha256": "35ebf51d16b89977f6e0c93bcdb44cc991be23f6c1cb682073bf16bab373957d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/397a5642a70d729e.woff2",
+      "bytes": 74724,
+      "sha256": "11377ddce435a703d4efdb9c5e30bb305bc8f55127d1ad1ef1310ecd2e7f6228",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/3f4db4f97db9b9c6.woff2",
+      "bytes": 113496,
+      "sha256": "050964a2479848c6265ecebc351f76f3c7cd0aaafed8424f7e744ebf294feaf9",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/3fba4a6c6acfa917.woff2",
+      "bytes": 8252,
+      "sha256": "db3a24b205d830b3cf310aeeb0f9181ea7492cad194894c4d47bb9b8e81ef593",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/40a13a4efae04aba.woff2",
+      "bytes": 97604,
+      "sha256": "9357cc4039ffe41c78f51f0bdee3e82a2da02552ef03375244e982515185c297",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/413258f65d5dacf0.woff2",
+      "bytes": 66504,
+      "sha256": "d250eabf51a0f5bbe74a159962e5f687dfef20e70a622c5e1fe5ead732173672",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/4153bc188e410169.woff2",
+      "bytes": 34248,
+      "sha256": "d6f7fc886d002ad8c08adb7e649eaa686e74d73a37dc5a96fb2962320d6bc415",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/430832424f072de8.woff2",
+      "bytes": 24928,
+      "sha256": "a427c06aa1a2f22a2042a38677993a20a80d1cacc24eab710a07d6d3fec4115b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/43576401afb619fb.woff2",
+      "bytes": 17868,
+      "sha256": "9f078e8ed9401fdc5b330ecb23d12b52f3ece060abc288559ffb219e4629ada0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/48e14fe4939b0b20.woff2",
+      "bytes": 36584,
+      "sha256": "9440051be994458a3e32674e1bab20a2ce88e20cca5907a3f75aca4e489b99e2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/4b79461e75c40902.woff2",
+      "bytes": 36420,
+      "sha256": "1d86306a854e785ead0e16bca587b56aca013a5d9fe853a3879ab6c922c49783",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/4b79c66484ce25e8.woff2",
+      "bytes": 8304,
+      "sha256": "2875170e0c1391476d276804cea8f1cf6f29a25067ae2d3c2562e224c796d7e3",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/4b837aa43c5ff2c5.woff2",
+      "bytes": 91896,
+      "sha256": "167f868d77c39780fb8590677f504fb4f9ace47d058a9196f38e43c413b3f6d8",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/4bbf9823d1201fe8.woff2",
+      "bytes": 96084,
+      "sha256": "ebf275307523d0a2070dfded0030aaff407cd2925820c2c196161ca827de219f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/4c97efdb2939ac83.woff2",
+      "bytes": 56056,
+      "sha256": "3f518d57874b8346a81d5c7ffd9c3dc6002bf95e5807883aefa3967a50bd48a5",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/4ce9b48308ee2fc8.woff2",
+      "bytes": 30472,
+      "sha256": "88d775fb1e911b0f379205fdbcf588768b676d599a3cee343c721b41bdac5d00",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/503fc92d6586bd00.woff2",
+      "bytes": 57012,
+      "sha256": "ee9871e077fa579c2304b75d32cfca18e36376c8b47df32d1e7686bbdad56f1a",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/51e32574ea576d67.woff2",
+      "bytes": 114880,
+      "sha256": "c64db8d7c69993c9512c6d3e5ccae23138ab9d08306c27d51e8b5cde422e7c4a",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/526bbe7df168a5ca.woff2",
+      "bytes": 55340,
+      "sha256": "54f29753828d68c84bbf7093c40e60bf7fb370f39c4b7588c17cbfd4ae218a81",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/54a9f39087a5fba6.woff2",
+      "bytes": 90704,
+      "sha256": "90781aa287b37f0c3328c24d76743ce5dcde9e8a6564225ced0855b6d8d0b14b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/57099ff2ed98ccad.woff2",
+      "bytes": 23388,
+      "sha256": "e39b069eda0635fa2e662ba2f4678e0e64d0ddf8aab7c2fdc854d3f6dedb148d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/571afe1a711614fa.woff2",
+      "bytes": 81388,
+      "sha256": "618b912014e7f5d4ec385128fb9770bc1f7f3ab3c21b9d7d6eb867f5f35af454",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/576192fcd3c6909d.woff2",
+      "bytes": 10460,
+      "sha256": "3faef39e20a2b2408bef2610693a3f21993d7a00b6725ed4fd76d292146fc37c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/57c68f3c3e4f136c.woff2",
+      "bytes": 90560,
+      "sha256": "077e720645c6e5ae81964962700376204e2292fcf14f55bfbb5ca355ce2dc0c6",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/57e25702035fcbe5.woff2",
+      "bytes": 77172,
+      "sha256": "a1c47bb81eb7946ff9459ce180e58994c821872213992704b716b8d33c34aa4b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/59a2c2f72bb18db1.woff2",
+      "bytes": 60164,
+      "sha256": "f8c7156f8c9896fcbede34775e8ca4af738cad959d2826140b90fdd47f95af8d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/5a34192358d3d4c6.woff2",
+      "bytes": 36628,
+      "sha256": "d446f9f7232fb1c505d2c73f55643c1c751976f1e53420d629619511e3da1476",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/5c0368786ff74ea3.woff2",
+      "bytes": 65492,
+      "sha256": "a307205cada9208fc1ecd3a203869e811c0106faf75e3163a900f3761a7f71ed",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/5d443c8cd62a97dd.woff2",
+      "bytes": 22628,
+      "sha256": "bdbe084d0cc5e9040a477cf0dacdf5c6918857dd50c6175f565fe45f873e0659",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/5d7214d722b7c108.woff2",
+      "bytes": 38792,
+      "sha256": "685a08464e524e769a40442a41a16d04713b52af9f912eddec665e97776deaa1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/5d7b575e69f68f51.woff2",
+      "bytes": 68716,
+      "sha256": "bd21825e0845be3d0816f7d7426a7f717cd2d7776845709f46cb8173d703ad8b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/5dc69aa5e3db0819.woff2",
+      "bytes": 93676,
+      "sha256": "ffafac14579ae426313d46f8e10a7a7110cbe40f2223cebfed90fa2220302c12",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/5fba1c0d5957c49d.woff2",
+      "bytes": 71344,
+      "sha256": "252a47a0273e4bbe09ee4599db57a1a410cbbf57acf05a093ed6e39c32620b40",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/5fc38dec0d098e87.woff2",
+      "bytes": 25800,
+      "sha256": "afb5e227248d38dfa84afe7834466a82e0820a6e84aec989f43ba5174cdde568",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/62312380f1508d96.woff2",
+      "bytes": 24076,
+      "sha256": "36eb37ca903b2baf9db1c21df4f2bcf0e907c428aa7d633462c36f6bbdfff437",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/62dac0d293830fe9.woff2",
+      "bytes": 21264,
+      "sha256": "6192576a6929b224504bb4b1ba8fc36e7f263b943bedf2838cb30c48f21bdcaf",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/64b17961a487317a.woff2",
+      "bytes": 83012,
+      "sha256": "116b716e540544dc9fc122931917b46c7f7b486b255c8a93cab34518e4c82a77",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/65b05a614c5c93d4.woff2",
+      "bytes": 7104,
+      "sha256": "81b4002a39a2fbda59cccb93b5cf3f474579157c57aa3bc3ad61acf60537a103",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/69ad2600a20d698b.woff2",
+      "bytes": 29584,
+      "sha256": "342717b3c5cdb6acdf5125eb65ef36ec0689f80ec4057f2881957e5b33e8c54c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/6b304a2c37d38e6b.woff2",
+      "bytes": 18696,
+      "sha256": "d964de9739dc356878a07a125757c23f11d71747c5c3345c44a2e43d8353db17",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/7187f53f004f4164.woff2",
+      "bytes": 77212,
+      "sha256": "f4a47a0b64b6b2405bd4ac69d856d647e5ae9ea9f9ee963f8b0089d056854e51",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/7538de9575566d8d.woff2",
+      "bytes": 27644,
+      "sha256": "eed25d2c73f663e16bc27392de089116a3affba50adc2149e64960bf7d0d38e1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/7661bab6ad5d2f74.woff2",
+      "bytes": 29032,
+      "sha256": "ca312047ed3af5ba9a12f4af9c1cd96d72934250773f97379e61b2bf3f479c84",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/7758845d909c85a8.woff2",
+      "bytes": 64304,
+      "sha256": "4b8b84c7ecf9789521e44e0643c67ee6cac38d0f5cdf0ab0f820a4f56ff51aa0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/777d8a5aff0133c5.woff2",
+      "bytes": 10816,
+      "sha256": "c2bf0207f69d89e2987b1339308f79adb6175391cebdaecc72786823be2c3bc7",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/77bab500a9124fe6.woff2",
+      "bytes": 59588,
+      "sha256": "99311a840ba683149f33776b69c0290478d688d1e089e810b37d06805fa8524e",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/7fcbb01a300bf293.woff2",
+      "bytes": 97376,
+      "sha256": "50ae1dc062965979c6dd28cb030d6eb14fa0979db56cb82933d61372b0f4e69a",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/8186330f05c82aff.woff2",
+      "bytes": 5312,
+      "sha256": "c258f2f792e07ea7599c02ececa5779868c5df6fe1c681bf32c1a8ff9fbb8c00",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/820e2e68c349c4f2.woff2",
+      "bytes": 5716,
+      "sha256": "31bbd697fb5a734f799b990a3f06c91d49cae332d43545698ed5f3260d9b025c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/843d2635133a702a.woff2",
+      "bytes": 50384,
+      "sha256": "1023a74fb272bbf5515c3419e2936bcb36af9e1b6e715aa9e4163fbb577f5e29",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/85fb31d6b7af8c22.woff2",
+      "bytes": 64012,
+      "sha256": "d2876349c841224de111a47451c88df6fb715f4afe5527ce34bc3d4cc2e8f52c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/86533a5b138bcd4f.woff2",
+      "bytes": 18680,
+      "sha256": "be02a372d211e5b7759eb4292e09bcf24ffaa4b2c06fc0a6b8d93abeee0c2d41",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/86f32fd89c3a8967.woff2",
+      "bytes": 21588,
+      "sha256": "37f616a4014288ab3767573fff698288676c8c89fc60b7f344a2bdb3ce922616",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/8768a39f544a3c9e.woff2",
+      "bytes": 65260,
+      "sha256": "02c661940bb9923d89ce68c2522ea561a88a558b51ce5ef20acea1727dd0a8d5",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/8ba7144bd796cbc0.woff2",
+      "bytes": 18648,
+      "sha256": "685c4333c2189df7f5e908440e9b73e77d53faae46450ec1dd26627fb5fcc9bf",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/8c3baa43c43eeb6e.woff2",
+      "bytes": 58000,
+      "sha256": "0ce29923672f35e3df8646d3f45c33ac1e1efb141fd430113be61fd958135984",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/8ddd41c2992c6f79.woff2",
+      "bytes": 84312,
+      "sha256": "0ba60a2ff7e1cb816178edb813fbada26703585f92f731862f0695dc5947b099",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/8e50f6cc6159eecf.woff2",
+      "bytes": 43808,
+      "sha256": "0c370278fecc52574542b11f8f022adc32d3560a4de9848efeff8b997b7c0f93",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/90da552c82432528.woff2",
+      "bytes": 20636,
+      "sha256": "cff17b284cfba8a26989bbfcb6ec616d2849ebf9b7a20fdf52f53187bf90c1e7",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/923876efc7e84672.woff2",
+      "bytes": 65584,
+      "sha256": "eda6a35d7b8fa414bebb7abd1f7ba6b3d4020ddf483df7eb3d40cfb910d1015b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/93807c8ff137ac76.woff2",
+      "bytes": 8292,
+      "sha256": "061e6e278f2314fc303c7a5b209dbab82879d5e828d0ba2d238237773e354f0b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/9680ccc62f683b93.woff2",
+      "bytes": 125076,
+      "sha256": "70ba3067658e47a297c7cc7c895056355c29c83d69104738e3d20bbe79345c34",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/9682be23ae2e1ac2.woff2",
+      "bytes": 9416,
+      "sha256": "33eacef0c008e8ed0454b3e132aa49aeb0d9ec08034570293bb38909410e4720",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/98775d293bf3f341.woff2",
+      "bytes": 81528,
+      "sha256": "94734bceed4293e161215c3af500faeee50d69388ef532f5775ef328718d864b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/998c747674abc4dc.woff2",
+      "bytes": 23868,
+      "sha256": "2005cf165a51f9a34bc7efcc727c1a745117a95286033e692a70e202ba12c619",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/9a17678917b4bd27.woff2",
+      "bytes": 9548,
+      "sha256": "1d01e24f492f8650e3396e8e9af3eea47ce21ac3f46f6c5252ceb56f435b4344",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/9a314f9a37a4a3d8.woff2",
+      "bytes": 72524,
+      "sha256": "5c14ff08955e59c94a54096f193c38cd78de6e0acdcdaece148364279db96277",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/9a31d4e563a1f697.woff2",
+      "bytes": 59840,
+      "sha256": "021ea10b52b1696056a6aa9a2414c8d571654be640befd4cefc42dffec7d7b68",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/9aa40d90dfc9123c.woff2",
+      "bytes": 59840,
+      "sha256": "d6305dca1550cd237c1d305e75d1a017e8ef560b833879303843b7a61d609bc7",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/9def3367064ec8fd.woff2",
+      "bytes": 21688,
+      "sha256": "7b1be9b543527fbbcd059c108bd179e1997af8f4a258b28f3ddcca192f2bf6c1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/9df196b70745d3ba.woff2",
+      "bytes": 6976,
+      "sha256": "23f6886539807f728b91c3aac383527becdf30f1ba0e55b5327861437b281bbf",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/9f0ff561882d70a2.woff2",
+      "bytes": 60928,
+      "sha256": "603a6efd5431f1f2e86f631dba3b02129902cfcb27f414e9f93d0538a5463201",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/MAPLE-THEME-LICENSE",
+      "bytes": 1069,
+      "sha256": "d789c9ed4bba63b03e8f4c1f31087cf1aace25278737de9b0271141235738563",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/OFL.txt",
+      "bytes": 4406,
+      "sha256": "cdb01cb2c0ac2d618ad3fc082275cf3cbe6145a58d558709ec083ce69c702cf0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/README.md",
+      "bytes": 897,
+      "sha256": "cb7e1bd4b6318a568a5382a41824900faa3e87d63d7c745bee33852e19da1a5f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/SHA256.json",
+      "bytes": 18339,
+      "sha256": "729ddc0ae379505c22736cf150c3e43a8979578f4769e28cd8c49a0358d609f6",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/a0c569e853505c3b.woff2",
+      "bytes": 75516,
+      "sha256": "7e464967ffad41dc1c316ce74f28f40f949be527d6926e29dca3a34e7849d31f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/a2a8343111c7c503.woff2",
+      "bytes": 10208,
+      "sha256": "32488641f3712130e3699bf0b8cc23580ca8b106477cea1b1ab870609ce928bf",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/a2d4c7829e80cc6b.woff2",
+      "bytes": 38716,
+      "sha256": "40f2edcf5e988ea6696d8dc1d7e4e1bb2a791578157fdde857b097ea09cf1ed0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/a498e0be3f83a865.woff2",
+      "bytes": 61580,
+      "sha256": "9b00148be7d6c05fc7e066f492616312529ebbd25b7a3658fb8e355e4af0c926",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/a5f79fb504bcafb8.woff2",
+      "bytes": 7040,
+      "sha256": "1f10a4ff94afb9c623e88da122227d999a8646d06a5e1a9ed43d2f9d7350294f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/a7e31986f7845f37.woff2",
+      "bytes": 45708,
+      "sha256": "d5828527a2bf2881655f75fe5e9edcef1d8e32d6c26c4c4cb34017833bd9a502",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/aab143435cb7ceb5.woff2",
+      "bytes": 36996,
+      "sha256": "921173cd5ccee813a252f38be98d1e3c5d5488c82cfb92f1dc09059167a0a148",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/ab31fbb37d0e386f.woff2",
+      "bytes": 8232,
+      "sha256": "58c9dc90c6aaf6cf69fc784c6382b99944a45061c5ae5eaeb0d86d5a1ed55c08",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/ab78b1e6e06af0ed.woff2",
+      "bytes": 26068,
+      "sha256": "a87f5012fd87c76aa5c91e526c239ef527165d08a730ab71da718deaba7ad955",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/abe1d5cefcd4f069.woff2",
+      "bytes": 22104,
+      "sha256": "92ef6f3f196305e4306283e7f161a89b2e6b0213a41c42a5b96a4dda40c8cd5d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/ac829522bc617fb6.woff2",
+      "bytes": 47616,
+      "sha256": "afa42eb05c2196b1706901665412223bca98e7c2c646601095990afb238b3f08",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/ad0700202f76d24c.woff2",
+      "bytes": 103816,
+      "sha256": "45179b69b092d80df29eea81b0b80219adbec885fbe7ce2d7031326adac04116",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/aec70d11fd255f36.woff2",
+      "bytes": 106500,
+      "sha256": "e40a167bff3a980fdbd9de80c44570f0a4a1d181e21ae8b3338ac84827179098",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/aed83dc789d140e0.woff2",
+      "bytes": 45352,
+      "sha256": "c408ea98a46dd6bcf8598f08c78527dc34ffec7f1bce69b7eb23b8a70e20439a",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/b29a9498dcdec987.woff2",
+      "bytes": 107304,
+      "sha256": "f472e011703457b2a00e15d4b7a5bb865d12e7727b6641904005b8a095bcb1e3",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/b6207707b7cc33c9.woff2",
+      "bytes": 55232,
+      "sha256": "db215175e8dcaf6865c4307a611d4ff90e00ee5b839b9612a3c7657eef2b0e2e",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/b71159d902d877d2.woff2",
+      "bytes": 74452,
+      "sha256": "e3d9f6aa3bde7d8fa0b35450e05d2064b93595d931c39140016012addc305591",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/b741e3f7df62ad24.woff2",
+      "bytes": 9220,
+      "sha256": "48058e8a63b527373546c2b487fc6112f4e8d72d601b4baa59ff3820529e0fa1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/b7c9deaef991c029.woff2",
+      "bytes": 51008,
+      "sha256": "adf28bba296492e1e3831300916769adcac1c2eefd6eec1274223e02b49824a7",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/b8d7f942a6336b87.woff2",
+      "bytes": 54824,
+      "sha256": "da59b94bd086cb25d5de9ae15703ba172b048e399414b2a5ee6ae7bbcdd74848",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/ba57f86e7efd737a.woff2",
+      "bytes": 110704,
+      "sha256": "38d4160af8620eeb0853bf8da979202aac397055218e37794a0a601d74a88bf3",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/ba772e16d774ec8d.woff2",
+      "bytes": 26544,
+      "sha256": "a10f3ca1935f6796a622da21a665804880e77a893dccdf29d3cac514a28d113c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/be4d05eaa860fbf6.woff2",
+      "bytes": 24692,
+      "sha256": "b2cc0981a24c0485911e9965223d45d237564ac04e70c40fd6d044caec34d798",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/c3e641bed2fd5f08.woff2",
+      "bytes": 62648,
+      "sha256": "e98ec1f0de5359d2f4424bb8bbbac04e3598d2c256751845536d3617f28fdcf8",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/c75d627258cb186c.woff2",
+      "bytes": 101936,
+      "sha256": "253953b80feec634c82d52a5b75ff77be6d178daa6d19f819c73e5538c48f7e3",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/c862dc6d3f9848c0.woff2",
+      "bytes": 77544,
+      "sha256": "dc659d7c66ddca11210fb0802b9c5cf1deeee2e0ac2ed6df7e4477c53d26d4e6",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/ca09b3c907924561.woff2",
+      "bytes": 119444,
+      "sha256": "e72961c3bea98bd60606b4b600875804fa3312010ffb584171d9a3ccc6a760ed",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/ca2c3243d3478242.woff2",
+      "bytes": 72896,
+      "sha256": "863d6b5d2011b0537ee5d3c6b4787c5d05f92b2e43b6d07523a8d57f62368b9f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/caf769c3e6a9e9f4.woff2",
+      "bytes": 84280,
+      "sha256": "308348a5114ceb67e87b6ec86fb978fdba71acb216eddf73d823fcb7c7655748",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/cbcb7df3861821c3.woff2",
+      "bytes": 19296,
+      "sha256": "9e668127cb5e85f69bd1f5dab36ff19564a2ec32b4cf210b717b70d5707d301a",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/cc8b33dc96fc7b38.woff2",
+      "bytes": 64036,
+      "sha256": "6b87ded88ea0a6d73ca039508048d9239b4cb0452d7ea3e311eb532abd87011b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/ce3f0e5793a1a342.woff2",
+      "bytes": 105996,
+      "sha256": "637b2dd9bbb19e669c3b539ae53707c325eaa2b2367a5dab3aa2ac7d6ddc006c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/d61b6c8916ea652a.woff2",
+      "bytes": 24416,
+      "sha256": "c0cd1555f5b672163001dd849010daee7f96f1ad8c4e4f56323eea11d6704741",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/d66c36b222c828f2.woff2",
+      "bytes": 87780,
+      "sha256": "bd10a91de500b59be5d0cc508b21107619aa697c780fbfbf050f67e187af6ae8",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/d670cfcb2aa1dc60.woff2",
+      "bytes": 111716,
+      "sha256": "2ea2fc70f1f90f8f8d5cd91a7ca429eedbe411837806846d64863405c3afb7e7",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/d7196cfe3fa671ab.woff2",
+      "bytes": 23756,
+      "sha256": "94c6a9246504b92410155892f0c6985767f17f2e30d11342944d30ceabfd54a8",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/d72039604a0fc862.woff2",
+      "bytes": 79496,
+      "sha256": "4578986115e08f17c336fcc2d05eb7b0e967f1d59f3df094177174b7e202cf18",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/da6a72008212b9c7.woff2",
+      "bytes": 39564,
+      "sha256": "ad083222b82b54f901d92794c0834b14304ca2883544e3bf91231901d96db753",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/dcac24e68d844e4e.woff2",
+      "bytes": 49792,
+      "sha256": "6b18edfdfcf30965989031135a44c9da74e45b7977d07e88df1e235531eb3000",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/dd633558f034c726.woff2",
+      "bytes": 80764,
+      "sha256": "b79204a435e14957626a32e7b23845efd7a981ddfdf3f66a11ad286b3e6aa8b1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/dd7992f78bd2052a.woff2",
+      "bytes": 100136,
+      "sha256": "e8baf6c78895151cd6e8f5ac92e77da5e3dead62fd183e346e8abb1bb5fbe13f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/df7dd12f47b280c7.woff2",
+      "bytes": 39656,
+      "sha256": "0a008ae10204bcc92cf3035168e06c086d08872ea4a6e10cceb07b127b9fa471",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/df90d7906563a6d4.woff2",
+      "bytes": 96720,
+      "sha256": "890ac4e4840f39ce5d589eff5f5ffacc6b2436dc052f04f798ca0855dddf83ac",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/dfe50755589c2178.woff2",
+      "bytes": 43132,
+      "sha256": "2d418569cf6c213af0af0e0aac6da4550a2d49546461737c7278ca0aa1f1e215",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/e0b92a2f4e3dad9e.woff2",
+      "bytes": 21892,
+      "sha256": "a77f1fcb75d5808b87515592836fc00d6226dd32bcafb4a010e11f725c5cc9ad",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/e0c3b1de56a8b215.woff2",
+      "bytes": 24256,
+      "sha256": "b2a73d49b263fd0908e2b2b212f28f824449c45f53a98381aef5602cabcaf9bc",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/e0eb3b24007879c2.woff2",
+      "bytes": 19872,
+      "sha256": "bcef156af93f529a162a9c2875a1aa054823dba7880eceafbabc7b4adccdf458",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/e10e946c62e58f5b.woff2",
+      "bytes": 57196,
+      "sha256": "63f01e337de364010a66ffa091fbd9a7a4a695db9fabd61106a3d341abb1985e",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/e2225a440e380380.woff2",
+      "bytes": 58756,
+      "sha256": "675398fa7ebf89f86918e04937c902ce4b778efe92960f24f11c3f8cefbfd86f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/e23c1958de246fc6.woff2",
+      "bytes": 89544,
+      "sha256": "dbb6673d3fcf38a7d586c851cfc0127e415fc82c109ea1e4adbdc3d2a8b2d818",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/e31adcde00c85239.woff2",
+      "bytes": 42728,
+      "sha256": "a6ee845fe5784bf75319bfde4dab5f5ff7044dff5f03998f6c6bcebb22493f94",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/e3250c3f0d7f777c.woff2",
+      "bytes": 17216,
+      "sha256": "a04e0900ccdf3176c308dca1f9878e5041c8d49aadf862cc82ef8958d240f81f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/e344f30b3f2ff986.woff2",
+      "bytes": 67504,
+      "sha256": "ff100c3ff007a9dc704b38af23074d080615b2319c1d28d3acad6cc0353a5617",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/e620f03310669bde.woff2",
+      "bytes": 20664,
+      "sha256": "47549384738c5cea2ac808684ad314b771fd00b1fd9dc1d3d6826ec32f724786",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/e68abf3f778c470c.woff2",
+      "bytes": 23892,
+      "sha256": "c95eb958ccedf64168422fdcf034e0d00ca2f2bc22ccb017344fded83d1393f1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/e8c25aa6c03973b7.woff2",
+      "bytes": 50884,
+      "sha256": "ee05101e2b69f5c61b70052536ba81a0253308e42adc5fa04a1b3decea987b12",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/ea3eb0f4e19ec067.woff2",
+      "bytes": 30736,
+      "sha256": "a0ad3e340abc124b21bce11c8bc54fbfcebf4b982bc1fe96ca8cbfa6fcd24852",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/eaf6626d9a349f49.woff2",
+      "bytes": 85324,
+      "sha256": "d04fd994e156eb9103be05d284e01cfcccd964a0b615a8daee1c50641c0631dd",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/eb901720b6f1b058.woff2",
+      "bytes": 89308,
+      "sha256": "fc0d63e566828ae06bf74e4eab9bf824ea015dff73e8837899ec7b43b460f5dc",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/ef268082ca8f2aa3.woff2",
+      "bytes": 102456,
+      "sha256": "7adaa5d078911a527a3610f1b58672f57ca448b2a1047faa9e6f75127d845ca9",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/efbf1af432691298.woff2",
+      "bytes": 39368,
+      "sha256": "5400105de6579a317d7c51699200f13660aede04250d9a6fd1022a3318132762",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/f01dacd84e682e0a.woff2",
+      "bytes": 84716,
+      "sha256": "422a0c6790859191c01e08f9cbda0ee47134ffffc55c30582c11a06041d87f4f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/f1c6b458b58912b8.woff2",
+      "bytes": 89624,
+      "sha256": "12776aa5bd8cacf81a7521cd9b6a8f8369ef6de78dd2e5326ff4b31a9317b7c6",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/f1ec6366bff77e82.woff2",
+      "bytes": 95100,
+      "sha256": "96a91af0a6b471181a1fe4e49acbf0c3f6466f7bee8ebd6f6962a59e08fb4f5e",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/f1f3bc5a72181c7a.woff2",
+      "bytes": 81208,
+      "sha256": "3750a815eee93fb40bdba9967b0222d8ed6ee54a980b946e9f233a9feed72807",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/f2b29b184456d912.woff2",
+      "bytes": 95084,
+      "sha256": "2a5e72d2a823887a4c904edb13c2c4342f8e45d4e295d1ed41d7eeaa190483c2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/f30a20289ea50beb.woff2",
+      "bytes": 12152,
+      "sha256": "c5428c4fb2c545b799bcd2a88873e952fe848af51cf0b273c268880810e9b228",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/f3fb156ab200ba32.woff2",
+      "bytes": 71588,
+      "sha256": "2286256a2db808a79c75214843b11971e83033239d5b5a2e18f12f9cd7f9aa0e",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/f56fcc615d45a595.woff2",
+      "bytes": 80304,
+      "sha256": "d6a75b1f7fa3d06e98a1d68db9199650543ea48754ae7e843316bacbd03f68f9",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/f6511fc8d310ebfb.woff2",
+      "bytes": 71876,
+      "sha256": "3d07e0ad8a318e9c2d9a33cac8117cb42d3a73500cd53c5aef40e7d7154c47a2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/f6a27df4ac210e8b.woff2",
+      "bytes": 33592,
+      "sha256": "ce9064029e3a2a2eb8d3114521ca411e1b0c14ae1fbf424a9fdab81a04202d90",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/f75b2aff66504ccc.woff2",
+      "bytes": 18392,
+      "sha256": "a179244437a2413675f4924ec2d8ec8f4ca963572d67773991d31a8f900b2804",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/f8fe3bd225b0d928.woff2",
+      "bytes": 48320,
+      "sha256": "500f8fd60dcafb327f43d13568ee31915b341781b09354a644a5c0de9911c424",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/fb41292c4f6e7ad4.woff2",
+      "bytes": 104352,
+      "sha256": "087de9523f367600e869555bec5b989a517990af815498892bb21588c1128dfd",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/fb89c7873a67b2db.woff2",
+      "bytes": 26968,
+      "sha256": "b7dcba428dc7916971b19484a8e8d631d64837d37e0c4420676673f9bddf2bf8",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/fc5165aff0c50e27.woff2",
+      "bytes": 56100,
+      "sha256": "8e419055fa089c18acc7dd89a88c56c864633f9017b02cd543328d8aa0cf54a8",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/fcbce318d3cb98b3.woff2",
+      "bytes": 77864,
+      "sha256": "33d21df28ee19d3e5b360fa0e743168d63f619f3ef18ae431aad759d0a655067",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/fonts/maple/maple.css",
+      "bytes": 146721,
+      "sha256": "e2ab78c73f7d8398fddb4c6ad8496c1287aa2ff3b622df332cebb2c86bee4399",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/assistant-figma/SOURCE.md",
+      "bytes": 612,
+      "sha256": "80a2b4261359ae12de696c036b2e7711cd1f059e4c5772a274927e03922dba46",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/assistant-figma/chevron.svg",
+      "bytes": 1250,
+      "sha256": "01c579c0d8b9d83c0231fed60a26cc6a513a933666c7c37f97c9ba53069db4a5",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/assistant-figma/panel-backdrop.svg",
+      "bytes": 1971,
+      "sha256": "c6e655d34fafdbca695a31c6a6019079f0d8a63eea9596aac1dea857d0ca66d1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/assistant-figma/response-background.png",
+      "bytes": 20315,
+      "sha256": "56590502477d79edb69d3bd88d0e514d0e612d4f3160785526172bd5627e95f4",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/assistant-figma/share.svg",
+      "bytes": 684,
+      "sha256": "5ab10e60c7e227a8ed76c71301470dd39460d4ab73c3650f885a8e1c24cce6ca",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/assistant-figma/thumb-down-main.svg",
+      "bytes": 526,
+      "sha256": "933dc7ad9c02ba34198f91546e18d6c13cd6072b5c7544288fc75ce272ae67d1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/assistant-figma/thumb-down-side.svg",
+      "bytes": 406,
+      "sha256": "b313337e96a8c9f9cf1a688b5b4738ab0d1fcbe4d4ee39da622d9a5af55cf670",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/assistant-figma/thumb-up.svg",
+      "bytes": 801,
+      "sha256": "881d33fcd954fb5c235193bf1ac56c20cb7f2a807ab2c6701a71dfab22178ae8",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/SOURCE.md",
+      "bytes": 274,
+      "sha256": "c9381bed8f6203b96470acaa15cdd4ebeb2504e41c6e2f45d794b0667b9c5489",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/album.png",
+      "bytes": 424639,
+      "sha256": "bc30dccc29a77d8e6a4e5d51e7f6e1dbe2afd2e298c01ebfa805ffb402b55abe",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/apps.svg",
+      "bytes": 1067,
+      "sha256": "9f086c2dab302c7b80754e15c2824864066aac9ed51f4c637386a4f7e7f52d86",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/connect.svg",
+      "bytes": 1552,
+      "sha256": "75e5e4928af5765095b54c24d7f124a7b5380f37dda72c888b5f7ec527053c46",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/defrost-front-air.svg",
+      "bytes": 4635,
+      "sha256": "45dcb04b7fe8cb69d93315f43843dd10564f624bb3e7968a852d5d84541d4e93",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/defrost-front-glass.svg",
+      "bytes": 1424,
+      "sha256": "8a66bcf78e91872684bbcf6d29ace38b4955fdc2740bc1a1dd08403deddc99c1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/defrost-rear.svg",
+      "bytes": 4851,
+      "sha256": "f6ee9405e52213ce85f23b34fcce275da7b32271ea9578666d3412ccee54230e",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/fan.svg",
+      "bytes": 2394,
+      "sha256": "41bccf95bbd4f13a01e2d05b466f4f2ae4992be7d0f9cdafd441485623563a78",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/home.svg",
+      "bytes": 321,
+      "sha256": "6577f3c7fe1439b3c70da04830dbbff6855750923df19d947cfca5c93e9c1c9c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/message.svg",
+      "bytes": 2556,
+      "sha256": "efab150194d66cef3a443c3c1584de345977d6eabdd91bfe0b104af697b0afc5",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/navigation.svg",
+      "bytes": 380,
+      "sha256": "044dc01326fe2572482a94b6742e008a2eda7ef78890cb9825ba6e439db20f66",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/temperature-arrow.svg",
+      "bytes": 330,
+      "sha256": "ee57872902a7e534c0b8deb60d09c34be5a8373d26f74ce03cbd977bfe5763f9",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/vehicle.svg",
+      "bytes": 5980,
+      "sha256": "4ff4b60ef737872608d4fcc89a3c1484954a2599a0674afe690b39248b08fc7c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/figma-chrome/wifi.svg",
+      "bytes": 1119,
+      "sha256": "0e6b60e07f6e5a6aaa3ef0c566f8f7469697e627dbf5bf6f6a1f4c7b37c5f5cb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/00652d4f-54da-430b-a2b2-0fa6ab313a25.svg",
+      "bytes": 1139,
+      "sha256": "2c8e0370de8578417a1d668bca01cf727d573d4c87cdea1a7741df797e590227",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/00d2f947-5914-4b32-82d8-3a5f36ef8f5a.png",
+      "bytes": 4650431,
+      "sha256": "a8cc7701d77194e8d39bb47e0ccd6867f58b4bbc2d08cb00103a53884bd04a05",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/030cbb53-0ed8-491d-a2b3-c967118cdd1a.svg",
+      "bytes": 985,
+      "sha256": "5653b5b574735e9f8efbad1811a49e18dd37a28f57d28dac83f945c4b983c07c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/0510b7fd-d68c-4d12-97ac-1e9c3b51108b.svg",
+      "bytes": 848,
+      "sha256": "49e7f8aaa161e3f88addc7bf2a0c369ca167fba046db360923c05632a1eff6ae",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/05ddb3c5-60e8-41ec-af35-712851bcf95e.svg",
+      "bytes": 609,
+      "sha256": "20500ac0debd34767d0a7b577e206ad9ef90d4dde38f1062a74de72dc43b0667",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/07814bd2-80bb-4676-b2a6-aa8895f3465d.svg",
+      "bytes": 450,
+      "sha256": "31403a2b0ea5d61a45bb267eab9344a2334569bbcf211e8e012a907dcf1e506d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/09f9e686-c74c-468e-ade1-d64418376595.png",
+      "bytes": 46062,
+      "sha256": "1ffa5199dad3cd4296fa091463ab89acfa0e9c1586684b6643085aa9cc88bba1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/0b73b8d4-1bf9-4db2-a6f2-11f4a31ea372.svg",
+      "bytes": 931,
+      "sha256": "3657b872f9434aa1dde6233c2de1a1a57704be054e8094b3d190edb272dbee62",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/0c0a454a-1652-4040-b7f9-03e29d12a296.svg",
+      "bytes": 2474,
+      "sha256": "27ce4d483ec4087a40bccc9e822b099445d3565dfecc397827949e9f8d46717a",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/0c32d3aa-c9f3-49a6-90fb-b73f00355298.svg",
+      "bytes": 821,
+      "sha256": "5ecbfe7de4e09cc8578bf57ddc470d6c1e94e3aa331702a92c0210360a99fdcb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/0c9bb7ac-e7cb-4226-98ba-99869cb6aafe.png",
+      "bytes": 2593,
+      "sha256": "4148360b8d79c2da0b449c921d4c1c619edb8bfa6f0cf7f080b21a0d3d4c60af",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/0d59b1ee-6e9e-416c-81c0-f2f57d072fef.svg",
+      "bytes": 409,
+      "sha256": "f8ca13bda1a9afdcc17d6617cbdce9d535b5bac4f9d9864718f3fd3963aabab0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/0e0aecf0-da96-470c-aa27-145041723ae1.svg",
+      "bytes": 409,
+      "sha256": "f8ca13bda1a9afdcc17d6617cbdce9d535b5bac4f9d9864718f3fd3963aabab0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/0e281a83-7e48-4a0a-af31-736ad6818997.svg",
+      "bytes": 676,
+      "sha256": "46de1eda15f8af8a26d65770e134b84f91ab731f4734e44b53cffdbba4073be0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/1190fb85-d729-4d90-94fb-1197ac43a11c.svg",
+      "bytes": 821,
+      "sha256": "5ecbfe7de4e09cc8578bf57ddc470d6c1e94e3aa331702a92c0210360a99fdcb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/122bc0e2-d9e7-4f66-99fe-149257c6e6af.svg",
+      "bytes": 931,
+      "sha256": "3657b872f9434aa1dde6233c2de1a1a57704be054e8094b3d190edb272dbee62",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/1235c168-45ba-4c23-8c2b-2acfe7cc3013.svg",
+      "bytes": 515,
+      "sha256": "364b2432d24ed4a54161a0f4575c6675c00906927abb2f3629975c9ff9814bec",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/1299f7e2-f698-4742-afa8-ecb1f1e3b15b.svg",
+      "bytes": 985,
+      "sha256": "5653b5b574735e9f8efbad1811a49e18dd37a28f57d28dac83f945c4b983c07c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/13cf08b2-249f-4450-aa9b-4cd7eede2840.svg",
+      "bytes": 1211,
+      "sha256": "d3027540f1262265a50da43aa50ab65d3b93e7be63db8ca475b7c4a533e9f833",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/141e0b5e-77ed-48ea-ad75-b7ecece072aa.svg",
+      "bytes": 699,
+      "sha256": "364c0614b92157c72e3c3c352b1786bee4af4d15f95317072375c069d5058b25",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/148cbf2b-330b-4584-96fc-3b17b424a56e.svg",
+      "bytes": 434,
+      "sha256": "25de4c6a176804c379456e05ea50c0e5ba1655098b476ec63ebe70a6cc1c7195",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/14d94a09-b59e-43f7-bda0-a98dff3f7145.svg",
+      "bytes": 821,
+      "sha256": "5ecbfe7de4e09cc8578bf57ddc470d6c1e94e3aa331702a92c0210360a99fdcb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/180cccf7-88cb-4ae1-ad5b-9560faec0081.svg",
+      "bytes": 836,
+      "sha256": "47c5cc37cd748573923ab82c281bd8262d2d865ea54db1848293f3e95cf50dbb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/19519e09-7bb9-43e8-8ed7-5fca5ff6d9b2.svg",
+      "bytes": 676,
+      "sha256": "46de1eda15f8af8a26d65770e134b84f91ab731f4734e44b53cffdbba4073be0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/1abfe404-cbd5-4efc-b90d-48e966a81f0f.svg",
+      "bytes": 1365,
+      "sha256": "08fec97b1af684f32318fe67d209607398449da706a68c5dac54d8d57611f00d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/1e80c0c9-2443-443c-b005-0476a6ef7bf1.svg",
+      "bytes": 913,
+      "sha256": "e43bd4d8d07028db814b2cddb0937aa8a070a9401b385473557b00ae55f97d9b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/1f617ca4-ecf4-4c16-ad8d-e2e8ae5baca6.png",
+      "bytes": 6948,
+      "sha256": "5b75edd8debb3923e7019c9648a1606655589fe4e7a11656ddf015f32e10988a",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/23bcbd21-ee3a-49fd-9c1e-f39574245a29.svg",
+      "bytes": 2346,
+      "sha256": "3450b324b173cf2f819b626c2a0a4cb50adefab50ca0f59c27e903a90ff63dff",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/25280afa-c872-462c-a235-46c9cf78924a.svg",
+      "bytes": 453,
+      "sha256": "73f490497c505deeeffac18204bb2e5b7bf0665594baef786b02c6a22d34b44e",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/259178db-f89f-40c2-ac69-fc9a56f485aa.png",
+      "bytes": 19787,
+      "sha256": "4911c44be86512c9e412d794e2165946d103c826df421b11231c742b3937b06a",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/25f05de6-5175-4fea-97ac-68074ae5153a.svg",
+      "bytes": 652,
+      "sha256": "1f8962631b552413ed303f222d91d083549512ae85ca0af4ac7ffd7b3a177804",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/278f7607-3477-4247-81f5-1fa9c7bcbeaa.svg",
+      "bytes": 848,
+      "sha256": "49e7f8aaa161e3f88addc7bf2a0c369ca167fba046db360923c05632a1eff6ae",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/28788b34-f71d-42df-bc1a-b756eb1ef842.svg",
+      "bytes": 1139,
+      "sha256": "2c8e0370de8578417a1d668bca01cf727d573d4c87cdea1a7741df797e590227",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/2b11edc2-af70-416b-a066-a787f162b723.svg",
+      "bytes": 676,
+      "sha256": "46de1eda15f8af8a26d65770e134b84f91ab731f4734e44b53cffdbba4073be0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/2b3013ed-1bfd-481d-ae8f-02b49a7dd68a.svg",
+      "bytes": 907,
+      "sha256": "5076579073d8a5fd19917fe57aee57d079cf6742914311e492c1d5f460c6e501",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/2c49a19a-03ec-430e-9fb1-e18d9080dc79.svg",
+      "bytes": 262,
+      "sha256": "e41d8fe4b80154df0d5b26b2930b679c79e6cf79169ecc54bd141a6e0dbfd260",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/2f6d3964-ba11-4737-9b49-7f08afafafdf.png",
+      "bytes": 27716,
+      "sha256": "04f6dcc672468b1e0e517ce1d8b58dbd2203689b96532d39095dffcaafb883b2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/30e14925-4a80-4114-be28-ddc9dcfff0e6.png",
+      "bytes": 42399,
+      "sha256": "ca8bdd9c939484b079eb76b69365f7e49983c749d0d1a37d5428cd2b2841fad0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/35b950ec-4bcf-44f9-b976-1592d9e1dd2e.svg",
+      "bytes": 848,
+      "sha256": "49e7f8aaa161e3f88addc7bf2a0c369ca167fba046db360923c05632a1eff6ae",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/360daaf6-9c99-45bf-acba-c6f6c4a60348.png",
+      "bytes": 54985,
+      "sha256": "714f9979cf50dd32041ef561289f860ae35eade1c85c7af0cb2be68e0dcbe3a2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/3762fe2b-efdb-4ef9-9f83-5c304f5878db.png",
+      "bytes": 42972,
+      "sha256": "08115c86044a55d91c4ff661cbf668605cc1f060354469d06abdfebcb4f8adb4",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/3ca9d801-2e6d-43eb-b525-8ede4305f8c2.png",
+      "bytes": 10196,
+      "sha256": "b3960e005b4826a6d7020b2aeeb2ff9d7fb4e63e01f61d73d4efb2932b59e68d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/3d50d640-6979-4db4-9dc5-38000725559a.svg",
+      "bytes": 958,
+      "sha256": "03553ac3d6c26f9e68169ec1164d232bf1035500285560610e04dfb53cc101d1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/3d9f2570-25b6-4d53-9627-72456d66eba6.svg",
+      "bytes": 2346,
+      "sha256": "3450b324b173cf2f819b626c2a0a4cb50adefab50ca0f59c27e903a90ff63dff",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/3ee10099-80c2-405d-95cc-b5a49a48ddb9.svg",
+      "bytes": 931,
+      "sha256": "3657b872f9434aa1dde6233c2de1a1a57704be054e8094b3d190edb272dbee62",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/407990f0-9e37-408f-bd4d-99e2ad250ae5.svg",
+      "bytes": 1905,
+      "sha256": "83b2b8a5f683134b3d1c208fb7fd27e7d1f337dabb7efaf3b91d56ec651f4d6f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/41385ba4-e7e6-448f-a693-888920c9d41a.svg",
+      "bytes": 262,
+      "sha256": "e41d8fe4b80154df0d5b26b2930b679c79e6cf79169ecc54bd141a6e0dbfd260",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/4177249b-35f3-48a4-a7f5-056e7c47ae0e.svg",
+      "bytes": 985,
+      "sha256": "5653b5b574735e9f8efbad1811a49e18dd37a28f57d28dac83f945c4b983c07c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/4373b33d-76f1-41e6-ac4c-6e8733b30d10.svg",
+      "bytes": 931,
+      "sha256": "3657b872f9434aa1dde6233c2de1a1a57704be054e8094b3d190edb272dbee62",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/452d032e-c56a-4cd8-ab7d-e8419df52a17.svg",
+      "bytes": 250,
+      "sha256": "79786a2bf3730e1adef3fe710e9fd896b2dfaf852588cf1153f661568916d6fb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/48e12d41-e8a7-4fb8-99fb-57470153e08d.svg",
+      "bytes": 262,
+      "sha256": "e41d8fe4b80154df0d5b26b2930b679c79e6cf79169ecc54bd141a6e0dbfd260",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/4f31240f-f7a0-4f6e-a160-a3ab50b1a1d2.svg",
+      "bytes": 1161,
+      "sha256": "6eae70eebb00639d426dcad74942a7e67b68b89935dee7cc07586b6c1d505566",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/50a74a9a-ba74-4e16-b288-7ff9c8f8f08b.svg",
+      "bytes": 3832,
+      "sha256": "f6a6c6d40eba07473cebba87bb22fd273265ec0d11aad3cfc38e074116597725",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/514df9ae-f339-4b30-b949-ab73b71f0d6e.png",
+      "bytes": 20092,
+      "sha256": "28a5045f56b09f1a7b75b87c85728a7e00e6d451b9c428cc0b0726ecb443db84",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/533ec991-33ea-4d85-ae27-48d7aa2686fc.svg",
+      "bytes": 533,
+      "sha256": "5813bb2b217a2954bd56bf56df52143dad9faee6e9c21a3157cedd76a43dc4be",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/53dc1c03-e16f-45d5-990d-3363e3e6d62b.svg",
+      "bytes": 1000,
+      "sha256": "59a56ce6b62beb0a6b8fd3590048b5a218b313f50af408e453f2af4221d24b30",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/542f06c4-5106-4bf1-8351-007a5d40b049.svg",
+      "bytes": 1000,
+      "sha256": "59a56ce6b62beb0a6b8fd3590048b5a218b313f50af408e453f2af4221d24b30",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/55960560-93f4-46c2-a29f-3887ec975077.svg",
+      "bytes": 1000,
+      "sha256": "59a56ce6b62beb0a6b8fd3590048b5a218b313f50af408e453f2af4221d24b30",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/5922aaa4-48f6-4ea5-b7aa-62b647382a4c.svg",
+      "bytes": 2346,
+      "sha256": "3450b324b173cf2f819b626c2a0a4cb50adefab50ca0f59c27e903a90ff63dff",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/595daf28-7c6d-4635-999b-18f1cbfe4388.svg",
+      "bytes": 324,
+      "sha256": "42db4bceff491d7a05912454693ea02d79e06f8200ca13b3b7ffcac4922a8b95",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/5a582a80-cb58-49b0-ba73-e061711c0068.svg",
+      "bytes": 931,
+      "sha256": "3657b872f9434aa1dde6233c2de1a1a57704be054e8094b3d190edb272dbee62",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/5d229524-a843-4c8b-860d-0d80a1545f28.svg",
+      "bytes": 409,
+      "sha256": "f8ca13bda1a9afdcc17d6617cbdce9d535b5bac4f9d9864718f3fd3963aabab0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/5dbc1821-b60b-423e-ab94-ccab8301ca06.svg",
+      "bytes": 931,
+      "sha256": "3657b872f9434aa1dde6233c2de1a1a57704be054e8094b3d190edb272dbee62",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/60437bec-662b-40aa-92e4-a14d5dc15943.png",
+      "bytes": 33494,
+      "sha256": "a1a34a5458884134e7ce2e411b93cfdb168ab1c0b5038f5c451718698ee669ee",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/60aad94d-7341-4328-9a92-bd22f0383c39.svg",
+      "bytes": 409,
+      "sha256": "f8ca13bda1a9afdcc17d6617cbdce9d535b5bac4f9d9864718f3fd3963aabab0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/635c92d0-c3bd-45d2-9bbf-561473b61821.svg",
+      "bytes": 262,
+      "sha256": "e41d8fe4b80154df0d5b26b2930b679c79e6cf79169ecc54bd141a6e0dbfd260",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/637febe4-8ef5-4c2a-9f74-392bb9c37a79.png",
+      "bytes": 58395,
+      "sha256": "36588d1183b4f145afb182cecb841af53e9b379ce202bf68cdc992334f10b567",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/64173ab3-7781-45df-bc74-669b43b21b9e.svg",
+      "bytes": 262,
+      "sha256": "e41d8fe4b80154df0d5b26b2930b679c79e6cf79169ecc54bd141a6e0dbfd260",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/65c2a0dc-17f2-4b02-81fe-8d878d879bc2.svg",
+      "bytes": 531,
+      "sha256": "67d9ffb7137c648eb1c123bbc53483324fae35f04e3b4f8844ae03423befc9e2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/666ba711-604e-4dc9-8a9f-f9d6c053f861.svg",
+      "bytes": 676,
+      "sha256": "46de1eda15f8af8a26d65770e134b84f91ab731f4734e44b53cffdbba4073be0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/69c07728-d4fb-435d-b613-3cb572ac51ac.svg",
+      "bytes": 958,
+      "sha256": "9aaef9d99cfba0d3a4a430a46bc74d0188f87a333e922695eb84884506554f27",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/6a535060-1cb6-47da-9c48-3b875183c709.png",
+      "bytes": 39914,
+      "sha256": "f567be652a8dc36f831175f22525f9d53ddd6450866aac2dc7f3a590fbd34f19",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/6d8caed3-7145-4c62-85e6-615a6bb31ae8.svg",
+      "bytes": 531,
+      "sha256": "67d9ffb7137c648eb1c123bbc53483324fae35f04e3b4f8844ae03423befc9e2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/6ea7ce0c-b0cd-409d-bdb5-a3b5d702a302.png",
+      "bytes": 2128412,
+      "sha256": "d325c7cce19e192c18f07853a7755f731f46d245e27350754e5941c68520b196",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/71754870-b770-4a46-a7e7-adc1388bbedd.svg",
+      "bytes": 985,
+      "sha256": "5653b5b574735e9f8efbad1811a49e18dd37a28f57d28dac83f945c4b983c07c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/71cf3f47-f643-4b5d-b3bb-3bcaf080aa41.svg",
+      "bytes": 1306,
+      "sha256": "ffd0bd4aecd13f7b8a7b24dd716d58d5ebf0f9a3ad9a00d692b0c5a370a06aa9",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/7218b41a-b6e2-425e-90ed-b32449f55ae2.svg",
+      "bytes": 1000,
+      "sha256": "59a56ce6b62beb0a6b8fd3590048b5a218b313f50af408e453f2af4221d24b30",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/7221b163-50cc-4ace-9401-7c7fd0685ed5.svg",
+      "bytes": 958,
+      "sha256": "4c50bab1cf1bee497f03e2d603f2ec05aacfe16e9346a45386ae41d1367b7088",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/72cc6060-b714-4e33-af22-9c4dd8247f0c.png",
+      "bytes": 14026,
+      "sha256": "5a85902d6c64acd938b80106915494544b7975ee53c464f8bee94cc63ba26ccf",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/763ef17c-3f29-4cc3-8ed8-bcac9e044f3d.svg",
+      "bytes": 2067,
+      "sha256": "7de7e4401a67b3ef40633358aa92082d8b93ee917c8d505ca34ea13c5a4d38cc",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/76a190de-5d0c-429e-aa85-60f5817be701.svg",
+      "bytes": 906,
+      "sha256": "703b0cb3d54258fb8ea46c00bfa4e2b1c8a0d91c0c8fee6b02ea289121d071b1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/78343b48-fbc2-4ed8-8e46-c2b45148294a.svg",
+      "bytes": 409,
+      "sha256": "f8ca13bda1a9afdcc17d6617cbdce9d535b5bac4f9d9864718f3fd3963aabab0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/7861b0cd-8b0f-4aff-8e39-402f9c57b840.svg",
+      "bytes": 409,
+      "sha256": "f8ca13bda1a9afdcc17d6617cbdce9d535b5bac4f9d9864718f3fd3963aabab0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/7983b4af-55b7-49ab-b9c2-7b7e4d0a0271.svg",
+      "bytes": 810,
+      "sha256": "314a9d3b705bbb806c9019eedc4c1a4507704cf5efedbf7b4423407352d0f5e1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/7a207576-814e-4463-ac35-82a1b5196a44.svg",
+      "bytes": 2296,
+      "sha256": "df34408ab2eed525ad43fdb423ae5ca01083a8e8f63e31f189dabb0929e20a2e",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/7bc95297-63e3-4567-bb3b-882210ae2216.svg",
+      "bytes": 848,
+      "sha256": "49e7f8aaa161e3f88addc7bf2a0c369ca167fba046db360923c05632a1eff6ae",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/7c86443f-6525-47a1-a945-b127f8a9c3bc.svg",
+      "bytes": 608,
+      "sha256": "4a44208b2d4fda166c1e8b17525691daa2a06eb84cb6ee57498590682ae3b39e",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/7d95d08f-70c6-4240-b647-76cbfa1f97bf.svg",
+      "bytes": 565,
+      "sha256": "46fe32c981549b72b8e74488931e19bb5be485e87a29db4b259d780700c67921",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/7e74396f-454a-4918-94bb-b07209e9aa32.svg",
+      "bytes": 848,
+      "sha256": "49e7f8aaa161e3f88addc7bf2a0c369ca167fba046db360923c05632a1eff6ae",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/7eafad10-5c40-4140-80bb-63b7f549d1ac.svg",
+      "bytes": 2346,
+      "sha256": "3450b324b173cf2f819b626c2a0a4cb50adefab50ca0f59c27e903a90ff63dff",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/7ef879ae-9a29-4f50-80bc-78c556157c46.svg",
+      "bytes": 821,
+      "sha256": "5ecbfe7de4e09cc8578bf57ddc470d6c1e94e3aa331702a92c0210360a99fdcb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/7fb1a1c0-e07c-49c5-8ca8-24f6a78b9dd8.svg",
+      "bytes": 821,
+      "sha256": "5ecbfe7de4e09cc8578bf57ddc470d6c1e94e3aa331702a92c0210360a99fdcb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/82f3f1ab-c321-45fa-b923-c16ca3bb1d95.svg",
+      "bytes": 745,
+      "sha256": "9c2d36806a329f54037594debf2265a81a7c5a667c3d71a3dad8ad573e8f5f14",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/833895b1-712b-4bab-8180-0fce2735570e.svg",
+      "bytes": 605,
+      "sha256": "2da220d1e635f201853b37bc301e8a2bec6698592611b4b508cb477e8c087b21",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/844dfa93-8b45-4430-9b2f-0fec1d425254.svg",
+      "bytes": 676,
+      "sha256": "46de1eda15f8af8a26d65770e134b84f91ab731f4734e44b53cffdbba4073be0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/84a5f36b-6497-417a-afbf-4558cda8dce4.svg",
+      "bytes": 608,
+      "sha256": "107ca8cc731109285c70c4993c7935f8148e4d9e1b256e19ed6def9ef4f56449",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/851a3279-ca2f-48fd-9395-9ce84b31e1af.svg",
+      "bytes": 1139,
+      "sha256": "2c8e0370de8578417a1d668bca01cf727d573d4c87cdea1a7741df797e590227",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/85a20814-0cbd-4cee-b587-76714fcdf7f0.svg",
+      "bytes": 2067,
+      "sha256": "7de7e4401a67b3ef40633358aa92082d8b93ee917c8d505ca34ea13c5a4d38cc",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/86b28666-be1a-40ed-93b7-15f275448e84.svg",
+      "bytes": 719,
+      "sha256": "6ed88a3e9fea8a0485e6d4a3caef1dde32261e710e3e1e4d983b2b95853eae64",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/87f2282a-1c85-4e27-9a3c-837785879559.svg",
+      "bytes": 531,
+      "sha256": "67d9ffb7137c648eb1c123bbc53483324fae35f04e3b4f8844ae03423befc9e2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/8d50038f-73ef-420f-aedb-1150783601b5.png",
+      "bytes": 42601,
+      "sha256": "2b5c1b020cdd0ee38c5f3da15268058920dc5bc7f683ba2c0328e85352079584",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/8e8a8fe6-a73c-4cd7-a736-e1515b927635.svg",
+      "bytes": 1139,
+      "sha256": "2c8e0370de8578417a1d668bca01cf727d573d4c87cdea1a7741df797e590227",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/8fc73e6a-e066-4b25-a2e6-7c07cf562ea8.svg",
+      "bytes": 985,
+      "sha256": "5653b5b574735e9f8efbad1811a49e18dd37a28f57d28dac83f945c4b983c07c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/907d5d0a-8205-4871-b8ca-65a6b037ec9e.svg",
+      "bytes": 1000,
+      "sha256": "59a56ce6b62beb0a6b8fd3590048b5a218b313f50af408e453f2af4221d24b30",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/9091c0e1-8c4b-4121-95f6-1a463dbda539.svg",
+      "bytes": 2346,
+      "sha256": "3450b324b173cf2f819b626c2a0a4cb50adefab50ca0f59c27e903a90ff63dff",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/9203326c-91a9-4604-941c-85f69f5d6389.svg",
+      "bytes": 531,
+      "sha256": "67d9ffb7137c648eb1c123bbc53483324fae35f04e3b4f8844ae03423befc9e2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/93c39b95-d2a7-42e8-b5a6-ae9b3e8a580a.svg",
+      "bytes": 1672,
+      "sha256": "8f85af91f2b689dfb8f074c7df208ec98a78deea2206940ae1eb793a0c5b8036",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/94f39e9b-1bf1-446b-9c21-f1478c7ee82e.svg",
+      "bytes": 727,
+      "sha256": "811c580ceb6fe3690da7c19aaa59b94560b899d337d1c8eaf16315a3443d015d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/94f756de-b334-4c3f-8032-dd5755330265.svg",
+      "bytes": 262,
+      "sha256": "e41d8fe4b80154df0d5b26b2930b679c79e6cf79169ecc54bd141a6e0dbfd260",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/9549fce7-9941-44f4-9dae-6f767b753b78.svg",
+      "bytes": 324,
+      "sha256": "42db4bceff491d7a05912454693ea02d79e06f8200ca13b3b7ffcac4922a8b95",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/9706593f-1639-4e1a-a061-a5c4eec9d391.svg",
+      "bytes": 985,
+      "sha256": "5653b5b574735e9f8efbad1811a49e18dd37a28f57d28dac83f945c4b983c07c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/976a10ec-47de-43e8-8099-006bf0326db2.svg",
+      "bytes": 958,
+      "sha256": "43ad1adf71a2a575647a8b468e593db08a434e44118c377a0173a1f186aca0c6",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/996fb77e-8567-4543-a5cd-69036c0b2250.svg",
+      "bytes": 531,
+      "sha256": "67d9ffb7137c648eb1c123bbc53483324fae35f04e3b4f8844ae03423befc9e2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/9a0e3a2f-80e2-412a-86d2-d03c9e2780bb.svg",
+      "bytes": 3433,
+      "sha256": "8e82ff6e1bf8170483a977a97e44b0e0d0975ec4363177a119f3f67ab6cfa53d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/9ba8c09a-f023-4af1-afea-5d727cb41189.svg",
+      "bytes": 324,
+      "sha256": "8f8b32ac043e051157d5d9e96ccbe4ef68ee3ab392381779a7bfd7977b0482ef",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/9c57dc14-747b-4ef1-ab9f-339e4a58c2ee.svg",
+      "bytes": 409,
+      "sha256": "f8ca13bda1a9afdcc17d6617cbdce9d535b5bac4f9d9864718f3fd3963aabab0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/9cd27bef-1576-42fe-bc05-7efdf1251c6e.svg",
+      "bytes": 821,
+      "sha256": "5ecbfe7de4e09cc8578bf57ddc470d6c1e94e3aa331702a92c0210360a99fdcb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/9d435bda-6c30-4c7e-bbb1-051a50fcd3b1.svg",
+      "bytes": 612,
+      "sha256": "6b704d9ce3e691b9431ea8393bf9d0446b837d316058941c5ae61e0fca76c4b3",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/a020440f-9299-4a62-a1ac-b5e16507dc38.png",
+      "bytes": 37019,
+      "sha256": "ecb125b13054dc63ba122afa2343b565d00f4938ef7dc2996d81dbf564a5af89",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/a304dd9a-1062-45eb-bcef-9cc9d2408e33.svg",
+      "bytes": 1928,
+      "sha256": "835be57387b73eea3b1ee66e01ed9775d5003d11b9aa70c5e20d2e6461482f16",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/a4ddac8d-d98a-4cff-9942-7855dd85dbdb.svg",
+      "bytes": 2420,
+      "sha256": "8f75211ca477f264329e96c5e3190dc538410a2fbd2a9dfcf6dd8cd7f3698a9c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/a79bb1bb-0fd8-47d9-b1d1-7b7ad5cba0ed.svg",
+      "bytes": 676,
+      "sha256": "46de1eda15f8af8a26d65770e134b84f91ab731f4734e44b53cffdbba4073be0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/a7d04b23-6d7d-473b-b3fc-03ef3d1a4a27.svg",
+      "bytes": 324,
+      "sha256": "8f8b32ac043e051157d5d9e96ccbe4ef68ee3ab392381779a7bfd7977b0482ef",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/a8e4f75c-d4ef-41a6-baa7-3e46efa44291.svg",
+      "bytes": 591,
+      "sha256": "decd1af8def97daf9b24f741236ad5229ddc78cbf2c23f131e7002c422ef78bd",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/aa9c326e-6943-45ad-be24-9cc63e089ae8.svg",
+      "bytes": 262,
+      "sha256": "e41d8fe4b80154df0d5b26b2930b679c79e6cf79169ecc54bd141a6e0dbfd260",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/ac729d1c-0eee-4d96-be85-5382c4635729.svg",
+      "bytes": 1139,
+      "sha256": "2c8e0370de8578417a1d668bca01cf727d573d4c87cdea1a7741df797e590227",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/aea15b5c-8655-4ebe-8807-5af94a7bdad4.svg",
+      "bytes": 719,
+      "sha256": "6ed88a3e9fea8a0485e6d4a3caef1dde32261e710e3e1e4d983b2b95853eae64",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/afc7c056-5c50-4bb6-ab55-1acdb0b200cb.png",
+      "bytes": 31712,
+      "sha256": "1a48969491863b6b04f04f7b7db7785c277e94e5781a093e164ef12968926b34",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/b05c0e97-9ad0-4e69-8c72-6ef2367493fe.svg",
+      "bytes": 803,
+      "sha256": "cbd84e357730d5898545bc67c46f45351160443be8465b8157cb04f6360fd341",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/b1c72261-289b-43eb-933e-158344d7cffc.svg",
+      "bytes": 515,
+      "sha256": "364b2432d24ed4a54161a0f4575c6675c00906927abb2f3629975c9ff9814bec",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/b22839e9-2d56-46d7-936e-8c6a62473691.svg",
+      "bytes": 526,
+      "sha256": "fc9a3b85e797e27b82a0ebef3c0053a9885f2043ffc2573bba118d8aae973060",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/b4bf5aa7-2f44-4c5c-a153-1761159bc7c1.svg",
+      "bytes": 958,
+      "sha256": "43ad1adf71a2a575647a8b468e593db08a434e44118c377a0173a1f186aca0c6",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/b538e781-12ea-47a7-ad13-dcbd6a505f4b.svg",
+      "bytes": 695,
+      "sha256": "77bd52a03aadff7615ed5119bbe9c0d9d84f2c18614fc43ba84791f8d6a0ba15",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/b8a153c1-940e-4ee2-b58a-5e490b83307c.svg",
+      "bytes": 8864,
+      "sha256": "8d6982b9590b32cdd5e6b091dd2ab210111045fc325dc2e85aafb7ff8752573d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/b8d859f7-297e-4111-a06a-ceee279682d3.svg",
+      "bytes": 475,
+      "sha256": "a16259dcde90a60495082ed68320244857b8c7a84612a8120bb7f8c7c1b03e1c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/b91073f7-af93-436f-91fc-3087944614bb.svg",
+      "bytes": 1139,
+      "sha256": "2c8e0370de8578417a1d668bca01cf727d573d4c87cdea1a7741df797e590227",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/b990663e-38b8-4c3c-83f7-0932109419aa.svg",
+      "bytes": 1139,
+      "sha256": "2c8e0370de8578417a1d668bca01cf727d573d4c87cdea1a7741df797e590227",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/bb7aba73-8429-432e-ad9f-de5fedd57630.svg",
+      "bytes": 345,
+      "sha256": "30ee180e8a84d82a568190af9e08c84ddd741158893f31e1070d37e91d02f804",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/bbcd0cbb-8fbe-4f15-ad8b-62039b3c8ab3.svg",
+      "bytes": 2346,
+      "sha256": "3450b324b173cf2f819b626c2a0a4cb50adefab50ca0f59c27e903a90ff63dff",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/bd1f1e84-f183-44c6-85a5-33f2b8a8877f.svg",
+      "bytes": 931,
+      "sha256": "3657b872f9434aa1dde6233c2de1a1a57704be054e8094b3d190edb272dbee62",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/bf97500f-4860-49c7-8a10-f8776d26f7e8.svg",
+      "bytes": 1139,
+      "sha256": "2c8e0370de8578417a1d668bca01cf727d573d4c87cdea1a7741df797e590227",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/c0d590e2-bf0f-478f-8814-014729dcab8d.png",
+      "bytes": 35971,
+      "sha256": "15e055d80c8ddacc426da2c555995bd47aff6a2c4593b1e3c3a32b1c37ecd8c2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/c259ef3b-499e-40c4-ab44-cbf3bfde1ee0.svg",
+      "bytes": 821,
+      "sha256": "5ecbfe7de4e09cc8578bf57ddc470d6c1e94e3aa331702a92c0210360a99fdcb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/c2d25e2a-9b5a-4a6c-b0b8-33cba90fd4d5.svg",
+      "bytes": 612,
+      "sha256": "06651487bfee3584423a3e862e67335f4b1bde09125d71f7fb0b7a655ab71881",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/c63270b4-3d2d-45b0-99ff-875d8cabd6c6.svg",
+      "bytes": 262,
+      "sha256": "e41d8fe4b80154df0d5b26b2930b679c79e6cf79169ecc54bd141a6e0dbfd260",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/c9d9e132-16b4-4451-a05f-151be6477699.svg",
+      "bytes": 2346,
+      "sha256": "3450b324b173cf2f819b626c2a0a4cb50adefab50ca0f59c27e903a90ff63dff",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/cae0733f-c31c-4b1c-b4ce-a1c4ab8047b0.svg",
+      "bytes": 1000,
+      "sha256": "59a56ce6b62beb0a6b8fd3590048b5a218b313f50af408e453f2af4221d24b30",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/cc3fdb8c-59f7-4361-8e44-12b1fec9878d.svg",
+      "bytes": 531,
+      "sha256": "67d9ffb7137c648eb1c123bbc53483324fae35f04e3b4f8844ae03423befc9e2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/cc41336a-a248-420e-b558-5e3e8c11204c.png",
+      "bytes": 35593,
+      "sha256": "b4c18539fa743f5b17681e3833907e41c265829b47f5a243597f857706233504",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/ceb64036-5e49-4c19-827a-9f76075eb9e3.svg",
+      "bytes": 676,
+      "sha256": "46de1eda15f8af8a26d65770e134b84f91ab731f4734e44b53cffdbba4073be0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/cfd70b20-4dbd-4d74-9ad0-6fa312206397.svg",
+      "bytes": 931,
+      "sha256": "3657b872f9434aa1dde6233c2de1a1a57704be054e8094b3d190edb272dbee62",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/d08c4e9f-76ee-4d65-88d6-e7942968d41f.svg",
+      "bytes": 531,
+      "sha256": "67d9ffb7137c648eb1c123bbc53483324fae35f04e3b4f8844ae03423befc9e2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/d1254b5f-25a5-4af7-83fe-612a4496aa73.svg",
+      "bytes": 531,
+      "sha256": "67d9ffb7137c648eb1c123bbc53483324fae35f04e3b4f8844ae03423befc9e2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/d4997fed-4b0e-4062-8e14-23443e2f2f29.png",
+      "bytes": 42648,
+      "sha256": "f82e8cfddb604a7eca8c7303bb7b688648a68fa64f9d8e2ccb3a9ebf05b16d3b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/d56dc9b8-a401-4e66-92b6-1a1d87aa1220.svg",
+      "bytes": 1000,
+      "sha256": "59a56ce6b62beb0a6b8fd3590048b5a218b313f50af408e453f2af4221d24b30",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/d85f13ac-672e-447f-8c3b-275b8dd0ab98.png",
+      "bytes": 46770,
+      "sha256": "4d23d04e012dc4708b2046fbf49fe63db5c50b931c4777fe5b1935354f67b48f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/d8739627-238f-4af7-97cd-17bd0b587e62.svg",
+      "bytes": 1642,
+      "sha256": "3d0472c6af56487c567de9153f5174f72452d9efedf354b06127203539ad9935",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/d9df9db1-6be1-4646-af0a-224581cad741.svg",
+      "bytes": 907,
+      "sha256": "5076579073d8a5fd19917fe57aee57d079cf6742914311e492c1d5f460c6e501",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/daaabe22-d772-4605-8efc-99f4331e3439.png",
+      "bytes": 16951,
+      "sha256": "5cf2f3c603cd6db3f507c75c91fa450e6fa9e91fb279ad3ba5957fbe5d40a6ec",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/db15fc87-4386-4cf8-8230-07e317625783.svg",
+      "bytes": 372,
+      "sha256": "3da1d256c60250ccdace658c646533e57685a8a7f7a3505e382b087f50b4a90d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/db1fa33e-74ba-45a0-a19b-353f7572ac44.svg",
+      "bytes": 958,
+      "sha256": "43ad1adf71a2a575647a8b468e593db08a434e44118c377a0173a1f186aca0c6",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/db91f1c6-1297-41ef-853f-72fcaa830845.svg",
+      "bytes": 253,
+      "sha256": "cd78b1687f39e09b1dfc3d49de360a082a6cf4752d2af143074129b54fffaad6",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/dc76ced0-6ddf-4023-9c31-7986fbe00549.svg",
+      "bytes": 958,
+      "sha256": "28bc2a6ebdb74b014e8800938eb05d257cb6430b595f2fdb846774169a41be73",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/df61bcc8-e007-4354-86ec-726220d6eb84.svg",
+      "bytes": 985,
+      "sha256": "5653b5b574735e9f8efbad1811a49e18dd37a28f57d28dac83f945c4b983c07c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/e054d96b-90a7-49e4-9194-f8530e329283.svg",
+      "bytes": 881,
+      "sha256": "17a68a174478bad28d80347a193be0e45356cf2a804e9a6b2120056a90df9e06",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/e2bae24e-3b0a-45c0-a48f-3c2d20eb7ed3.svg",
+      "bytes": 973,
+      "sha256": "bcd12f3d5034ccc381a4f5559eed854c5eb3d57013574a807f1d0b20e5b4ca8a",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/e3d22c1c-5014-49f3-b4bb-00c5eefef7b4.svg",
+      "bytes": 2346,
+      "sha256": "3450b324b173cf2f819b626c2a0a4cb50adefab50ca0f59c27e903a90ff63dff",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/e55f883b-c24d-461f-abb9-1b345f44c776.svg",
+      "bytes": 298,
+      "sha256": "2de8807b0470817595f79e98290d1f107c96f729f4327718d10b26faabb7908f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/e7cf97c5-3658-47e8-a433-24a66e3a8a41.png",
+      "bytes": 32681,
+      "sha256": "55da50bb8be5e291059da6bc5188b0644cfdb957a0161c9fb12af65843ae9f27",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/e94188b1-9826-450a-baee-e90981de3f30.svg",
+      "bytes": 958,
+      "sha256": "8d2147cd3c4743d69c46c32d216f06e2325406de9c7d94d643305041669be1d0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/e99f6715-dc87-44ca-a46a-2de08cfdb9f6.svg",
+      "bytes": 821,
+      "sha256": "5ecbfe7de4e09cc8578bf57ddc470d6c1e94e3aa331702a92c0210360a99fdcb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/eabec166-cb8a-4232-9393-e65f36eae6e1.svg",
+      "bytes": 685,
+      "sha256": "eceeef50465e1a09e90babf68200c51d4f02244ed9ac1b1508f70b5a9dc8be91",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/eae73059-09d6-45ce-86f6-293c8ba35744.svg",
+      "bytes": 848,
+      "sha256": "49e7f8aaa161e3f88addc7bf2a0c369ca167fba046db360923c05632a1eff6ae",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/eae8e094-cd5c-42d1-87bd-47bc6c8af9ff.svg",
+      "bytes": 931,
+      "sha256": "3657b872f9434aa1dde6233c2de1a1a57704be054e8094b3d190edb272dbee62",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/edbd6d1e-9b52-4484-9686-39fb73283260.svg",
+      "bytes": 848,
+      "sha256": "49e7f8aaa161e3f88addc7bf2a0c369ca167fba046db360923c05632a1eff6ae",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/f287ce66-4c9d-4cd5-a4b6-4cc62049a2cb.png",
+      "bytes": 39017,
+      "sha256": "8b3dcb34139ca8a0c5e90b8f01257ca3cde16c15a1218aa4e334c0e9ca7b1478",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/f47f0d2a-a4ea-4ebb-8b72-c585b6bd02fe.svg",
+      "bytes": 985,
+      "sha256": "5653b5b574735e9f8efbad1811a49e18dd37a28f57d28dac83f945c4b983c07c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/f493f615-f1ef-4947-a7b1-1ab2fd472e59.svg",
+      "bytes": 848,
+      "sha256": "49e7f8aaa161e3f88addc7bf2a0c369ca167fba046db360923c05632a1eff6ae",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/f4da1ed6-652e-4579-ac37-bc52996f0342.png",
+      "bytes": 15440,
+      "sha256": "ac05e713a62b32b183fbc685ea2d208cf2bbb02797f997655cb65e2bd812bbe5",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/f53e51b3-6d77-4879-a94e-5bd69c8513a3.svg",
+      "bytes": 409,
+      "sha256": "f8ca13bda1a9afdcc17d6617cbdce9d535b5bac4f9d9864718f3fd3963aabab0",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/f6e77e37-5aed-42fb-ada0-117dd057b790.svg",
+      "bytes": 942,
+      "sha256": "fdc482d90f05d1b5a40d912ae89fcdd4b325e62f95cf76225182b108133a93fa",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/f73bd850-e02d-4caa-9a82-510813fdc7b9.svg",
+      "bytes": 531,
+      "sha256": "67d9ffb7137c648eb1c123bbc53483324fae35f04e3b4f8844ae03423befc9e2",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/f77f7a59-51de-436f-b804-e34a10199c72.svg",
+      "bytes": 1000,
+      "sha256": "59a56ce6b62beb0a6b8fd3590048b5a218b313f50af408e453f2af4221d24b30",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/f86fcbb0-eb33-42ea-ac13-20cf608ff9db.svg",
+      "bytes": 923,
+      "sha256": "12927c70d90436e55fa13376e2ed7ff5a65c6728a37c9d70c4e6299b04e3971c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/fc337007-6980-4d64-b73d-3b617f425460.svg",
+      "bytes": 661,
+      "sha256": "97dc03f5956de9d2de1627db464c0cc9f12565f4772c9693d5f20dfb6e03652a",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/tesla/manifest.json",
+      "bytes": 75878,
+      "sha256": "894e63ed4af48b096ff92c1a022446f13facd69108a338bc406f756ba7a14d85",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/voice-capture.js",
+      "bytes": 1289,
+      "sha256": "8d24367d49533331b632241f2cd657b08d89ad904603b56743fa04f97b1ff926",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img.svg",
+      "bytes": 1586,
+      "sha256": "c8f8c6f41f49b6b9341056e9f0fea8aa4e62ffe464a2bcdac5f365074549c4da",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img06SignDirectionExpand.svg",
+      "bytes": 4657,
+      "sha256": "bf5d7983d389ad2df9bb9256c2ef5ce9a87d6e7839f369ac35142889a252115f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img1.png",
+      "bytes": 342039,
+      "sha256": "72d349e0d0d535c569b7189c74d670d124bfc974ae3b33880ea822fdce1f8dfb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img10.svg",
+      "bytes": 1540,
+      "sha256": "f4e446af7ba86e9b85bd83342fc96552d764d7d8cea05f81276ae235d848ca0f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img11.svg",
+      "bytes": 997,
+      "sha256": "10e9b00a226695312dc02b82ed5ed502d4247faeee1327da7a3183be63986fd8",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img1111111.svg",
+      "bytes": 760,
+      "sha256": "3e5057721bdb372c8e901b31c6c4f845ac703417b7ff01b61ebc698f6c889ee6",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img2.png",
+      "bytes": 544934,
+      "sha256": "89605585d2d81d2ec5fe63d37d9eee869c53f45a73a393ae5f5a5101536a844f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img3.svg",
+      "bytes": 641,
+      "sha256": "8bee2aabcce0e1dd1db9ed78ea47d0d51e6954055eb571b3352bd997c6a0d326",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img4.svg",
+      "bytes": 1011,
+      "sha256": "03458332b40506b9bddc9d3340332459c4b0eaba4ac8a1dd9e5a97a320621c37",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img5.svg",
+      "bytes": 293,
+      "sha256": "229be2caa8706c07116cd0f9c3a23ae5fbf6f6e2750926734e21e6a0866c4e07",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img6.svg",
+      "bytes": 525,
+      "sha256": "711736179899c52c94828ebd66ab31b1fc9e28db7447138e896c9de7103d9a7d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img7.svg",
+      "bytes": 621,
+      "sha256": "18d17ba45349efda74abfc358eb6a80e9011bf707d41888c902728e26201c699",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img8.svg",
+      "bytes": 501,
+      "sha256": "15e3b6ecec1146e485be875757c663519958d8ce9607551093e55a08aa040a8e",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/img9.svg",
+      "bytes": 1407,
+      "sha256": "9d3e5e1d0847a087424b460ed6dac6029944be9099f26af1100f988d2cb72688",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgApp.svg",
+      "bytes": 1607,
+      "sha256": "2ef977989f68c962d369f01ab54943baa5c859231935c2a5f5166eb048c2af67",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgApp1.svg",
+      "bytes": 1610,
+      "sha256": "0e448e37ba57f8ed32c071b3e9cbd8c79864e02d70ffd9b2c1298c5f6654e1ac",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgApp2.svg",
+      "bytes": 1091,
+      "sha256": "9a7cda2ee17b7a7051bca3cedf4a3d6ef7b349aa706cbb9d61539c913325f9bd",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgApp3.svg",
+      "bytes": 1588,
+      "sha256": "123ddac0d26a424418cb92cdf186bbf9861933798e9fe920810d4007dc9501ca",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgApp4.svg",
+      "bytes": 1586,
+      "sha256": "1f43479729480dd8048eeb1f4465003bbf76ea6fa69755cbee6e627a24c60023",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgApp5.png",
+      "bytes": 1247483,
+      "sha256": "3d273bd922cb06094a7d0d56c59de47946a96add04b482cd18f320effb6e8448",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgApp6.svg",
+      "bytes": 1581,
+      "sha256": "6ad2060bf8bacccb30877d5e163ae45d88ef055c255bb16fe3c549b610e4f171",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgEllipse2253.svg",
+      "bytes": 393,
+      "sha256": "d9bd2b3b97e6e510bea190370e0671817c032b2d04857c9f7b79ea4dba8a02f8",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgEllipse2355.svg",
+      "bytes": 641,
+      "sha256": "b79f3703e67284213426b1bc0128fb7aafe57f243a8ea390e30f84a8d3b7d5f8",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgEvreneBirTiniBirak.png",
+      "bytes": 389458,
+      "sha256": "104ca4419b592da94cdb8e9c18606760641939b7be78960f634601689b538a22",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgExitRight.svg",
+      "bytes": 757,
+      "sha256": "8a8f7a75e2ca4ac72b471264c27f53daa450e0c1ee2009b8946aa4c26bd2da5f",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgExitRight1.svg",
+      "bytes": 832,
+      "sha256": "d77e47864f6b9e166c1c02281a01297c7ceef63466e109f23a1fde37ac7a17f5",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgFrame1522887.svg",
+      "bytes": 1943,
+      "sha256": "b983b5dc9251297fc143a9d4171040f342e11583913d546c19edc838754d0280",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgFrame15230055.svg",
+      "bytes": 3232,
+      "sha256": "6aed59da65239845cbdbe9586c415a50cd3560edb83f11784462f3a519a6fa45",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgFrame15230096.svg",
+      "bytes": 1596,
+      "sha256": "ab0a37364778a4e9b1928e48f6058e3903d24988476a9c3906703357815c38d6",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgFrame15230128.svg",
+      "bytes": 259,
+      "sha256": "5bb22c9bce4b04ae45cc01f0339a2cea319c83210c8c233a47cd520d19299fe5",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgFrame15230129.svg",
+      "bytes": 1432,
+      "sha256": "897f2b6c7d37ad578c7f7edef7abf0f1538cdc3a3bee9c821ffad39532393f41",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgGroup.svg",
+      "bytes": 769,
+      "sha256": "0b0778a65cf5ef18850d7680904057c1f99a143e82500aaf07edc06794768229",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgGroup1.svg",
+      "bytes": 2608,
+      "sha256": "ebfe2173ac336dbfbf594cb1933b53c1a8c345c78aff0662aa4486b40cbdc901",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgGroup15230051.svg",
+      "bytes": 4811,
+      "sha256": "96bc9e5f3526535887f52d82d95b241857e5e896074bdc8820bc21560aad2ead",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgGroup2.svg",
+      "bytes": 760,
+      "sha256": "e79cd9b70625ea1a528b281d8f7407c388318e773b8b21d907c5c0070f855243",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgHotelCaliforina.svg",
+      "bytes": 532,
+      "sha256": "524b8a666654c0ef59bd4a0731ba136c03a9020881af8039c8f42d7c2ea9c584",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgImage1038.png",
+      "bytes": 2530168,
+      "sha256": "01f16bd6bd8409c5358f4a48e2f7440efe348ea96500acfb5fd51c9df7f3fba7",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgImage957.svg",
+      "bytes": 241,
+      "sha256": "08fdf7d945a72ac3633546f9abebf5d14a81ec66b70b5a5784e0f9c5c68ccb0d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgImage958.png",
+      "bytes": 822892,
+      "sha256": "239d98aa180959e179bbf3cd0314e252763c2c49b310d094f2db35ddb2503269",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgLine122.svg",
+      "bytes": 260,
+      "sha256": "2e5a37deeb968ee60112e25df6fd9c49f0f5cc6fc24c77e9c8ad92f4bfd9f2bf",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgOval5.svg",
+      "bytes": 253,
+      "sha256": "e70971807a785be676b3e60bb2f3d3c027d70408e076a505eaa4d9357bfac1ff",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgRectangle112805.svg",
+      "bytes": 1599,
+      "sha256": "8c063f38b5af5b473af95abf86210b74722eb038160c73ec1e8246ccf4434e8e",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgRectangle112806.svg",
+      "bytes": 1613,
+      "sha256": "f12d1b1471639857a577b63e0bb136fdfb9d69e2df217c000cecd763482763bd",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgRectangle112978.png",
+      "bytes": 7095149,
+      "sha256": "8bcd1fd473b20199acba73e58e3c6357d3129d0e710c166b4411948decae9cae",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgRectangle113475.svg",
+      "bytes": 450,
+      "sha256": "5838e090fb401d36a23abe08e4c548143f94b89840aeaf61978f15519062be66",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgRectangle114310.svg",
+      "bytes": 1108,
+      "sha256": "3f182d10ef570c916a38c01eb9db024022ddc4d4fca34801a5a385aa0cd40f21",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgRectangle114312.svg",
+      "bytes": 1142,
+      "sha256": "4de29b02fb94ce8e30cf1d3e13c571e217cf0918880be40dcf071d4fa82cf39d",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgSubtract.svg",
+      "bytes": 338,
+      "sha256": "0e95730f56ecabe30c9d41c9f969afba085d66f2bbdb66a5e0fcdceaf86ffc7b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgVector.svg",
+      "bytes": 2340,
+      "sha256": "59cefc73403fcdcf8c29889046414f256fa0a19f1cbc40b1dbafb8859da73c57",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgVector4126.svg",
+      "bytes": 1037,
+      "sha256": "1a8b8cedceed2a88ef1d0f9eca80c60e15f8f886fbedb0f922c4366d29329806",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgVector4127.svg",
+      "bytes": 438,
+      "sha256": "d12606b439d36940e629982599895faa2083e9cc2a3877d8bb60c597960c89b1",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgVector4139.svg",
+      "bytes": 625,
+      "sha256": "c2ee842f33a54a77dc35317fe770184a903ee9f91ac9510ebb21b8951b71c553",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgWaypoint.svg",
+      "bytes": 1188,
+      "sha256": "ee018548d9d850a2d4588c4aa1254524f9a3452f6b6d151fa0fc71f1b65f071c",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgWecomTempF67392B47Fca4B50Fb0572Da818Ed1D22.png",
+      "bytes": 102806,
+      "sha256": "77b6731dde82596ffa2beccdaa7301a8c70b365d0923d519b9fae4f18118c8fd",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgWecomTempF67392B47Fca4B50Fb0572Da818Ed1D23.svg",
+      "bytes": 1604,
+      "sha256": "10a8529f9291725c55f34abae35daf19cfcbc1923a57714e6522aa7288cc5246",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/imgWecomTempF67392B47Fca4B50Fb0572Da818Ed1D24.png",
+      "bytes": 144133,
+      "sha256": "7a2b839460fb22beab6ef14b01f9f064001afff99090edeb059ec128bcf40af7",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/hmi/widget-kit/manifest.json",
+      "bytes": 19959,
+      "sha256": "e8396e966f4272826d7fbe4d1fcc478d09743b8a8a79c51427235f4c95351958",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/logo.png",
+      "bytes": 16043,
+      "sha256": "0062309909c0001764f6bd6d5a09911a4961b694fc31df4d63307f8aabfc9cfb",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/models/su7/SOURCE.md",
+      "bytes": 1401,
+      "sha256": "b912a69475d49203d08df1570aef6d24aa7abb8472b74101ad10a6a9e9f8948b",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/models/su7/rig.json",
+      "bytes": 7149,
+      "sha256": "d5fc9f11b2445776f326a4ef68772f2a952802dd5fa6a7275cca8ad112e01e17",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/models/su7/sm_car.glb",
+      "bytes": 2104716,
+      "sha256": "31c38a3bbfe8e175db0badf71408e5f6140759d9b21b4fad48c01b6994e70306",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/models/su7/t_env_light.hdr",
+      "bytes": 909071,
+      "sha256": "b4ad2dd9878e9f88f56f71adefa7ad511eb21d79e6203cc3d41284faba8aba21",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/opensparx-retro-computer.png",
+      "bytes": 1519093,
+      "sha256": "796a538228499dc9eff08500e40944f41aa27cb828e8b8b2624e5de422089d99",
+      "storage": "git"
+    },
+    {
+      "path": "studio/public/opensparx-screen-mark.png",
+      "bytes": 16043,
+      "sha256": "0062309909c0001764f6bd6d5a09911a4961b694fc31df4d63307f8aabfc9cfb",
+      "storage": "git"
+    }
+  ]
+}

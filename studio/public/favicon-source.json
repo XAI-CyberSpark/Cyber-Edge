@@ -1,0 +1,43 @@
+{
+  "source": "https://www.figma.com/design/kqLScny45NQXJ9PCEfNDTr?node-id=110-147",
+  "nodeId": "110:147",
+  "originalSize": [
+    794,
+    794
+  ],
+  "exported": "2026-10-03",
+  "method": "Figma temporary frame: original image layer scaled 1.25x and recentered; source unchanged; temporary nodes removed; direct PNG export; ICO embeds identical PNG bytes",
+  "exports": [
+    {
+      "file": "favicon-figma-110-147-compact-16.png",
+      "size": 16,
+      "sha256": "d6bebed67aaa975750f4661e94b2dc4bfa0c8de3e6fe2ba3628754bc8a7328d2"
+    },
+    {
+      "file": "favicon-figma-110-147-compact-32.png",
+      "size": 32,
+      "sha256": "e81160c665c38636478cae2053484a3ec16e50dbb4ad627042bc8447593aedf3"
+    },
+    {
+      "file": "favicon-figma-110-147-compact-48.png",
+      "size": 48,
+      "sha256": "820f67ad30d94251a5b040a03ab81c5b7e68170a99417fb73cc895902060dfad"
+    }
+  ],
+  "revision": "compact",
+  "layout": {
+    "canvas": [
+      794,
+      794
+    ],
+    "cornerRadius": 150,
+    "image": [
+      900,
+      900
+    ],
+    "imageOffset": [
+      -60,
+      -52
+    ]
+  }
+}

@@ -61,4 +61,5 @@ model-providers.json
 credentials.json
 outputs/
 backend/projects/
-studio/public/docs/
+studio/public/docs/*
+!studio/public/docs/studio-preview.jpg

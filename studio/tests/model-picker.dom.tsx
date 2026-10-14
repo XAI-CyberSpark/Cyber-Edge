@@ -4,13 +4,14 @@ import {createRoot} from 'react-dom/client';
 import {AuthoringModelPicker, type ReasoningSettings} from '../src/components/layout/AuthoringModelPicker';
 (globalThis as any).IS_REACT_ACT_ENVIRONMENT=true;
 const providers=[{id:'minimax',label:'MiniMax',model:'MiniMax-M3',configured:true,reasoning:{supported:true,can_disable:true,efforts:[],default_enabled:true}},{id:'openai',label:'GPT',model:'gpt-4.1',configured:true,reasoning:{supported:false,can_disable:false,efforts:[],default_enabled:false}},{id:'anthropic',label:'Claude',model:'claude-sonnet-5',configured:false,reasoning:{supported:true,can_disable:true,efforts:['low','medium','high','xhigh','max'],default_enabled:true,default_effort:'high'}}];
+providers.push({id:'deepseek',label:'DeepSeek',model:'deepseek-flash',configured:false,reasoning:{supported:true,can_disable:true,efforts:['low','high','max'],default_enabled:true,default_effort:'high'}});
 let savedReasoning: ReasoningSettings | undefined;
 let gets=0,failLoad=false;
 let chosen=['minimax','MiniMax-M3'],ready=false,good=false,submitted:any,putCount=0;
 globalThis.fetch=async(url:any,init:any={})=>{
  if(init.method!=='PUT'){gets++;return failLoad ? Response.json({}, {status:503}) : Response.json({providers});}
- putCount++;submitted=JSON.parse(init.body);assert.ok(String(url).endsWith('/anthropic'));
- return good?Response.json({...providers[2],configured:true}):Response.json({detail:'Claude 调用失败（HTTP 401）'},{status:503});
+ putCount++;submitted=JSON.parse(init.body);const provider=providers.find(p=>String(url).endsWith('/'+p.id))!;assert.ok(provider);
+ return good?Response.json({...provider,configured:true}):Response.json({detail:'Claude 调用失败（HTTP 401）'},{status:503});
 };
 function Harness(){const [selection,setSelection]=useState(chosen);const [reasoning,setReasoning]=useState<ReasoningSettings>();return <AuthoringModelPicker providerId={selection[0]} model={selection[1]} reasoning={reasoning} onChange={(id,model,next)=>{chosen=[id,model];savedReasoning=next;setReasoning(next);setSelection(chosen)}} onAvailability={value=>{ready=value}}/>;}
 const root=createRoot(document.getElementById('root')!);
@@ -64,7 +65,16 @@ await click(button('返回模型列表'));await click(button('GPT模型选项'))
 assert.equal(document.querySelector('[role=switch]'),null);
 await click(button('返回模型列表'));
 const before=gets;failLoad=true;await click(button('刷新模型'));assert.equal(gets,before+1);assert.ok(document.querySelector('[role=alert]'));
-assert.equal(document.querySelectorAll('[data-model-choice]').length,3);
+assert.equal(document.querySelectorAll('[data-model-choice]').length,4);
 failLoad=false;await click(button('刷新模型'));assert.equal(document.querySelector('[role=alert]'),null);
 console.log('PASS: real-capability options, effort/toggle/reset values, unsupported controls hidden, refresh failure and retry');
+await select('deepseek');assert.equal(chosen[0],'minimax');
+assert.match(document.querySelector('[role=dialog]')!.textContent!,/DeepSeek/);
+await type('deepseek-test-only-secret');
+await act(async()=>document.querySelector('form')!.dispatchEvent(new window.Event('submit',{bubbles:true,cancelable:true})));
+assert.equal(submitted.model,'deepseek-flash');assert.equal(submitted.api_key,'deepseek-test-only-secret');
+assert.deepEqual(chosen,['deepseek','deepseek-flash']);assert.equal(ready,true);
+assert.equal(document.querySelector('[role=dialog]'),null);assert.equal(window.localStorage.length,0);
+assert.doesNotMatch(document.body.textContent!,/deepseek-test-only-secret/);
+console.log('PASS: DeepSeek uses the existing setup dialog, explicit provider endpoint and verified selection');
 await act(async()=>root.unmount());

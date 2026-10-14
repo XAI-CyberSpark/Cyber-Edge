@@ -10,7 +10,7 @@ class ChatMessage(BaseModel):
 
 
 class ChatRequestSchema(BaseModel):
-    provider_id: Optional[Literal["minimax", "openai", "anthropic"]] = None
+    provider_id: Optional[Literal["minimax", "openai", "anthropic", "deepseek"]] = None
     json_mode: bool = False
     model: str = Field(..., description="Model identifier (e.g., llama3, llava)")
     messages: List[dict] = Field(..., description="List of chat messages")

@@ -633,3 +633,17 @@ PLAN_ASSERTION_WEAK警告nodes.<id> exists仅证明状态记录存在，skipped/
 结构inspect通过且无计划时返回next_required_step。共享调用或时间超过50%且无计划时，宿主在下一次编排模型调用注入一次AUTHORING_PLAN_DUE提醒，提醒不增加调用/时间额度。主动submit没有当前revision和图指纹对应的实际trial证据时返回SUBMIT_TRIAL_REQUIRED；图改动后须重跑。宿主预算结束保留不可应用草稿及既有host finalize验证门槛不变。
 
 本轮验证与限制见[dev.107验收](releases/2.8.0-dev.107/ACCEPTANCE.md)。
+
+### dev.108 普通车控的动作授权说明（2026-10-13）
+
+保留dev.96及connection_contract的既有门槛：普通car_control的LLM来源必须为outputFormat=actions，经过logic仍保留该协议。固定action=windows、module=vehicleControl、signalKey=WINDOW_POSITION、function=set及area/targetStatus不豁免动作授权；固定WINDOW_POSITION/set仍需顶层action=windows通过Builder静态检查，JSON分类→logic→固定车窗仍会被GRAPH_CONNECTION_CONTRACT拒绝。由负责意图/动作决策的现有LLM直接输出actions，条件读取input.actions/input.action，不要求每图另加模型。targetStatus=0由既有windows.close_all授权，非零目标由windows.open_all授权，固定节点锁定实际区域与目标开度；模型参数不能覆盖固定区域。JSON例外仅限已登记HMI配置/字段绑定（含hmi_mock氛围灯）及已登记MCP arguments绑定。生成/审查应消费统一连接诊断，不建议删除合规动作决策后回到JSON违约路线。
+
+独立回归覆盖Builder静态检查、注入生成/审查与完整生产图，并使用确定性图内模型回调：先经图动作准备fl/fr/rl/rr=17/29/43/68并在等待点检查实际初值，再验证仅rr关闭、实际requested={rr:0}与其他三窗保持；否定、询问和其他窗不授权时保持四窗，模型离线及既有VehicleWorld卡窗故障走error反馈，不展示成功。普通JSON路径在模型调用和动作前拒绝，Python/TS诊断的来源、连线路径、目标和修法一致。这些是注入模型与隔离仿真证据，不证明真实模型意图识别或实车执行；没有扩展固定车窗JSON契约。迭代结果见[dev.108验收](releases/2.8.0-dev.108/ACCEPTANCE.md)。
+
+### dev.109 动作协议与用例车辆初态（2026-10-13–14）
+
+注册表`connection_contract.producers.llm.formats.actions.canonical_response_examples`提供实际动作与`none`两类完整响应；`car_control.data.action=windows`是节点分类，模型`action`与`actions[].name`使用`windows.close_all/windows.open_all`等canonical名称，空动作使用`action=none、actions=[]、parameters={}`。固定`WINDOW_POSITION/set`的区域映射为0=all、1=fl、2=fr、3=rl、4=rr、5=fl/fr、6=rl/rr；机器元数据位于`fields.area.window_area_targets`。`operation_contracts`提取普通车控/HMI/氛围灯的既有完整协议供按需加载，`action_summaries`只提供现有动作短用途，不增加执行能力。
+
+隔离试跑的case可声明`initial_windows={fl,fr,rl,rr}`（四键完整、有限JSON数值0–100）及`blocked_window=fl|fr|rl|rr|null`（单窗阻挡）；省略或null为四窗0、无故障。所有case条件在首个模型/动作调用前校验，初始化通过独立VehicleWorld状态设置，不产生工作流actions，不接触日常HMI。每步证据`initial_vehicle`保存执行前实际四窗和故障；动作后的`requested/actual/success`来自原执行回执，success只证明被请求目标到位。各case的车辆、故障、动作编号、会话、state与记忆均隔离；锁定后不能改初态/故障，调用方计划保持完全锁定。
+
+图内`_cloud_inference`保留提供商报告的数字usage；未知字段不补0。每次真实provider调用使用`runtime/graph_inference`范围，安全call_id沿增量observer传递，已完成与失败调用metadata同时保留在`model_usage`，后续失败/超时不抹掉前序消耗。图模型原12次预算独立于编排预算，临时observer/context在finally恢复。离线验证采用生产GraphEngine、隔离车辆和替身模型/HTTP传输，未执行真实模型或实车验证；当前结果见[dev.109验收](releases/2.8.0-dev.109/ACCEPTANCE.md)。

@@ -108,9 +108,14 @@ FLOW_INSTRUCTIONS = '''按用户目标组合已注册能力，输出WorkflowDraf
 - llm的模型指令只写data.systemPrompt（支持状态绑定），不要用prompt或promptTemplate，它们不会执行。outputFormat=text返回text/reply；json返回data对象；car_control共享HMI回执在action_result内，例如outputs.nodeId.action_result.actual和success，不在outputs.nodeId.actual。
 - 创作模型与执行模型独立。新llm节点明确model/providerId，使用已配置真实模型；没有指定时可以使用当前创作模型作默认，平台不覆盖已指定绑定。按任务模态核对实际接入。
 - 可以先生成固定内容，也可以使用llm节点在阶段前动态创作。自由回答需要wait(any)接模型/判断；不要把所有问题强制变成唯一短答案。能力缺失保留为missing，不能用相似动作冒充。
+- 普通car_control（含固定车窗的顶层action=windows、module=vehicleControl、signalKey=WINDOW_POSITION、function=set配置）在LLM来源路径上必须使用outputFormat=actions；经过logic仍保留同一动作协议，固定参数不改变该要求，JSON分类结果不能经logic获得车控授权。固定WINDOW_POSITION/set也需保留action=windows以通过Builder检查，不能只填写module/signalKey/function/area/targetStatus。让负责意图/动作决策的现有LLM直接输出actions，条件读取input.actions/input.action；不要求另加模型。WINDOW_POSITION的area/targetStatus锁定实际目标，targetStatus=0由既有windows.close_all授权，非零目标由windows.open_all授权，不能用模型参数覆盖固定区域。JSON例外仅限已登记HMI配置/字段绑定（含hmi_mock氛围灯）及已登记MCP arguments绑定。修复GRAPH_CONNECTION_CONTRACT时保留合规actions路径，不因审查建议删除动作决策而恢复JSON违约路线。
 - car_control的共享HMI控制使用executionMode=hmi（不是hmi_mock）、controlId（注册表ID，如ac.temp）、controlOperation=set/get、controlValue。该模式不要求action字段。hmi_mock只用于ambient_light.set/restore专用动作。
 - 通用流程的HMI controlValue可用单字段对象{"$ref":"state.savedValue"}或outputs.<节点ID>.action_result.actual等绑定，保留值类型；不能用文字插值传递数字。节点ID/路径先检查，实际值在运行时仍校验类型、范围、整数与选项。JSON模型可通过显式HMI配置和绑定组合动作，不把模型原文直接当动作执行。
 - car_control的ambient_light.set在executionMode=hmi_mock时可配置color/brightness/reason/poseTips（也支持绑定）；未配置时读取上游data.light_color/light_brightness/light_reason/pose_tips。
 - MCP使用tool节点tool_id=mcp、固定serverId/toolName与arguments对象；通过真实mcp_connections核对工具及参数。动态参数以$ref绑定input/state/outputs。输出data是工具structuredContent，text/content为原始返回，不是模型推断。只能调用已登记工具，未知工具保留missing；服务地址、凭据不得写入图。自动试跑仅可用allow_trials=true工具，不可通过声明readOnly绕过。
 - HMI已接入的mock控制可满足模拟体验。未知设备、真实GPS、音频和外部服务不能假定已连接。所有检查结果标明结构/模拟/真实服务范围。
 '''
+
+ACTION_PROTOCOL_INSTRUCTIONS = '''car_control.data.action=windows是节点分类，不是模型动作名；LLM action与actions[].name用实际下游支持的canonical名，不能返回action=windows或actions[].action。完整动作响应例子：{"action":"windows.close_all","actions":[{"name":"windows.close_all","parameters":{}}],"intent":"vehicle_control","parameters":{},"reply":"请求关闭车窗。","confidence":0.96}。合法无动作例子：{"action":"none","actions":[],"intent":"none","parameters":{},"reply":"未执行车控动作。","confidence":0.96}。action与首个actions[].name一致，空actions使用none；parameters为对象。回复只表达请求，动作后的成功结论需实际action_result.success、requested和actual。固定WINDOW_POSITION/set区域0=all、1=fl、2=fr、3=rl、4=rr、5=fl/fr、6=rl/rr，area=3是左后窗、area=4是右后窗；节点area/targetStatus锁定实际目标。'''
+
+FLOW_INSTRUCTIONS += '\n' + ACTION_PROTOCOL_INSTRUCTIONS

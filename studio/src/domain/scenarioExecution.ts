@@ -6,7 +6,7 @@ import {errorDetails} from './contractErrors';
  */
 import { GraphEngine, type GraphCallbacks } from '../utils/GraphEngine';
 import { ScenarioSessions } from './scenarioSession';
-import { VehicleWorld } from './vehicleWorld';
+import { VehicleWorld, type WindowKey } from './vehicleWorld';
 import { evaluateExpression, validateExpression } from './expression';
 import { bindFlowValue } from './flowSession';
 
@@ -15,6 +15,8 @@ export type ExecutionPlan = { cases: Array<{
   name: string;
   weather?: string;
   controls?: Array<{ control: string; value: any }>;
+  initial_windows?: Record<WindowKey, number> | null;
+  blocked_window?: WindowKey | null;
   steps: Array<{ input: any; event_id?: string; status?: string; assertions?: Assertion[] }>;
 }> };
 export type ExecutionAdapters = {
@@ -66,6 +68,9 @@ export async function executeScenario(project: any, plan: ExecutionPlan, adapter
       const hmi: Record<string, unknown> = {}, outputs: Record<string, any> = {}, nodes: Record<string, any> = {};
       const messages: string[] = [], actions: any[] = [], memories: any[] = [], steps: any[] = [];
       for (const control of test.controls || []) world.executeHmiControl(control);
+      if (test.initial_windows) world.setCar(car => ({...car,windows:{...test.initial_windows!}}));
+      world.setFault(test.blocked_window ?? null);
+      const initialVehicle={windows:structuredClone(world.getSnapshot().car.windows),blocked_window:world.getSnapshot().blockedWindow};
       globalThis.fetch = async (url, init) => {
         const path = new URL(String(url)).pathname, body = JSON.parse(String(init?.body || '{}'));
         if (path === '/v1/inference/chat/completions') {
@@ -102,7 +107,7 @@ export async function executeScenario(project: any, plan: ExecutionPlan, adapter
         try { run = await new GraphEngine(structuredClone(project.nodes), structuredClone(project.edges), callbacks, sessions).run(step.input, {eventId:step.event_id || `step-${index}`,signal:controller.signal}); }
         finally { clearTimeout(timer); }
         const snapshot=sessions.flow.snapshot();
-        const evidence={run, state:snapshot?.state || {}, car:structuredClone(world.getSnapshot().car), hmi:{...hmi}, nodes:snapshot?.nodes ? {...snapshot.nodes} : {...nodes}, outputs:structuredClone(snapshot?.outputs || outputs), messages:[...messages], actions:structuredClone(actions)};
+        const evidence={run, state:snapshot?.state || {}, car:structuredClone(world.getSnapshot().car), initial_vehicle:structuredClone(initialVehicle), hmi:{...hmi}, nodes:snapshot?.nodes ? {...snapshot.nodes} : {...nodes}, outputs:structuredClone(snapshot?.outputs || outputs), messages:[...messages], actions:structuredClone(actions)};
         const assertions=(step.assertions || []).map(a => {
           const actual=ownPath(evidence,a.path), record={...a, actual:actual === undefined ? null : actual, actual_missing:actual === undefined};
           try { return {...record, passed:assertionPass(a,actual)}; }

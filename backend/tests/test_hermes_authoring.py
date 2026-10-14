@@ -5,6 +5,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+import psutil
 from unittest.mock import patch, AsyncMock, Mock
 from fastapi import HTTPException
 from app.schemas.orchestration_schema import WorkflowGenerateRequestSchema
@@ -148,7 +149,13 @@ class TransportTests(unittest.IsolatedAsyncioTestCase):
             if pidfile.exists():break
             await asyncio.sleep(.02)
         pid=int(pidfile.read_text());await stream.aclose()
-        with self.assertRaises(ProcessLookupError):os.kill(pid,0)
+        # Windows may retain the terminated process until asyncio releases its
+        # transport handle on the next loop tick. The final death check remains.
+        if os.name == 'nt':
+            for _ in range(20):
+                if not psutil.pid_exists(pid): break
+                await asyncio.sleep(.01)
+        self.assertFalse(psutil.pid_exists(pid), 'worker remained after stream close')
     def test_bad_server_config_does_not_silently_select_other_engine(self):
         path=self.root/'engine.json';path.write_text('{"engine":"unknown"}')
         with patch('app.services.hermes_authoring.CONFIG_PATH',path):
@@ -160,7 +167,7 @@ class RoutingTests(unittest.IsolatedAsyncioTestCase):
     async def test_formal_builder_uses_configured_hermes_without_model_fallback(self):
         from app.services.scenario_builder import build_events
         seen=[]
-        async def fake(request,config):
+        async def fake(request,config,*,observer=None):
             seen.append(request.provider_id)
             yield 'result',{'test':'hermes-route'}
         with patch('app.services.hermes_authoring.configured_engine',return_value=EngineConfig(engine='hermes')),patch('app.services.hermes_authoring.hermes_events',fake):

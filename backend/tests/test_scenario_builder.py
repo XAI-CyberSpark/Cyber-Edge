@@ -215,13 +215,22 @@ class DraftRegression(unittest.IsolatedAsyncioTestCase):
         errors,_=validate_capabilities(result['project']['nodes'],result['project']['edges'])
         self.assertTrue(any('草稿' in e for e in errors));save.assert_not_called()
 
-    async def test_failed_repair_cannot_expose_stale_prior_candidate(self):
+    async def test_failed_repair_retains_design_only_candidate_without_execution_certification(self):
         c=candidate();c['requirement_coverage'][0]['status']='missing'
         outputs=[BRIEF,c,{'workflow':'broken'}]
         async def complete(_):return json.dumps(outputs.pop(0))
         result=next(d for e,d in [e async for e in ScenarioBuilder(WorkflowGenerateRequestSchema(prompt='乘客文字探险'),complete).events()] if e=='result')
-        self.assertFalse(result['build_report']['can_inspect'])
-        self.assertEqual(result['project']['nodes'],[])
+        self.assertTrue(result['build_report']['can_inspect'])
+        self.assertEqual([n['id'] for n in result['project']['nodes']],['input','story'])
+        self.assertEqual(result['build_report']['coverage'][0]['status'],'missing')
+        self.assertEqual(result['build_report']['candidate_attempt'],1)
+        self.assertFalse(result['build_report']['can_apply'])
+        self.assertFalse(result['build_report']['runtime_verified'])
+        self.assertEqual(result['build_report']['execution']['status'],'not_run')
+        self.assertTrue(all(n['data']['designOnly'] for n in result['project']['nodes']))
+        from app.services.node_capability_service import validate_capabilities
+        errors,_=validate_capabilities(result['project']['nodes'],result['project']['edges'])
+        self.assertTrue(any('草稿' in e for e in errors))
         self.assertTrue(any('字段' in e for e in result['validation']['errors']))
 
     def test_dangling_and_duplicate_ids_are_not_inspectable(self):

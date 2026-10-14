@@ -52,7 +52,10 @@ class BuilderTests(unittest.IsolatedAsyncioTestCase):
         events=[e async for e in ScenarioBuilder(WorkflowGenerateRequestSchema(prompt='测试'),complete,executor=execute).events()]
         result=next(v for k,v in events if k=='result')
         self.assertIn(GENERAL_BUILD_INSTRUCTIONS,messages[1][0]['content'])
-        self.assertIn(FLOW_INSTRUCTIONS,messages[1][0]['content'])
+        context=json.loads(messages[1][1]['content'])
+        self.assertIn('connection_contract',context['capabilities'])
+        self.assertIn('actions',context['capabilities']['connection_contract']['producers']['llm']['formats'])
+        self.assertIn('wait',context['capabilities']['nodes'])
         project=result['project']
         self.assertEqual(len(project['nodes']),5)
         self.assertEqual(next(n for n in project['nodes'] if n['id']=='m')['data']['model'],'independent-model')

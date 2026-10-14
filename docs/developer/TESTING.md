@@ -1,8 +1,94 @@
 # 测试与故障排查
 
-目的：为改动选择合适验证，并定位本机开发常见故障。状态：现有测试入口与排障指南；本轮文档工作未重跑全套产品测试。维护日期：2026-10-05。主依据：仓库脚本、源码和迭代验收。返回[开发者文档](README.md)与[项目主文档](../README.md)。
+## dev.111 意图顺序与阈值检索
+
+新协议验证理解不带目录，原文/description/source_quote与改写同时进入select，每需求查询恰好覆盖唯一ID，纯约束null不作正向检索，多目标合并不全局截K。生产understand/select合同独立；外部旧completion兼容单列。select日志、失败用量和总8次准入均需回归。
+
+固定检索CLI新增 `--min-score 0.35 --top-k 32`（初始默认），参数校验及策略写入报告；相对分是查询内部排序强度，不是正确率。`candidate_budget_met`保留为旧gold规模目标，不代表当前字符预算。无证据时完整目录可见但不制造零分候选。完整目录已从理解阶段移到select。沿用原64例回归金标，阈值后的候选完整率与目录可见性分列；不以手工改写替代真实意图模型测评。命令、实际结果及未测范围见[dev.111验收](../product/releases/2.8.0-dev.111/ACCEPTANCE.md)。
+
+上下文体积单列静态对照：三个固定契约选择下，当前首构图messages＋实际联合输出Schema字符相较同当前全目录对照减少49.77%–65.39%；探针保存完整尺寸/源码哈希，未调用模型或执行图。该数字不含新增select/返工/核验，且不是提供商token或历史dev.108冻结回放，不能当作实际整轮节省。具体口径与工件见[补充记录](../product/releases/2.8.0-dev.111/ACCEPTANCE.md#上下文体积对照补充2026-10-14)。
+
+用户后续授权真实编排测评：沿用固定十例并冻结prompt/gold，每例一次，当前生产builder、真实DeepSeek与BGE，在执行器/review前停止，不返回伪造passed证据；真实返回的缺口/澄清保留最终状态。独立代理静态复核7/10（70%）、图6/7、缺口/澄清1/3；执行成功/can_apply不评分，人工手动验收未执行。08/09缺口状态needs_changes属于编排处置失败，09调用者输入标志不等于可信MCP回执；07规范化15处额外变更违反局部编辑范围。
+
+隔离harness及run位于 `.demo-runtime/optimization-dev111/`，80实际调用/120万预留或已知token/7200秒总准入与每例720秒预登记；实际42调用/877,840输入＋输出token，未知/拒绝/provider失败0。保留全部解码输出、本地检查历史、候选哈希及原pending采集文件，最终判定另存accuracy-assessment.json，不挑最好产物/重抽。保存、设备/MCP、图执行和review均未调用，源码/受保护SHA保持。该实验不是HTTP/SSE/UI端到端、总体99.9%或成对成本测评；详细[评分口径、逐例和工件](../product/releases/2.8.0-dev.111/TEST_CASES.md)。
+
+用户授权源码快照前另行全量检查687项：663通过、3失败、10错误、11跳过。新增1项旧提示断言仍要求PlanningResult，按当前IntentUnderstanding/独立CapabilitySelection合同同步并加强阶段边界断言；input_contract＋intent_selection_pipeline22项复验通过，12个既有Windows/夹具残余保留，未称全量全绿。前端车窗7/7、执行器20/20、模型菜单7组DOM和构建通过；不追加付费模型调用。输出与保护范围见[源码快照验收](../product/releases/2.8.0-dev.111/ACCEPTANCE.md#用户授权源码快照2026-10-14)。
+
+## dev.110 固定工具检索测评
+
+最新主门槛为按任务全部必需能力可见的完整率≥99.9%，缺一项该任务即失败。指标版本2保留`ranked_all_required_rate`和平均Recall作为优先排序诊断，`all_required_rate`统计实际规划可见池（优先候选+节点概览+完整能力概览）。`availability_gate.sample_passed`只表示固定样本达到门槛，`population_target_validated=false`不证明总体99.9%。样本未达时CLI仍保存报告并退出2；模型选择/生成图另测。
+
+原heldout失败已打开做预算裁剪诊断，当前64例后续为回归集，不再是新的盲测；JSON原金标及split名称不改。完整目录保障测试为`tests.test_capability_availability`，覆盖极低预算、无证据和降级仍保留注册全集、未知MCP/权限事实以及understand实际视图。严禁用更多重复改写稀释失败率。
+
+[独立金标](../../benchmarks/retrieval/capability-retrieval-v1.json)固定64例，开发/留出各32，覆盖84个生产能力身份及3个原创MCP夹具身份。标签来自注册契约，不由检索排名生成；4个未知例单列，不计入准确度分母。每个必需ID或等价组是一项relevance unit；Recall、all-required、MRR及nDCG分别统计，不能把全目录保留得到的100% Recall当作有效裁剪或整体编排成功。
+
+先按[模型配置](CONFIGURATION.md#工具检索模型dev1102026-10-14)准备真实本地embedding，再从根目录运行：
+
+```powershell
+$env:PYTHONUTF8='1'
+$env:PYTHONIOENCODING='utf-8'
+.\backend\.venv_host_lite\Scripts\python.exe scripts\evaluate_capability_retrieval.py --output .demo-runtime\optimization-dev110\retrieval-new.json
+```
+
+默认比较BM25、纯dense和hybrid。`--modes bm25`仅词法，可在无模型环境运行；`--baseline`可额外指定冻结的原实现源码进行历史机制比较。输出路径必须为新文件，已有证据不被覆盖。报告保存金标/目录/模型摘要、每例候选、分母、延迟和降级；冷probe含首次加载，case延迟包含各fixture首次文档索引建立，不能一律称热缓存延迟。精确上下文token与真实规划质量/成本未由这个离线脚本测量。
+
+机制测试使用注入向量/临时协议worker；真实BGE测评单独记录，二者不互相代替。对应回归从backend运行，Windows先设置上述UTF-8环境；现有JSON Schema测试依赖以绝对PYTHONPATH引用根`.demo-runtime/test-deps`：
+
+```powershell
+.\.venv_host_lite\Scripts\python.exe -m unittest tests.test_capability_selection tests.test_hybrid_capability_recall tests.test_capability_embeddings tests.test_capability_retrieval_dataset tests.test_capability_retrieval_evaluation tests.test_authoring_context tests.test_builder_hybrid_recall tests.test_builder_stage_protocol tests.test_mcp_selected_discovery
+```
+
+原十例完整查询的检索复查只评价候选规模/回退与引用保留，不重新调用规划模型或执行图。完整结果、源码指纹、全量旧残余及本轮限制见[验收](../product/releases/2.8.0-dev.110/ACCEPTANCE.md)。
+
+目的：为改动选择合适验证，并定位本机开发常见故障。状态：现有测试入口与排障指南；全量后端有既有残余，dev.109十例未达质量门槛。维护日期：2026-10-14。主依据：仓库脚本、源码和迭代验收。返回[开发者文档](README.md)与[项目主文档](../README.md)。
+
+## 编排接口批测（dev.108，2026-10-13）
+
+使用已运行的本机后端，复用 `benchmarks/scenarios/cases.json` 原始案例。下面是 Windows 项目根目录命令；模型配置入口见[配置与接入](CONFIGURATION.md#编排模型与诊断日志dev1082026-10-13)。
+
+```powershell
+.\backend\.venv_host_lite\Scripts\python.exe -X utf8 scripts\test_workflow_batch.py --provider minimax --base-url http://127.0.0.1:8001
+```
+
+菜单配置 DeepSeek 后，将 `--provider minimax` 改为 `--provider deepseek`；默认使用服务端保存的模型 ID。脚本只读取非秘密配置状态，不读取配置文件密钥。
+
+默认选择 CT-01、CT-02、CT-03、IN-02、BT-02、CR-01，每条一次并串行请求。`--cases`可指定现有案例ID，`--repeat`为1至5；`--model`省略时读取该提供商服务端模型，不自动切换服务商。每请求最长900秒，响应默认最多16MiB；可通过对应参数调整但有硬上限。请求不携带用户项目或历史，`save_on_success=false`、`overwrite=false`，不会把候选写进项目库。
+
+每轮在 `.demo-runtime/workflow-batches/` 建立独立目录，保存套件副本、请求、SSE事件、结果/候选、逐条评价及 `summary.json`/`SUMMARY.md`。报告区分讨论回复、可应用候选、待确认、能力缺口、试跑/审查未通过、SSE错误、断流、超时和缺配置。HTTP200不等于业务成功；静态规则通过、实际运行、人工内容评审和实车验证分别记录。正常的能力缺口或待确认结果可以符合案例预期，但不能记成可运行workflow。
+
+未配置模型时默认不发送生成请求，记录blocked并返回非零退出码；仅诊断错误路径时加`--allow-unconfigured`，它可以请求真实HTTP/SSE接口，仍把缺配置记为blocked。失败或blocked不会伪装成成功。真实模型生成及图内试跑调用会消耗所选服务商额度；在明确测试环境执行。
+
+本轮回归与真实批测证据见[dev.108验收](../product/releases/2.8.0-dev.108/ACCEPTANCE.md)。本机结果不替代反馈环境复现。
+
+dev.108深归因在原批测目录另存`diagnostic-provider-probe.json`，仅两例规划/首次构图的元数据重放，不执行图或改写原报告。已复现DeepSeek `finish_reason=length`且14,000额度被推理大量消耗；通用503不能一概判为网络错误。通过API查询到configured=true、HTTP200或tool_calls均不代表完整JSON/图已验收。车窗图仍须遵守当前actions契约；合法needs_input可带不可执行designOnly草稿，评测不能因有草稿而判错。修复优先级、独立离线复现与未证实范围见该验收的深入归因章节。
+
+同轮修复回归入口：在backend运行`python -m unittest tests.test_provider_completion_diagnostics tests.test_scenario_builder_recovery tests.test_vehicle_action_authoring_contract tests.test_scenario_benchmark tests.test_workflow_batch tests.test_orchestration_logging`。提供商用HTTP替身；窗口测试仅注入模型响应，实际TS图引擎和隔离车辆仍运行。四窗用不同非零开度准备，不能用全0状态证明只关右后窗。澄清oracle检查问题、明确不可应用/未运行，以及全designOnly且引用合法的草稿，不再强制无节点。Windows实际Node/async管道检查需可用进程权限，挂起或被拒不能计为通过。
+
+真实预算A/B目录`.demo-runtime/workflow-batches/budget-ab-20261013-155156-f49b3da4/`仅保存元数据，同一CT-01首次构图输入在32K/high与32K/low下均形成字段有效结果，输出17,191/17,455 token。共一次规划和两次构图，不检查或执行图、未保存项目；这不等于六例复测通过，也没有据此修改默认思考强度。真实冻结六例复测与剩余失败以本轮验收记录为准。
+
+Windows 的 Python worker 夹具回归需要父子进程统一 UTF-8；在测试前设置 `PYTHONUTF8=1` 与 `PYTHONIOENCODING=utf-8`，不要仅给父进程加 `-X utf8`。本轮测试依赖隔离在 `.demo-runtime/test-deps`，未升级服务虚拟环境。全量检查发现的既有 SQLite 连接未关闭、项目夹具缺失、符号链接权限、POSIX 进程/权限断言限制分别登记到验收；没有跳过失败来构造全绿结果。
 
 ## 按改动选择检查
+
+### dev.109 原创十例与独立回放
+
+用户后续明确当前只测试编排产物。该范围检查需求/节点/参数/数据引用/连线分支和编辑范围，跳过执行成功、独立回放及运行后模型核验通过条件，`can_apply`也不能代替编排评价。最新只读复评见[测试记录](../product/releases/2.8.0-dev.109/TEST_CASES.md)：图5/7符合，全部6符合/2不符合/2无产物待评，无新增API/执行。以下命令仍是包含产品试跑的原端到端批测入口；此次没有新增跳过执行的生成模式或修改产品流程。两类数据分别记录。
+
+[十例预登记](../product/releases/2.8.0-dev.109/TEST_CASES.md)使用原创夹具和对话；7可执行/2缺口/1澄清分母固定，原套件保持。`--suite benchmarks/scenarios/orchestration-dev109.json --cases all`选择新套件。case可选`request_context`仅传`conversation_history/current_project/acceptance_tests`，通过真实请求Schema，固定不保存/不覆盖。
+
+`--execute-runtime`以生产GraphEngine独立执行预登记计划，另存`runtime.json`和`verification_usage`；`--replay-batch <原批目录>`不发生成请求并校验原case/结果哈希。回放默认真实LLM额度0，真实MCP禁止，确定性图仍执行；有LLM的图须明确登记额度或如实保留未完成，不注入固定答案冒充模型验证。人工项保持pending，代理复核另存并标识来源。
+
+整批`--max-requests/--max-model-calls/--max-tokens/--max-total-seconds`在请求前准入；HTTP层按44调用及输出766144、输入预留估计保守计入，未知用量不释放。HTTP无法中途限制服务端每次调用或证明输入token硬上限；本轮另用隔离8002服务的逐调用预留wrapper，具体额度/源码冻结与初始失败见迭代验收。不能将大额准入预留当作实际用量或费用。
+
+本轮补齐`X-Orchestration-Run-ID`与日志的同一run；原接口缺header时两例usage保持unknown，人工关联恢复下限另存，不改原summary。构图/修复联合Schema根必须`type=object`且保留两个分支约束。回归模块为`tests.test_builder_provider_schema`、`tests.test_workflow_batch`及既有阶段/增量日志测试。
+
+十例结束后的独立审查补修两项预算边界，67项相关回归通过、无新付费调用：只有run/terminal事件而调用记录全缺时保持unknown并保留预扣；44调用预留只适用于bounded，生成入口遇到Hermes/未知引擎时返回`budget_unsupported_engine`、付费POST前阻止，不切换服务端引擎。原产物的离线回放仍按独立回放预算执行。真实十例绑定运行时旧runner，收尾新runner身份另存，不据此改写实测结果。
+
+dev.109 第一批新增选择/上下文/协议/用量回归。在Windows从backend使用既有`.venv_host_lite\Scripts\python.exe -X utf8 -m unittest`，模块为`tests.test_capability_selection`、`tests.test_mcp_selected_discovery`、`tests.test_authoring_context`、`tests.test_builder_stage_protocol`、`tests.test_incremental_provider_usage`、`tests.test_scenario_execution_usage`。既有schema测试依赖已隔离在根`.demo-runtime/test-deps`，通过绝对PYTHONPATH引用；本轮没有安装或升级共享依赖。
+
+Windows沙箱曾把asyncio事件循环阻塞在socketpair的本机accept；faulthandler确认尚未进入业务代码。需允许本地回环/子进程权限后再运行，不能把挂起计为通过或改断言规避。UTF-8与SystemRoot按既有子进程边界保持。
+
+Studio运行`node scripts/test-trial-window-conditions.mjs`、`node scripts/test-scenario-execution.mjs`及`npm run build`。验证完整四窗有限范围、实际初态/故障/回执、用例隔离、调用方锁定，模型用量测试使用MockTransport。全量后端已知12项Windows/夹具残余与新失败分列；最终命令/数字见[验收](../product/releases/2.8.0-dev.109/ACCEPTANCE.md)。这些不是云端模型或实车验收。
 
 前端命令在 `studio` 目录运行。使用实际存在的脚本名，不假定仓库有通用 `npm test`。
 

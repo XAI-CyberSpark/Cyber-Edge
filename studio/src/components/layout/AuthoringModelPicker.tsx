@@ -42,7 +42,7 @@ export function AuthoringModelPicker({ providerId, model, disabled, reasoning, o
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
   const current = providers.find(p => p.id === providerId);
-  const label = current?.label || ({ minimax: 'MiniMax', openai: 'GPT', anthropic: 'Claude' } as Record<string,string>)[providerId] || '模型';
+  const label = current?.label || ({ minimax: 'MiniMax', openai: 'GPT', anthropic: 'Claude', deepseek: 'DeepSeek' } as Record<string,string>)[providerId] || '模型';
 
   useEffect(() => {
     const controller = new AbortController();

@@ -3,6 +3,7 @@ import {parseInputObject} from './inputContract';
 import {errorDetails} from './contractErrors';
 import {eventOf, isGeneralFlow, normalizeFlowAnswer, type FlowNode, type FlowEdge} from './flowSession';
 import type {ExecutionPlan} from './scenarioExecution';
+import {WINDOW_KEYS} from './vehicleWorld';
 export type PlanDiagnostic = {category:string;code:string;message:string;path:string;node_id?:string;field?:string;suggestions?:string[][];expected_type?:string};
 /** Conservative reachability only: never evaluates model results or business expressions. */
 export function inspectTestPlan(project:{nodes:FlowNode[];edges:FlowEdge[]},plan:ExecutionPlan) {
@@ -23,6 +24,11 @@ export function inspectTestPlan(project:{nodes:FlowNode[];edges:FlowEdge[]},plan
   const previousStateWrites=new Set<string>();
   let previousCaseWrite=false;
   for(const [i,test] of plan.cases.entries()) {
+    const initial=test.initial_windows;
+    if(initial!=null&&(!initial||typeof initial!=='object'||Array.isArray(initial)||Object.keys(initial).length!==WINDOW_KEYS.length||WINDOW_KEYS.some(key=>!Object.hasOwn(initial,key)||typeof initial[key]!=='number'||!Number.isFinite(initial[key])||initial[key]<0||initial[key]>100)))
+      errors.push({category:'input_contract',code:'PLAN_INITIAL_WINDOWS',path:`plan.cases[${i}].initial_windows`,message:`plan.cases[${i}].initial_windows（${test.name}）：必须完整提供fl/fr/rl/rr四键，开度为有限JSON数值0–100；省略或null为四窗0。`});
+    if(test.blocked_window!=null&&!(WINDOW_KEYS as readonly unknown[]).includes(test.blocked_window))
+      errors.push({category:'input_contract',code:'PLAN_BLOCKED_WINDOW',path:`plan.cases[${i}].blocked_window`,message:`plan.cases[${i}].blocked_window（${test.name}）：故障只允许fl/fr/rl/rr单窗或null。`});
     let waiting:FlowNode[]=[],caseWrite=false;const localStateWrites=new Set<string>();
     for(const [j,step] of test.steps.entries()) {
       const path=`plan.cases[${i}].steps[${j}]`,event=eventOf(step.input,`static-${j}`);

@@ -71,12 +71,20 @@ class InputContractTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(all(x['repair_hint'] for x in d));self.assertFalse(any(x['code']=='ASSERTION_STATUS' for x in d));self.assertNotIn('状态waiting，期望not_failed',' '.join(execution_feedback(report)))
 
     def test_contract_instructions_cover_shape_fields_and_isolation(self):
-        from app.services.scenario_builder import BRIEF_INSTRUCTIONS
+        from app.services.scenario_builder import BRIEF_INSTRUCTIONS, SELECT_INSTRUCTIONS, BOUNDED_RULES
         from app.services.scenario_execution import EXECUTION_INSTRUCTIONS
         import json
         from pathlib import Path
         catalog=json.loads((Path(__file__).parents[1]/'app/services/node_capabilities.json').read_text())
-        for text in [BRIEF_INSTRUCTIONS,EXECUTION_INSTRUCTIONS,next(t[1] for t in session().tools() if t[0]=='oakegde_test_plan')]:
+        self.assertIn('IntentUnderstanding',BRIEF_INSTRUCTIONS)
+        self.assertIn('brief和queries',BRIEF_INSTRUCTIONS)
+        self.assertIn('不选择能力',BRIEF_INSTRUCTIONS)
+        self.assertNotIn('PlanningResult',BRIEF_INSTRUCTIONS)
+        self.assertIn('CapabilitySelection',SELECT_INSTRUCTIONS)
+        self.assertIn('不重写brief',SELECT_INSTRUCTIONS)
+        self.assertIn('source_quote',BRIEF_INSTRUCTIONS)
+        self.assertIn('outputFields',BOUNDED_RULES)
+        for text in [EXECUTION_INSTRUCTIONS,next(t[1] for t in session().tools() if t[0]=='oakegde_test_plan')]:
             self.assertIn('outputFields',text);self.assertIn('直接',text);self.assertIn('同一个 case',text)
         self.assertIn('step.input',json.dumps(catalog,ensure_ascii=False))
 

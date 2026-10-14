@@ -1,5 +1,5 @@
 """Data contract for model-authored or caller-supplied graph acceptance tests."""
-from typing import Any, Literal
+from typing import Annotated, Any, Literal
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 class Contract(BaseModel):
@@ -33,10 +33,20 @@ class InitialControl(Contract):
     control: str = Field(min_length=1, max_length=100)
     value: Any
 
+WindowPosition = Annotated[float, Field(strict=True, ge=0, le=100)]
+
+class InitialWindows(Contract):
+    fl: WindowPosition
+    fr: WindowPosition
+    rl: WindowPosition
+    rr: WindowPosition
+
 class ExecutionCase(Contract):
     name: str = Field(min_length=1, max_length=120)
     weather: str = Field(default='sunny', max_length=50)
     controls: list[InitialControl] = Field(default_factory=list, max_length=53)
+    initial_windows: InitialWindows | None = Field(default=None, description='隔离用例的四窗初始开度；必须完整提供fl/fr/rl/rr，有限JSON数值0–100。初始化不产生工作流动作。省略或null为四窗0。')
+    blocked_window: Literal['fl', 'fr', 'rl', 'rr'] | None = Field(default=None, description='隔离车辆的单窗阻挡故障；省略或null为无故障，不作用于日常HMI。')
     steps: list[ExecutionStep] = Field(min_length=1, max_length=30)
 
 class ExecutionPlan(Contract):

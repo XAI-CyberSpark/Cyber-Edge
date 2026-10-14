@@ -1,6 +1,7 @@
 """Model-facing patch fields come from the catalog, never scenario-specific literals."""
 import copy
 import unittest
+from unittest.mock import patch
 from jsonschema import Draft202012Validator, ValidationError as SchemaError
 from app.services.authoring_session import GraphPatch
 from app.services.node_capability_service import CATALOG
@@ -12,6 +13,17 @@ def data_schema():
 
 
 class PatchDataSchemaTests(unittest.TestCase):
+    def test_projected_control_enum_stays_scoped_when_live_registry_changes(self):
+        from app.services.hmi_control_contract import CONTROLS
+        from app.services.node_data_schema import patch_data_schema
+        projected = copy.deepcopy(CATALOG)
+        projected['nodes']['car_control']['hmi_controls'] = {'ac.temp': {'type': 'number', 'min': 16, 'max': 30}}
+        # A generic snapshot can still carry an older top-level full directory;
+        # the explicit node projection determines this schema's loaded scope.
+        projected['hmi_controls'] = copy.deepcopy(CONTROLS)
+        with patch.dict(CONTROLS, {'test.registered': {'type': 'boolean'}}):
+            self.assertEqual(['ac.temp'], patch_data_schema(projected)['properties']['controlId']['enum'])
+
     def test_arrays_have_items_and_reject_item_envelopes(self):
         schema=data_schema();props=schema.get('properties',{})
         self.assertIn('aliases',props)

@@ -19,6 +19,15 @@ ROOT = Path(__file__).resolve().parents[3]
 EXECUTION_TIMEOUT_SECONDS = 150
 OVERLOAD_RETRY_DELAY_SECONDS = 2
 
+def execution_environment():
+    """Keep worker credentials isolated while preserving OS runtime essentials."""
+    env = {'PATH': os.environ.get('PATH', ''), 'LANG': 'en_US.UTF-8', 'TMPDIR': tempfile.gettempdir()}
+    if os.name == 'nt':
+        system_root = os.environ.get('SystemRoot') or os.environ.get('SYSTEMROOT')
+        if system_root:
+            env['SystemRoot'] = system_root
+    return env
+
 def test_plan_control_errors(plan):
     from app.services.hmi_control_contract import validate_request
     errors=[]
@@ -70,13 +79,31 @@ MCP工具仅调用已登记且allow_trials=true的服务；每候选最多12次�
 
 EXECUTION_INSTRUCTIONS += '\n已有记忆正确示例（前提：图中普通input连接memory_write，写入分支下游没有LLM；另一个eventName=read_memory的input连接memory_read，其下游有LLM使记忆节点执行读取；节点ID按实际图配置，不是宿主初始化命令）：'+json.dumps(MEMORY_CASE_EXAMPLE,ensure_ascii=False)+'。两个步骤必须放在同一个case。'
 
+EXECUTION_INSTRUCTIONS += '\n每个case可声明initial_windows={"fl":17,"fr":29,"rl":43,"rr":68}，必须完整四键且为有限JSON数值0–100；省略或null为四窗0。blocked_window只允许fl/fr/rl/rr单窗或null，默认无故障。两者仅初始化本case隔离车辆，不是工作流动作、不产生actions回执，也不影响日常HMI；所有case的条件在调用模型或执行动作前校验。每步evidence.initial_vehicle保留实际初始windows和blocked_window，动作后检查action_result.requested/actual/success和实际car.windows；success只证明被请求目标到位，不能证明未请求车窗关闭。锁定后不能修改初态或故障条件，调用方计划完全锁定。'
+
 async def _cloud_inference(body):
     request = ChatRequestSchema.model_validate(body)
     if not request.provider_id:
         raise ValueError('自动试跑模型需明确providerId；本地模型适配器尚未连接')
     provider = model_providers.resolve(request.provider_id, request.model)
-    content = await model_providers.complete(provider, request.messages, max_tokens=min(request.max_tokens or 2048, 14000))
-    return {'model':provider.model, 'choices':[{'finish_reason':'stop','message':{'role':'assistant','content':content}}]}
+    counts={}; observer=model_providers.COMPLETION_USAGE_OBSERVER.get()
+    def collect_usage(value):
+        counts.update({key:number for key,number in value.items() if type(number) is int and number>=0})
+        if observer:
+            try:observer(value)
+            except Exception:pass
+    token=model_providers.COMPLETION_USAGE_OBSERVER.set(collect_usage)
+    try:
+        content = await model_providers.complete(provider, request.messages, **model_providers.runtime_options(provider, request.max_tokens))
+    finally:
+        model_providers.COMPLETION_USAGE_OBSERVER.reset(token)
+    mapping={'input_tokens':'prompt_tokens','output_tokens':'completion_tokens',
+             'input_uncached_tokens':'input_uncached_tokens','input_tokens_lower_bound':'input_tokens_lower_bound',
+             'cache_read_tokens':'cache_read_input_tokens','cache_write_tokens':'cache_creation_input_tokens',
+             'cache_hit_tokens':'prompt_cache_hit_tokens','cache_miss_tokens':'prompt_cache_miss_tokens'}
+    usage={target:counts[source] for source,target in mapping.items() if source in counts}
+    if 'reasoning_tokens' in counts:usage['completion_tokens_details']={'reasoning_tokens':counts['reasoning_tokens']}
+    return {'model':provider.model, 'choices':[{'finish_reason':'stop','message':{'role':'assistant','content':content}}], 'usage':usage}
 
 async def execute_candidate(project, plan, *, inference=None, mcp=None, timeout=EXECUTION_TIMEOUT_SECONDS, source_root=None):
     """Cancel/timeout always reaps the worker. Tests may inject a labelled model adapter."""
@@ -105,8 +132,22 @@ async def execute_candidate(project, plan, *, inference=None, mcp=None, timeout=
     bindings={(n.get('data',{}).get('providerId'),n.get('data',{}).get('model')) for n in project.get('nodes',[]) if n.get('type')=='llm'}
     tool_bindings={(n.get('data',{}).get('serverId'),n.get('data',{}).get('toolName')) for n in project.get('nodes',[]) if n.get('type')=='tool' and (n.get('data',{}).get('tool_id') or n.get('data',{}).get('tool'))=='mcp'}
     # No provider credentials/config paths are inherited by the child.
-    env={'PATH':os.environ.get('PATH',''), 'LANG':'en_US.UTF-8', 'TMPDIR':tempfile.gettempdir()}
-    process=None;calls=0;tool_calls=0;overload_retries=0
+    env=execution_environment()
+    process=None;calls=0;tool_calls=0;overload_retries=0;model_usage=[]
+    async def infer(body):
+        observer=model_providers.COMPLETION_CALL_OBSERVER.get()
+        def observe(metadata):
+            if metadata.get('event')=='completed':model_usage.append(dict(metadata))
+            if observer:
+                try:observer(metadata)
+                except Exception:pass
+        tokens=[(model_providers.COMPLETION_CALL_OBSERVER,model_providers.COMPLETION_CALL_OBSERVER.set(observe)),
+                (model_providers.COMPLETION_CALL_CONTEXT,model_providers.COMPLETION_CALL_CONTEXT.set(
+                    {'stage':'runtime','call_scope':'graph_inference','attempt':calls,'policy_version':'graph-execution-dev109'})),
+                (model_providers.COMPLETION_BUDGET_HOOK,model_providers.COMPLETION_BUDGET_HOOK.set(None))]
+        try:return await (inference or _cloud_inference)(body)
+        finally:
+            for variable,token in reversed(tokens):variable.reset(token)
     async def stop(proc):
         if proc and proc.returncode is None:
             proc.kill()
@@ -130,7 +171,7 @@ async def execute_candidate(project, plan, *, inference=None, mcp=None, timeout=
                     message=json.loads(line)
                     if message.get('type')=='result':
                         result=message['result']
-                        result.update(model_calls=calls,tool_calls=tool_calls,overload_retries=overload_retries,tool_source='injected_test_adapter' if mcp else 'registered_mcp',model_source='injected_test_adapter' if inference else 'configured_api',runtime_verified=result.get('status')=='passed')
+                        result.update(model_calls=calls,model_usage=model_usage,tool_calls=tool_calls,overload_retries=overload_retries,tool_source='injected_test_adapter' if mcp else 'registered_mcp',model_source='injected_test_adapter' if inference else 'configured_api',runtime_verified=result.get('status')=='passed')
                         await process.wait()
                         if process.returncode: raise ValueError('试跑进程异常退出')
                         return result
@@ -151,7 +192,7 @@ async def execute_candidate(project, plan, *, inference=None, mcp=None, timeout=
                                 calls+=1
                                 if attempt:overload_retries+=1
                                 try:
-                                    result=await (inference or _cloud_inference)(body)
+                                    result=await infer(body)
                                     break
                                 except Exception as exc:
                                     if attempt or getattr(exc,'upstream_status_code',None) not in (529,503):raise
@@ -165,9 +206,9 @@ async def execute_candidate(project, plan, *, inference=None, mcp=None, timeout=
                         response={'id':message['id'],'error':reason[:600]}
                     process.stdin.write(json.dumps(response,ensure_ascii=False).encode()+b'\n');await process.stdin.drain()
         except TimeoutError:
-            return {'status':'failed','issue':'自动试跑超过执行预算，进程已取消','runtime_verified':False,'model_calls':calls,'tool_calls':tool_calls,'overload_retries':overload_retries}
+            return {'status':'failed','issue':'自动试跑超过执行预算，进程已取消','runtime_verified':False,'model_calls':calls,'model_usage':model_usage,'tool_calls':tool_calls,'overload_retries':overload_retries}
         except (OSError,ValueError,KeyError) as exc:
-            return {'status':'failed','issue':str(exc)[:600],'runtime_verified':False,'model_calls':calls,'tool_calls':tool_calls,'overload_retries':overload_retries}
+            return {'status':'failed','issue':str(exc)[:600],'runtime_verified':False,'model_calls':calls,'model_usage':model_usage,'tool_calls':tool_calls,'overload_retries':overload_retries}
         finally:
             await stop(process)
 

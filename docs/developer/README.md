@@ -1,5 +1,11 @@
 # OAKEgde Studio 开发者文档
 
+dev.111（2026-10-14）：已实现意图理解/改写→本地检索→独立选择；原文与改写随阶段和结果保留，每意图阈值/Top-K代替字符裁剪。248项集成246通过、2项既有Windows权限残余，真实BGE原查询候选60/60完整。用户授权真实十例独立静态复核7/10（70%），图6/7、缺口/澄清1/3；42次调用/877,840输入＋输出token，未执行图。局部编辑、缺口交付与MCP可信回执仍失败，人工/执行及配对收益待验收。[需求与合同](../product/releases/2.8.0-dev.111/PRD.md)、[验收](../product/releases/2.8.0-dev.111/ACCEPTANCE.md)、[逐例结果](../product/releases/2.8.0-dev.111/TEST_CASES.md)。相关源码、测试、夹具与文档随本次开发提交保存；未发布，日常与共享环境保持。
+
+dev.110（2026-10-14）：混合索引及完整能力目录保障已实现；用户要求99.9%完整召回、缺一项失败。理解阶段不再因排序预算隐藏能力，完整目录可见与优先排序分列评价。当前小回归集可见性通过，99.9%总体目标与真实规划质量未验证；[验收](../product/releases/2.8.0-dev.110/ACCEPTANCE.md)、[配置](CONFIGURATION.md)、[测试](TESTING.md)。日常与共享环境保持。
+
+dev.109（2026-10-14）第一批编排优化已实现：本地能力召回/选中契约、阶段上下文、安全增量用量及实际证据门槛。当前离线验证与遗留范围见[验收](../product/releases/2.8.0-dev.109/ACCEPTANCE.md)，真实质量/成本及M3–M5待验收；没有重载开发服务或更新日常5175。阅读行为变化见[核心概念](CONCEPTS.md)、计量配置见[配置](CONFIGURATION.md)、回归入口见[测试](TESTING.md)。
+
 这套文档帮助你在本机运行 OAKEgde Studio，理解场景编排的工作方式，修改网页和后端，以及接入模型、节点与 MCP 工具。读完对应章节后，应能找到实现位置、完成操作并判断结果是否正确。
 
 状态：第一版，持续维护。维护日期：2026-10-05。适用范围：当前仓库的智能座舱网页工作台，产品编号以 [VERSION](../../VERSION) 为准。主依据：当前源码、[项目上下文](../../CONTEXT.md)、领域规范与各版本验收。返回[项目主文档](../README.md)。
@@ -39,5 +45,7 @@
 本目录解释开发操作与阅读路径，不复制所有规范。架构细节看[当前实现架构](../architecture/02_Current_Implementation_Architecture.md)；后者原为 dev.74 快照、局部更新至 dev.80，近期行为还需结合对应迭代和源码核对。未来方案看[目标架构](../architecture/03_Target_Architecture.md)，重要取舍看 [ADR](../adr/)。
 
 界面看[设计规范](../product/DESIGN_GUIDELINES.md)、[设计参数](../product/DESIGN_TOKENS.md)和[文字规范](../product/TYPOGRAPHY.md)。节点与工具看[节点契约](../product/NODE_CONTRACTS.md)和 [MCP 运行契约](../product/MCP_RUNTIME.md)。节点契约含设计草案，不能将全部条目视为已经可执行。
+
+编排成本与后续开发路线看[整体优化方案](../product/ORCHESTRATION_OPTIMIZATION.md)。用途：能力筛选、上下文、提示词与增量修复的设计/实施主依据；dev.109实现第一批，dev.110按用户确认推进混合检索；实际状态与证据看对应迭代验收，M3–M5仍未完成。
 
 产品需求和验收继续保存在[迭代目录](../product/releases/)，变更摘要进入 [CHANGELOG](../../CHANGELOG.md)。本套文档先在仓库内共同维护；尚未搭建或发布独立文档网站。

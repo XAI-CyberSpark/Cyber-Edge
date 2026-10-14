@@ -49,9 +49,66 @@ class Benchmark(unittest.TestCase):
         self.assertTrue(any(c['status']=='fail' for c in check_candidate(BY_ID['CT-03'],result)))
 
     def test_unnecessary_question_is_not_treated_as_success(self):
-        result={'project':{'nodes':[]},'validation':{'passed':False},'build_report':{'status':'needs_input','can_apply':False,'brief':{'questions':['起点在哪里？']}}}
+        result={'project':{'nodes':[]},'validation':{'passed':False},'build_report':{'status':'needs_input','can_apply':False,'runtime_verified':False,'brief':{'questions':['起点在哪里？']}}}
         self.assertTrue(any(c['id']=='disposition' and c['status']=='fail' for c in check_candidate(BY_ID['BT-01'],result)))
         self.assertTrue(all(c['status']=='pass' for c in check_candidate(BY_ID['IN-01'],result)))
+
+    def clarification_result(self):
+        return {'project':{'nodes':[
+            {'id':'input','type':'input','position':{'x':0,'y':0},'data':{'designOnly':True}},
+            {'id':'output','type':'output','position':{'x':300,'y':0},'data':{'designOnly':True}},
+        ],'edges':[{'id':'e','source':'input','target':'output'}]},
+            'validation':{'passed':False},
+            'build_report':{'status':'needs_input','can_apply':False,'can_inspect':True,'runtime_verified':False,
+                'brief':{'questions':['“它”具体指哪扇车窗？']}}}
+
+    def test_clarification_may_include_inspectable_non_executable_draft(self):
+        checks=check_candidate(BY_ID['IN-02'],self.clarification_result())
+        self.assertTrue(all(c['status']=='pass' for c in checks),checks)
+
+    def test_clarification_requires_questions_and_no_execution_verification(self):
+        for mutation in ('no_questions','blank_question','question_not_list','verified','verification_missing','applicable','validated'):
+            with self.subTest(mutation=mutation):
+                result=self.clarification_result();result['project']={'nodes':[],'edges':[]}
+                report=result['build_report']
+                if mutation=='no_questions':report['brief']['questions']=[]
+                elif mutation=='blank_question':report['brief']['questions']=[' ']
+                elif mutation=='question_not_list':report['brief']['questions']='车窗是哪扇？'
+                elif mutation=='verified':report['runtime_verified']=True
+                elif mutation=='verification_missing':report.pop('runtime_verified')
+                elif mutation=='applicable':report['can_apply']=True
+                else:result['validation']['passed']=True
+                self.assertTrue(any(c['status']=='fail' for c in check_candidate(BY_ID['IN-02'],result)))
+
+    def test_clarification_draft_cannot_contain_executable_nodes(self):
+        for flag in (None,False,1,'true'):
+            with self.subTest(flag=flag):
+                result=self.clarification_result()
+                if flag is None:result['project']['nodes'][1]['data'].pop('designOnly')
+                else:result['project']['nodes'][1]['data']['designOnly']=flag
+                self.assertTrue(any(c['status']=='fail' for c in check_candidate(BY_ID['IN-02'],result)))
+
+    def test_clarification_draft_requires_actual_inspectable_structure(self):
+        for mutation in ('node_id_missing','node_id_blank','unknown_type','position_missing','position_text','position_infinite','data_not_object','duplicate_node','duplicate_edge','edge_id_missing','dangling','edge_target_missing','node_not_object','nodes_not_list','edges_not_list','edges_without_nodes'):
+            with self.subTest(mutation=mutation):
+                result=self.clarification_result();project=result['project'];node=project['nodes'][1];edge=project['edges'][0]
+                if mutation=='node_id_missing':node.pop('id')
+                elif mutation=='node_id_blank':node['id']=''
+                elif mutation=='unknown_type':node['type']='unknown'
+                elif mutation=='position_missing':node.pop('position')
+                elif mutation=='position_text':node['position']['x']='300'
+                elif mutation=='position_infinite':node['position']['x']=float('inf')
+                elif mutation=='data_not_object':node['data']=['designOnly']
+                elif mutation=='duplicate_node':node['id']='input'
+                elif mutation=='duplicate_edge':project['edges'].append(copy.deepcopy(edge))
+                elif mutation=='edge_id_missing':edge.pop('id')
+                elif mutation=='dangling':edge['target']='missing'
+                elif mutation=='edge_target_missing':edge.pop('target')
+                elif mutation=='node_not_object':project['nodes'][1]=None
+                elif mutation=='nodes_not_list':project['nodes']='invalid'
+                elif mutation=='edges_not_list':project['edges']='invalid'
+                else:project['nodes']=[]
+                self.assertTrue(any(c['status']=='fail' for c in check_candidate(BY_ID['IN-02'],result)))
 
     def review(self,case):
         return {'case_sha256':digest(case),'artifact_sha256':'artifact-A','reviewer':'测试评审人','reviewed_at':'2026-09-25','criteria':[{'id':x['id'],'status':'pass','evidence':'测试证据：第三章'} for x in case['manual']]}

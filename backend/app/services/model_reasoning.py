@@ -1,7 +1,8 @@
 """Documented authoring controls, validated before any provider request.
 
 Sources (2026-10-05): MiniMax text-openai-api, Claude effort/thinking,
-OpenAI reasoning guide. Unknown model aliases expose no speculative controls.
+OpenAI reasoning guide; DeepSeek Chat Completions/thinking mode (2026-10-13).
+Unknown model aliases expose no speculative controls.
 """
 import re
 from fastapi import HTTPException
@@ -36,6 +37,9 @@ def capabilities(provider_id, model):
         elif re.fullmatch(r'gpt-5\.(?:1|2|4|5)(?:-\d{4}-\d{2}-\d{2})?', model):
             efforts=['low','medium','high'] + ([] if model.startswith('gpt-5.1') else ['xhigh'])
             result.update(supported=True, can_disable=True, default_enabled=model.startswith('gpt-5.5'), efforts=efforts, default_effort='medium')
+    elif provider_id == 'deepseek' and model in ('deepseek-flash','deepseek-v4-pro'):
+        result.update(supported=True, can_disable=True, default_enabled=True,
+                      efforts=['low','high','max'], default_effort='high')
     return result
 
 
@@ -57,6 +61,10 @@ def request_fields(provider_id, model, settings):
     if settings is None: return {}
     if provider_id == 'openai':
         return {'reasoning_effort':settings.effort or 'medium'} if settings.enabled else {'reasoning_effort':'none'}
+    if provider_id == 'deepseek':
+        fields={'thinking':{'type':'enabled' if settings.enabled else 'disabled'}}
+        if settings.effort: fields['reasoning_effort']=settings.effort
+        return fields
     fields={'thinking':{'type':'adaptive' if settings.enabled else 'disabled'}}
     if settings.effort:
         if provider_id == 'anthropic': fields['output_config']={'effort':settings.effort}
@@ -74,6 +82,8 @@ def bind_hermes_reasoning(agent, provider, settings):
         extra=dict(payload.get('extra_body') or {})
         for key in ('reasoning','thinking','reasoning_effort','output_config'):
             payload.pop(key,None); extra.pop(key,None)
+        if provider['id']=='deepseek':
+            payload.pop('reasoning_split',None); extra.pop('reasoning_split',None)
         if provider['id']=='anthropic': payload.update(fields)
         else:
             if 'thinking' in fields: extra['thinking']=fields['thinking']

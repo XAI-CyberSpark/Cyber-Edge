@@ -7,6 +7,7 @@ from __future__ import annotations
 import hashlib
 import json
 from app.services.node_capability_service import validate_capabilities
+from app.services.scenario_builder import DraftGraph
 
 
 def digest(value):
@@ -40,7 +41,21 @@ def check_candidate(case, result):
     if expected!='preview':
         check('not_applied',report.get('can_apply') is False and (result.get('validation') or {}).get('passed') is False,'澄清/缺口不得标为可应用')
         if expected=='needs_input':
-            check('question_present',bool((report.get('brief') or {}).get('questions')) and not nodes,'提出澄清问题且不先交付执行图','intent')
+            questions=(report.get('brief') or {}).get('questions')
+            check('question_present',isinstance(questions,list) and bool(questions) and all(isinstance(q,str) and q.strip() for q in questions),'提出非空的具体澄清问题','intent')
+            check('not_runtime_verified',report.get('runtime_verified') is False,'澄清结果不得标为已执行验证')
+            draft_nodes=project.get('nodes',[]);draft_edges=project.get('edges',[])
+            safe_draft=isinstance(draft_nodes,list) and isinstance(draft_edges,list) and not draft_nodes and not draft_edges
+            if draft_nodes:
+                try:
+                    DraftGraph.model_validate({'nodes':draft_nodes,'edges':draft_edges},strict=True)
+                    ids=[n['id'] for n in draft_nodes];edge_ids=[e['id'] for e in draft_edges]
+                    safe_draft=(all(n['data'].get('designOnly') is True for n in draft_nodes)
+                        and len(ids)==len(set(ids)) and len(edge_ids)==len(set(edge_ids))
+                        and all(e['source'] in ids and e['target'] in ids for e in draft_edges))
+                except Exception:
+                    safe_draft=False
+            check('clarification_draft',safe_draft,'可无草稿，或提供结构完整、引用有效且全部 designOnly 的不可执行草稿','flow')
         else:
             check('gap_present',any(x.get('status')=='missing' and str(x.get('note','')).strip() for x in report.get('coverage',[])) or bool((project.get('meta') or {}).get('missing_capabilities')),'具体缺口必须保留；缺口是否完整仍需人工核对')
         return checks

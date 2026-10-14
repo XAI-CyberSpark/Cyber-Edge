@@ -6,6 +6,7 @@ import os
 import re
 import sys
 import tempfile
+import time
 from pathlib import Path
 from urllib.parse import urlsplit
 from . import mcp_packages
@@ -129,6 +130,66 @@ async def discover(server_id):
     server=binding(server_id)
     tools=await _worker(server,'list',timeout=15)
     return [{**tool,'server_id':server_id,'allow_trials':server['tools'][tool['name']].get('allow_trials',False)} for tool in tools]
+
+def safe_connection_snapshot():
+    """Read already bound public metadata without a connection or discovery.
+
+    The allowlist deliberately excludes URLs, commands, environment variable
+    names, headers and credentials. Missing tool purpose remains unknown.
+    Managed recipes enter this view only when explicitly present in settings.
+    """
+    result = []
+    for server_id, server in settings().items():
+        record = {'server_id': server_id, 'configured': True, 'available': None, 'tools': []}
+        for key in ('name', 'description'):
+            if isinstance(server.get(key), str):
+                record[key] = server[key]
+        for name, permission in server['tools'].items():
+            tool = {'name': name, 'allow_trials': permission.get('allow_trials', False), 'execution_authorized': True}
+            for key in ('title', 'description'):
+                if isinstance(permission.get(key), str):
+                    tool[key] = permission[key]
+            record['tools'].append(tool)
+        result.append(record)
+    return result
+
+async def discover_selected(server_ids, *, timeout=15, budget_seconds=None):
+    """Discover only selected bindings within the caller's remaining deadline.
+
+    Failures keep their short identity/permission facts. They do not prove an
+    external capability absent and never authorize a trial. Old catalog() keeps
+    its original full-discovery behavior for existing API consumers.
+    """
+    started = time.monotonic()
+    snapshot = {record['server_id']: record for record in safe_connection_snapshot()}
+    records = []
+    for server_id in dict.fromkeys(server_ids):
+        record = dict(snapshot.get(server_id, {'server_id': server_id, 'configured': False, 'available': None, 'tools': []}))
+        remaining = timeout if budget_seconds is None else min(timeout, max(0, budget_seconds - (time.monotonic() - started)))
+        discovery_start = time.monotonic()
+        try:
+            if remaining <= 0:
+                raise TimeoutError()
+            server = binding(server_id)
+            async with asyncio.timeout(remaining):
+                discovered = await _worker(server, 'list', timeout=remaining)
+            if not isinstance(discovered, list) or any(not isinstance(tool, dict) or not isinstance(tool.get('name'), str) for tool in discovered):
+                raise MCPRuntimeError('MCP工具发现响应格式无效。')
+            # A server annotation cannot add a tool or change local permissions.
+            record['tools'] = [{**{key: tool[key] for key in ('name', 'title', 'description', 'inputSchema', 'input_schema', 'outputSchema') if key in tool},
+                                'server_id': server_id, 'execution_authorized': True,
+                                'allow_trials': server['tools'][tool['name']].get('allow_trials', False)}
+                               for tool in discovered if tool.get('name') in server['tools']]
+            record['available'] = True
+        except asyncio.CancelledError:
+            raise
+        except (MCPRuntimeError, TimeoutError) as error:
+            record['available'] = False
+            record['issue'] = ('MCP发现期限已到，工具用途与连接结果仍不可确定。' if isinstance(error, TimeoutError)
+                               else 'MCP选中服务发现失败，工具用途与连接结果仍不可确定。')
+        record['discovery_elapsed_seconds'] = round(time.monotonic() - discovery_start, 6)
+        records.append(record)
+    return records
 
 async def catalog():
     semaphore=asyncio.Semaphore(4)

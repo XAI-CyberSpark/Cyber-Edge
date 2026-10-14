@@ -1,4 +1,5 @@
 import json
+from contextlib import aclosing
 import re
 import time
 from typing import AsyncGenerator
@@ -13,6 +14,7 @@ from app.schemas.orchestration_schema import (
 )
 from app.services.orchestration_service import OrchestrationService
 from app.services.scenario_builder import build_events
+from app.services.orchestration_logging import OrchestrationRunLog
 
 router = APIRouter()
 
@@ -20,22 +22,25 @@ router = APIRouter()
 @router.post("/generate", response_model=WorkflowGenerateResponseSchema)
 async def generate_workflow(request: WorkflowGenerateRequestSchema):
     """Generate, validate, test, and optionally save a workflow from natural language."""
-    async for event, data in build_events(request):
-        if event == "result":
-            return WorkflowGenerateResponseSchema.model_validate(data)
+    async with aclosing(build_events(request)) as events:
+        async for event, data in events:
+            if event == "result":
+                return WorkflowGenerateResponseSchema.model_validate(data)
     raise RuntimeError("场景构建未返回结果")
 
 
 @router.post("/generate-stream")
 async def generate_workflow_stream(request: WorkflowGenerateRequestSchema):
     """Stream workflow generation with thinking chain via SSE."""
+    run = OrchestrationRunLog(request)
     return StreamingResponse(
-        _stream_orchestration(request),
+        _stream_orchestration(request, run),
         media_type="text/event-stream",
         headers={
             "Cache-Control": "no-cache",
             "Connection": "keep-alive",
             "X-Accel-Buffering": "no",
+            "X-Orchestration-Run-ID": run.fields["run_id"],
         },
     )
 
@@ -55,11 +60,13 @@ def _strip_reasoning_from_model_content(raw_text: str) -> str:
     ).strip()
 
 
-async def _stream_orchestration(request: WorkflowGenerateRequestSchema) -> AsyncGenerator[str, None]:
+async def _stream_orchestration(request: WorkflowGenerateRequestSchema, run=None) -> AsyncGenerator[str, None]:
     """Public progress only; never expose model reasoning or provider error bodies."""
     try:
-        async for event, data in build_events(request):
-            yield _sse_event(event, data)
+        source = build_events(request) if run is None else build_events(request, run=run)
+        async with aclosing(source) as events:
+            async for event, data in events:
+                yield _sse_event(event, data)
     except Exception as exc:
         from fastapi import HTTPException
         message = "场景构建未完成，当前项目未被替换。请重试或补充需求。"
@@ -75,7 +82,10 @@ async def _stream_orchestration(request: WorkflowGenerateRequestSchema) -> Async
                     checkpoint=AuthoringCheckpoint.model_validate(exc.detail['checkpoint']).model_dump()
             elif isinstance(exc.detail,str):
                 message = exc.detail
-        yield _sse_event("error", {"message": message, **({'diagnostics':diagnostics} if diagnostics is not None else {}), **({'checkpoint':checkpoint} if checkpoint is not None else {})})
+        from app.services.model_providers import FAILURE_CODES
+        code = getattr(exc, 'provider_failure_code', None)
+        safe_code = code if isinstance(code, str) and code in FAILURE_CODES else None
+        yield _sse_event("error", {"message": message, **({'code':safe_code} if safe_code else {}), **({'diagnostics':diagnostics} if diagnostics is not None else {}), **({'checkpoint':checkpoint} if checkpoint is not None else {})})
 
 
 # Config endpoints share the application's authenticated SiteAccessMiddleware.
@@ -95,7 +105,7 @@ def list_providers(response: Response):
     return {'providers':model_providers.statuses()}
 
 @router.put('/providers/{provider_id}')
-async def configure_provider(provider_id: Literal['minimax','openai','anthropic'], request: Request, response: Response):
+async def configure_provider(provider_id: Literal['minimax','openai','anthropic','deepseek'], request: Request, response: Response):
     response.headers['Cache-Control']='no-store'
     raw = bytearray()
     async for chunk in request.stream():
@@ -123,7 +133,7 @@ def authoring_engine_status(response: Response):
 
 
 @router.get('/providers/{provider_id}/reasoning')
-def provider_reasoning(provider_id: Literal['minimax','openai','anthropic'], response: Response, model: str | None = None):
+def provider_reasoning(provider_id: Literal['minimax','openai','anthropic','deepseek'], response: Response, model: str | None = None):
     from app.services.model_reasoning import capabilities
     response.headers['Cache-Control']='no-store'
     provider=model_providers.resolve(provider_id,model,require_key=False)

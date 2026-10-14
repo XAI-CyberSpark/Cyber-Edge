@@ -814,7 +814,7 @@ class OrchestrationService:
 - 每个 node 都必须有唯一 id。
 - position 必须是数字。
 - llm 节点必须有 data.model。为新节点显式配置 outputFormat：text（纯文本）、json（数据）、actions（动作）。auto 仅兼容旧项目。
-- json 模式必须配置 outputFields，例如 {{"nav_needed":"boolean","summary":"string"}}。支持 string/number/boolean/array/object 的顶层类型检查，下游使用 input.data.nav_needed。通常不能把 json/text 节点直接连到工具或车控；例外是 executionMode="hmi_mock" 的 ambient_light.set/restore，以及 executionMode="hmi" 且显式 valueField 的共享控制节点。后者 controlId 取能力目录，输入 input.data[valueField] 必须匹配类型。
+- json 模式必须配置 outputFields，例如 {{"nav_needed":"boolean","summary":"string"}}。支持 string/number/boolean/array/object 的顶层类型检查，下游使用 input.data.nav_needed。普通工具/车控的LLM来源路径必须使用outputFormat=actions，经过logic仍须遵守；JSON例外仅限已登记HMI配置/字段绑定（含executionMode="hmi_mock"的ambient_light.set/restore）及已登记MCP工具的arguments绑定。共享HMI的controlId取能力目录，controlValue/$ref或valueField绑定必须匹配实际字段类型。
 - actions 模式只返回 reply、action、actions（name/parameters），下游条件依据 input.actions 或 input.action，不可依据会被丢弃的任意字段。为文字内容建议 maxTokens=2048。
 - llm/interaction 的失败分支使用 sourceHandle="error"，成功路径省略。fallback.trigger 只是说明，不能代替 error 连线；不能在成功路径同时执行失败反馈。
 - 旅程、分章节游戏、等待回答等持续场景使用 input -> interaction。每个工作流一个 interaction，唯一输入直接进入互动；不要用 memory 冒充精确进度，不用环路或一次性 llm 输出替代等待。
@@ -828,7 +828,7 @@ class OrchestrationService:
 - 儿童单帧视觉场景使用 input -> llm -> recognition -> logic -> output/fallback；recognition 必须配置 resultSource="vision"，上游模型必须返回 status(normal/risk/unknown)、confidence(0-1)、risk_action、summary 的 JSON。其他感知任务若无适配器，应说明能力缺失，不能捏造识别结果。
 - logic 多分支的 edges 必须明确 sourceHandle="true" 或 "false"；filter 是数据处理，不是分支。
 - systemInput 仅支持 weather（模拟天气与车窗）、camera/rear_camera（单帧图片）；不能声称接入实时传感器、CAN 或语音流。
-- car_control 优先使用 action="windows", parameter="close_all"/"open_all"；指定车窗用 module="vehicleControl", function="set", signalKey="WINDOW_POSITION", area=0至6, targetStatus=0至100。氛围灯使用 action="ambient_light.set" 或 "ambient_light.restore"，executionMode="hmi_mock"，不填module/signalKey/function；set读取input.data的light_color(#RRGGBB)、light_brightness(0–100)、light_reason、pose_tips。已有HMI模拟即可完成本平台调灯体验，不要求真实车机。新页面共享控制使用 executionMode="hmi", controlId, controlValue, controlOperation="set"/"get"，不填 module/signalKey/function；可用 valueField 显式绑定上游 JSON。旧座椅加热/通风与遮阳帘 get/set 已接入共享状态。其他车型信号、subscribe 和自动泊车尚未接入。
+- car_control 优先使用 action="windows", parameter="close_all"/"open_all"；指定车窗同时保留 action="windows", module="vehicleControl", function="set", signalKey="WINDOW_POSITION", area=0至6, targetStatus=0至100；缺action也会被Builder检查拒绝。固定参数不改变普通车控的actions门槛；负责动作决策的现有LLM使用outputFormat=actions，logic按input.actions/input.action判断授权，不能用JSON分类→logic→固定车窗替代。targetStatus=0由既有windows.close_all授权，非零目标由windows.open_all授权，实际区域与开度由固定节点锁定，不使用模型参数覆盖区域。氛围灯使用 action="ambient_light.set" 或 "ambient_light.restore"，executionMode="hmi_mock"，不填module/signalKey/function；set读取input.data的light_color(#RRGGBB)、light_brightness(0–100)、light_reason、pose_tips。已有HMI模拟即可完成本平台调灯体验，不要求真实车机。新页面共享控制使用 executionMode="hmi", controlId, controlValue, controlOperation="set"/"get"，不填 module/signalKey/function；可用 valueField 显式绑定上游 JSON。旧座椅加热/通风与遮阳帘 get/set 已接入共享状态。其他车型信号、subscribe 和自动泊车尚未接入。
 - tool 仅允许 tool="music"/"nav"/"call_phone"，全部仅界面仿真；不可生成 api_call 伪装外部接口。
 - 不生成 risk_monitor 连续监测、tts 播报等未接入能力。缺失能力写入 workflow.meta.missing_capabilities 数组，并在 summary 中说明，不能以预设成功替代。
 - test_cases 只是建议用例，未实际运行，不得称为已通过测试。

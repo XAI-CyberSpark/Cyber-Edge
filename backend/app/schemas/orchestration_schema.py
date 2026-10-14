@@ -30,7 +30,7 @@ class WorkflowGenerateRequestSchema(BaseModel):
     reasoning: ReasoningSettings | None = None
     agent_mode: Literal["single", "team"] | None = Field(default=None, description="Hermes authoring mode; omitted uses server default. Both modes keep the same graph execution and acceptance gates.")
     acceptance_tests: ExecutionPlan | None = Field(default=None, description='Optional caller-owned input sequences and assertions; models cannot change these expectations.')
-    provider_id: Literal["minimax", "openai", "anthropic"] = "minimax"
+    provider_id: Literal["minimax", "openai", "anthropic", "deepseek"] = "minimax"
     prompt: str = Field(..., description="Natural language workflow requirement")
     project_name: Optional[str] = Field(None, description="Preferred project name")
     current_project: Optional[ProjectSchema] = Field(

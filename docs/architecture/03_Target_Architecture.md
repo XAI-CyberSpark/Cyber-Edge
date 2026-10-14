@@ -1,5 +1,7 @@
 # OAKEgde Studio 目标架构（MVP 阶段）
 
+dev.111本轮局部实施：按用户确认把bounded的合并理解/选择拆为understand、逐需求本地检索、select；原文与改写共同支撑选择，阈值/每意图Top-K代替候选字符裁剪，完整注册目录仍保障可见性。不新增服务或改变能力执行契约，正常路径增加一次选择请求，总8次保持。此轮不推进GraphPatch或Hermes适配；[需求](../product/releases/2.8.0-dev.111/PRD.md)、[实际验证](../product/releases/2.8.0-dev.111/ACCEPTANCE.md)。
+
 - **目的**：在现状架构基础上，明确接下来按什么结构演进：哪些保持、哪些要补、哪些明确不做。
 - **状态**：当前规范（用户 2026-09-30 确认第 6 节全部事项）。描述目标结构与演进顺序，不代表已实现；实现与验收按各迭代记录。
 - **维护日期**：2026-09-30。主依据：[02 现状架构](<02_Current_Implementation_Architecture.md)、ADR 0001–0007、[ADR 0008](../adr/0008-target-architecture-and-device-access.md)、[NODE_CONTRACTS.md](../product/NODE_CONTRACTS.md>) 第 9 节、AGENTS.md「通用能力优先」。
@@ -113,6 +115,8 @@ graph TD
 以上决策登记为 [ADR 0008](../adr/0008-target-architecture-and-device-access.md)。
 
 ## 7. 演进顺序
+
+编排成本与可靠性专题主依据见[整体优化方案](../product/ORCHESTRATION_OPTIMIZATION.md)（维护2026-10-14）。dev.108形成设计与历史真实失败证据；dev.109已在新分支接入M1/M2任务能力视图、阶段上下文和计量/证据，采用单体内存索引，不新增服务或改变SDK。第一批离线结果见[dev.109验收](../product/releases/2.8.0-dev.109/ACCEPTANCE.md)，增量修复与真实质量/成本仍待验收。当前真实引擎bounded，不将本页历史Hermes示意图视为当前默认引擎。
 
 1. 能力注册表：前后端 `nodeCapabilities.json` 合并为单一来源。
 2. 执行适配器接口 + mock 车控适配器，结果标 `source`。

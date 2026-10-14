@@ -35,6 +35,7 @@ def field_conflicts(catalog=None):
 
 
 def patch_data_schema(catalog=None):
+    full_registry = catalog is None
     catalog = CATALOG if catalog is None else catalog
     conflicts = field_conflicts(catalog)
     properties = {}
@@ -50,7 +51,8 @@ def patch_data_schema(catalog=None):
             continue
         literal = {key: copy.deepcopy(field[key]) for key in ('type', 'items', 'enum') if field.get(key) is not None}
         if field.get('enum_source') == 'hmi_controls':
-            literal['enum'] = list(CONTROLS)
+            controls = CONTROLS if full_registry else catalog.get('nodes', {}).get('car_control', {}).get('hmi_controls', {})
+            literal['enum'] = list(controls)
         prop = {'anyOf': [literal, copy.deepcopy(VALUE_REFERENCE_SCHEMA)]} if field['bindable'] else literal
         prop['description'] = '; '.join(descriptions)
         properties[name] = prop

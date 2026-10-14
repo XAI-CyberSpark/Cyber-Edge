@@ -1,8 +1,31 @@
 # 本地开发快速开始
 
-目的：运行网页与轻量后端，并区分页面启动成功、模型可用和场景验收成功。状态：当前操作指南，命令已按源码核对；本轮未在全新电脑重装。维护日期：2026-10-05。适用：macOS 开发环境。返回[开发者文档](README.md)与[项目主文档](../README.md)。
+目的：运行网页与轻量后端，并区分页面启动成功、模型可用和场景验收成功。状态：当前操作指南，命令已按源码核对；本轮未在全新电脑重装。维护日期：2026-10-13。适用：macOS 与下述 Windows 开发环境。返回[开发者文档](README.md)与[项目主文档](../README.md)。
 
 主依据：[安装脚本](../../scripts/setup_local.sh)、[服务管理脚本](../../scripts/local_services.py)、[本地环境记录](../devops/05_macOS_Local.md)。
+
+## Windows 开发端口（dev.108）
+
+本机已用现有 `backend/.venv_host_lite`（Python 3.13.5）与 Node 25.8.0 启动验证。默认5173/8000被其他服务占用，本轮使用5174/8001；先检查端口，避免重复启动。以下手工命令需已准备项目依赖，在两个 PowerShell 终端从仓库根目录分别运行：
+
+```powershell
+$env:PYTHONUTF8='1'
+$env:PYTHONIOENCODING='utf-8'
+$env:OLLAMA_BASE_URL='http://127.0.0.1:11435/v1'
+$env:OPENSPARX_BASE_URL=$env:OLLAMA_BASE_URL
+Set-Location backend
+.\.venv_host_lite\Scripts\python.exe -X utf8 -m uvicorn main_host_lite:app --host 127.0.0.1 --port 8001
+```
+
+```powershell
+$env:VITE_PROXY_TARGET='http://127.0.0.1:8001'
+Set-Location studio
+node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 5174 --strictPort
+```
+
+打开 [Studio 5174](http://127.0.0.1:5174/)，检查后端 `/health` 与前端 `/v1/projects/`。UTF-8 环境变量用于让继承环境的 Python 子进程保持相同编码；仅父进程 `-X utf8` 不会自动改变子进程。图试跑的隔离 Node 子进程在 Windows 额外保留 `SystemRoot`，修复其 CSPRNG 启动失败；依然不会继承模型凭据。固定 Hermes 子进程另有白名单环境，未实测该 SDK 的 Windows 真实调用。
+
+当前后台开发实例的进程与输出路径记录在 `.demo-runtime/dev-processes.json`，编排日志见[配置与诊断](CONFIGURATION.md#编排模型与诊断日志dev1082026-10-13)。这不是通用 Windows 安装器，也不更新日常5175或其数据；实际测试与已知 Windows 限制见[dev.108验收](../product/releases/2.8.0-dev.108/ACCEPTANCE.md)。
 
 
 ## 日常使用的独立环境（dev.93）

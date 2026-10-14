@@ -1,6 +1,8 @@
 # OAKEgde Studio API 使用与参考
 
-目的：帮助开发者调用当前工作台后端，正确处理项目保存、编排事件和 MCP 结果。状态：当前核心接口指南，非全部路由逐字段手册。维护日期：2026-10-05。主依据：[host-lite 入口](../../backend/main_host_lite.py)、[路由](../../backend/app/api/)与 [Schema](../../backend/app/schemas/)。返回[开发者文档](../developer/README.md)与[项目主文档](../README.md)。
+dev.111内部编排阶段更新：bounded正常路径先understand输出IntentUnderstanding，再本地逐需求检索，随后select输出CapabilitySelection，最后加载契约构图。请求接口不新增阈值字段或改写参数；原prompt/history仍保留。SSE的选择进度复用planning阶段，实际诊断调用stage可为select；总调用上限8保持。原文/改写不写入安全诊断日志。实现状态与验证边界见[验收](../product/releases/2.8.0-dev.111/ACCEPTANCE.md)。
+
+目的：帮助开发者调用当前工作台后端，正确处理项目保存、编排事件和 MCP 结果。状态：当前核心接口指南，非全部路由逐字段手册。维护日期：2026-10-13。主依据：[host-lite 入口](../../backend/main_host_lite.py)、[路由](../../backend/app/api/)与 [Schema](../../backend/app/schemas/)。返回[开发者文档](../developer/README.md)与[项目主文档](../README.md)。
 
 ## 运行服务与接口来源
 
@@ -26,13 +28,16 @@
 | `DELETE /v1/projects/{project_id}` | 删除项目 | 删除真实项目文件 |
 | `GET /v1/orchestration/providers` | 服务商配置状态 | 已配置不等于真实可用 |
 | `PUT /v1/orchestration/providers/{provider_id}` | 模型及密钥配置 | 写配置，可能触发连接验证 |
+| `GET /v1/orchestration/providers/{provider_id}/reasoning?model=...` | 模型思考能力 | 未知别名不推测控制项 |
 | `GET /v1/orchestration/engine` | 编排引擎配置状态 | 不披露运行路径或密钥 |
 | `POST /v1/orchestration/generate` | 一次返回编排结果 | 可能调用真实模型，按参数决定保存 |
-| `POST /v1/orchestration/generate-stream` | 流式编排 | 同上，响应为 SSE |
+| `POST /v1/orchestration/generate-stream` | 流式编排 | 同上，响应为 SSE；`X-Orchestration-Run-ID`与本次服务端安全日志共用run_id |
 | `GET /v1/mcp/connections` | 工具发现与状态 | 可访问已登记服务，不执行其业务工具 |
 | `POST /v1/mcp/invoke` | 工具调用 | 可首次安装配方并执行实际工具 |
 | `GET /v1/capabilities` | 已导入能力资料 | 资料不代表可执行 |
 | `GET /v1/executions/{key}` | 执行检查点 | 与项目 JSON 保存不同 |
+
+dev.108 同轮接入的服务商 ID 为 `minimax`、`openai`、`anthropic`、`deepseek`。配置 PUT 的 JSON 为 `{model, api_key?}`，先进行简短真实调用，再原子保存；验证失败保留旧配置。`api_key`只发给后端设置入口，不写进编排请求或项目；`base_url`不接受客户端任意修改。DeepSeek 使用官方固定地址，配置、默认模型与验证范围见[模型服务商](../developer/CONFIGURATION.md#模型服务商)。
 
 ## 读取与保存项目
 
@@ -102,6 +107,8 @@ SSE 使用 `event: 名称`、`data: JSON`，空行分隔事件。网络分块不
 当前 Hermes 对外主要交付 `thinking`（公开进度说明）与最终 `result`，路由捕获异常后交付 `error`。worker 内部的 `tool_status` 用于宿主诊断，不应假定每项工具状态都作为同名公共 SSE 事件转发。`thinking` 也不代表原始模型思维链。
 
 HTTP 200 只表示流已建立，仍可能随后收到 `error`。连接结束而未收到完整终态也不能算成功。`result` 中包含 `project`、`documentation_markdown`、`validation`、`tests`、`used_live_model` 等字段，并可带 `build_report` 或 `chat_reply`。有讨论回复时保持原图；应用构建结果前按引擎返回的验证与报告判断，不能仅因字段中有 `project` 就覆盖画布。
+
+dev.108提供商失败的SSE `error`可附固定`code`：`output_truncated`、`invalid_json`、`invalid_response`、`empty_response`、`tool_protocol`、`refused_response`、`timeout`、`upstream_http`、`transport_error`。`message`仍为安全可读提示，不附原响应、工具参数、思考正文或凭据。旧客户端只读message继续兼容。bounded的`build_report.calls[].completions`包含安全结束原因和token计数，另有`candidate_attempt`、`proposed_goal`、`plan_revisions`、`trial_count`；保留草稿不能据此声称已运行。
 
 dev.103：宿主超时的SSE `error` 增加 `checkpoint`，包括最后可用 `revision`、`project`、`completion_attempts`、`normalizations`、`call_timeouts`、`status_revisions`、`patch_total`、`patch_rejected`、`overload_retries`；初始尚未调用时为0。它是中断候选证据，仍是错误终态，不能当作可应用结果或自动保存。正常 `build_report` 增加 `status_revisions`/`status_revision_details`，`diagnostics.call_timeouts` 和 `overload_retries`。status修订次数指独立status修订；计数范围与验证见[dev.103验收](../product/releases/2.8.0-dev.103/ACCEPTANCE.md)。
 

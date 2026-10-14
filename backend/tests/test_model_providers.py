@@ -16,8 +16,52 @@ from app.services.scenario_builder import ScenarioBuilder, build_events
 from app.api.orchestration import router
 
 
+def production_pipeline_fixture():
+    """Current production contract; interaction is readable only in existing graphs."""
+    from copy import deepcopy
+    from tests.test_scenario_builder import BRIEF, candidate
+    draft=candidate()
+    draft['workflow']['nodes']=[
+        {'id':'input','type':'input','position':{'x':0,'y':0},'data':{'flowVersion':2}},
+        {'id':'story','type':'wait','position':{'x':300,'y':0},'data':{
+            'eventName':'message','match':'exact','answers':['5','五'],
+            'prompt':'开始想象中的冒险。第一题：2加3等于几？'}},
+        {'id':'reward','type':'output','position':{'x':600,'y':0},'data':{'responseText':'获得星星徽章。'}},
+        {'id':'second','type':'wait','position':{'x':900,'y':0},'data':{
+            'eventName':'message','match':'exact','answers':['6','六'],
+            'prompt':'来到下一站。第二题：3加3等于几？'}},
+        {'id':'ending','type':'output','position':{'x':1200,'y':0},'data':{'responseText':'获得月亮徽章，旅程完成。'}},
+    ]
+    draft['workflow']['edges']=[{'id':source+'-'+target,'source':source,'target':target}
+        for source,target in [('input','story'),('story','reward'),('reward','second'),('second','ending')]]
+    draft['requirement_coverage'][0]['node_ids']=['story','reward','second','ending']
+    draft['execution_plan']['cases'][0]['steps'][0]['assertions']=[
+        {'path':['nodes','story'],'op':'equals','value':'waiting'},
+        {'path':['hmi','message'],'op':'equals','value':'开始想象中的冒险。第一题：2加3等于几？'},
+    ]
+    intent={'brief':deepcopy(BRIEF),'queries':[{'requirement_id':'R1','query':'连续文字题目、固定奖励与结尾反馈'}]}
+    selection={'requirements':[{
+        'requirement_id':'R1','capability_ids':['node:input','node:wait','node:output'],
+        'required_execution_source':'simulation'}],'unresolved':[]}
+    return intent,selection,draft
+
+
+def production_step_review(messages):
+    context=next(value for message in messages if message['role']=='user'
+        and message['content'].startswith('{') and 'actual_execution' in
+        (value:=json.loads(message['content'])))
+    checks=[]
+    for case_index,case in enumerate(context['actual_execution']['cases']):
+        for step_index,step in enumerate(case['steps']):
+            checks.append({'case_index':case_index,'step_index':step_index,'verdict':'pass',
+                'evidence_ids':[entry['evidence_id'] for entry in step['evidence_index']
+                    if entry['evidence_path']==['nodes','story']],'findings':[]})
+    return {'issues':[],'strengths':[],'checks':checks}
+
+
 class Providers(unittest.IsolatedAsyncioTestCase):
     def setUp(self):
+        self.runtime_environment={key:os.environ[key] for key in ('PATH','SystemRoot','PYTHONUTF8','PYTHONIOENCODING') if key in os.environ}
         self.tmp=tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
         from app.services.hermes_authoring import EngineConfig
@@ -131,18 +175,21 @@ class Providers(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(response.status_code,200);self.assertNotIn('secret-claude',response.text)
 
     async def test_selected_provider_survives_entire_pipeline_and_result(self):
-        from tests.test_scenario_builder import BRIEF,candidate
-        from copy import deepcopy
         for id in ('openai','anthropic'):
-            outputs=[deepcopy(BRIEF),candidate(),{'issues':[],'strengths':[]}]
+            intent,selection,draft=production_pipeline_fixture()
+            outputs=[intent,selection,draft,production_step_review]
             async def complete(p,*args,**kw):
                 self.assertEqual(p.id,id)
-                return json.dumps(outputs.pop(0),ensure_ascii=False)
-            with patch.object(mp,'complete',new=complete):
+                value=outputs.pop(0)
+                return json.dumps(value(args[0]) if callable(value) else value,ensure_ascii=False)
+            # Keep credentials isolated while allowing the real Node preflight/trial.
+            with patch.object(mp,'complete',new=complete),patch.dict(os.environ,self.runtime_environment),\
+                 patch('app.services.capability_selection.get_embedding_provider',return_value=None):
                 events=[e async for e in build_events(WorkflowGenerateRequestSchema(prompt='乘客文字探险',provider_id=id))]
             result=next(v for k,v in events if k=='result')
             self.assertEqual(result['provider']['id'],id);self.assertEqual(result['project']['meta']['authoring_provider'],id)
             self.assertTrue(result['validation']['passed']);self.assertFalse(outputs)
+            self.assertTrue(result['build_report']['runtime_verified'])
 
     async def test_gateway_configuration_keeps_endpoint_and_key_isolated(self):
         gateway = 'https://www.fucheers.top/v1'

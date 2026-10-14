@@ -1,8 +1,43 @@
 # 配置与能力接入
 
-目的：理解配置在哪一层生效，并完成模型、Hermes 与 MCP 接入。状态：当前实现参考；秘密值不收录在文档。维护日期：2026-10-05。主依据：下文源码与 [MCP 运行契约](../product/MCP_RUNTIME.md)。返回[开发者文档](README.md)与[项目主文档](../README.md)。
+目的：理解配置在哪一层生效，并完成模型、Hermes 与 MCP 接入。状态：当前实现参考；秘密值不收录在文档。维护日期：2026-10-14。主依据：下文源码与 [MCP 运行契约](../product/MCP_RUNTIME.md)。返回[开发者文档](README.md)与[项目主文档](../README.md)。
+
+## 编排模型与诊断日志（dev.108，2026-10-13）
+
+dev.111阶段与检索政策：先意图理解/改写，再逐有效需求本地检索与独立select。内部`search_capabilities(..., min_score=0.35, top_k=32)`按本次最高RRF归一化分取阈值内最多K项，参数须为有限0–1数值/正整数；精确ID和已有引用可越过门槛/K并单列。候选不再按字符裁剪，完整短目录在选择阶段可补选，无证据/降级不假报缺口。阈值不是语义可信度或授权判断，默认值为初始政策，尚无用户UI参数。已知DeepSeek select与understand均16384输出额度，总authoring仍8次；正常路径增加一次选择请求，实际用量按stage记录，原文/改写不进入诊断日志。实现与验证见[dev.111验收](../product/releases/2.8.0-dev.111/ACCEPTANCE.md)。
+
+在 Studio 打开项目的“编排”页，点击右侧聊天输入框旁的模型名称下拉框，再点击“未接入”的模型或“编辑模型…”。填写账号实际可用的模型 ID 和 API 密钥，点击“验证并保存”。验证会进行一次简短真实模型调用；失败不会替换原配置。密钥保存在本机后端 `.demo-runtime/model-providers.json`，不用写进项目或聊天。该入口配置的是场景创作服务，不是模型资料目录。
+
+编排入口自动写 `.demo-runtime/logs/orchestration.jsonl`：每次请求有独立标识、引擎、阶段、耗时、候选节点数量、可应用状态及白名单终止类别。日志不含需求、历史、节点正文、密钥或原始服务商错误正文。单文件 5 MiB，保留三个轮转备份；日志写入失败不得改变编排结果。HTTP/SSE 批测证据的取得方式见[测试与排障](TESTING.md#编排接口批测dev1082026-10-13)。
+
+同轮修复后记录安全模型元数据：固定`finish_reason`、请求输出上限、输入/总输出/思考token计数和固定失败码；缺少用量时保持未知，不能当作0。`length`截断与网络失败分别反馈，不保留部分工具参数或原始推理文本。实现与真实复测状态见本轮验收，不将完整JSON当作可应用图。
+
+本机开发沿用前端5174/后端8001，默认5173/8000为其他服务占用；这不是日常5175副本更新。日志在后端载入新源码后生效。实现与验证范围见[dev.108验收](../product/releases/2.8.0-dev.108/ACCEPTANCE.md)。
 
 ## 服务地址与环境变量
+
+### 工具检索模型（dev.110，2026-10-14）
+
+用户后续确认完整召回99.9%优先于裁剪：现在无论排序或模型是否可用，理解阶段都能看到本次注册快照的完整短目录；排序只影响优先加载，不决定能力有无。当前84项的完整身份/用途/来源/权限已保留，详细Schema仍按选择加载。上下文会增加，旧每例11–15项仅表示优先列表，不能当作模型看到的全部能力范围。
+
+工具筛选默认使用BM25＋本地 `BAAI/bge-small-zh-v1.5`，与用户选择的编排生成模型分别运行。采用官方修订 `7999e1d3359715c523056ef9478215996d62a620`，512维、512 token、CPU/float32、CLS池化和L2归一化，查询使用官方中文检索前缀。模型文件逐一SHA256核验；[官方模型说明](https://huggingface.co/BAAI/bge-small-zh-v1.5)。检索不发付费生成请求，不发现或执行工具。
+
+从项目根目录显式准备一次；只有 `--prepare` 安装依赖与下载权重，全部写入 `.demo-runtime/capability-embeddings/`。`--check` 默认离线真实推理，不安装；本机已实际完成两种命令。独立Python环境与锁定依赖见[依赖文件](../../backend/requirements-capability-embeddings.txt)，共享host-lite不安装torch/transformers。
+
+```powershell
+.\backend\.venv_host_lite\Scripts\python.exe -X utf8 scripts\setup_capability_embeddings.py --prepare
+.\backend\.venv_host_lite\Scripts\python.exe -X utf8 scripts\setup_capability_embeddings.py --check
+```
+
+本机实际占用约4.24GB，含约96MB模型、CPU依赖及下载缓存；不是模型本身4GB。正常编排仅从本地读取，不自动下载。后端懒加载独立worker，同一进程复用模型与向量缓存；模型启动、推理、竞争等待均有界。`CAPABILITY_EMBEDDING_RUNTIME_DIR`可指向已经准备好的独立目录；准备脚本只允许上述默认目录。改变运行目录/模型配置后重启对应开发后端，不重启日常5175。
+
+每个节点、动作、控件及已登记MCP绑定对应独立记录；静态语义文档/契约哈希和模型指纹控制缓存失效，当前权限、来源和配置仍从注册表读取。向量文档不放进模型上下文。精确ID/已有引用保留，弱或不可用召回可扩大短索引；模型缺失或异常以`semantic_recall_unavailable`及安全reason标记降级，不能当作能力不存在。只有选择具体MCP服务后才载入真实详情，召回不授予试跑权限。实际检索指标与未验证范围见[dev.110验收](../product/releases/2.8.0-dev.110/ACCEPTANCE.md)。
+
+dev.109（2026-10-14）不增加能力选择对外API或新模型默认，不升级固定SDK。内存索引从当前注册表与已绑定MCP安全元数据生成；只有选中服务才发现，只有选中工具才加载参数Schema，权限仍由既有绑定检查。未配置/无试跑授权与未知用途分别反馈，检索不授予权限。
+
+载入新后端后，诊断日志在每次实际请求发起/完成时增量记录安全call_id、阶段/尝试、authoring/graph_inference、耗时、输入/输出/思考/缓存与上下文组件字节/字符。失败、取消和无result也保留前序完成消耗；缺失usage为unknown及已知下限。Claude有缓存时总输入为未缓存+缓存读+缓存写；字段缺失不补0。DeepSeek等prompt总输入已包含缓存，不重复累加；思考已含在总输出时不再相加。日志不存原始推理/正文/密钥。
+
+批测用`--log-path`指向同运行实例的JSONL及其轮转文件，按HTTP run_id关联；缺header或日志不能当作0成本。默认路径为仓库根目录下`.demo-runtime/logs/orchestration.jsonl`，开发源码未重载时不视为新日志策略已生效。Claude总输入归一化依据[官方缓存计量说明](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)。当轮质量及用量见[dev.109记录](../product/releases/2.8.0-dev.109/ACCEPTANCE.md)，当前真实十例见[dev.111测评](../product/releases/2.8.0-dev.111/TEST_CASES.md)；没有成对缓存收益或费用节省验证。
 
 | 配置 | 作用位置 | 缺省值或行为 |
 | --- | --- | --- |
@@ -31,13 +66,23 @@ VITE_PROXY_TARGET=http://127.0.0.1:8011 STUDIO_PORT=5175 bash scripts/start_stud
 
 ## 模型服务商
 
-编排服务支持的服务商 ID 由 [model_providers.py](../../backend/app/services/model_providers.py)定义，目前为 `minimax`、`openai`、`anthropic`。在产品模型设置中接入后，服务端配置存放于 `.demo-runtime/model-providers.json`；读取状态使用 `GET /v1/orchestration/providers`。
+编排服务支持的服务商 ID 由 [model_providers.py](../../backend/app/services/model_providers.py)定义，目前为 `minimax`、`openai`、`anthropic`、`deepseek`。在产品模型设置中接入后，服务端配置存放于 `.demo-runtime/model-providers.json`；读取状态使用 `GET /v1/orchestration/providers`。
 
-官方服务可按代码读取 `MINIMAX_API_KEY`、`OPENAI_API_KEY`、`ANTHROPIC_API_KEY`。已有服务端保存配置可能优先于环境变量，修改环境后仍使用旧配置时应检查解析顺序。网关不能自动继承官方服务凭据；服务地址由服务端管理，不能用单次场景请求任意更换。
+官方服务可按代码读取 `MINIMAX_API_KEY`、`OPENAI_API_KEY`、`ANTHROPIC_API_KEY`、`DEEPSEEK_API_KEY`。已有服务端保存配置可能优先于环境变量，修改环境后仍使用旧配置时应检查解析顺序。网关不能自动继承官方服务凭据；服务地址由服务端管理，不能用单次场景请求任意更换。
+
+DeepSeek 在现有模型菜单中独立接入，固定官方地址 `https://api.deepseek.com`，默认模型 `deepseek-flash`；可填合法的 `deepseek-` 模型 ID，实际权限在“验证并保存”时确认。当前[官方列表](https://api-docs.deepseek.com/quick_start/pricing/)还包括 `deepseek-v4-pro`，核对日期2026-10-13；旧的 `deepseek-chat` 不能当作当前已验证模型。不能把 DeepSeek ID 和密钥填进 GPT/MiniMax/Claude 配置，它们有独立模型前缀和服务地址。
+
+已知两个 DeepSeek 模型提供思考开关与 low/high/max 强度，按[官方 Chat Completions](https://api-docs.deepseek.com/api/create-chat-completion/)发送 enabled/disabled；接入的简短验证关闭思考以避免验证额度被推理耗尽，生成仍使用用户所选设置或服务默认。未知别名不提供猜测的思考能力。本轮复用现有设置弹窗，没有新增通用服务商/任意地址入口，左侧“添加模型资料”仍只管理能力资料。真实配置与批测状态见[本轮验收](../product/releases/2.8.0-dev.108/ACCEPTANCE.md)。
+
+dev.108修复将已知DeepSeek的bounded阶段额度设为：需求规划16,384、构图/修复32,768、内容审查8,192；思考与结果共同占用额度，不是给JSON另保留32K。没有显式选择时继续官方默认思考行为；用户显式开关/强度原样传递。单次HTTP请求仍按90秒读取/15秒连接超时，整体编排720秒，构图/试跑最多三轮。其他服务商和未知DeepSeek别名保留14,000额度/240秒整体期限；Hermes角色额度和既有总预算保持。API官方最大393,216不是产品默认应发送的额度，实际输出长度决定用量。
+
+图内推理的短结果预算与编排分开：已知DeepSeek型号在网页运行和隔离试跑中关闭隐式思考，按节点原max_tokens输出（当前服务上限14,000）。节点运行接口没有编排`reasoning`字段，这不会改写用户在编排菜单选择的思考模式；未知别名不添加猜测参数。本轮没有新增输出额度编辑UI。
 
 建议按以下顺序接入：确认提供商与真实模型 ID → 配置密钥 → 回读服务状态 → 查询该模型支持的思考设置 → 使用明确测试输入验证真实调用。`configured: true` 只表示找到了配置，不表示网络、余额或模型可用性已经验证。
 
 思考设置查询接口为 `GET /v1/orchestration/providers/{provider_id}/reasoning?model=...`。返回是否支持、能否关闭与允许的强度。未知模型别名不推测能力；`reasoning` 可省略以使用默认请求行为。具体约束见 [model_reasoning.py](../../backend/app/services/model_reasoning.py)。
+
+Windows 的 POSIX `0600` 模式不等于 ACL 验证；本轮未验证 Windows 凭据文件的专用 ACL。固定 Hermes worker 对仅由宿主环境变量提供的凭据另有既有重解析限制，不能凭宿主 configured=true 就认定 Hermes 全链路可用；本轮使用 bounded，菜单保存配置按既有 settings_path 读取。
 
 模型目录资料和可调用编排提供商是不同机制。把模型说明导入目录，不会自动下载权重、配置推理端点或验证模态。
 

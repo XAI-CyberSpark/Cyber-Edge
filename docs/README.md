@@ -6,7 +6,7 @@
 
 飞书协作入口：[OAKEgde Studio 项目主文档](<https://bi98l1v0z9.feishu.cn/docx/Vz86dZhreoLgPYxrS4sc1fSrn2f)。2026-09-25 已将本次主目录原有 Markdown 引用转换为可直接阅读的飞书文档，长部署日志分卷保留；文档对应关系见 [飞书文档登记表](FEISHU_DOCUMENTS.json>)。并行 dev.40 组件库布局与最新迭代指向尚未纳入本次线上快照；原需求文档CE-20已单独回写完成状态并回读验证。飞书暂无自动双向同步，后续更新先读取线上最新内容并比较本地差异，保留共同编辑，不直接整篇覆盖。
 
-维护日期：2026-10-09｜文档状态：项目管理入口｜维护方式：每轮工作同步更新
+维护日期：2026-10-14｜文档状态：项目管理入口｜维护方式：每轮工作同步更新
 
 **以后从这里了解项目。** 这里管理方向、文档职责、当前状态和待办；详细规则写在对应子文档，避免多份内容各自演变。
 
@@ -24,7 +24,13 @@ OAKEgde Studio 是智能座舱场景编排与体验验证工作台。目标是�
 
 ## 2. 当前状态与下一步
 
-当前登记 **2.8.0-dev.107**：精确契约、核验证据编号和编排推进引导验证中，真实实验待完成。[需求](product/releases/2.8.0-dev.107/PRD.md) · [任务](product/releases/2.8.0-dev.107/TASKS.md) · [验收](product/releases/2.8.0-dev.107/ACCEPTANCE.md)。
+当前登记 **2.8.0-dev.111**：已实现先意图理解/改写、附原描述，再检索与select；阈值0.35/每意图普通Top-K32替代6000字符预算，完整目录及强制引用保持。正常新协议增加一次select，总8次不变；248项246通过、2项原Windows权限残余。真实BGE原查询候选60/60完整；用户授权当前架构真实十例，独立静态复核**7/10（70%）**，图6/7、缺口/澄清1/3，局部编辑及缺口交付仍有问题。42次模型调用/877,840输入＋输出token，未执行图；总体99.9%、人工/执行验收及配对成本收益尚未验证。[需求](product/releases/2.8.0-dev.111/PRD.md) · [任务](product/releases/2.8.0-dev.111/TASKS.md) · [验收](product/releases/2.8.0-dev.111/ACCEPTANCE.md) · [逐例结果](product/releases/2.8.0-dev.111/TEST_CASES.md)。继续原分支，相关实现、测试与文档随本次开发源码快照保存；原开发/日常5175与共享环境保持，未发布。
+
+上一轮 **2.8.0-dev.110**：混合索引与完整能力可见性保障已实现。用户最新要求完整召回≥99.9%，缺一项即任务失败；旧优先候选27/30只有90%，未达目标。已修复预算裁剪隐藏能力，理解阶段保留完整目录、排序只决定加载优先级；当前60个已知回归查询所需身份均可见，优先排序仍55/60完整。总体99.9%和模型实际选择/编排未验收，发现上下文增大，旧留出已用于诊断后作为回归集。[需求](product/releases/2.8.0-dev.110/PRD.md) · [任务](product/releases/2.8.0-dev.110/TASKS.md) · [当轮验收口径](product/releases/2.8.0-dev.110/ACCEPTANCE.md)。原12项全量残余保留，原开发/5175保持，未提交、未发布。
+
+上一轮 **2.8.0-dev.109**：在 `codex/orchestration-optimization` 实施编排优化第一批M1/M2，承接dev.108未提交修改。用户后续明确本轮只测试编排，跳过执行成功判断；[十例产物复评](product/releases/2.8.0-dev.109/TEST_CASES.md)图编排5/7符合，全部6符合/2有编排问题/2无产物待评，无新增模型或执行调用。原端到端4/7可应用及回放、澄清1/3保留为独立历史指标。实际用量与遗留见[需求](product/releases/2.8.0-dev.109/PRD.md) · [任务](product/releases/2.8.0-dev.109/TASKS.md) · [验收](product/releases/2.8.0-dev.109/ACCEPTANCE.md)。[整体专题](product/ORCHESTRATION_OPTIMIZATION.md)继续管理M3–M5及成对验收，尚未验证节省比例。未提交、未发布，原开发及日常5175保持；临时8002测试服务已停止。上一轮32K六例0可应用的事实保留。
+
+上一轮 **2.8.0-dev.107**：精确契约、核验证据编号和编排推进引导，自动验证完成，真实实验结果未完整登记；10月10日补传运行资源。[验收](product/releases/2.8.0-dev.107/ACCEPTANCE.md)。
 
 上一轮 **2.8.0-dev.106**：断言路径/类型预检、类型可见反馈、受限计划纠错、截断限次恢复及state记忆警告完成。最终后端402项（9跳过）、前端相关80项（2跳过）和类型检查通过；七次真实实验2/7可应用，A-Claude 0/3未达目标，C-MiniMax 1/2、C-Claude 1/1、A-MiniMax 0/1。测试依赖隔离到/tmp，共享解释器pip freeze不变。复杂场景可靠性仍未达。[需求](product/releases/2.8.0-dev.106/PRD.md) · [任务](product/releases/2.8.0-dev.106/TASKS.md) · [验收](product/releases/2.8.0-dev.106/ACCEPTANCE.md)。
 
@@ -221,6 +227,9 @@ Latest chat fix: [2.8.0-dev.51](<product/releases/2.8.0-dev.51/PRD.md) - [tasks]
 | 设计工具使用 | [Apple 设计技能约定](product/APPLE_DESIGN_SKILLS.md) | 技能选择、参考优先级、使用方法 | 工具约定；不覆盖用户选择和当前领域规范 |
 | MCP实际工具接入 | [MCP_RUNTIME](product/MCP_RUNTIME.md) | 登记、权限、独立SDK与执行契约 | 2026-09-27当前实现；以dev.62实际验收为准 |
 | 节点与执行契约 | [NODE_CONTRACTS](product/NODE_CONTRACTS.md) | 基础节点、输入输出、实现、依赖、失败与证据 | v0.1 草案，未全面实施；能力与契约变化时更新 |
+| 编排成本与可靠性优化 | [整体优化方案](product/ORCHESTRATION_OPTIMIZATION.md) | 本地混合召回与任务能力选择、阶段上下文、提示词、patch、调用策略与质量/成本验收 | 设计与实施主依据，2026-10-14；dev.109第一批，dev.110混合检索离线验收；真实质量/成本与M3–M5待验收 |
+| dev.110工具检索 | [需求](product/releases/2.8.0-dev.110/PRD.md) · [验收](product/releases/2.8.0-dev.110/ACCEPTANCE.md) | 独立索引、本地BGE、融合排序、完整目录可见性及回归 | 2026-10-14；保障实现，99.9%总体目标与真实规划/成本待验收，未发布 |
+| dev.109十例编排测试 | [用例与结果](product/releases/2.8.0-dev.109/TEST_CASES.md) | 原创7可执行/2缺口/1澄清、锁定计划、真实生成和独立回放；失败与未知消耗保留 | 2026-10-14；测试主依据，实际完成状态与限制见对应结果；非实车/发布验收 |
 | 场景定义 | [节点定义中的两类场景](product/NODE_CONTRACTS.md#5-两个场景按同一层级编排) + 对应迭代 PRD | 目标、触发、路径、异常、可验收结果 | 当前以设计示例/迭代规格管理；独立场景规范库待建立 |
 | 模型分工与接入 | [高通模型目录](<product/QUALCOMM_MODEL_CATALOG.md) + [节点契约](product/NODE_CONTRACTS.md) + [dev.33 接入需求](product/releases/2.8.0-dev.33/PRD.md>) | 任务能力、提供商、云端/端侧边界及验证范围 | 设计与已实现分开；路由、提供商、模态改变时更新 |
 | 架构决策 | [ADR 目录](<adr/) | 为什么选当前方案、影响及被替代关系；当前 0001–0009；新增[0009 对话主管与构建交接](<adr/0009-conversation-intake.md)，其余近期决策：[0005 多角色分工编排](adr/0005-multi-role-orchestration.md)、[0006 编排契约诊断](adr/0006-orchestration-contract-diagnostics.md)、[0007 站点门禁默认关闭](adr/0007-site-access-default-off.md>)、[0008 目标架构与实车接入](adr/0008-target-architecture-and-device-access.md>) | 决策记录；重要跨模块取舍改变时新增或标记替代 |

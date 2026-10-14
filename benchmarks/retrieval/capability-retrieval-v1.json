@@ -1,0 +1,3154 @@
+{
+  "schema_version": 1,
+  "dataset_id": "capability-retrieval-v1",
+  "maintained_at": "2026-10-14",
+  "gold_status": "frozen_pre_tuning",
+  "annotation_policy": {
+    "source": "独立按现有注册表、运行契约与原创连接元数据人工推导；未调用search_capabilities或查看排名生成gold。",
+    "scope": "仅评检索覆盖、排序与候选选择性；不评生成图、执行成功、实车或模型语义正确性。",
+    "minimality": "required_ids表示任务明确需要的细粒度契约；不因operation的carrier依赖强制给node:tool/node:car_control贴gold。实际已有项目引用另由required_refs保留。",
+    "equivalence": "acceptable_groups每组任一ID即可；只在契约能满足本例同一要求时使用，组间仍必须全部满足。",
+    "negation": "被否定但要求检查/读取的控件仍召回；non_authorization约束交由理解与权限检查，不要求检索删除所有否定词对应能力。",
+    "unknown": "未知用途/未登记真实能力允许扩大短索引；空gold不参与正例MRR/recall分母，未知fallback和权限诊断单列。",
+    "budgets": "已知任务max_candidates=30，精确ID=10是冻结的选择性评价期望；未达须如实报告，不能按排名修改标签或预算。",
+    "split": "32 development + 32 heldout，分别原创不同表达；能力类别可重叠，query文字不重复。调参只能使用development，heldout仅终评。",
+    "freeze": "本文件初次64例标注在任何检索运行或调参前冻结；SHA-256由外部运行manifest记录，不在文件内自引用哈希。"
+  },
+  "connection_snapshots": {
+    "static": [],
+    "registered": [
+      {
+        "server_id": "bench-info",
+        "configured": true,
+        "available": true,
+        "tools": [
+          {
+            "name": "lookup_schedule",
+            "description": "读取指定日期已登记的日程，返回会议时段和标题；只读，不创建、修改、发送或控制设备。",
+            "allow_trials": false,
+            "execution_authorized": true,
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "date"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "trip_forecast",
+            "description": "读取目的地指定日期范围的天气预报，返回每日最低最高气温和降水概率；只读，不读取本地仿真天气状态。",
+            "allow_trials": false,
+            "execution_authorized": true,
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "destination": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "days": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 7
+                }
+              },
+              "required": [
+                "destination",
+                "start_date",
+                "days"
+              ],
+              "additionalProperties": false
+            }
+          }
+        ]
+      }
+    ],
+    "opaque": [
+      {
+        "server_id": "opaque",
+        "configured": true,
+        "available": null,
+        "tools": [
+          {
+            "name": "w7",
+            "allow_trials": false,
+            "execution_authorized": true,
+            "input_schema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "DEV-01",
+      "split": "development",
+      "family": "builtin_music",
+      "tags": [
+        "paraphrase",
+        "builtin_tool"
+      ],
+      "query": "在车机界面模拟放一首歌，切换播放器到播放状态。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:music"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "请求是内置音乐界面仿真，必要操作为music；不额外要求模型、导航或真实音乐服务。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/tool/fields/tool_id",
+          "note": "music是独立登记的内置界面仿真操作；节点description明确前三项仅仿真，真实动作须已登记MCP。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "仅请求界面仿真，不代表真实播放、地图服务、拨号、实车接入或自动试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-02",
+      "split": "development",
+      "family": "builtin_navigation",
+      "tags": [
+        "paraphrase",
+        "builtin_tool"
+      ],
+      "query": "在仿真车机里把目的地设为西湖，展示导航界面即可。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:nav"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "目的地与导航界面模拟对应nav；不要求实际路径查询或地图服务。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/tool/fields/tool_id",
+          "note": "nav是独立登记的内置界面仿真操作；节点description明确前三项仅仿真，真实动作须已登记MCP。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "仅请求界面仿真，不代表真实播放、地图服务、拨号、实车接入或自动试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-03",
+      "split": "development",
+      "family": "builtin_phone",
+      "tags": [
+        "paraphrase",
+        "builtin_tool"
+      ],
+      "query": "模拟在中控发起给阿姨的电话，展示拨号反馈即可。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:call_phone"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "内置电话界面仿真单独对应call_phone，不以generic tool替代具体操作标签。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/tool/fields/tool_id",
+          "note": "call_phone是独立登记的内置界面仿真操作；节点description明确前三项仅仿真，真实动作须已登记MCP。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "仅请求界面仿真，不代表真实播放、地图服务、拨号、实车接入或自动试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-04",
+      "split": "development",
+      "family": "window_semantics",
+      "tags": [
+        "paraphrase"
+      ],
+      "query": "把四扇玻璃升到最顶端，让车里不再通风。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:windows.close_all"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "四窗升到顶端表示目标开度为0，由windows.close_all授权；玻璃是独立中文转述，未从索引排名生成。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/windows.close_all",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只请求仿真车窗；实际目标仍由节点参数锁定。"
+      ],
+      "ambiguities": [
+        "目录无hmi:windows类控制项。action:windows是节点分类而不是可替代的canonical模型动作；不能标为等价组。"
+      ]
+    },
+    {
+      "id": "DEV-05",
+      "split": "development",
+      "family": "window_scope",
+      "tags": [
+        "paraphrase",
+        "negation"
+      ],
+      "query": "只把副驾驶那边的车窗降到一半，其他三扇别动。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:windows.open_all"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "非零开度由open_all授权；固定area=2与targetStatus=50锁定fr，不因名字含all就要求全车窗动作。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/windows.open_all",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "其他三扇车窗禁止改变；检索操作身份不覆盖区域限制。"
+      ],
+      "ambiguities": [
+        "目录按动作授权身份而非每个窗口分别登记；单窗范围由area表达，不能编造单窗ID。"
+      ]
+    },
+    {
+      "id": "DEV-06",
+      "split": "development",
+      "family": "ambient_lifecycle",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "拍照体验时将模拟氛围灯调成紫色、亮度40；结束后还原进入体验前的灯光。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:ambient_light.set",
+        "action:ambient_light.restore"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "set配置颜色亮度；restore明确支持恢复体验前状态。仅这两个模拟操作必要，不强制另加state或LLM。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/ambient_light.set",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/ambient_light.restore",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "使用hmi_mock，不代表真实车辆灯光已执行。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-07",
+      "split": "development",
+      "family": "emergency_actions",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "在隔离车辆仿真中进入紧急模式，并打开危险警示双闪。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:emergency.protocol",
+        "action:hazard_lights.on"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "请求同时包含仿真紧急模式和双闪canonical动作，分别由已登记操作承载。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/emergency.protocol",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/hazard_lights.on",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "模拟紧急状态不代表实车安全处置；不授权调用真实车控。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-08",
+      "split": "development",
+      "family": "json_input_branch",
+      "tags": [
+        "paraphrase",
+        "multi_intent",
+        "negation"
+      ],
+      "query": "手工送入JSON对象，字段humidity是数值；超过70走true，其他走false，不用读取外部天气。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "node:input",
+        "node:logic"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "手工JSON来源属于input.inputFormat=json，阈值分支属于logic；环境来源systemInput不是此输入。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/input",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/logic",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "不读取外部天气；不把JSON字段校验等同内容真实性验证。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-09",
+      "split": "development",
+      "family": "creative_memory",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "读取最近几条后端短期对话，让所选模型接着写一段旅途故事，并将新段落呈现在HMI。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "node:memory",
+        "node:llm",
+        "node:output"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "短期上下文为memory；实际生成需所选LLM；HMI呈现模型文字为output。不是旧interaction或永久向量检索。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/memory",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/llm",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/output",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "仅后端短期记忆；不要求永久储存或已接入向量检索。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-10",
+      "split": "development",
+      "family": "vision_feedback",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "取本次后排相机单帧给视觉模型，校验normal/risk/unknown与confidence；风险分支发出座舱提醒并显示后排视频。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "node:systemInput",
+        "node:llm",
+        "node:recognition",
+        "node:cockpit_alert",
+        "node:video_display"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "明确源为本次相机单帧；LLM识别、recognition校验专用vision字段、座舱提醒与后排视频各自有独立契约。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/systemInput",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/llm",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/recognition",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/cockpit_alert",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/video_display",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "不证明持续摄像、风险解除或真实流接入；LLM自报confidence不是识别准确率。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-11",
+      "split": "development",
+      "family": "failure_evidence",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "上游调用失败后，从error出口展示固定的“服务暂不可用”，并在本次运行时间线记下失败来源。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "node:fallback",
+        "node:event_log"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "错误出口上的固定反馈属于fallback；当前会话时间线记录属于event_log。不要求无故重试。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/fallback",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/event_log",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "错误走error连线；trigger文案不构成错误路由，不宣称永久日志。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-12",
+      "split": "development",
+      "family": "repeat_wait_state",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "把一组步骤放进可展开的子流程，每轮等用户发新消息；收到后在当前会话计数加一，下轮不重复初始化。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "node:stage",
+        "node:wait",
+        "node:state"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "stage是真实执行内部步骤的分组；可重复等待用wait；会话增量用state，不要求固定节点数量和拓扑。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/stage",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/wait",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/state",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "每轮必须有新事件；不是无等待自动循环或刷新后永久状态。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-13",
+      "split": "development",
+      "family": "exact_car_identity",
+      "tags": [
+        "exact_id",
+        "edit_history"
+      ],
+      "query": "检查action:auto、action:windows及action:hazard_lights的登记契约，保留已有node:car_control引用。",
+      "connection_snapshot": "static",
+      "required_refs": [
+        "node:car_control"
+      ],
+      "required_ids": [
+        "action:auto",
+        "action:windows",
+        "action:hazard_lights",
+        "node:car_control"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 10
+      },
+      "reasoning": "此例请求精确身份契约与已有节点引用；windows/hazard_lights仅按自身登记含义回查，不当作canonical动作别名。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/auto",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/windows",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/hazard_lights",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "回查身份不授权任何车辆动作；auto仍需上游受控动作。"
+      ],
+      "ambiguities": [
+        "windows是节点分类；hazard_lights为既有动作枚举。此例仅检验精确ID，不能据此推广自然语言等价关系。"
+      ]
+    },
+    {
+      "id": "DEV-14",
+      "split": "development",
+      "family": "climate_bundle",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "在共享HMI打开空调，把温度设为24度、模式改为制冷，风量调至3档。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:ac.on",
+        "hmi:ac.temp",
+        "hmi:ac.mode",
+        "hmi:ac.fan"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "四项独立请求分别对应空调布尔、温度数值、模式cool与风量数值控件；不只标generic car_control。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/ac.on",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/ac.temp",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/ac.mode",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/ac.fan",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-15",
+      "split": "development",
+      "family": "defrost",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "共享仿真界面开启前风挡除雾，同时打开后窗除雾。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:ac.frontDefrost",
+        "hmi:ac.rearDefrost"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "前风挡与后窗除雾为两个不同布尔控件，不是车窗开度控制。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/ac.frontDefrost",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/ac.rearDefrost",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-16",
+      "split": "development",
+      "family": "locks",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "在HMI把车门锁好，开启儿童锁和离车自动上锁。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:doors.locked",
+        "hmi:locks.child",
+        "hmi:locks.walkAway"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "锁车、儿童锁、离车自动上锁各有注册布尔控件。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/doors.locked",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/locks.child",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/locks.walkAway",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-17",
+      "split": "development",
+      "family": "exterior_interior_lights",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "HMI里将大灯设置为自动，开启前雾灯，阅读灯设为常亮。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:lights.headlights",
+        "hmi:lights.fog",
+        "hmi:lights.dome"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "大灯auto、前雾灯true、阅读灯on分别是现有控件的合法选项。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/lights.headlights",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/lights.fog",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/lights.dome",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-18",
+      "split": "development",
+      "family": "display_units",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "屏幕用夜间模式、亮度60%，里程显示英里，温度单位用摄氏。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:display.mode",
+        "hmi:display.brightness",
+        "hmi:display.distance",
+        "hmi:display.temperature"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "模式、亮度、距离和温度单位是四个显示控件；温度单位不等于目标空调温度。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/display.mode",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/display.brightness",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/display.distance",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/display.temperature",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-19",
+      "split": "development",
+      "family": "mirror_adjustment",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "在模拟控件里收起后视镜，水平角度设为10，垂直角度设为负5。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:mirrors.folded",
+        "hmi:mirrors.horizontal",
+        "hmi:mirrors.vertical"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "镜子折叠与两个角度为三个独立控件；目标位于注册范围。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/mirrors.folded",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/mirrors.horizontal",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/mirrors.vertical",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-20",
+      "split": "development",
+      "family": "steering_adjustment",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "共享HMI将方向盘抬高到70、前后位置设为40，并把转向模式切成舒适。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:steering.height",
+        "hmi:steering.reach",
+        "hmi:driving.steering"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "方向盘高度、前后及转向模式独立登记；不是自动驾驶方向控制。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/steering.height",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/steering.reach",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/driving.steering",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-21",
+      "split": "development",
+      "family": "driving_settings",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "在仿真设置里将能量回收改为低，启用脱困起步和低速缓行。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:driving.regen",
+        "hmi:driving.slipStart",
+        "hmi:driving.creep"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "低回收、脱困起步、缓行为三个已登记HMI设置，不推断真实驱动执行器。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/driving.regen",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/driving.slipStart",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/driving.creep",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-22",
+      "split": "development",
+      "family": "driver_assistance_settings",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "仅在HMI模拟里把跟车距离设为5，打开辅助转向和辅助变道。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:autopilot.distance",
+        "hmi:autopilot.autosteer",
+        "hmi:autopilot.laneChange"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "跟车距离数值及两个辅助开关各有登记控件，模拟开关不是实际驾驶动作。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/autopilot.distance",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/autopilot.autosteer",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/autopilot.laneChange",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-23",
+      "split": "development",
+      "family": "safety_service_settings",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "读取HMI车辆电源与驻车制动状态，设置雨刷维护位置开启、大灯高度为2。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:safety.power",
+        "hmi:safety.parkingBrake",
+        "hmi:service.wiper",
+        "hmi:service.headlightHeight"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "四项分别为车辆电源、驻车制动、雨刷维护和大灯高度；get和set共用控件身份。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/safety.power",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/safety.parkingBrake",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/service.wiper",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/service.headlightHeight",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "前两项仅get，不得关闭电源或解除驻车制动。",
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-24",
+      "split": "development",
+      "family": "driver_comfort",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "HMI里打开手套箱，将主驾座椅加热调至2档、通风1档、位置30。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:glovebox.open",
+        "hmi:seat.heat.0",
+        "hmi:seat.vent.0",
+        "hmi:seat.position.0"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "手套箱布尔与主驾加热、通风、位置是独立注册项；座位0来自中文主驾标签。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/glovebox.open",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.heat.0",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.vent.0",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.position.0",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-25",
+      "split": "development",
+      "family": "all_other_seats",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "仿真里副驾加热1档、通风2档、位置40；后排左侧加热3档通风1档，后排右侧加热2档通风3档。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:seat.heat.1",
+        "hmi:seat.vent.1",
+        "hmi:seat.position.1",
+        "hmi:seat.heat.2",
+        "hmi:seat.vent.2",
+        "hmi:seat.heat.3",
+        "hmi:seat.vent.3"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "每个座位和模式单独有控件，位置只对前排登记，不能扩展到后排位置。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.heat.1",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.vent.1",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.position.1",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.heat.2",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.vent.2",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.heat.3",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.vent.3",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-26",
+      "split": "development",
+      "family": "sunshades",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "在共享界面关闭天幕、后风挡、后排左侧和后排右侧四处遮阳帘。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:sunshade.1",
+        "hmi:sunshade.2",
+        "hmi:sunshade.3",
+        "hmi:sunshade.4"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "四个位置的遮阳帘各自登记，不能用车窗动作替代。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/sunshade.1",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/sunshade.2",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/sunshade.3",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/sunshade.4",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-27",
+      "split": "development",
+      "family": "long_history_correction",
+      "tags": [
+        "paraphrase",
+        "multi_intent",
+        "long_narration",
+        "edit_history",
+        "negation"
+      ],
+      "query": "我们先把需求说清楚。这只是电脑里的座舱体验验证，不连接实车。最早的聊天里我说过启动后全部车窗打开、空调设到18度，又聊过音乐和导航，那些只是当时的想法。后来我们比较了几个方案，注意力转向了后排乘员的感受，讨论中提到过拍照、视频和灯光，但都没有成为这次要做的动作。现在我要撤回前面的旧决定，旧聊天不要继续当作执行指令。最终只把右后车窗关到顶端，并把共享HMI空调目标温度设到24度。左前、右前和左后车窗保持原样，也不要添加音乐、导航、电话、视频或灯光动作。完成后的界面仅显示固定文字“已按最新要求设置”，不要求语音，也不需要临时创作故事。用户如果之后提出新的需求，再单独讨论；这一轮不要猜测乘员年龄、生日或目的地。请按我这条最终更正检索必要能力，历史中反复出现的其他关键词不构成新增要求。检索到了历史动作，也不能据此执行。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:windows.close_all",
+        "hmi:ac.temp"
+      ],
+      "acceptable_groups": [
+        [
+          "node:output",
+          "node:fallback"
+        ]
+      ],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "最新肯定目标为rr关闭与24度；旧窗/应用/媒体关键词均撤回。固定无语音文字可由output或fallback呈现，不强制拓扑。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/windows.close_all",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/ac.temp",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/output",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/fallback",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "旧的全窗打开、18度、音乐、导航、电话、视频和灯光决定已撤回；不因检索命中恢复授权。",
+        "只改rr，其他三窗保持。"
+      ],
+      "ambiguities": [
+        "output支持固定responseText，fallback支持固定反馈responseText；本例只要求展示相同固定文字且不要求语音，因此允许任一。此等价不适用于错误路由或动态模型文字。"
+      ]
+    },
+    {
+      "id": "DEV-28",
+      "split": "development",
+      "family": "legacy_preservation",
+      "tags": [
+        "exact_id",
+        "edit_history"
+      ],
+      "query": "已有项目包含node:interaction、node:risk_monitor、node:tts和node:tool；只读取它们的契约并保留现有引用，不能新建前三种旧节点。",
+      "connection_snapshot": "static",
+      "required_refs": [
+        "node:interaction",
+        "node:risk_monitor",
+        "node:tts",
+        "node:tool"
+      ],
+      "required_ids": [
+        "node:interaction",
+        "node:risk_monitor",
+        "node:tts",
+        "node:tool"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 10
+      },
+      "reasoning": "四个真实已有引用都需要保留；前三项generatable=false，不把可读契约升级为可新建能力。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/interaction",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/risk_monitor",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/tts",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/tool",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "不得新建旧interaction/risk_monitor/tts；读取不证明后台监控或真实语音播报。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-29",
+      "split": "development",
+      "family": "unsupported_physical_input",
+      "tags": [
+        "unanswerable",
+        "multi_intent"
+      ],
+      "query": "实时读取车辆CAN总线的方向盘力矩，并直接控制真实刹车让车辆停车。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": false,
+        "allow_full_fallback": true,
+        "max_candidates": null
+      },
+      "reasoning": "当前systemInput未接CAN和通用传感器，HMI驻车制动布尔不是实车制动执行。不存在足以完成请求的现有契约，不能给出虚假gold。",
+      "evidence": [
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "不把HMI模拟状态或仿真紧急模式当作真实刹车；真实接入与权限均未知。"
+      ],
+      "ambiguities": [
+        "空gold表示当前登记契约无法证实任务可满足，不断言宽泛平台永远不可能实现。"
+      ]
+    },
+    {
+      "id": "DEV-30",
+      "split": "development",
+      "family": "opaque_mcp_identity",
+      "tags": [
+        "exact_id",
+        "unknown_mcp",
+        "negation"
+      ],
+      "query": "请回查已登记mcp:opaque/w7。它没有任何用途描述，先列出尚未知的信息，别凭名字认定能查天气。",
+      "connection_snapshot": "opaque",
+      "required_refs": [],
+      "required_ids": [
+        "mcp:opaque/w7"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": false,
+        "allow_full_fallback": true,
+        "max_candidates": null
+      },
+      "reasoning": "登记身份明确且必须回查；无description/title则用途unknown，不给天气等猜测标签。",
+      "evidence": [
+        {
+          "path": "benchmarks/retrieval/capability-retrieval-v1.json",
+          "pointer": "/connection_snapshots/opaque/0/tools/0",
+          "note": "原创已登记连接夹具的工具身份与用途元数据是唯一证据；无描述时只承认身份存在，不推断用途或权限。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "连接元数据是原创只读夹具；allow_trials=false，召回工具不授权调用、安装或自动试跑。",
+        "缺用途描述时只能报告unknown，不宣称能查询天气或已执行。"
+      ],
+      "ambiguities": [
+        "此例只验证未知身份保留，不进入已知语义任务的准确度分母。"
+      ]
+    },
+    {
+      "id": "DEV-31",
+      "split": "development",
+      "family": "registered_mcp_schedule",
+      "tags": [
+        "paraphrase",
+        "negation"
+      ],
+      "query": "读取连接夹具里明天的日程安排，拿到每个时段和标题，不做创建或修改。",
+      "connection_snapshot": "registered",
+      "required_refs": [],
+      "required_ids": [
+        "mcp:bench-info/lookup_schedule"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "只有夹具中明确描述的lookup_schedule支持按日期读取日程；通用tool或显示日程组件不是替代身份。",
+      "evidence": [
+        {
+          "path": "benchmarks/retrieval/capability-retrieval-v1.json",
+          "pointer": "/connection_snapshots/registered/0/tools/0",
+          "note": "原创已登记连接夹具的工具身份与用途元数据是唯一证据；无描述时只承认身份存在，不推断用途或权限。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "连接元数据是原创只读夹具；allow_trials=false，召回工具不授权调用、安装或自动试跑。",
+        "只读；禁止创建或修改日程。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "DEV-32",
+      "split": "development",
+      "family": "registered_mcp_weather",
+      "tags": [
+        "paraphrase"
+      ],
+      "query": "从登记的信息服务读取目的地未来三天的天气预报，返回每日气温与降水概率。",
+      "connection_snapshot": "registered",
+      "required_refs": [],
+      "required_ids": [
+        "mcp:bench-info/trip_forecast"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "目的地未来日期预报来自明确MCP元数据；systemInput天气只读当前仿真状态，不能等价。",
+      "evidence": [
+        {
+          "path": "benchmarks/retrieval/capability-retrieval-v1.json",
+          "pointer": "/connection_snapshots/registered/0/tools/1",
+          "note": "原创已登记连接夹具的工具身份与用途元数据是唯一证据；无描述时只承认身份存在，不推断用途或权限。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "连接元数据是原创只读夹具；allow_trials=false，召回工具不授权调用、安装或自动试跑。"
+      ],
+      "ambiguities": [
+        "真实服务元数据夹具与本地天气仿真来源不同；不将二者作为等价组。"
+      ]
+    },
+    {
+      "id": "HOLD-01",
+      "split": "heldout",
+      "family": "builtin_music",
+      "tags": [
+        "paraphrase",
+        "builtin_tool"
+      ],
+      "query": "演示模式让车机音乐播放器显示正在播放，音频是否实际播放不在本次范围。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:music"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "车机音乐界面状态与music仿真操作对应；无需额外模型或真实媒体账号。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/tool/fields/tool_id",
+          "note": "music是独立登记的内置界面仿真操作；节点description明确前三项仅仿真，真实动作须已登记MCP。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "仅请求界面仿真，不代表真实播放、地图服务、拨号、实车接入或自动试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-02",
+      "split": "heldout",
+      "family": "builtin_navigation",
+      "tags": [
+        "paraphrase",
+        "builtin_tool",
+        "negation"
+      ],
+      "query": "做个导航界面演示：终点填火车站，不查在线地图。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:nav"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "明确界面演示目的地，对应内置nav；在线地图排除不改变仿真操作身份。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/tool/fields/tool_id",
+          "note": "nav是独立登记的内置界面仿真操作；节点description明确前三项仅仿真，真实动作须已登记MCP。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "仅请求界面仿真，不代表真实播放、地图服务、拨号、实车接入或自动试跑授权。",
+        "禁止查询在线地图。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-03",
+      "split": "heldout",
+      "family": "builtin_phone",
+      "tags": [
+        "paraphrase",
+        "builtin_tool",
+        "negation"
+      ],
+      "query": "只在车机仿真屏幕上显示呼叫家人的电话过程，不拨出真实号码。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:call_phone"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "仿真电话过程对应call_phone，真实拨号明确禁止。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/tool/fields/tool_id",
+          "note": "call_phone是独立登记的内置界面仿真操作；节点description明确前三项仅仿真，真实动作须已登记MCP。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "仅请求界面仿真，不代表真实播放、地图服务、拨号、实车接入或自动试跑授权。",
+        "不拨出真实电话。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-04",
+      "split": "heldout",
+      "family": "window_semantics",
+      "tags": [
+        "paraphrase"
+      ],
+      "query": "让四个侧窗的玻璃都回到完全升起的位置，车内密闭。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:windows.close_all"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "升起且密闭是零开度的关闭语义，需close_all canonical授权而非open_all。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/windows.close_all",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "仅仿真四窗；不连接实车。"
+      ],
+      "ambiguities": [
+        "并非打开车窗；无登记HMI车窗控件作为替代。"
+      ]
+    },
+    {
+      "id": "HOLD-05",
+      "split": "heldout",
+      "family": "window_scope",
+      "tags": [
+        "paraphrase",
+        "negation"
+      ],
+      "query": "后排左边那扇窗留四分之三开口，别碰别的窗。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:windows.open_all"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "非零开度75由open_all授权，实际固定区域为rl即area=3；其余窗禁止改变。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/windows.open_all",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "锁定rl与75，其他三窗保持；canonical动作名不决定固定区域。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-06",
+      "split": "heldout",
+      "family": "ambient_restore",
+      "tags": [
+        "paraphrase"
+      ],
+      "query": "灯光体验已经结束，请把模拟氛围灯恢复到进入这个体验前的状态。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "action:ambient_light.restore"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "恢复先前模拟灯光是restore契约，不能用新建某个固定灯色替代恢复。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/ambient_light.restore",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "仅恢复hmi_mock体验前灯光；不声明真实灯光状态。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-07",
+      "split": "heldout",
+      "family": "shared_light_settings",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "用共享HMI控制项把氛围灯打开，颜色设为#336699、亮度25，危险警示灯开关也打开。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:lights.ambient",
+        "hmi:lights.color",
+        "hmi:lights.brightness",
+        "hmi:lights.hazard"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "明确要求四个共享HMI控件，其中双闪为lights.hazard，不改为ordinary actions协议或hmi_mock体验设置。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/lights.ambient",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/lights.color",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/lights.brightness",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/lights.hazard",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": [
+        "效果词相近不代表所有普通动作与HMI模式可互换；此例明确指定共享HMI控制项。"
+      ]
+    },
+    {
+      "id": "HOLD-08",
+      "split": "heldout",
+      "family": "typed_manual_input",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "接收用户提供的结构化订单对象，count必须是数字；判断count是否大于2，并分成两个出口。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "node:input",
+        "node:logic"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "调用方手工结构化输入由input校验，数值条件路由由logic；不引入环境来源或JSON分类LLM。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/input",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/logic",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-09",
+      "split": "heldout",
+      "family": "model_with_context",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "把后端短期记忆里的最近回应读给模型，让它生成一条新的鼓励语，最后显示这条模型回应。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "node:memory",
+        "node:llm",
+        "node:output"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "上下文读取、实际内容生成、模型文字显示需要memory/llm/output；不强制生日或答题业务。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/memory",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/llm",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/output",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "短期记忆不等于跨刷新永久记录；不使用规则冒充模型。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-10",
+      "split": "heldout",
+      "family": "vision_feedback",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "让视觉模型看本次后排单帧，解析专用risk与confidence结果；需要提醒时显示座舱告警并展示浏览器可播放的后排视频地址。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "node:systemInput",
+        "node:llm",
+        "node:recognition",
+        "node:cockpit_alert",
+        "node:video_display"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "本次相机输入、模型识别、专用vision解析、提醒与视频分别对应已登记节点，不额外声称持续监控。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/systemInput",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/llm",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/recognition",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/cockpit_alert",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/video_display",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "视频需浏览器支持的地址；本次识别不证明风险解除或持续后台感知。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-11",
+      "split": "heldout",
+      "family": "fixed_text_alternative",
+      "tags": [
+        "paraphrase",
+        "negation"
+      ],
+      "query": "启动时在HMI显示固定一句“祝你一路平安”，不要求语音，不需要模型创作，也没有错误恢复的含义。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [],
+      "acceptable_groups": [
+        [
+          "node:output",
+          "node:fallback"
+        ]
+      ],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "纯固定文字展示同时落在output.responseText与fallback.responseText契约内；只要求一种实现即可，不要求两个节点同时存在。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/output",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/fallback",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "不调用模型；无语音要求；固定反馈不赋予错误处理或动作成功事实。"
+      ],
+      "ambiguities": [
+        "无动态内容、无语音和错误路由要求时，两节点均能展示配置字符串。动态模型输出或从error路由的需求须另行按各自契约标注。"
+      ]
+    },
+    {
+      "id": "HOLD-12",
+      "split": "heldout",
+      "family": "session_evidence",
+      "tags": [
+        "paraphrase"
+      ],
+      "query": "在当前页面会话的运行时间线上留下这次判断的来源和输入引用，刷新清空也可以。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "node:event_log"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "event_log承载当前运行会话判断及来源记录，用户接受刷新清空，因此不要求持久存储或memory。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/event_log",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "不宣称永久审计日志。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-13",
+      "split": "heldout",
+      "family": "stateful_wait",
+      "tags": [
+        "paraphrase",
+        "multi_intent",
+        "negation"
+      ],
+      "query": "收完一条回答就把会话count增加1，再等待下一条新回答；在可展开分组中查看这一轮步骤，不要重新跑初始化。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "node:wait",
+        "node:state",
+        "node:stage"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "可重复事件等待、状态增量和可展开真实子流程均有明确契约；不要求旧interaction复合节点。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/wait",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/state",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/stage",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "等待期间不执行下游；每轮须新输入，不重复上游初始化。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-14",
+      "split": "heldout",
+      "family": "simulated_weather_source",
+      "tags": [
+        "paraphrase",
+        "negation"
+      ],
+      "query": "只读取当前仿真世界的天气和车窗环境上下文，不请求互联网天气预报。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "node:systemInput"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "systemInput.weather读仿真天气与窗状态；这不是手工JSON输入或未来天气服务。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/systemInput",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "不发网络天气查询，不把仿真状态当真实传感器。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-15",
+      "split": "heldout",
+      "family": "climate_paraphrase",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "在座舱模拟控件里把空调的设定温度提到26摄氏度，送风调成1档。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:ac.temp",
+        "hmi:ac.fan"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "设定温度与送风档位分别为ac.temp/ac.fan，不是温度单位或当前外界气温。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/ac.temp",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/ac.fan",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-16",
+      "split": "heldout",
+      "family": "automatic_unlocks",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "共享HMI打开靠近解锁和驻车解锁，把儿童锁关闭。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:locks.walkUp",
+        "hmi:locks.parkUnlock",
+        "hmi:locks.child"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "靠近、驻车和儿童锁控制登记为三个布尔项，不能扩大成所有门锁模式。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/locks.walkUp",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/locks.parkUnlock",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/locks.child",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-17",
+      "split": "heldout",
+      "family": "parking_lamps",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "只在HMI里把大灯切到示宽灯模式，关掉前雾灯，阅读灯设为自动。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:lights.headlights",
+        "hmi:lights.fog",
+        "hmi:lights.dome"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "大灯parking、前雾灯false、阅读灯auto分别对应三项合法目标。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/lights.headlights",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/lights.fog",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/lights.dome",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-18",
+      "split": "heldout",
+      "family": "display_limits",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "车机显示改日间模式，屏幕亮度20，距离用公里，温度用华氏。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:display.mode",
+        "hmi:display.brightness",
+        "hmi:display.distance",
+        "hmi:display.temperature"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "日间day、亮度20边界、公里km与华氏F四项显示控件对应。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/display.mode",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/display.brightness",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/display.distance",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/display.temperature",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-19",
+      "split": "heldout",
+      "family": "mirror_angles",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "在共享设置中展开后视镜，向左右的角度取负10，俯仰的角度取8。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:mirrors.folded",
+        "hmi:mirrors.horizontal",
+        "hmi:mirrors.vertical"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "展开为folded=false，左右为水平角，俯仰为垂直角；独立措辞依据控件标签与范围。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/mirrors.folded",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/mirrors.horizontal",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/mirrors.vertical",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-20",
+      "split": "heldout",
+      "family": "wheel_position",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "模拟界面的方向盘高度调到30，前后调到80。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:steering.height",
+        "hmi:steering.reach"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "两种方向盘位置设置在注册表中独立存在，不推断转向角度或实际驾驶控制。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/steering.height",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/steering.reach",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-21",
+      "split": "heldout",
+      "family": "driving_modes",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "在HMI把转向手感切成运动、能量回收保持标准，关闭脱困起步与低速缓行。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:driving.steering",
+        "hmi:driving.regen",
+        "hmi:driving.slipStart",
+        "hmi:driving.creep"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "sport/standard及两个false开关均是已登记共享HMI设置；不代表车辆真实动态。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/driving.steering",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/driving.regen",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/driving.slipStart",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/driving.creep",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-22",
+      "split": "heldout",
+      "family": "assistance_preferences",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "共享仿真将跟车距离调为7，关闭辅助转向，辅助变道仍开。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:autopilot.distance",
+        "hmi:autopilot.autosteer",
+        "hmi:autopilot.laneChange"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "距离7为登记上限；辅助转向与变道是两个独立布尔偏好。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/autopilot.distance",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/autopilot.autosteer",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/autopilot.laneChange",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-23",
+      "split": "heldout",
+      "family": "service_and_safety_reads",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "查询共享状态中的车辆电源和驻车制动；随后开启雨刷维护位置，把大灯高度调到负3。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:safety.power",
+        "hmi:safety.parkingBrake",
+        "hmi:service.wiper",
+        "hmi:service.headlightHeight"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "两个安全状态只读取，两个维护控件设置，身份按项登记而不是按get/set重复新增。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/safety.power",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/safety.parkingBrake",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/service.wiper",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/service.headlightHeight",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "前两项只读，不发关电或松刹车动作。",
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-24",
+      "split": "heldout",
+      "family": "seat_shade_combination",
+      "tags": [
+        "paraphrase",
+        "multi_intent"
+      ],
+      "query": "在HMI把副驾座椅通风开到3档、加热归零、位置55；后排右边的遮阳帘收起。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:seat.vent.1",
+        "hmi:seat.heat.1",
+        "hmi:seat.position.1",
+        "hmi:sunshade.4"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "副驾对应座位1，后排右帘对应区域4，不以位置靠近把其他座位或窗动作算必要能力。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.vent.1",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.heat.1",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.position.1",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/sunshade.4",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只操作已登记共享HMI状态；不代表实车接入或试跑授权。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-25",
+      "split": "heldout",
+      "family": "long_narration_single_change",
+      "tags": [
+        "paraphrase",
+        "long_narration",
+        "negation",
+        "edit_history"
+      ],
+      "query": "我想描述一下使用背景：这套演示是在办公室电脑上运行，参与者不会坐进真实车辆。我们会先让大家看一遍界面，再介绍几个可以设置的控件。有人在讨论时提了窗户、音响和灯光，我也讲了导航旅行的故事，但这些只是介绍素材，今天不是把每种功能都串成一个长流程。展示空间比较安静，我不需要播放声音，也不需要发电话或读取个人日程。前面的讨论中出现过22度和28度，随后我们决定都不采用；它们不是本轮要求的候选值。现在真正需要的操作只有一件：共享HMI空调的设定温度改成23摄氏度，执行后由现有回执反映实际值即可。不要切空调模式，不改风量，不开关任何灯，也不动座椅、遮阳帘和窗户。界面已有的文字和布局都不属于此次修改范围，模型不必追加故事或提醒。后台是否以后接入设备不是当前问题；这一轮检索只依据现有模拟控件注册事实。请保留这条最终决定和前面的否定约束，遇到旧聊天里其他功能的词语也不要扩大本次目标。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:ac.temp"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "长叙述只有最新23度一个肯定控制目标；其他组件均背景或禁止，不能按词频给必需能力贴满目录。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/ac.temp",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "不得设置旧22/28度，不修改模式、风量、灯、座椅、帘、窗或现有文字；回执不证明实车执行。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-26",
+      "split": "heldout",
+      "family": "negated_temperature_read",
+      "tags": [
+        "paraphrase",
+        "negation"
+      ],
+      "query": "不要把空调调到24度；我只是要读取当前目标温度和副驾通风档位，其他设置保持。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:ac.temp",
+        "hmi:seat.vent.1"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "两个get请求仍需温度与副驾通风控件契约；否定设置目标不能被误读成允许set，也不能导致控件漏召回。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/ac.temp",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.vent.1",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "两个控件仅get；禁止设置24度和修改其他状态。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-27",
+      "split": "heldout",
+      "family": "local_edit_refs",
+      "tags": [
+        "paraphrase",
+        "edit_history",
+        "negation"
+      ],
+      "query": "当前保存项目有用户输入、会话状态、等待事件、展示输出和内置音乐工具。只把最后展示文字改成“到此结束”，保留原节点、连线和其他参数。",
+      "connection_snapshot": "static",
+      "required_refs": [
+        "node:input",
+        "node:state",
+        "node:wait",
+        "node:output",
+        "node:tool",
+        "action:music"
+      ],
+      "required_ids": [
+        "node:input",
+        "node:state",
+        "node:wait",
+        "node:output",
+        "node:tool",
+        "action:music"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "gold包含传入的真实已有引用与受改输出；这是契约保留，不要求检索器生成固定拓扑或把局部保存当运行节点能力。",
+      "evidence": [
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/input",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/state",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/wait",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/output",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/tool",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/tool/fields/tool_id",
+          "note": "music是独立登记的内置界面仿真操作；节点description明确前三项仅仿真，真实动作须已登记MCP。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "只改指定文本字段；不新建、删改或执行现有音乐、节点和连线。"
+      ],
+      "ambiguities": [
+        "required_refs独立于自然语言相关性，是宿主已有项目保留约束。只有输出需要局部修改，不代表其他能力新增授权。"
+      ]
+    },
+    {
+      "id": "HOLD-28",
+      "split": "heldout",
+      "family": "exact_ids_mixed_case",
+      "tags": [
+        "exact_id",
+        "multi_intent"
+      ],
+      "query": "确认(hmi:seat.heat.3)、[action:windows.close_all]和node:logic的契约；这些都是检查对象，不能触发动作。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [
+        "hmi:seat.heat.3",
+        "action:windows.close_all",
+        "node:logic"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 10
+      },
+      "reasoning": "完整规范ID优先精确命中，括号标点不应成为查询语法；三项都显式需要查询契约。",
+      "evidence": [
+        {
+          "path": "backend/app/services/hmi_controls.json",
+          "pointer": "/seat.heat.3",
+          "note": "共享HMI注册项的中文名称、类型、选项与范围对应本需求；不凭ID猜测未登记操作。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/car_control/action_summaries/windows.close_all",
+          "note": "登记动作用途与本需求一致；windows为节点分类，close_all/open_all为canonical授权动作。普通动作、HMI和hmi_mock各自保留协议。"
+        },
+        {
+          "path": "backend/app/services/node_capabilities.json",
+          "pointer": "/nodes/logic",
+          "note": "该运行节点的输入、输出、现有职责和新建限制是标签依据；不把目标设计节点当现有实现。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "身份检查不能执行加热、关窗或条件分支。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-29",
+      "split": "heldout",
+      "family": "opaque_mcp_purpose",
+      "tags": [
+        "unknown_mcp",
+        "unanswerable",
+        "negation"
+      ],
+      "query": "已连接的w7工具能做什么？现有资料没有标题或描述，别猜测它能读日程或发送邮件。",
+      "connection_snapshot": "opaque",
+      "required_refs": [],
+      "required_ids": [],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": false,
+        "allow_full_fallback": true,
+        "max_candidates": null
+      },
+      "reasoning": "没有可信用途描述的MCP工具无法建立自然语言用途gold；允许保守扩大索引，交给后续发现而不是按名字猜。",
+      "evidence": [
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "连接元数据是原创只读夹具；allow_trials=false，召回工具不授权调用、安装或自动试跑。",
+        "用途未知；禁止按w7名字推断日程或邮件能力。"
+      ],
+      "ambiguities": [
+        "此例为空语义gold，与DEV-30的明确身份回查不同；未知fallback单列，不计算MRR/recall。"
+      ]
+    },
+    {
+      "id": "HOLD-30",
+      "split": "heldout",
+      "family": "unregistered_real_side_effects",
+      "tags": [
+        "unanswerable",
+        "multi_intent",
+        "negation"
+      ],
+      "query": "把刚才的照片发送到我的微信朋友圈，再付款买咖啡；需要真实结果，不接受界面演示。",
+      "connection_snapshot": "static",
+      "required_refs": [],
+      "required_ids": [],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": false,
+        "allow_full_fallback": true,
+        "max_candidates": null
+      },
+      "reasoning": "没有登记朋友圈发布或支付执行工具；music/nav/call_phone和HMI仿真均无法满足明确真实副作用要求。",
+      "evidence": [
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "禁止以界面模拟替代真实发布或付款；不能临时编造MCP身份、权限或执行结果。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-31",
+      "split": "heldout",
+      "family": "registered_mcp_weather",
+      "tags": [
+        "paraphrase",
+        "negation"
+      ],
+      "query": "查出信息服务中杭州后天的最低最高气温和下雨概率，不是模拟天气开关。",
+      "connection_snapshot": "registered",
+      "required_refs": [],
+      "required_ids": [
+        "mcp:bench-info/trip_forecast"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "注册夹具的目的地日期预报返回气温与降水概率；systemInput当前模拟环境不支持这种未来查询。",
+      "evidence": [
+        {
+          "path": "benchmarks/retrieval/capability-retrieval-v1.json",
+          "pointer": "/connection_snapshots/registered/0/tools/1",
+          "note": "原创已登记连接夹具的工具身份与用途元数据是唯一证据；无描述时只承认身份存在，不推断用途或权限。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "连接元数据是原创只读夹具；allow_trials=false，召回工具不授权调用、安装或自动试跑。",
+        "不以当前仿真天气作为未来预报。"
+      ],
+      "ambiguities": []
+    },
+    {
+      "id": "HOLD-32",
+      "split": "heldout",
+      "family": "registered_mcp_schedule",
+      "tags": [
+        "paraphrase",
+        "negation"
+      ],
+      "query": "把指定日期已经登记的会议时段和名称只读查询出来，别新增活动。",
+      "connection_snapshot": "registered",
+      "required_refs": [],
+      "required_ids": [
+        "mcp:bench-info/lookup_schedule"
+      ],
+      "acceptable_groups": [],
+      "expected_retrieval": {
+        "known_task": true,
+        "allow_full_fallback": false,
+        "max_candidates": 30
+      },
+      "reasoning": "夹具lookup_schedule描述按日期返回日程时段与标题；名称转述不增加写入能力。",
+      "evidence": [
+        {
+          "path": "benchmarks/retrieval/capability-retrieval-v1.json",
+          "pointer": "/connection_snapshots/registered/0/tools/0",
+          "note": "原创已登记连接夹具的工具身份与用途元数据是唯一证据；无描述时只承认身份存在，不推断用途或权限。"
+        },
+        {
+          "path": "docs/product/NODE_CONTRACTS.md",
+          "pointer": "#dev.109-动作协议与用例车辆初态2026-10-13–14",
+          "note": "本评测沿用现有输入、数据绑定、actions授权、HMI模拟和MCP独立权限边界；只评召回，不评执行成功。"
+        }
+      ],
+      "non_authorization": [
+        "连接元数据是原创只读夹具；allow_trials=false，召回工具不授权调用、安装或自动试跑。",
+        "不新增活动或修改日程。"
+      ],
+      "ambiguities": []
+    }
+  ]
+}

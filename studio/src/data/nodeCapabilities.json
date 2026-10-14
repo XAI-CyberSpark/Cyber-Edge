@@ -135,7 +135,7 @@
     "llm": {
       "name": "模型推理",
       "source": "真实服务调用·待运行验证",
-      "description": "调用所选模型；离线、空响应或无效结果会失败，不使用规则冒充推理。 text 返回文字；json 按 outputFields 校验，字段位于下游 input.data；actions 返回受控动作。 模型指令必须使用data.systemPrompt，prompt/promptTemplate不执行；text输出text/reply，json输出data对象。 outputFields必须是字段名到类型字符串的对象，例如{\"summary\":\"string\",\"score\":\"number\"}；类型只允许string/number/boolean/array/object。不是字段名数组，也不是JSON Schema的properties或{type:...}对象。字段名称必须与systemPrompt和下游input.data引用完全一致。 jsonRepairAttempts为0–2整数，默认0，仅json模式可启用；仅修复JSON/字段类型错误，共用60秒节点期限，不重放上游，不重试服务错误、取消、空/截断/模拟响应。无效回答超过32000字符不修复；格式通过不代表语义正确。",
+      "description": "调用所选模型；离线、空响应或无效结果会失败，不使用规则冒充推理。 text 返回文字；json 按 outputFields 校验，字段位于下游 input.data；actions 返回受控动作。普通工具/车控（包括固定WINDOW_POSITION）必须由outputFormat=actions授权，经过logic不改变协议；让现有意图/动作决策LLM直接输出actions，不必另加模型。JSON例外仅限已登记HMI配置/字段绑定及已登记MCP arguments绑定。 模型指令必须使用data.systemPrompt，prompt/promptTemplate不执行；text输出text/reply，json输出data对象。 outputFields必须是字段名到类型字符串的对象，例如{\"summary\":\"string\",\"score\":\"number\"}；类型只允许string/number/boolean/array/object。不是字段名数组，也不是JSON Schema的properties或{type:...}对象。字段名称必须与systemPrompt和下游input.data引用完全一致。 jsonRepairAttempts为0–2整数，默认0，仅json模式可启用；仅修复JSON/字段类型错误，共用60秒节点期限，不重放上游，不重试服务错误、取消、空/截断/模拟响应。无效回答超过32000字符不修复；格式通过不代表语义正确。",
       "inputs": "文字 / 图片 / 上游上下文",
       "outputs": "模型文本 / 结构化结果",
       "fields": {
@@ -393,8 +393,8 @@
     "car_control": {
       "name": "车辆动作",
       "source": "仅仿真执行",
-      "description": "车窗支持实际开度与卡窗反馈；紧急/警示动作仅改变仿真状态，不代表实车执行。 HMI氛围灯支持 action=ambient_light.set / ambient_light.restore，必须 executionMode=hmi_mock 且不填 module/signalKey/function。set 节点可直接配置 color(#RRGGBB)、brightness(0–100)、reason、poseTips，支持{{...}}和$ref绑定；省略配置时才从上游 input.data 读取 light_color、light_brightness、light_reason、pose_tips。这些 light_* 名称不能写为节点顶层配置。set 更新共享灯光与HMI建议；restore恢复进入体验前灯光。此明确模拟动作可接JSON模型，不需要实车连接，覆盖状态为simulated。 HMI 共享控制：executionMode=hmi, controlId（见 hmiControls 注册表）, controlOperation=set/get, controlValue 类型严格匹配。可显式 valueField 从 input.data 取值；JSON 模型仅在指定字段时允许接入。执行器返回 actual/revision，不连接实车。旧 Seat 加热/通风 get/set、遮阳帘 get/set 已映射共享状态；subscribe 未实现。 共享 controlId 注册表：{\"ac.on\":{\"type\":\"boolean\"},\"ac.temp\":{\"type\":\"number\",\"min\":16,\"max\":30},\"ac.mode\":{\"type\":\"string\",\"options\":{\"auto\":\"自动\",\"cool\":\"制冷\",\"heat\":\"制热\"}},\"ac.fan\":{\"type\":\"number\",\"min\":0,\"max\":10},\"ac.frontDefrost\":{\"type\":\"boolean\"},\"ac.rearDefrost\":{\"type\":\"boolean\"},\"doors.locked\":{\"type\":\"boolean\"},\"locks.walkUp\":{\"type\":\"boolean\"},\"locks.walkAway\":{\"type\":\"boolean\"},\"locks.child\":{\"type\":\"boolean\"},\"locks.parkUnlock\":{\"type\":\"boolean\"},\"lights.headlights\":{\"type\":\"string\",\"options\":{\"off\":\"关闭\",\"parking\":\"示宽灯\",\"on\":\"开启\",\"auto\":\"自动\"}},\"lights.fog\":{\"type\":\"boolean\"},\"lights.dome\":{\"type\":\"string\",\"options\":{\"off\":\"关闭\",\"on\":\"开启\",\"auto\":\"自动\"}},\"lights.ambient\":{\"type\":\"boolean\"},\"lights.color\":{\"type\":\"string\",\"format\":\"color\"},\"lights.brightness\":{\"type\":\"number\",\"min\":0,\"max\":100},\"lights.hazard\":{\"type\":\"boolean\"},\"display.mode\":{\"type\":\"string\",\"options\":{\"day\":\"日间\",\"night\":\"夜间\",\"auto\":\"自动\"}},\"display.brightness\":{\"type\":\"number\",\"min\":20,\"max\":100},\"display.distance\":{\"type\":\"string\",\"options\":{\"km\":\"公里\",\"mi\":\"英里\"}},\"display.temperature\":{\"type\":\"string\",\"options\":{\"F\":\"°F\",\"C\":\"°C\"}},\"mirrors.folded\":{\"type\":\"boolean\"},\"mirrors.horizontal\":{\"type\":\"number\",\"min\":-30,\"max\":30},\"mirrors.vertical\":{\"type\":\"number\",\"min\":-20,\"max\":20},\"steering.height\":{\"type\":\"number\",\"min\":0,\"max\":100},\"steering.reach\":{\"type\":\"number\",\"min\":0,\"max\":100},\"driving.steering\":{\"type\":\"string\",\"options\":{\"comfort\":\"舒适\",\"standard\":\"标准\",\"sport\":\"运动\"}},\"driving.regen\":{\"type\":\"string\",\"options\":{\"standard\":\"标准\",\"low\":\"低\"}},\"driving.slipStart\":{\"type\":\"boolean\"},\"driving.creep\":{\"type\":\"boolean\"},\"autopilot.distance\":{\"type\":\"number\",\"min\":1,\"max\":7},\"autopilot.autosteer\":{\"type\":\"boolean\"},\"autopilot.laneChange\":{\"type\":\"boolean\"},\"safety.parkingBrake\":{\"type\":\"boolean\"},\"safety.power\":{\"type\":\"boolean\"},\"service.wiper\":{\"type\":\"boolean\"},\"service.headlightHeight\":{\"type\":\"number\",\"min\":-5,\"max\":5},\"glovebox.open\":{\"type\":\"boolean\"},\"seat.heat.0\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.vent.0\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.heat.1\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.vent.1\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.heat.2\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.vent.2\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.heat.3\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.vent.3\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.position.0\":{\"type\":\"number\",\"min\":0,\"max\":100},\"seat.position.1\":{\"type\":\"number\",\"min\":0,\"max\":100},\"sunshade.1\":{\"type\":\"boolean\"},\"sunshade.2\":{\"type\":\"boolean\"},\"sunshade.3\":{\"type\":\"boolean\"},\"sunshade.4\":{\"type\":\"boolean\"}} 完整节点输出为{action,action_result,reply}，共享HMI实际回执在action_result.actual，不能引用节点根actual。",
-      "inputs": "固定参数 / 显式 JSON 字段 / 上游动作计划",
+      "description": "普通车控的LLM来源必须outputFormat=actions，经过logic仍保留动作协议；固定参数不改变该要求。固定车窗同时保留顶层action=windows、module=vehicleControl、signalKey=WINDOW_POSITION、function=set、area与targetStatus；也不能接JSON分类结果。条件读取input.actions/input.action，area/targetStatus锁定实际目标；targetStatus=0由windows.close_all授权，非零目标由windows.open_all授权，不用模型参数覆盖固定区域。JSON例外仅限下述已登记HMI配置/字段绑定，不能推广到普通车窗。车窗支持实际开度与卡窗反馈；紧急/警示动作仅改变仿真状态，不代表实车执行。 car_control.data.action=windows是节点分类，LLM action/actions[].name必须使用windows.close_all/windows.open_all等canonical动作名；两者不可互换。WINDOW_POSITION区域0/1/2/3/4/5/6对应all/fl/fr/rl/rr/前排/后排，area=3是rl，area=4是rr。 HMI氛围灯支持 action=ambient_light.set / ambient_light.restore，必须 executionMode=hmi_mock 且不填 module/signalKey/function。set 节点可直接配置 color(#RRGGBB)、brightness(0–100)、reason、poseTips，支持{{...}}和$ref绑定；省略配置时才从上游 input.data 读取 light_color、light_brightness、light_reason、pose_tips。这些 light_* 名称不能写为节点顶层配置。set 更新共享灯光与HMI建议；restore恢复进入体验前灯光。此明确模拟动作可接JSON模型，不需要实车连接，覆盖状态为simulated。 HMI 共享控制：executionMode=hmi, controlId（见 hmiControls 注册表）, controlOperation=set/get, controlValue 类型严格匹配。可显式 valueField 从 input.data 取值；JSON 模型仅在上述已登记HMI配置/字段绑定时允许接入。执行器返回 actual/revision，不连接实车。旧 Seat 加热/通风 get/set、遮阳帘 get/set 已映射共享状态；subscribe 未实现。 共享 controlId 注册表：{\"ac.on\":{\"type\":\"boolean\"},\"ac.temp\":{\"type\":\"number\",\"min\":16,\"max\":30},\"ac.mode\":{\"type\":\"string\",\"options\":{\"auto\":\"自动\",\"cool\":\"制冷\",\"heat\":\"制热\"}},\"ac.fan\":{\"type\":\"number\",\"min\":0,\"max\":10},\"ac.frontDefrost\":{\"type\":\"boolean\"},\"ac.rearDefrost\":{\"type\":\"boolean\"},\"doors.locked\":{\"type\":\"boolean\"},\"locks.walkUp\":{\"type\":\"boolean\"},\"locks.walkAway\":{\"type\":\"boolean\"},\"locks.child\":{\"type\":\"boolean\"},\"locks.parkUnlock\":{\"type\":\"boolean\"},\"lights.headlights\":{\"type\":\"string\",\"options\":{\"off\":\"关闭\",\"parking\":\"示宽灯\",\"on\":\"开启\",\"auto\":\"自动\"}},\"lights.fog\":{\"type\":\"boolean\"},\"lights.dome\":{\"type\":\"string\",\"options\":{\"off\":\"关闭\",\"on\":\"开启\",\"auto\":\"自动\"}},\"lights.ambient\":{\"type\":\"boolean\"},\"lights.color\":{\"type\":\"string\",\"format\":\"color\"},\"lights.brightness\":{\"type\":\"number\",\"min\":0,\"max\":100},\"lights.hazard\":{\"type\":\"boolean\"},\"display.mode\":{\"type\":\"string\",\"options\":{\"day\":\"日间\",\"night\":\"夜间\",\"auto\":\"自动\"}},\"display.brightness\":{\"type\":\"number\",\"min\":20,\"max\":100},\"display.distance\":{\"type\":\"string\",\"options\":{\"km\":\"公里\",\"mi\":\"英里\"}},\"display.temperature\":{\"type\":\"string\",\"options\":{\"F\":\"°F\",\"C\":\"°C\"}},\"mirrors.folded\":{\"type\":\"boolean\"},\"mirrors.horizontal\":{\"type\":\"number\",\"min\":-30,\"max\":30},\"mirrors.vertical\":{\"type\":\"number\",\"min\":-20,\"max\":20},\"steering.height\":{\"type\":\"number\",\"min\":0,\"max\":100},\"steering.reach\":{\"type\":\"number\",\"min\":0,\"max\":100},\"driving.steering\":{\"type\":\"string\",\"options\":{\"comfort\":\"舒适\",\"standard\":\"标准\",\"sport\":\"运动\"}},\"driving.regen\":{\"type\":\"string\",\"options\":{\"standard\":\"标准\",\"low\":\"低\"}},\"driving.slipStart\":{\"type\":\"boolean\"},\"driving.creep\":{\"type\":\"boolean\"},\"autopilot.distance\":{\"type\":\"number\",\"min\":1,\"max\":7},\"autopilot.autosteer\":{\"type\":\"boolean\"},\"autopilot.laneChange\":{\"type\":\"boolean\"},\"safety.parkingBrake\":{\"type\":\"boolean\"},\"safety.power\":{\"type\":\"boolean\"},\"service.wiper\":{\"type\":\"boolean\"},\"service.headlightHeight\":{\"type\":\"number\",\"min\":-5,\"max\":5},\"glovebox.open\":{\"type\":\"boolean\"},\"seat.heat.0\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.vent.0\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.heat.1\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.vent.1\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.heat.2\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.vent.2\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.heat.3\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.vent.3\":{\"type\":\"number\",\"min\":0,\"max\":3},\"seat.position.0\":{\"type\":\"number\",\"min\":0,\"max\":100},\"seat.position.1\":{\"type\":\"number\",\"min\":0,\"max\":100},\"sunshade.1\":{\"type\":\"boolean\"},\"sunshade.2\":{\"type\":\"boolean\"},\"sunshade.3\":{\"type\":\"boolean\"},\"sunshade.4\":{\"type\":\"boolean\"}} 完整节点输出为{action,action_result,reply}，共享HMI实际回执在action_result.actual，不能引用节点根actual。",
+      "inputs": "普通车控的LLM来源：outputFormat=actions（经logic仍须保留）；固定参数锁定目标，不豁免动作协议。JSON仅用于已登记HMI配置/字段绑定（含模拟氛围灯）",
       "outputs": "action_result.success、actual、revision / 车窗实际开度",
       "fields": {
         "executionMode": {
@@ -515,7 +515,7 @@
         },
         "action": {
           "type": "string",
-          "description": "仅需动作模式时使用，不能是嵌套配置对象；hmi模式不要求action，且不得配置module/signalKey/function。",
+          "description": "动作模式使用字符串，不能是嵌套配置对象；固定WINDOW_POSITION/set也需顶层action=windows，否则Builder检查拒绝。hmi模式不要求action，且不得配置module/signalKey/function。",
           "enum": [
             "windows",
             "windows.open_all",
@@ -609,9 +609,37 @@
           "enum": null,
           "required": false,
           "example": 1,
-          "description": "旧车窗区域0–6；遮阳帘1–4。",
+          "description": "WINDOW_POSITION区域0=all、1=fl、2=fr、3=rl、4=rr、5=前排fl/fr、6=后排rl/rr；遮阳帘1–4沿独立契约。",
           "validation": "node",
-          "bindable": false
+          "bindable": false,
+          "window_area_targets": {
+            "0": [
+              "fl",
+              "fr",
+              "rl",
+              "rr"
+            ],
+            "1": [
+              "fl"
+            ],
+            "2": [
+              "fr"
+            ],
+            "3": [
+              "rl"
+            ],
+            "4": [
+              "rr"
+            ],
+            "5": [
+              "fl",
+              "fr"
+            ],
+            "6": [
+              "rl",
+              "rr"
+            ]
+          }
         },
         "targetStatus": {
           "label": "targetStatus",
@@ -998,7 +1026,23 @@
           "brightness": 40,
           "reason": "模拟灯光"
         }
-      ]
+      ],
+      "operation_contracts": {
+        "ordinary": "普通车控的LLM来源必须outputFormat=actions，经过logic仍保留动作协议；固定参数不改变该要求。固定车窗同时保留顶层action=windows、module=vehicleControl、signalKey=WINDOW_POSITION、function=set、area与targetStatus；也不能接JSON分类结果。条件读取input.actions/input.action，area/targetStatus锁定实际目标；targetStatus=0由windows.close_all授权，非零目标由windows.open_all授权，不用模型参数覆盖固定区域。JSON例外仅限下述已登记HMI配置/字段绑定，不能推广到普通车窗。车窗支持实际开度与卡窗反馈；紧急/警示动作仅改变仿真状态，不代表实车执行。 car_control.data.action=windows是节点分类，LLM action/actions[].name必须使用windows.close_all/windows.open_all等canonical动作名；两者不可互换。WINDOW_POSITION区域0/1/2/3/4/5/6对应all/fl/fr/rl/rr/前排/后排，area=3是rl，area=4是rr。",
+        "ambient": "HMI氛围灯支持 action=ambient_light.set / ambient_light.restore，必须 executionMode=hmi_mock 且不填 module/signalKey/function。set 节点可直接配置 color(#RRGGBB)、brightness(0–100)、reason、poseTips，支持{{...}}和$ref绑定；省略配置时才从上游 input.data 读取 light_color、light_brightness、light_reason、pose_tips。这些 light_* 名称不能写为节点顶层配置。set 更新共享灯光与HMI建议；restore恢复进入体验前灯光。此明确模拟动作可接JSON模型，不需要实车连接，覆盖状态为simulated。",
+        "hmi": "HMI 共享控制：executionMode=hmi, controlId（见 hmiControls 注册表）, controlOperation=set/get, controlValue 类型严格匹配。可显式 valueField 从 input.data 取值；JSON 模型仅在上述已登记HMI配置/字段绑定时允许接入。执行器返回 actual/revision，不连接实车。旧 Seat 加热/通风 get/set、遮阳帘 get/set 已映射共享状态；subscribe 未实现。 完整节点输出为{action,action_result,reply}，共享HMI实际回执在action_result.actual，不能引用节点根actual。"
+      },
+      "action_summaries": {
+        "windows": "按固定区域与开度执行车窗动作",
+        "windows.open_all": "打开车窗",
+        "windows.close_all": "关闭车窗",
+        "auto": "按上游受控动作自动执行车辆动作",
+        "emergency.protocol": "启动仿真紧急模式",
+        "hazard_lights": "执行仿真危险警示灯动作",
+        "hazard_lights.on": "打开仿真危险警示灯双闪",
+        "ambient_light.set": "设置模拟氛围灯颜色与亮度",
+        "ambient_light.restore": "恢复进入体验前的模拟氛围灯"
+      }
     },
     "tool": {
       "name": "应用动作",
@@ -1007,6 +1051,11 @@
       "description": "music/nav/call_phone仅界面仿真。真实MCP使用tool_id=mcp、serverId、toolName、arguments对象；只能选mcp_connections中已登记且可用的工具，arguments按真实input_schema配置，支持$ref绑定，JSON Schema不是outputFields。返回data为真实structuredContent，content/text为原始工具内容；未提供结构化数据时不能编造data字段。工具失败走error出口，无自动重试。连接地址和凭据不属于节点字段；自动试跑需allow_trials=true。",
       "inputs": "显式参数对象 / 上游绑定",
       "outputs": "MCP结构化data与原始content/text / 界面仿真回执",
+      "operation_summaries": {
+        "music": "选择音乐曲目并更新媒体界面仿真，不代表真实音频播放",
+        "nav": "设置导航目的地并更新导航界面仿真，不代表真实路线规划或车辆行驶",
+        "call_phone": "显示拨打电话的界面仿真，不建立真实通话"
+      },
       "fields": {
         "tool_id": {
           "type": "string",
@@ -1655,7 +1704,30 @@
               "raw_command": "string",
               "has_image": "boolean"
             },
-            "repair": "动作必须在实际下游支持集合内；普通工具读取 actions/parameters，不能把 data 当动作。"
+            "repair": "动作必须在实际下游支持集合内；普通工具读取 actions/parameters，不能把 data 当动作。",
+            "canonical_response_examples": [
+              {
+                "action": "windows.close_all",
+                "actions": [
+                  {
+                    "name": "windows.close_all",
+                    "parameters": {}
+                  }
+                ],
+                "intent": "vehicle_control",
+                "parameters": {},
+                "reply": "请求关闭车窗。",
+                "confidence": 0.96
+              },
+              {
+                "action": "none",
+                "actions": [],
+                "intent": "none",
+                "parameters": {},
+                "reply": "未执行车控动作。",
+                "confidence": 0.96
+              }
+            ]
           }
         },
         "auto_note": "auto 由运行时可执行下游与 promptProfile 决定；静态检查不冒称已知格式，显式 text/json/actions 才作确定诊断。"

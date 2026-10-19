@@ -80,4 +80,6 @@ ASR未出现在main及其可达历史中。用户排除ASR前，239,233,841字�
 
 先写4项回归，缺少初始化函数/种子路径时全部失败。独立上传快照36项相关测试：34通过、2项原有可选环境跳过；新增4项全部通过，覆盖空库473条、重复启动数据库不变、已有草稿/确认数据保留、启动API和失败回滚。临时工作目录及隔离数据库下，实际启动`main_host_lite:app`的TestClient并GET接口，返回473条且全部未接入。全功能main入口挂同一函数，但未整体启动；复用已有依赖，未重新安装/测试新操作系统，未调用真实MCP或模型，未改前端。
 
-种子782194字节，SHA-256：`486f480130d3052673ce21791830cc8992f820541683cbbb9a53bfa45714ba6f`。真实凭据/token/私钥/本机路径检查零命中；唯一手机号形式候选实际是32位UUID内的数字片段，保持原ID。远端交付与最终保护检查待收尾。
+种子782194字节，SHA-256：`486f480130d3052673ce21791830cc8992f820541683cbbb9a53bfa45714ba6f`。真实凭据/token/私钥/本机路径检查零命中；唯一手机号形式候选实际是32位UUID内的数字片段，保持原ID。远端交付与最终保护检查见下方记录。
+
+Remote delivery verified (2026-10-19): main commit `125d3c9` contains the 473-interface seed and startup initializer. Anonymous tree/file hashes match all 16 delivered files; anonymous seed download matches all 782194 bytes and SHA-256. Protection audit: 3706 existing project/stable/state/credential files unchanged. No prepare, daily restart, SDK change or user database writes. Local test logs and delivery evidence are retained under outputs; temporary diagnostics are removed at close. This is the dev.107 delivery supplement; local dev.111 and its uncommitted work are not published as a new product release.

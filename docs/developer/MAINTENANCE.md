@@ -138,4 +138,4 @@ dev.106（2026-10-09）：断言路径/类型预检共用TS目录推导；修订
 
 2026-10-10 dev.107交付补充：按用户要求补传运行图片、字体和SU7到独立脱敏仓库；按最新要求排除ASR，QUICKSTART登记普通Git取得方式，RUNTIME_ASSETS.json登记用途、维护日期和字节校验。仅补资产交付，不混入原工作区未提交功能修改，源码快照提交与产品发布分开记录。实际检查与远程结果见dev.107验收。
 
-2026-10-19：473条接口资料的种子JSON及空库初始化已同步QUICKSTART、CONFIGURATION、MCP_RUNTIME、TESTING。用途：修复源码交付后缺少接口目录；状态：相关测试及隔离Host Lite验证通过，远端交付待收尾。主依据：[dev.107交付补记](../product/releases/2.8.0-dev.107/ACCEPTANCE.md#接口目录数据补交付2026-10-19)。当前开发dev.111编号与实验结论不变。
+2026-10-19：473条接口资料的种子JSON及空库初始化已同步QUICKSTART、CONFIGURATION、MCP_RUNTIME、TESTING。用途：修复源码交付后缺少接口目录；状态：相关测试、隔离Host Lite及匿名远端回读通过。主依据：[dev.107交付补记](../product/releases/2.8.0-dev.107/ACCEPTANCE.md#接口目录数据补交付2026-10-19)。当前开发dev.111编号与实验结论不变。

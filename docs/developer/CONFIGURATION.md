@@ -129,3 +129,11 @@ EngineConfig.api_call_timeout_seconds默认150秒，可在服务端引擎配置�
 worker在工具/API进度处回传请求内checkpoint；宿主超时error包含最后校验通过的revision/project快照、completion_attempts、normalizations、call_timeouts、status_revisions与patch计数。仅返回候选证据，不保存、不自动应用。初始化未开始调用时计数为0。checkpoint不消耗原模型消息预算。
 
 trial图模型仅真实HTTP529/503等待2秒后原模型重试一次；真实attempt计入model_calls和原12次上限，overload_retries单独记录。执行器150秒与独立核验规则不变。inspect不可达反馈列ID与补边/remove_node_ids两种办法；显式删边/删节点导致新不可达时patch.warnings提前说明，不代删图。
+
+## 随仓库交付的接口目录（2026-10-19）
+
+[capability-library.seed.json](../../backend/config/capability-library.seed.json)保存473条已导入接口资料（参数、分类、原文依据），不包含连接绑定、密钥或执行历史。条目保持“未接入、未验证”。
+
+两个后端入口启动时调用`capability_library.initialize_library`，使用`OAKEGDE_CAPABILITY_DB`（兼容旧前缀）或后端工作目录下`state/capability-library.sqlite3`。imports表为空时事务导入；已有任何草稿或确认记录就不合并、不覆盖。重复启动不重复导入，失败回滚并中止启动。运行数据库继续排除在Git之外。
+
+拉取代码并重启自己的后端后，空库的`GET /v1/capabilities`应返回473条。已有非空目录继续保留；不要删除旧库来强行初始化。MCP服务登记、独立SDK和授权仍需单独准备。

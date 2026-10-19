@@ -176,3 +176,7 @@ PYTHONPATH=/tmp/oakegde-test-deps .venv_macos/bin/python -m unittest discover -s
 前端新增`assertion-contract.test`，与input-contract/scenario-execution等执行器回归一起运行；`npx tsc -b`做类型检查。固定SDK截断协议检查为`backend/tests/check_authoring_truncation_sdk.py`，占用开发5173，运行前确认空闲；本地模拟服务不调用云模型。实际安装包、版本、执行命令与结果见[dev.106验收](../product/releases/2.8.0-dev.106/ACCEPTANCE.md)。
 
 本轮dev.107新增后端test_authoring_progress_contract.py与前端authoring-progress.test.ts，覆盖连接来源追踪、显式HMI/MCP绑定、证据编号与旧引用差异、弱断言/事件预检、预算提醒与提交门槛。继续使用/tmp/oakegde-test-deps，不安装到共享解释器；七份dev.106候选只做静态回放，六次真实实验另行记录，不能混称模型通过。实际命令与结果见[验收](../product/releases/2.8.0-dev.107/ACCEPTANCE.md)。
+
+## 接口目录初始化检查（2026-10-19）
+
+在backend目录运行`.venv_macos/bin/python -m unittest tests.test_capability_library_seed tests.test_capability_library tests.test_capability_binding tests.test_mcp_packages -q`。新增4项只写临时SQLite，验证473条数据、幂等、已有数据保护、启动/API和事务回滚。上传快照另在临时工作目录及隔离数据库下完成真实Host Lite TestClient启动；不代表全新操作系统安装、实车或真实MCP调用验收。

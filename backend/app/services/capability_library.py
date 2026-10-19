@@ -18,6 +18,7 @@ MAX_FILE = 8 * 1024 * 1024
 MAX_TEXT = 100_000
 from app.services.capability_categories import CATEGORIES, classify
 TEXT_EXTS = {'.txt', '.md', '.json', '.yaml', '.yml', '.csv', '.h', '.aidl', '.proto'}
+SEED_PATH = Path(__file__).resolve().parents[2] / 'config' / 'capability-library.seed.json'
 
 class ImportProblem(ValueError):
     pass
@@ -206,6 +207,24 @@ def db():
             yield conn
     finally:
         conn.close()
+
+def initialize_library():
+    """Populate an empty installation; never merge into an existing library."""
+    with db() as conn:
+        conn.execute('BEGIN IMMEDIATE')
+        if conn.execute('SELECT 1 FROM imports LIMIT 1').fetchone():
+            return 0
+        seed = json.loads(SEED_PATH.read_text(encoding='utf-8'))
+        if seed.get('schema_version') != 1 or not isinstance(seed.get('imports'), list):
+            raise ValueError('内置接口目录格式无效，请检查代码仓中的种子数据。')
+        count = 0
+        for entry in seed['imports']:
+            record = entry['record']
+            conn.execute('INSERT INTO imports VALUES (?,?,?,?,?)', (
+                record['id'], entry['fingerprint'], record['status'],
+                json.dumps(record, ensure_ascii=False), record['created']))
+            count += len(record['items'])
+        return count
 
 def preview(filename, data, platform='', version='', allow_ai=False):
     docs, warnings = documents(filename, data)

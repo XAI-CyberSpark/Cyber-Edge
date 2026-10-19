@@ -69,6 +69,7 @@ from app.api import capabilities
 from app.api import mcp_runtime
 from app.api import mcp_catalog
 from app.api import qualcomm_catalog
+app.router.add_event_handler('startup', capabilities.service.initialize_library)
 app.include_router(qualcomm_catalog.router, prefix='/v1/catalog/qualcomm', tags=['Qualcomm model catalog'])
 
 app.include_router(mcp_runtime.router, prefix="/v1/mcp", tags=["Registered MCP tools"])

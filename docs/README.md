@@ -1,5 +1,8 @@
 # OAKEgde Studio 项目主文档
 
+用户指出源码仓只有代码、缺数据库内容。补回473条接口资料，以JSON保存参数、分类和原文依据；两个后端启动仅向空imports表事务初始化。已有资料不覆盖，条目不冒充可执行MCP，不分发密钥/绑定/执行历史。归入dev.107源码交付补充，不混入dev.108–111其他修改；当前开发编号保持dev.111，不更新日常5175。
+
+
 参数变形后续诊断（2026-10-06）：两组真实请求定位aliases.item已在MiniMax API响应中存在，Hermes与宿主未改写set_data；Anthropic对照无item/XML，正常$ref透传。上一轮XML引用仍未定案。仅诊断、无兼容修复，临时采集已移除；[证据与待选方案](product/releases/2.8.0-dev.98/ACCEPTANCE.md)。不改变当前dev.99编号。
 
 2026-10-06 dev.98：通用节点字段目录与校验一致性，字段回归、定位信息及覆盖引用警告已实现，真实single复跑340.974秒、21节点/27连线，patch拒绝6→4，仍不可应用。[需求](product/releases/2.8.0-dev.98/PRD.md) · [任务](product/releases/2.8.0-dev.98/TASKS.md) · [验收](product/releases/2.8.0-dev.98/ACCEPTANCE.md)。当前登记以根 VERSION 为准；不更新5175，未提交、未发布。
